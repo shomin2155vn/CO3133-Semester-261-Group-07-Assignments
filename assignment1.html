@@ -1,135 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assignment 1 — CO3133 Group Site</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 1 — CO3133 Group Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="topnav">
-  <div class="wrap">
-    <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
-    <nav>
-      <a href="index.html#course">Course</a>
-      <a href="index.html#group">Group</a>
-      <a href="index.html#assignments">Assignments</a>
-      <a href="index.html#ai-disclosure">AI Disclosure</a>
-    </nav>
-  </div>
-</header>
+  <header class="topnav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
+      <nav>
+        <a href="index.html#course">Course</a>
+        <a href="index.html#group">Group</a>
+        <a href="index.html#assignments">Assignments</a>
+        <a href="index.html#ai-disclosure">AI Disclosure</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
-  <div class="wrap">
-    <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
+  <main>
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
 
-    <section class="hero" style="padding-top:32px;">
-      <p class="eyebrow">Assignment 1</p>
-      <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
-      <p class="institution">From Linear Models to Modern Sequence Models: A Comparative Study for
-Image Classification</p>
-      <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="10" y1="17" x2="890" y2="17"></line>
-        <circle class="pulse" cx="10" cy="17" r="8"></circle>
-        <circle cx="10" cy="17" r="3.5"></circle>
-        <circle cx="300" cy="17" r="3.5"></circle>
-        <circle cx="600" cy="17" r="3.5"></circle>
-        <circle class="pulse" cx="890" cy="17" r="8"></circle>
-        <circle cx="890" cy="17" r="3.5"></circle>
-      </svg>
-    </section>
+      <section class="hero" style="padding-top:32px;">
+        <p class="eyebrow">Assignment 1</p>
+        <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
+        <p class="institution">From Linear Models to Modern Sequence Models: A Comparative Study for
+          Image Classification</p>
+        <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="10" y1="17" x2="890" y2="17"></line>
+          <circle class="pulse" cx="10" cy="17" r="8"></circle>
+          <circle cx="10" cy="17" r="3.5"></circle>
+          <circle cx="300" cy="17" r="3.5"></circle>
+          <circle cx="600" cy="17" r="3.5"></circle>
+          <circle class="pulse" cx="890" cy="17" r="8"></circle>
+          <circle cx="890" cy="17" r="3.5"></circle>
+        </svg>
+      </section>
 
-    <section class="assignment-people">
-      <h2 class="section-title">Instructor</h2>
-      <p class="assignment-detail">Lê Thành Sách</p>
-    </section>
+      <section class="assignment-people">
+        <h2 class="section-title">Instructor</h2>
+        <p class="assignment-detail">Lê Thành Sách</p>
+      </section>
 
-    <section class="assignment-people">
-      <h2 class="section-title">Group members</h2>
-      <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
-    </section>
+      <section class="assignment-people">
+        <h2 class="section-title">Group members</h2>
+        <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
+      </section>
 
-  
-    <section>
-      <h2 class="section-title">Problem statement</h2>
-      <div class="stub-note"></div>
-    </section>
 
-    <section>
-      <h2 class="section-title">Dataset description and EDA</h2>
-      <div class="stub-note"></div>
-    </section>
+      <section>
+        <h2 class="section-title">Problem statement</h2>
+        <div class="stub-note"></div>
+      </section>
 
-    <section>
-      <h2 class="section-title">Methodology</h2>
-      <div class="stub-note"></div>
-    </section>
+      <section>
+        <h2 class="section-title">Dataset description and EDA</h2>
+        <div class="stub-note"></div>
+      </section>
 
-    <section>
-      <h2 class="section-title">Experimental setup</h2>
-      <div class="stub-note"></div>
-    </section>
+      <section id="methodology">
+        <h2 class="section-title">Methodology</h2>
 
-    <section>
-      <h2 class="section-title">Results</h2>
-      <div class="stub-note"></div>
-    </section>
+        <h3
+          style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:0 0 14px; color:var(--ink);">
+          Pipeline overview</h3>
+        <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
+          Pipeline overview diagram following Section 3.2 of the Course Project Handbook:
+        </p>
 
-    <section>
-      <h2 class="section-title">Comparison and discussion</h2>
-      <div class="stub-note"></div>
-    </section>
+        <div class="pipeline-card">
+          <div class="pipeline-flow-steps">
+            <span class="pipeline-pill">Raw data</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Preprocessing</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Data loader</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Model</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Loss</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Optimization</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Prediction</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Post-processing</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-pill">Evaluation</span>
+          </div>
+        </div>
 
-    <section>
-      <h2 class="section-title">Error analysis</h2>
-      <div class="stub-note"></div>
-    </section>
+        <h3
+          style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 18px; color:var(--ink);">
+          Mandatory models</h3>
 
-    <section>
-      <h2 class="section-title">Limitations and conclusion</h2>
-      <div class="stub-note"></div>
-    </section>
+        <div class="mandatory-table-wrap">
+          <table class="mandatory-models-table">
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center;">#</th>
+                <th style="min-width: 140px;">Model</th>
+                <th style="min-width: 250px;">Architecture</th>
+                <th style="min-width: 170px;">Input representation</th>
+                <th style="min-width: 170px;">Loss</th>
+                <th style="min-width: 150px;">Metrics</th>
+                <th style="min-width: 270px;">Strengths &amp; limits</th>
+                <th style="min-width: 90px; text-align: center;">Params</th>
+                <th style="min-width: 210px;">Library vs. Self-implemented</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center;"><strong>1</strong></td>
+                <td><strong>Linear / softmax</strong></td>
+                <td>Flatten 2D image into 784-dim vector (<code>x.view(x.size(0), -1)</code>) followed by a single fully
+                  connected layer <code>nn.Linear(784, 10)</code> computing affine transformation
+                  <code>z = W·x + b</code>. Strictly returns raw unnormalized logits without intermediate hidden layers,
+                  activations, or softmax in forward pass.
+                </td>
+                <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code> (1×28×28 pixels)</td>
+                <td><code>nn.CrossEntropyLoss</code> (raw logits; no softmax applied inside model)</td>
+                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td>
+                  <strong>Strengths:</strong> Highly interpretable linear weights, minimal compute &amp; memory
+                  ($O(1)$), convex loss surface.<br>
+                  <strong>Limits:</strong> Severe underfitting; incapable of capturing non-linear interactions or
+                  spatial hierarchies.
+                </td>
+                <td style="text-align: center;"><span class="tag-placeholder">7,850</span></td>
+                <td>
+                  <strong>Self-implemented:</strong> <code>LinearClassifier</code> class &amp; forward flattening
+                  flow.<br>
+                  <strong>Library:</strong> <code>torch.nn.Linear</code>, <code>torch.nn.CrossEntropyLoss</code>.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>2</strong></td>
+                <td><strong>MLP</strong></td>
+                <td>
+                  Deep feedforward network with 3 hidden dense layers (<code>hidden_dims=(256, 64, 64)</code>,
+                  <code>dropout=0.3</code>):<br>
+                  • <code>Linear(784, 256)</code> → <code>ReLU(inplace=True)</code> → <code>Dropout(0.3)</code><br>
+                  • <code>Linear(256, 64)</code> → <code>ReLU(inplace=True)</code> → <code>Dropout(0.3)</code><br>
+                  • <code>Linear(64, 64)</code> → <code>ReLU(inplace=True)</code> → <code>Dropout(0.3)</code><br>
+                  • Output layer: <code>Linear(64, 10)</code> to 10 class logits.<br>
+                  <em>(Sequential dense stack without batch normalization, regularized via dropout).</em>
+                </td>
+                <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code></td>
+                <td><code>nn.CrossEntropyLoss</code> (raw unnormalized logits)</td>
+                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td>
+                  <strong>Strengths:</strong> Universal function approximator capable of non-linear decision
+                  boundaries.<br>
+                  <strong>Limits:</strong> Destroys 2D geometry upon flattening; lacks translation invariance; dense
+                  parameters prone to overfitting.
+                </td>
+                <td style="text-align: center;"><span class="tag-placeholder">222,218</span></td>
+                <td>
+                  <strong>Self-implemented:</strong> <code>MLP</code> class, dynamic layer construction, dropout
+                  regularization.<br>
+                  <strong>Library:</strong> <code>torch.nn.Linear</code>, <code>torch.nn.ReLU</code>,
+                  <code>torch.nn.Dropout</code>, <code>torch.nn.Sequential</code>.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>3</strong></td>
+                <td><strong>CNN (self-designed)</strong></td>
+                <td>
+                  Custom 3-block ConvNet (<code>SimpleCNN</code>, no pretrained backbone) structured into feature
+                  extractor and classifier head:<br>
+                  • <strong>Features:</strong><br>
+                  &nbsp;&nbsp;– Block 1: <code>Conv2d(1, 64, 3, pad=1)</code> → <code>BatchNorm2d(64)</code> →
+                  <code>ReLU</code> → <code>MaxPool2d(2)</code> (28→14)<br>
+                  &nbsp;&nbsp;– Block 2: <code>Conv2d(64, 128, 3, pad=1)</code> → <code>BatchNorm2d(128)</code> →
+                  <code>ReLU</code> → <code>MaxPool2d(2)</code> (14→7)<br>
+                  &nbsp;&nbsp;– Block 3: <code>Conv2d(128, 128, 3, pad=1)</code> → <code>BatchNorm2d(128)</code> →
+                  <code>ReLU</code> (7×7 feature maps)<br>
+                  • <strong>Classifier:</strong> <code>AdaptiveAvgPool2d(1)</code> → <code>Flatten()</code> →
+                  <code>Dropout(0.3)</code> → <code>Linear(128, 10)</code>.
+                </td>
+                <td>2D spatial tensor <code>(B, 1, 28, 28)</code> preserving image coordinate grid</td>
+                <td><code>nn.CrossEntropyLoss</code> (raw unnormalized logits)</td>
+                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td>
+                  <strong>Strengths:</strong> Strong spatial inductive bias (locality &amp; translation equivariance);
+                  parameter sharing enables high expressiveness.<br>
+                  <strong>Limits:</strong> Slower training per batch than MLP; fixed receptive field determined by
+                  kernel size and depth.
+                </td>
+                <td style="text-align: center;"><span class="tag-placeholder">224,010</span></td>
+                <td>
+                  <strong>Self-implemented:</strong> Complete custom ConvNet architecture (<code>SimpleCNN</code>, no
+                  pretrained backbone).<br>
+                  <strong>Library:</strong> <code>torch.nn.Conv2d</code>, <code>torch.nn.BatchNorm2d</code>,
+                  <code>torch.nn.MaxPool2d</code>, <code>torch.nn.AdaptiveAvgPool2d</code>,
+                  <code>torch.nn.Flatten</code>, <code>torch.nn.Dropout</code>, <code>torch.nn.Linear</code>.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>4</strong></td>
+                <td><strong>LSTM or GRU</strong></td>
+                <td colspan="7"
+                  style="text-align: center; vertical-align: middle; padding: 22px 16px; background: rgba(237, 241, 248, 0.35);">
+                  <span class="tag-underdev">Under development</span>
+                  <div style="font-size: 16px; color: var(--ink-soft); font-style: italic; margin-top: 6px;">
+                    Architecture, input representation, parameters, and evaluation are currently in progress.
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>5</strong></td>
+                <td><strong>Transformer</strong></td>
+                <td colspan="7"
+                  style="text-align: center; vertical-align: middle; padding: 22px 16px; background: rgba(237, 241, 248, 0.35);">
+                  <span class="tag-underdev">Under development</span>
+                  <div style="font-size: 16px; color: var(--ink-soft); font-style: italic; margin-top: 6px;">
+                    Vision Transformer patch tokenization, attention layers, and evaluation are currently in progress.
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <section id="ai-disclosure">
-      <p class="section-label">AI usage — this assignment</p>
-      <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
-      <div class="disclosure-box">
-        <h4>Where AI was used</h4>
-        <ul><li class="placeholder"></li></ul>
-        <h4>Where AI was NOT used</h4>
-        <ul><li class="placeholder"></li></ul>
-      </div>
-    </section>
+        <div class="repo-callout" style="margin-top: 20px;">
+          <span class="label">Methodology source code &amp; pipeline</span>
+          <a class="button"
+            href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/03_methodology"
+            target="_blank" rel="noopener">Browse Assignment1/03_methodology/ →</a>
+        </div>
+      </section>
 
-    <section>
-      <h2 class="section-title">Links</h2>
-      <div class="table-wrap">
-        <table class="links-table">
-          <thead>
-            <tr>
-              <th>Content</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Source code</td>
-              <td><a href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1" target="_blank" rel="noopener">GitHub repository</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </div>
-</main>
+      <section id="experimental-setup">
+        <h2 class="section-title">Experimental setup</h2>
+        <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
+          To ensure strict experimental fairness (Section 12.2 of the Course Project Handbook), all models were trained
+          under a unified, identical protocol. The hyperparameters, optimization policies, and execution environment are
+          detailed below:
+        </p>
 
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
-    <span><a href="index.html" style="color:inherit; text-decoration:none;">← Group home</a></span>
-  </div>
-</footer>
+        <div class="mandatory-table-wrap">
+          <table class="mandatory-models-table">
+            <thead>
+              <tr>
+                <th style="width: 45px; text-align: center;">#</th>
+                <th style="min-width: 210px;">Setup / Hyperparameter</th>
+                <th style="min-width: 260px;">Value / Policy</th>
+                <th style="min-width: 380px;">Design Rationale &amp; Protocol Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center;"><strong>1</strong></td>
+                <td><strong>Optimizer</strong></td>
+                <td><code>torch.optim.Adam</code></td>
+                <td>Uniform optimizer family applied across all architectures</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>2</strong></td>
+                <td><strong>Learning rate</strong></td>
+                <td>Initial <code>lr = 1e-3</code> (0.001); minimum <code>min_lr = 1e-6</code></td>
+                <td>Standard robust baseline for Adam on normalized Fashion-MNIST pixel tensors; dynamically reduced
+                  upon plateauing.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>3</strong></td>
+                <td><strong>Batch size</strong></td>
+                <td><code>128</code></td>
+                <td>Constant across <code>train_loader</code>, <code>val_loader</code>, and <code>test_loader</code>
+                  (with <code>drop_last=False</code> and <code>num_workers=2</code>). Balances gradient estimation
+                  stability with GPU throughput.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>4</strong></td>
+                <td><strong>Epochs</strong></td>
+                <td>Maximum <code>100</code> epochs (governed by early stopping)</td>
+                <td>Upper bound ensuring complete convergence
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>5</strong></td>
+                <td><strong>Scheduler</strong></td>
+                <td><code>ReduceLROnPlateau(mode="min", factor=0.5, patience=3, threshold=1e-4)</code></td>
+                <td>Monitors validation loss; decays learning rate by 50% when validation loss ceases to
+                  improve for 3 consecutive epochs, enabling fine-grained convergence near local minima.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>6</strong></td>
+                <td><strong>Regularization</strong></td>
+                <td>
+                  • <strong>MLP:</strong> <code>Dropout(p=0.3)</code> after each hidden ReLU layer.<br>
+                  • <strong>CNN:</strong> <code>BatchNorm2d</code> across all conv blocks + <code>Dropout(p=0.3)</code>
+                  before final classification head.<br>
+                  • <strong>Input normalization:</strong> Grayscale pixels scaled to $[-1, 1]$ via
+                  <code>transforms.Normalize((0.5,), (0.5,))</code>.<br>
+                  • <strong>Capacity ceiling:</strong> Hard parameter constraint $\le 200\text{K}$ parameters.
+                </td>
+                <td>Prevents co-adaptation and deep weight overfitting while stabilizing internal covariate shifts
+                  throughout convolutional feature representations.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>7</strong></td>
+                <td><strong>Early stopping</strong></td>
+                <td><code>patience = 8</code> epochs; tolerance threshold $\Delta = 10^{-4}$ on <code>val_loss</code>
+                </td>
+                <td>Automatically halts training if <code>val_loss &lt; best_val_loss - 1e-4</code> is not achieved
+                  within 8 consecutive epochs, saving computation and mitigating late-stage over-adaptation.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>8</strong></td>
+                <td><strong>Checkpoint criterion</strong></td>
+                <td>Minimum Validation Loss (<code>best_val_loss</code>)</td>
+                <td>The exact model state (<code>state_dict</code>) yielding the lowest validation loss is deep-copied
+                  in memory and persisted to Google Drive (<code>CKPT_DIR</code>). Automatically restored for final test
+                  evaluation.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>9</strong></td>
+                <td><strong>Seed</strong></td>
+                <td><code>SEED = 42</code> (<code>N_SEEDS = 1</code> primary run; full seed protocol)</td>
+                <td>Deterministic random seed set across <code>random.seed(42)</code>,
+                  <code>numpy.random.seed(42)</code>, <code>torch.manual_seed(42)</code>, and
+                  <code>torch.cuda.manual_seed_all(42)</code> to ensure bit-exact reproducibility.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>10</strong></td>
+                <td><strong>Hardware</strong></td>
+                <td>NVIDIA Tesla T4 GPU (15,360 MiB VRAM), Google Colab instance</td>
+                <td>OS: Linux 6.6 x86_64, PyTorch 2.11.0+cu128, Python 3.13.15. Device accelerated via CUDA
+                  (<code>device = "cuda"</code>).</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>11</strong></td>
+                <td><strong>Mixed precision</strong></td>
+                <td>Not used (Standard Single Precision FP32 across all models)</td>
+                <td>Guarantees deterministic arithmetic, prevents numerical underflow in lightweight models, and enables
+                  unskewed inference latency benchmarking.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>12</strong></td>
+                <td><strong>Training time</strong></td>
+                <td>
+                  • <strong>Linear:</strong> ~536.2 s (~8.9 min)<br>
+                  • <strong>MLP:</strong> ~1,173.2 s (~19.5 min)<br>
+                  • <strong>CNN:</strong> ~1,117.4 s (~18.6 min)<br>
+                  <em>Total benchmark run: ~47.0 minutes</em>
+                </td>
+                <td>Wall-clock execution time measured from initialization through early stopping trigger on identical
+                  hardware under GPU acceleration.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center;"><strong>13</strong></td>
+                <td><strong>Hyperparameter selection method</strong></td>
+                <td>Constrained architectural grid search &amp; manual tuning</td>
+                <td>Layer dimensions and channel capacities were systematically sized so each architecture approaches
+                  but strictly adheres to the mandatory $\le 200\text{K}$ parameter ceiling. Optimization
+                  hyperparameters were shared across models to preserve fair comparison.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="repo-callout" style="margin-top: 20px;">
+          <span class="label">Experimental setup documentation &amp; logs</span>
+          <a class="button"
+            href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/04_experimental_setup"
+            target="_blank" rel="noopener">Browse Assignment1/04_experimental_setup/ →</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Results</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Comparison and discussion</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Error analysis</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Limitations and conclusion</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section id="ai-disclosure">
+        <p class="section-label">AI usage — this assignment</p>
+        <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
+        <div class="disclosure-box">
+          <h4>Where AI was used</h4>
+          <ul>
+            <li class="placeholder"></li>
+          </ul>
+          <h4>Where AI was NOT used</h4>
+          <ul>
+            <li class="placeholder"></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Links</h2>
+        <div class="table-wrap">
+          <table class="links-table">
+            <thead>
+              <tr>
+                <th>Content</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Source code (Assignment 1)</td>
+                <td><a
+                    href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1"
+                    target="_blank" rel="noopener">GitHub repository</a></td>
+              </tr>
+              <tr>
+                <td>Methodology (Models &amp; Pipeline)</td>
+                <td><a
+                    href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/03_methodology"
+                    target="_blank" rel="noopener">Assignment1/03_methodology</a></td>
+              </tr>
+              <tr>
+                <td>Experimental Setup (Protocol &amp; Specs)</td>
+                <td><a
+                    href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/04_experimental_setup"
+                    target="_blank" rel="noopener">Assignment1/04_experimental_setup</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
+      <span><a href="index.html" style="color:inherit; text-decoration:none;">← Group home</a></span>
+    </div>
+  </footer>
 
 </body>
+
 </html>
