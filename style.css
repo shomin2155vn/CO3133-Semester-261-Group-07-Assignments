@@ -380,6 +380,29 @@ h2.section-title {
   border-radius: var(--radius);
   overflow: hidden;
 }
+.table-caption,
+figcaption {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin: 12px 0 0;
+}
+figure {
+  margin: 24px 0;
+}
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+figure.figure-large img {
+  width: 100%;
+  max-width: 760px;
+}
 table.members,
 table.links-table {
   width: 100%;

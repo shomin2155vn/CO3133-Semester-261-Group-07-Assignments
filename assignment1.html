@@ -58,7 +58,233 @@ Image Classification</p>
 
     <section>
       <h2 class="section-title">Dataset description and EDA</h2>
-      <div class="stub-note"></div>
+
+      <h3>Dataset description</h3>
+
+      <h4>Datasets, source and license</h4>
+      <p>Two benchmarks from the MNIST family are involved. MNIST (handwritten digits) is used only while the pipeline is being built: checking DataLoader behavior, the forward and backward pass, and the evaluation metrics before any longer training run. It appears in none of the reported tables or figures. Fashion-MNIST is the primary dataset, and all five architectures (Linear/softmax, MLP, CNN, GRU/LSTM and Transformer) are trained, validated and tested on it with an identical split and evaluation protocol.</p>
+      <p>Fashion-MNIST was released in 2017 by Zalando Research (Han Xiao, Kashif Rasul and Roland Vollgraf) as a drop-in replacement for MNIST. It keeps the 28 × 28 grayscale format, the 10 classes and the 60,000 / 10,000 train/test split, but was designed as a more challenging benchmark. It is distributed under the MIT License (© 2017 Zalando SE) and hosted at <a href="https://github.com/zalandoresearch/fashion-mnist" target="_blank" rel="noopener">github.com/zalandoresearch/fashion-mnist</a>. We load the official release through <code>torchvision.datasets.FashionMNIST</code>, which reads the canonical IDX byte files.</p>
+
+      <h4>Collection and labeling</h4>
+      <p>The images are product photos from Zalando's online catalog. The original high-resolution color studio shots went through automatic background removal, aspect-ratio-preserving resizing, centering and downsampling to 28 × 28 grayscale. Each image carries exactly one of 10 mutually exclusive garment labels, taken from Zalando's product category hierarchy. Our team did no manual relabeling or label cleaning.</p>
+
+      <h4>Format, counts and size</h4>
+      <div class="table-wrap">
+        <table class="members">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total samples</td>
+              <td>70,000 (60,000 official train + 10,000 official test)</td>
+            </tr>
+            <tr>
+              <td>Raw sample format</td>
+              <td>28 × 28, single channel, uint8 in [0, 255]</td>
+            </tr>
+            <tr>
+              <td>After ToTensor</td>
+              <td>float32 tensor of shape 1 × 28 × 28, values in [0.0, 1.0]</td>
+            </tr>
+            <tr>
+              <td>Annotation</td>
+              <td>One integer label y ∈ {0, …, 9} per image</td>
+            </tr>
+            <tr>
+              <td>Size on disk</td>
+              <td>≈ 85.8 MB (raw torchvision directory)</td>
+            </tr>
+            <tr>
+              <td>Training pool in memory</td>
+              <td>≈ 188.16 MB as float32 (60,000 × 28 × 28 × 4 bytes)</td>
+            </tr>
+            <tr>
+              <td>License</td>
+              <td>MIT (© 2017 Zalando SE)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">Table 1 — Fashion-MNIST at a glance</p>
+      <p>The sample counts were verified by inspecting the decompressed byte arrays directly. Table 2 lists the class mapping with those counts for the official training and test partitions, plus the mean pixel intensity of each class over the training partition (discussed in the EDA below).</p>
+
+      <div class="table-wrap">
+        <table class="members">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Class</th>
+              <th>Train</th>
+              <th>Test</th>
+              <th>Mean intensity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">0</td>
+              <td>T-shirt/top</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">83.03</td>
+            </tr>
+            <tr>
+              <td class="mono">1</td>
+              <td>Trouser</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">56.84</td>
+            </tr>
+            <tr>
+              <td class="mono">2</td>
+              <td>Pullover</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">96.06</td>
+            </tr>
+            <tr>
+              <td class="mono">3</td>
+              <td>Dress</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">66.02</td>
+            </tr>
+            <tr>
+              <td class="mono">4</td>
+              <td>Coat</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">98.26</td>
+            </tr>
+            <tr>
+              <td class="mono">5</td>
+              <td>Sandal</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">34.87</td>
+            </tr>
+            <tr>
+              <td class="mono">6</td>
+              <td>Shirt</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">84.61</td>
+            </tr>
+            <tr>
+              <td class="mono">7</td>
+              <td>Sneaker</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">42.76</td>
+            </tr>
+            <tr>
+              <td class="mono">8</td>
+              <td>Bag</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">90.16</td>
+            </tr>
+            <tr>
+              <td class="mono">9</td>
+              <td>Ankle boot</td>
+              <td class="mono">6,000</td>
+              <td class="mono">1,000</td>
+              <td class="mono">76.81</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><strong>All classes</strong></td>
+              <td class="mono"><strong>60,000</strong></td>
+              <td class="mono"><strong>10,000</strong></td>
+              <td class="mono"><strong>72.94</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">Table 2 — Class mapping, sample counts and mean pixel intensity (0–255)</p>
+
+      <h4>Bias and limitations</h4>
+      <ul>
+        <li>Catalog bias: every image comes from studio photography with even lighting, centered framing and clean frontal or side views. Results on this benchmark say little about consumer photos with clutter, odd angles or uneven light.</li>
+        <li>Silhouette ambiguity: at 28 × 28, stitching, fabric weave, buttons and collars are mostly gone. T-shirt/top, Shirt, Pullover and Coat have very similar outlines, which is a built-in obstacle for linear and shallow models.</li>
+        <li>Artificial class balance: each class holds exactly 10.0% of the data, whereas real retail catalogs are skewed toward some categories. The upside is that a weak result on one class cannot be blamed on too few examples of it.</li>
+      </ul>
+
+      <h3>Exploratory data analysis</h3>
+      <p>All statistics and plots below were computed on the raw tensors, without downsampling, in our EDA notebook (<code>Assignment1_EDA.ipynb</code>).</p>
+
+      <h4>Integrity and class balance</h4>
+      <p>Every image in the training and test partitions is exactly 28 × 28 × 1. We found no corrupted files, missing entries or shape mismatches, so all five architectures read the same pixel grid. What differs is how each one treats it: spatial convolutions, recurrence over rows, attention over tokens, or plain flattening.</p>
+      <p>Figure 1 shows the class counts for both partitions. The standard deviation of the class counts is zero in each, which gives exactly 6,000 training and 1,000 test images per category. A majority-class guess would score only 10.0%, so overall accuracy remains a meaningful headline metric. We still report macro-F1 and full confusion matrices to catch uneven behavior on the overlapping categories. With balanced classes, a low F1 on a class such as Shirt points to how hard that class is to represent rather than to a shortage of training samples.</p>
+      <figure>
+        <img src="Assignment1/02_dataset_and_eda/a1_fig1_class_distribution.png" alt="Grouped bar chart of Fashion-MNIST class counts: 6,000 training and 1,000 test images for each of the 10 classes" loading="lazy">
+        <figcaption>Figure 1 — Verified sample count per class, official train and test partitions</figcaption>
+      </figure>
+
+      <h4>Pixel intensity</h4>
+      <p>Over the 60,000 × 28 × 28 = 47,040,000 pixels of the raw training pool, the global statistics on the 0–255 scale are μ<sub>raw</sub> = 72.94 and σ<sub>raw</sub> = 90.02. The log-scale histogram in Figure 2 is strongly bimodal. Exactly 50.2% of all pixels are zero, the black studio background, and the remaining mass spreads over 1–255 and corresponds to the garment body, folds and surface texture.</p>
+      <figure class="figure-large">
+        <img src="Assignment1/02_dataset_and_eda/a1_fig2_pixel_intensity.png" alt="Log-scale histogram of pixel intensities in the training set, with a large spike at 0 and a broad, lower mass from 1 to 255" loading="lazy">
+        <figcaption>Figure 2 — Log-scale pixel intensity distribution, training partition</figcaption>
+      </figure>
+      <p>Mean intensity per class (last column of Table 2) works as a rough proxy for how much of the frame a garment fills. Sandal (34.87) and Sneaker (42.76) are lowest because of the wide empty margins around them. Pullover (96.06) and Coat (98.26) are highest, since they take up most of the frame. Total foreground area is therefore a low-level cue that even a linear model can use to separate footwear from apparel.</p>
+
+      <h4>Sample inspection</h4>
+      <p>Figures 3 and 4 show seven randomly selected training images per class (seed 42). Two patterns stand out. Some classes vary a great deal internally: Bag covers handbags, backpacks and clutches with different shapes and strap layouts, which calls for nonlinear decision boundaries. And T-shirt/top, Shirt, Pullover and Coat blur into each other. Low contrast and the absence of color or material cues make this group the most likely source of confusion-matrix errors, a hypothesis we revisit in the error analysis.</p>
+      <figure>
+        <img src="Assignment1/02_dataset_and_eda/a1_fig3_samples_classes_0-4.png" alt="Grid of training samples for T-shirt/top, Trouser, Pullover, Dress and Coat, seven images per class" loading="lazy">
+        <figcaption>Figure 3 — Randomly sampled training images, classes 0–4 (seed 42)</figcaption>
+      </figure>
+      <figure>
+        <img src="Assignment1/02_dataset_and_eda/a1_fig4_samples_classes_5-9.png" alt="Grid of training samples for Sandal, Shirt, Sneaker, Bag and Ankle boot, seven images per class" loading="lazy">
+        <figcaption>Figure 4 — Randomly sampled training images, classes 5–9 (seed 42)</figcaption>
+      </figure>
+
+      <h4>Consequences for preprocessing and splitting</h4>
+      <p>Raw intensities run from 0 to 255 and half the pixels are zero, so inputs are scaled to [0, 1] and then standardized with μ = 0.2860 and σ = 0.3530, computed on the training split only. Because every image has the same 28 × 28 grid, the same tensor transformations apply to all models, with no cropping or resizing.</p>
+      <p>The official 60,000-image training pool is divided into 48,000 training and 12,000 validation images by stratified sampling (<code>sklearn.model_selection.train_test_split</code>, global seed 42), which gives exactly 4,800 and 1,200 images per class. The 10,000 official test images stay untouched until final evaluation. The split is made on the raw <code>uint8</code> arrays before any statistic is computed, so no validation or test pixel enters μ or σ.</p>
+      <div class="table-wrap">
+        <table class="members">
+          <thead>
+            <tr>
+              <th>Subset</th>
+              <th>Source</th>
+              <th>Samples</th>
+              <th>Per class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Train</td>
+              <td>80% of the official training pool (stratified)</td>
+              <td class="mono">48,000</td>
+              <td class="mono">4,800</td>
+            </tr>
+            <tr>
+              <td>Validation</td>
+              <td>20% of the official training pool (stratified)</td>
+              <td class="mono">12,000</td>
+              <td class="mono">1,200</td>
+            </tr>
+            <tr>
+              <td>Test</td>
+              <td>Official test set</td>
+              <td class="mono">10,000</td>
+              <td class="mono">1,000</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><strong>Official training pool + official test set</strong></td>
+              <td class="mono"><strong>70,000</strong></td>
+              <td class="mono"><strong>7,000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">Table 3 — Data partitioning and class distribution</p>
     </section>
 
     <section>
