@@ -14,8 +14,8 @@
   --radius: 10px;
   --max-w: 1040px;
 
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-display: 'Times New Roman', Times, Georgia, serif;
+  --font-body: 'Times New Roman', Times, serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
 }
 
@@ -32,9 +32,19 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18.5px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.88em;
+  background: #edf1f8;
+  color: #1c2f6b;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #d4dbee;
 }
 
 .wrap {
@@ -334,7 +344,7 @@ section:first-of-type { border-top: none; }
 h2.section-title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 28px;
+  font-size: 32px;
   margin: 0 0 24px;
   color: var(--ink);
 }
@@ -608,3 +618,132 @@ footer {
   font-size: 14px;
   background: var(--paper);
 }
+
+
+/* ==========================================================================
+   Mandatory Models Table (Handbook Format)
+   ========================================================================== */
+.mandatory-table-wrap {
+  border: 1px solid #dcdfe8;
+  border-radius: 10px;
+  overflow-x: auto;
+  background: var(--paper);
+  box-shadow: 0 1px 4px rgba(21, 23, 28, 0.03);
+  margin: 16px 0 24px;
+}
+table.mandatory-models-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+}
+table.mandatory-models-table th {
+  background: #edf1f8;
+  color: #1c2f6b;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18.5px;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-bottom: 1.5px solid #d4dbee;
+  white-space: nowrap;
+}
+table.mandatory-models-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eef1f6;
+  font-size: 18px;
+  color: var(--ink);
+  vertical-align: top;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.55;
+}
+table.mandatory-models-table tr:last-child td {
+  border-bottom: none;
+}
+.tag-placeholder {
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-style: italic;
+  color: #1e3a8a;
+  background: #f1f4fb;
+  border: 1px dashed #b2c4e6;
+  border-radius: 6px;
+  padding: 3px 10px;
+  line-height: 1.4;
+}
+.tag-underdev {
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  color: #475569;
+  background: #edf2f8;
+  border: 1.5px dashed #a8b8d4;
+  border-radius: 6px;
+  padding: 6px 18px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.status-todo {
+  display: inline-block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1c2f6b;
+  background: #edf2f9;
+  border: 1.5px solid #b8c8e6;
+  border-radius: 14px;
+  padding: 3px 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Pipeline Overview Diagram (Handbook Section 3.2)
+   ========================================================================== */
+.pipeline-card {
+  background: var(--paper);
+  border: 1px solid #dcdfe8;
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin: 18px 0 30px;
+  box-shadow: 0 1px 4px rgba(21, 23, 28, 0.03);
+}
+.pipeline-flow-steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+.pipeline-pill {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1c2f6b;
+  background: #edf1f8;
+  border: 1px solid #cfd9ec;
+  border-radius: 6px;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+.pipeline-arrow {
+  color: #2a4494;
+  font-weight: 700;
+  font-size: 20px;
+}
+.pipeline-notes-list {
+  margin: 16px 0 0;
+  padding-left: 22px;
+  font-size: 17.5px;
+  color: var(--ink-soft);
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.6;
+}
+.pipeline-notes-list li {
+  margin-bottom: 5px;
+}
+
+
+>>>>>>> origin/phuc
