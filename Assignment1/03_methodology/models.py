@@ -56,19 +56,19 @@ class LinearClassifier(nn.Module):
 # ==============================================================================
 class MLP(nn.Module):
     """
-    Multilayer Perceptron (Feedforward Neural Network) matching notebook architecture.
+    Multilayer Perceptron (Feedforward Neural Network) matching notebook architecture (v4).
     Architecture:
         Input: 784 -> Linear(256) -> ReLU(inplace=True) -> Dropout(0.3)
-                   -> Linear(64)  -> ReLU(inplace=True) -> Dropout(0.3)
+                   -> Linear(128) -> ReLU(inplace=True) -> Dropout(0.3)
                    -> Linear(64)  -> ReLU(inplace=True) -> Dropout(0.3)
                    -> Linear(10)  -> Logits
-    Total parameters: 222,218.
+    Total parameters: 242,762.
     """
     def __init__(
         self,
         num_classes: int = 10,
         input_dim: int = 28 * 28,
-        hidden_dims: tuple = (256, 64, 64),
+        hidden_dims: tuple = (256, 128, 64),
         dropout: float = 0.3,
         in_features: int = None
     ):
@@ -96,26 +96,25 @@ class MLP(nn.Module):
 # ==============================================================================
 class SimpleCNN(nn.Module):
     """
-    Custom 3-block Convolutional Neural Network matching notebook architecture.
-    Total parameters: 224,010.
+    Custom 3-block Convolutional Neural Network matching the trained final checkpoint (231,626 params).
     
     Architecture:
         features:
-            Conv2d(1, 64, 3, pad=1) -> BatchNorm2d(64) -> ReLU -> MaxPool2d(2)  (28 -> 14)
-            Conv2d(64, 128, 3, pad=1) -> BatchNorm2d(128) -> ReLU -> MaxPool2d(2) (14 -> 7)
-            Conv2d(128, 128, 3, pad=1) -> BatchNorm2d(128) -> ReLU (7x7 maps)
+            Conv2d(1, 64, 3, pad=1) -> BatchNorm2d(64) -> ReLU -> MaxPool2d(2) -> Dropout2d(0.25) (28 -> 14)
+            Conv2d(64, 128, 3, pad=1) -> BatchNorm2d(128) -> ReLU -> MaxPool2d(2) -> Dropout2d(0.25) (14 -> 7)
+            Conv2d(128, 128, 3, pad=1) -> BatchNorm2d(128) -> ReLU -> Dropout2d(0.3) (7x7 maps)
         classifier:
-            AdaptiveAvgPool2d(1) -> Flatten() -> Dropout(0.3) -> Linear(128, 10)
+            AdaptiveAvgPool2d(1) -> Flatten() -> Linear(128, 64) -> ReLU -> Dropout(0.3) -> Linear(64, 10)
     """
     def __init__(self, num_classes: int = 10, in_channels: int = 1):
         super().__init__()
         self.features = nn.Sequential(
-            nn.Conv2d(in_channels, 64, 3, padding=1), nn.BatchNorm2d(64), nn.ReLU(inplace=True), nn.MaxPool2d(2),   # 28->14
-            nn.Conv2d(64, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(inplace=True), nn.MaxPool2d(2),  # 14->7
-            nn.Conv2d(128, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(inplace=True),                 # 7x7 feature maps
+            nn.Conv2d(in_channels, 64, 3, padding=1), nn.BatchNorm2d(64), nn.ReLU(inplace=True), nn.MaxPool2d(2), nn.Dropout2d(0.25),   # 28->14
+            nn.Conv2d(64, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(inplace=True), nn.MaxPool2d(2), nn.Dropout2d(0.25),  # 14->7
+            nn.Conv2d(128, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(inplace=True), nn.Dropout2d(0.3),                 # 7x7 feature maps
         )
         self.classifier = nn.Sequential(
-            nn.AdaptiveAvgPool2d(1), nn.Flatten(), nn.Dropout(0.3), nn.Linear(128, num_classes)
+            nn.AdaptiveAvgPool2d(1), nn.Flatten(), nn.Linear(128, 64), nn.ReLU(inplace=True), nn.Dropout(0.3), nn.Linear(64, num_classes)
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:

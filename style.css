@@ -721,4 +721,61 @@ table.mandatory-models-table tr:last-child td {
   margin-bottom: 5px;
 }
 
-
+/* ==========================================================================
+   Implementation Results Components (Handbook Section 3.3)
+   ========================================================================== */
+.figure-card {
+  background: var(--paper);
+  border: 1px solid #dcdfe8;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0 30px;
+  box-shadow: 0 1px 4px rgba(21, 23, 28, 0.03);
+  text-align: center;
+}
+.figure-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #eef1f6;
+  display: block;
+  margin: 0 auto 12px;
+}
+.figure-caption {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+.results-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 18px 0 26px;
+}
+.results-kpi-card {
+  background: var(--paper);
+  border: 1px solid #dcdfe8;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(21, 23, 28, 0.02);
+}
+.results-kpi-card.highlight {
+  border-color: #2a4494;
+  background: #f8faff;
+}
+.results-kpi-value {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1c2f6b;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.results-kpi-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16.5px;
+  color: var(--ink-soft);
+}
