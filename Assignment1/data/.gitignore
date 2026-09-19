@@ -1,0 +1,6 @@
+# Ignore all dataset files and subdirectories
+*
+
+# Keep this file and README.md
+!.gitignore
+!README.md
