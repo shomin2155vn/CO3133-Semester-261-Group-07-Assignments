@@ -395,7 +395,7 @@
                 <th style="min-width: 250px;">Architecture</th>
                 <th style="min-width: 170px;">Input representation</th>
                 <th style="min-width: 170px;">Loss</th>
-                <th style="min-width: 150px;">Metrics</th>
+                <th style="min-width: 210px;">Metrics</th>
                 <th style="min-width: 270px;">Strengths &amp; limits</th>
                 <th style="min-width: 90px; text-align: center;">Params</th>
                 <th style="min-width: 210px;">Library vs. Self-implemented</th>
@@ -411,8 +411,13 @@
                   activations, or softmax in forward pass.
                 </td>
                 <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code> (1×28×28 pixels)</td>
-                <td><code>nn.CrossEntropyLoss</code> (raw logits; no softmax applied inside model)</td>
-                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td><code>nn.CrossEntropyLoss</code></td>
+                <td>
+                  • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
+                  • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
+                  • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                  • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
+                </td>
                 <td>
                   <strong>Strengths:</strong> Highly interpretable linear weights, minimal compute &amp; memory
                   ($O(1)$), convex loss surface.<br>
@@ -439,8 +444,13 @@
                   <em>(Sequential dense stack without batch normalization, regularized via dropout).</em>
                 </td>
                 <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code></td>
-                <td><code>nn.CrossEntropyLoss</code> (raw unnormalized logits)</td>
-                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td><code>nn.CrossEntropyLoss</code></td>
+                <td>
+                  • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
+                  • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
+                  • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                  • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
+                </td>
                 <td>
                   <strong>Strengths:</strong> Universal function approximator capable of non-linear decision
                   boundaries.<br>
@@ -473,8 +483,13 @@
                   <code>Linear(64, 10)</code>.
                 </td>
                 <td>2D spatial tensor <code>(B, 1, 28, 28)</code> preserving image coordinate grid</td>
-                <td><code>nn.CrossEntropyLoss</code> (raw unnormalized logits)</td>
-                <td>Accuracy (Top-1), Macro-F1, training time, inference latency</td>
+                <td><code>nn.CrossEntropyLoss</code></td>
+                <td>
+                  • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
+                  • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
+                  • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                  • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
+                </td>
                 <td>
                   <strong>Strengths:</strong> Strong spatial inductive bias (locality &amp; translation equivariance);
                   multi-stage 2D dropout and batch normalization prevent overfitting.<br>
@@ -562,8 +577,9 @@
               <tr>
                 <td style="text-align: center;"><strong>4</strong></td>
                 <td><strong>Epochs</strong></td>
-                <td>Maximum <code>100</code> epochs (governed by early stopping)</td>
-                <td>Upper bound ensuring complete convergence
+                <td>Maximum <code>200</code> epochs (governed by early stopping)</td>
+                <td>Upper bound ensuring complete convergence. Actual epochs executed before early stopping trigger:
+                  Linear = 38 epochs, MLP = 104 epochs, CNN = 86 epochs.
                 </td>
               </tr>
               <tr>

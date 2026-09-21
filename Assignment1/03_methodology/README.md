@@ -22,7 +22,7 @@ $$\text{Raw Data} \longrightarrow \text{Preprocessing} \longrightarrow \text{Dat
 6. **Optimization:** Tối ưu hóa trọng số bằng thuật toán AdamW / SGD với Momentum, kết hợp Cosine Annealing Learning Rate Scheduler.
 7. **Prediction & Post-processing:** Áp dụng Softmax để lấy phân phối xác suất và $\operatorname{argmax}$ để dự đoán nhãn lớp:
    $$\hat{y} = \arg\max_{c \in \{0, \dots, 9\}} \sigma(\mathbf{z})_c$$
-8. **Evaluation:** Đánh giá toàn diện qua Accuracy, Macro-F1, Confusion Matrix, số lượng tham số và thời gian suy luận.
+8. **Evaluation:** Đánh giá toàn diện qua Top-1 Accuracy, Macro-F1, Macro-Precision, Macro-Recall, Test Loss, phân tích từng lớp (Per-class Precision/Recall/F1), ma trận nhầm lẫn (Confusion Matrix), số lượng tham số, thời gian huấn luyện (training time) và độ trễ suy luận (inference latency ms/sample).
 
 ---
 
