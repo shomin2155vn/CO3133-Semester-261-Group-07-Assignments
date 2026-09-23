@@ -713,9 +713,8 @@
                   <tr>
                     <td style="text-align: center;"><strong>4</strong></td>
                     <td><strong>Epochs</strong></td>
-                    <td>Maximum <code>200</code> epochs (governed by early stopping)</td>
-                    <td>Upper bound ensuring complete convergence. Actual epochs executed before early stopping trigger:
-                      Linear = 38 epochs, MLP = 104 epochs, CNN = 86 epochs.
+                    <td>Maximum <code>200</code> epochs</td>
+                    <td>Upper bound ensuring complete convergence. Actual epochs executed before early stopping trigger: Linear = 31 epochs, MLP = 110 epochs, CNN = 129 epochs.
                     </td>
                   </tr>
                   <tr>
@@ -776,17 +775,15 @@
                     <td style="text-align: center;"><strong>11</strong></td>
                     <td><strong>Mixed precision</strong></td>
                     <td>Not used (Standard Single Precision FP32 across all models)</td>
-                    <td>Guarantees deterministic arithmetic, prevents numerical underflow in lightweight models, and
-                      enables
-                      unskewed inference latency benchmarking.</td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td style="text-align: center;"><strong>12</strong></td>
                     <td><strong>Training time</strong></td>
                     <td>
-                      • <strong>Linear:</strong> ~1,142.2 s (~19.0 min)<br>
-                      • <strong>MLP:</strong> ~1,845.3 s (~30.8 min)<br>
-                      • <strong>CNN:</strong> ~1,811.7 s (~30.2 min)<br>
+                      • <strong>Linear:</strong> 10 min 18.9s<br>
+                      • <strong>MLP:</strong> 36 min 52s<br>
+                      • <strong>CNN:</strong> 44 min 1.5s<br>
 
                     </td>
                     <td>Wall-clock execution time measured from initialization through early stopping trigger on
@@ -1213,7 +1210,7 @@
                   <tr>
                     <td>EDA; Dataset/DataLoader; train/val loop; Linear + MLP + CNN runnable w</td>
                     <td><a
-                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/Assignment1/EDA_training_pipeline.ipynb"
+                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/EDA_training_pipeline.ipynb"
                         target="_blank" rel="noopener">Jupyter Notebook</a></td>
                   </tr>
                 
