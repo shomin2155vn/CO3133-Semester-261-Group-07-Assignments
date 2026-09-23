@@ -7,26 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 1 — CO3133 Group Site</title>
   <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 1 — CO3133 Group Site</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
-  <header class="topnav">
-    <div class="wrap">
-      <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
-      <nav>
-        <a href="index.html#course">Course</a>
-        <a href="index.html#group">Group</a>
-        <a href="index.html#assignments">Assignments</a>
-        <a href="index.html#ai-disclosure">AI Disclosure</a>
-      </nav>
-    </div>
-  </header>
   <header class="topnav">
     <div class="wrap">
       <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
@@ -44,23 +29,6 @@
       <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
       <main>
         <div class="wrap">
-          <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
-
-          <section class="hero" style="padding-top:32px;">
-            <p class="eyebrow">Assignment 1</p>
-            <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
-            <p class="institution">From Linear Models to Modern Sequence Models: A Comparative Study for
-              Image Classification</p>
-            <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
-              <line x1="10" y1="17" x2="890" y2="17"></line>
-              <circle class="pulse" cx="10" cy="17" r="8"></circle>
-              <circle cx="10" cy="17" r="3.5"></circle>
-              <circle cx="300" cy="17" r="3.5"></circle>
-              <circle cx="600" cy="17" r="3.5"></circle>
-              <circle class="pulse" cx="890" cy="17" r="8"></circle>
-              <circle cx="890" cy="17" r="3.5"></circle>
-            </svg>
-          </section>
           <section class="hero" style="padding-top:32px;">
             <p class="eyebrow">Assignment 1</p>
             <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
@@ -81,15 +49,7 @@
             <h2 class="section-title">Instructor</h2>
             <p class="assignment-detail">Lê Thành Sách</p>
           </section>
-          <section class="assignment-people">
-            <h2 class="section-title">Instructor</h2>
-            <p class="assignment-detail">Lê Thành Sách</p>
-          </section>
 
-          <section class="assignment-people">
-            <h2 class="section-title">Group members</h2>
-            <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
-          </section>
           <section class="assignment-people">
             <h2 class="section-title">Group members</h2>
             <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
@@ -140,7 +100,7 @@
               License (©
               2017 Zalando SE) and hosted at <a href="https://github.com/zalandoresearch/fashion-mnist" target="_blank"
                 rel="noopener">github.com/zalandoresearch/fashion-mnist</a>. We load the official release through
-              <code>torchvision.datasets.FashionMNIST</code>, which reads the canonical IDX byte files.
+              <code>torchvision.datasets.FashionMNIST</code>.
             </p>
 
             <h4>Collection and labeling</h4>
@@ -148,7 +108,7 @@
               shots
               went through automatic background removal, aspect-ratio-preserving resizing, centering and downsampling to
               28
-              × 28 grayscale. Each image carries exactly one of 10 mutually exclusive garment labels, taken from
+              × 28 grayscale. Each image carries exactly one of 10 labels, taken from
               Zalando's
               product category hierarchy. Our team did no manual relabeling or label cleaning.</p>
 
@@ -182,10 +142,7 @@
                     <td>Size on disk</td>
                     <td>≈ 85.8 MB (raw torchvision directory)</td>
                   </tr>
-                  <tr>
-                    <td>Training pool in memory</td>
-                    <td>≈ 188.16 MB as float32 (60,000 × 28 × 28 × 4 bytes)</td>
-                  </tr>
+                
                   <tr>
                     <td>License</td>
                     <td>MIT (© 2017 Zalando SE)</td>
@@ -193,12 +150,8 @@
                 </tbody>
               </table>
             </div>
-            <p class="table-caption">Table 1 — Fashion-MNIST at a glance</p>
-            <p>The sample counts were verified by inspecting the decompressed byte arrays directly. Table 2 lists the
-              class
-              mapping with those counts for the official training and test partitions, plus the mean pixel intensity of
-              each
-              class over the training partition (discussed in the EDA below).</p>
+            <p class="table-caption">Table 1 — Overview of Fashion-MNIST</p>
+            <p>The official sample counts in Table 2 follow the Fashion-MNIST release data.</p>
 
             <div class="table-wrap">
               <table class="members">
@@ -206,9 +159,9 @@
                   <tr>
                     <th>Label</th>
                     <th>Class</th>
-                    <th>Train</th>
-                    <th>Test</th>
-                    <th>Mean intensity</th>
+                    <th>Official train pool</th>
+                    <th>Official test metadata</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -217,82 +170,82 @@
                     <td>T-shirt/top</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">83.03</td>
+
                   </tr>
                   <tr>
                     <td class="mono">1</td>
                     <td>Trouser</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">56.84</td>
+
                   </tr>
                   <tr>
                     <td class="mono">2</td>
                     <td>Pullover</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">96.06</td>
+
                   </tr>
                   <tr>
                     <td class="mono">3</td>
                     <td>Dress</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">66.02</td>
+
                   </tr>
                   <tr>
                     <td class="mono">4</td>
                     <td>Coat</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">98.26</td>
+
                   </tr>
                   <tr>
                     <td class="mono">5</td>
                     <td>Sandal</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">34.87</td>
+
                   </tr>
                   <tr>
                     <td class="mono">6</td>
                     <td>Shirt</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">84.61</td>
+
                   </tr>
                   <tr>
                     <td class="mono">7</td>
                     <td>Sneaker</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">42.76</td>
+
                   </tr>
                   <tr>
                     <td class="mono">8</td>
                     <td>Bag</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">90.16</td>
+
                   </tr>
                   <tr>
                     <td class="mono">9</td>
                     <td>Ankle boot</td>
                     <td class="mono">6,000</td>
                     <td class="mono">1,000</td>
-                    <td class="mono">76.81</td>
+
                   </tr>
                   <tr>
                     <td></td>
                     <td><strong>All classes</strong></td>
                     <td class="mono"><strong>60,000</strong></td>
                     <td class="mono"><strong>10,000</strong></td>
-                    <td class="mono"><strong>72.94</strong></td>
+
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p class="table-caption">Table 2 — Class mapping, sample counts and mean pixel intensity (0–255)</p>
+            <p class="table-caption">Table 2 — Official sample-count metadata by class</p>
 
             <h4>Bias and limitations</h4>
             <ul>
@@ -309,22 +262,23 @@
                 examples of it.</li>
             </ul>
 
-            <h3>Exploratory data analysis</h3>
-            <p>All statistics and plots below were computed on the raw tensors, without downsampling, in our EDA
-              notebook
-              (<code>Assignment1_EDA.ipynb</code>).</p>
+            <h3>Exploratory data analysis (EDA)</h3>
 
-            <h4>Integrity and class balance</h4>
-            <p>All images in the training and test sets have a consistent size of 28 × 28 × 1. No corrupted samples,
-              missing
-              entries, or shape inconsistencies were identified during data inspection. Therefore, all evaluated models
-              receive inputs with the same spatial dimensions, while differing only in how the image information is
-              processed by each architecture.</p>
-            <p>Figure 1 presents the class distribution of the official Fashion-MNIST training and test sets. Each of
-              the
-              ten classes contains exactly 6,000 training samples and 1,000 test samples, resulting in a fully balanced
-              class distribution. Consequently, the standard deviation of the class counts is zero for both partitions.
-              Since all classes are equally represented, the majority-class baseline accuracy is 10%.
+            <h4>Data integrity</h4>
+            <p>An integrity gate on the raw 70,000-image official training and testing pool verified matching
+              image/label counts,
+              <code>uint8</code> pixel storage, valid labels from 0 to 9, and a consistent 28 × 28 single-channel shape.
+              No missing entries, non-finite values or shape inconsistencies were found.
+            </p>
+
+            <h4>Data splitting</h4>
+            <p>After the integrity gate passed, the official 60,000-image training pool was split once with stratified sampling and seed 42 into an 80/20 train-validation split. This stratified partitioning enforces consistent class proportions across both splits.</p>
+
+            <h4>Class Distribution</h4>
+            <p>Figure 1 presents the class distribution after the canonical split. Stratification preserves exactly
+              4,800 training and 1,200 validation samples per class, so the standard deviation of class counts is zero
+              within both development partitions. Since all classes are equally represented, the majority-class
+              baseline accuracy is 10%.
 
               Because the dataset is balanced, overall accuracy provides a reliable summary of model performance.
               However,
@@ -339,34 +293,106 @@
               clearer view of classification difficulties that may not be visible from overall accuracy alone.</p>
             <figure>
               <img src="Assignment1/02_dataset_and_eda/a1_fig1_class_distribution.png"
-                alt="Grouped bar chart of Fashion-MNIST class counts: 6,000 training and 1,000 test images for each of the 10 classes"
+                alt="Grouped bar chart of the seeded Fashion-MNIST split: 4,800 training and 1,200 validation images per class"
                 loading="lazy">
-              <figcaption>Figure 1 — Verified sample count per class, official train and test partitions</figcaption>
+              <figcaption>Figure 1 — Class counts in the seeded training and validation splits</figcaption>
             </figure>
 
             <h4>Pixel intensity</h4>
-            <p>Over the 60,000 × 28 × 28 = 47,040,000 pixels of the raw training pool, the global statistics on the
-              0–255
-              scale are μ<sub>raw</sub> = 72.94 and σ<sub>raw</sub> = 90.02. The log-scale histogram in Figure 2 is
+            <p>Over the 48,000 × 28 × 28 = 37,632,000 pixels of the raw training split, the global statistics on the
+              0–255 scale are μ<sub>raw</sub> = 72.99 and σ<sub>raw</sub> = 90.06. The log-scale histogram in Figure 2
+              is
               strongly
-              bimodal. Exactly 50.2% of all pixels are zero, the black studio background, and the remaining mass spreads
+              bimodal. Exactly 50.2% of all pixels are zero, which is the black background, and the remaining mass spreads
               over 1–255 and corresponds to the garment body, folds and surface texture.</p>
             <figure class="figure-large">
               <img src="Assignment1/02_dataset_and_eda/a1_fig2_pixel_intensity.png"
                 alt="Log-scale histogram of pixel intensities in the training set, with a large spike at 0 and a broad, lower mass from 1 to 255"
                 loading="lazy">
-              <figcaption>Figure 2 — Log-scale pixel intensity distribution, training partition</figcaption>
+              <figcaption>Figure 2 — Log-scale pixel intensity distribution, 48,000-image training split</figcaption>
             </figure>
-            <p>Mean intensity per class (last column of Table 2) works as a rough proxy for how much of the frame a
+
+            <div class="table-wrap">
+              <table class="members">
+                <thead>
+                  <tr>
+                    <th>Label</th>
+                    <th>Class</th>
+                    <th>Mean intensity (0–255)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">0</td>
+                    <td>T-shirt/top</td>
+                    <td class="mono">82.85</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">1</td>
+                    <td>Trouser</td>
+                    <td class="mono">56.99</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">2</td>
+                    <td>Pullover</td>
+                    <td class="mono">96.49</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">3</td>
+                    <td>Dress</td>
+                    <td class="mono">66.12</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">4</td>
+                    <td>Coat</td>
+                    <td class="mono">98.10</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">5</td>
+                    <td>Sandal</td>
+                    <td class="mono">34.80</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">6</td>
+                    <td>Shirt</td>
+                    <td class="mono">84.83</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">7</td>
+                    <td>Sneaker</td>
+                    <td class="mono">42.84</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">8</td>
+                    <td>Bag</td>
+                    <td class="mono">90.17</td>
+                  </tr>
+                  <tr>
+                    <td class="mono">9</td>
+                    <td>Ankle boot</td>
+                    <td class="mono">76.76</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><strong>All classes</strong></td>
+                    <td class="mono"><strong>72.99</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-caption">Table 3 — Mean raw pixel intensity by class, 48,000-image training split</p>
+
+            <p>Mean intensity per class (Table 3) works as a rough proxy for how much of the frame a
               garment
-              fills. Sandal (34.87) and Sneaker (42.76) are lowest because of the wide empty margins around them.
+              fills. Sandal (34.80) and Sneaker (42.84) are lowest because of the wide empty margins around them.
               Pullover
-              (96.06) and Coat (98.26) are highest, since they take up most of the frame. Total foreground area is
+              (96.49) and Coat (98.10) are highest, since they take up most of the frame. Total foreground area is
               therefore
               a low-level cue that even a linear model can use to separate footwear from apparel.</p>
 
             <h4>Sample inspection</h4>
-            <p>Figures 3 and 4 show seven randomly selected training images per class (seed 42). Two patterns stand out.
+            <p>Figures 3 and 4 show seven randomly selected images per class from the 48,000-image training split
+              (sampling seed 42). Two patterns stand out.
               Some classes vary a great deal internally: Bag covers handbags, backpacks and clutches with different
               shapes
               and strap layouts, which calls for nonlinear decision boundaries. And T-shirt/top, Shirt, Pullover and
@@ -378,65 +404,80 @@
               <img src="Assignment1/02_dataset_and_eda/a1_fig3_samples_classes_0-4.png"
                 alt="Grid of training samples for T-shirt/top, Trouser, Pullover, Dress and Coat, seven images per class"
                 loading="lazy">
-              <figcaption>Figure 3 — Randomly sampled training images, classes 0–4 (seed 42)</figcaption>
+              <figcaption>Figure 3 — Randomly sampled training-split images, classes 0–4 (seed 42)</figcaption>
             </figure>
             <figure>
               <img src="Assignment1/02_dataset_and_eda/a1_fig4_samples_classes_5-9.png"
                 alt="Grid of training samples for Sandal, Shirt, Sneaker, Bag and Ankle boot, seven images per class"
                 loading="lazy">
-              <figcaption>Figure 4 — Randomly sampled training images, classes 5–9 (seed 42)</figcaption>
+              <figcaption>Figure 4 — Randomly sampled training-split images, classes 5–9 (seed 42)</figcaption>
             </figure>
 
-            <h4>Consequences for preprocessing and splitting</h4>
-            <p>Raw intensities run from 0 to 255 and half the pixels are zero, so inputs are scaled to [0, 1] and then
-              standardized with μ = 0.2860 and σ = 0.3530, computed on the training split only. Because every image has
-              the
-              same 28 × 28 grid, the same tensor transformations apply to all models, with no cropping or resizing.</p>
-            <p>The official 60,000-image training pool is divided into 48,000 training and 12,000 validation images by
-              stratified sampling (<code>sklearn.model_selection.train_test_split</code>, global seed 42), which gives
-              exactly 4,800 and 1,200 images per class. The 10,000 official test images stay untouched until final
-              evaluation. The split is made on the raw <code>uint8</code> arrays before any statistic is computed, so no
-              validation or test pixel enters μ or σ.</p>
-            <div class="table-wrap">
-              <table class="members">
-                <thead>
-                  <tr>
-                    <th>Subset</th>
-                    <th>Source</th>
-                    <th>Samples</th>
-                    <th>Per class</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Train</td>
-                    <td>80% of the official training pool (stratified)</td>
-                    <td class="mono">48,000</td>
-                    <td class="mono">4,800</td>
-                  </tr>
-                  <tr>
-                    <td>Validation</td>
-                    <td>20% of the official training pool (stratified)</td>
-                    <td class="mono">12,000</td>
-                    <td class="mono">1,200</td>
-                  </tr>
-                  <tr>
-                    <td>Test</td>
-                    <td>Official test set</td>
-                    <td class="mono">10,000</td>
-                    <td class="mono">1,000</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Total</strong></td>
-                    <td><strong>Official training pool + official test set</strong></td>
-                    <td class="mono"><strong>70,000</strong></td>
-                    <td class="mono"><strong>7,000</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="table-caption">Table 3 — Data partitioning and class distribution</p>
+            
+            <h4>Data Preprocessing</h4>
+            <p><strong>Intensity scaling and zero-centered standardization:</strong> Raw pixel values span [0, 255] as
+              integers. As demonstrated in Figure 2, exactly 50.2% of all
+              pixels are zero (the black studio background), while the remaining 49.8% form a broad foreground mass
+              spanning 1 to 255. To eliminate numerical saturation and gradient instabilities, inputs are first scaled
+              to [0.0, 1.0] via <code>torchvision.transforms.ToTensor()</code> (which also introduces the channel
+              dimension to form a 1 &times; 28 &times; 28 tensor) and then standardized via channel-wise Z-score
+              normalization:</p>
+            <p
+              style="text-align: center; font-style: italic; margin: 12px 0; font-family: var(--font-mono, monospace);">
+              x&#771; = (x - &mu;) / &sigma; &emsp; with &emsp; &mu; = 0.2863, &ensp; &sigma; = 0.3532
+            </p>
+            <p>Here, &mu; and &sigma; are computed strictly on the 48,000-image training split, stabilizing gradient
+              flow during backpropagation and speeding up convergence across
+              all model backbones.</p>
+
+            <p><strong>Asymmetric transformation pipeline:</strong> To balance regularization against deterministic
+              evaluation integrity, the preprocessing pipeline is deliberately asymmetric between training and
+              evaluation splits:</p>
+            <ul>
+              <li><strong>Training pipeline (<code>train_transform</code>):</strong>
+                <ol style="margin: 6px 0 6px 20px; padding: 0;">
+                  <li><code>transforms.RandomRotation(degrees=(-10, 10))</code>: Rotates the image randomly within
+                    &plusmn;10&deg; to simulate minor natural hanging tilt and slight camera misalignment while keeping
+                    garments upright.</li>
+                  <li><code>transforms.RandomHorizontalFlip(p=0.5)</code>: Horizontally mirrors the image with 50%
+                    probability, exploiting the bilateral physical symmetry of most apparel and footwear (T-shirts,
+                    trousers, pullovers, sneakers) to double visual variety and enforce reflectional invariance.</li>
+                  <li><code>transforms.RandomCrop(size=28, padding=2)</code>: Pads the canvas by 2 zero-intensity pixels
+                    on all sides (matching the black studio background) and randomly crops back to 28 &times; 28,
+                    introducing subtle translation shifts of up to &plusmn;2 pixels to prevent models from overfitting
+                    to rigid center-pixel coordinate alignments.</li>
+                  <li><code>transforms.ToTensor()</code>: Scales integer pixel intensities from [0, 255] to
+                    floating-point values in [0.0, 1.0] and reshapes the image into a channel-first tensor of shape
+                    <code>(1, 28, 28)</code>.
+                  </li>
+                  <li><code>transforms.Normalize((0.2863,), (0.3532,))</code>: Applies Z-score standardization computed
+                    strictly on the 48,000-image training split to center features around zero with approximately unit
+                    variance.
+                  </li>
+                </ol>
+              </li>
+              <li><strong>Evaluation pipeline (<code>eval_transform</code>):</strong> Validation is evaluated
+                deterministically throughout training. After all development decisions and the checkpoint roster are
+                fixed, the same deterministic pipeline is applied once to the official test set. Samples pass through
+                <code>transforms.ToTensor()</code> followed by <code>transforms.Normalize((0.2863,), (0.3532,))</code>
+                using the training split's statistics.
+              </li>
+            </ul>
+
+            <p><strong>Batching and architectural fairness:</strong> Preprocessed tensors are
+              grouped by custom PyTorch <code>DataLoader</code> instances into mini-batches of
+              <code>batch_size = 128</code> for training (with random shuffle enabled) and <code>batch_size = 256</code>
+              for validation (without shuffle). The test <code>DataLoader</code> is constructed only in the final
+              evaluation stage, also with <code>batch_size = 256</code> and no shuffle. All five candidate models
+              receive the exact same
+              tensor batch format of shape <code>(B, 1, 28, 28)</code>. Any structural transformations required by
+              specific backbones &mdash; flattening into 784-dimensional vectors for Linear and MLP or patch projections
+              for Transformer &mdash; are executed internally
+              inside the respective model's forward pass. This guarantees that preprocessing remains a strictly
+              controlled, invariant baseline across all architectural comparisons.
+            </p>
           </section>
+
 
 
           <section id="methodology">
@@ -446,7 +487,7 @@
               style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:0 0 14px; color:var(--ink);">
               Pipeline overview</h3>
             <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              Pipeline overview diagram following Section 3.2 of the Course Project Handbook:
+              Pipeline overview diagram:
             </p>
 
             <div class="pipeline-card">
@@ -532,7 +573,7 @@
                       • <code>Linear(256, 128)</code> → <code>ReLU(inplace=True)</code> → <code>Dropout(0.3)</code><br>
                       • <code>Linear(128, 64)</code> → <code>ReLU(inplace=True)</code> → <code>Dropout(0.3)</code><br>
                       • Output layer: <code>Linear(64, 10)</code> to 10 class logits.<br>
-                      <em>(Sequential dense stack without batch normalization, regularized via dropout).</em>
+                      (Sequential dense stack without batch normalization, regularized via dropout).
                     </td>
                     <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code></td>
                     <td><code>nn.CrossEntropyLoss</code></td>
@@ -631,8 +672,7 @@
           <section id="experimental-setup">
             <h2 class="section-title">Experimental setup</h2>
             <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              To ensure strict experimental fairness (Section 12.2 of the Course Project Handbook), all models were
-              trained
+              To ensure strict experimental fairness, all models were trained
               under a unified, identical protocol. The hyperparameters, optimization policies, and execution environment
               are
               detailed below:
@@ -701,10 +741,9 @@
                   <tr>
                     <td style="text-align: center;"><strong>7</strong></td>
                     <td><strong>Early stopping</strong></td>
-                    <td><code>patience = 8</code> epochs; tolerance threshold &Delta; = 10<sup>-4</sup> on
-                      <code>val_loss</code>
+                    <td><code>patience = 8</code> epochs
                     </td>
-                    <td>Automatically halts training if <code>val_loss &lt; best_val_loss - 1e-4</code> is not achieved
+                    <td>Automatically ends the training if <code>val_loss &lt; best_val_loss</code> is not achieved
                       within 8 consecutive epochs, saving computation and mitigating late-stage over-adaptation.</td>
                   </tr>
                   <tr>
@@ -720,7 +759,7 @@
                   <tr>
                     <td style="text-align: center;"><strong>9</strong></td>
                     <td><strong>Seed</strong></td>
-                    <td><code>SEED = 42</code> (<code>N_SEEDS = 1</code> primary run; full seed protocol)</td>
+                    <td><code>SEED = 42</code></td>
                     <td>Deterministic random seed set across <code>random.seed(42)</code>,
                       <code>numpy.random.seed(42)</code>, <code>torch.manual_seed(42)</code>, and
                       <code>torch.cuda.manual_seed_all(42)</code> to ensure bit-exact reproducibility.
@@ -748,7 +787,7 @@
                       • <strong>Linear:</strong> ~1,142.2 s (~19.0 min)<br>
                       • <strong>MLP:</strong> ~1,845.3 s (~30.8 min)<br>
                       • <strong>CNN:</strong> ~1,811.7 s (~30.2 min)<br>
-                      <em>Total benchmark run: ~4,799.2 s (~1h 20m)</em>
+
                     </td>
                     <td>Wall-clock execution time measured from initialization through early stopping trigger on
                       identical
@@ -763,9 +802,7 @@
                       range (~230K–245K parameters; MLP: 242,762; CNN: 231,626) to enable fair, rigorous comparison
                       across
                       architectural families under comparable representation capacity. Optimization hyperparameters
-                      (learning rate, batch size, scheduler) were held strictly uniform across models to satisfy
-                      Handbook
-                      Section 12.2 fairness constraints.</td>
+                      (learning rate, batch size, scheduler) were held strictly uniform across models.</td>
                   </tr>
                 </tbody>
               </table>
@@ -782,14 +819,14 @@
               cost, and per-class breakdown), and qualitative prediction diagnostics.
             </p>
 
-            <!-- KPI Summary Cards -->
+           
             <div class="results-kpi-grid">
               <div class="results-kpi-card highlight">
-                <div class="results-kpi-value">91.85%</div>
+                <div class="results-kpi-value">92.08%</div>
                 <div class="results-kpi-label">Top-1 Accuracy (CNN Best)</div>
               </div>
               <div class="results-kpi-card highlight">
-                <div class="results-kpi-value">0.9187</div>
+                <div class="results-kpi-value">0.9203</div>
                 <div class="results-kpi-label">Macro-F1 Score (CNN Best)</div>
               </div>
               <div class="results-kpi-card">
@@ -802,7 +839,7 @@
               </div>
             </div>
 
-            <!-- 3.3.1 Training Behavior -->
+            
             <h3
               style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:32px 0 14px; color:var(--ink);">
               1. Training behavior &amp; learning curves</h3>
@@ -824,37 +861,29 @@
 
             <ul class="pipeline-notes-list" style="margin-bottom:28px;">
               <li><strong>Linear Classifier:</strong> Rapidly converged within ~19–38 epochs before triggering early
-                stopping.
-                Demonstrates pronounced <em>underfitting</em> with validation loss plateauing around <code>0.7189</code>
-                and
-                test
-                accuracy ceiling at <code>74.60%</code>. The lack of hidden layers severely restricts the hypothesis
+                stopping. The lack of hidden layers severely restricts the hypothesis
                 space
                 to
                 simple linear hyperplanes.</li>
               <li><strong>Multilayer Perceptron (MLP):</strong> Exhibited smooth convergence with validation loss
                 steadily
-                decreasing to <code>0.3223</code>. The <code>Dropout(p=0.3)</code> layers effectively curbed the
+                decreasing. The <code>Dropout(p=0.3)</code> layers effectively curbed the
                 generalization gap,
                 preventing over-memorization of training samples across 242,762 dense parameters. Learning rate decayed
                 upon
-                plateaus to achieve <code>88.05%</code> test accuracy.</li>
+                plateaus to achieve <code>87.20%</code> test accuracy.</li>
               <li><strong>Convolutional Neural Network (CNN):</strong> Demonstrated superior optimization dynamics and
                 the
-                lowest validation loss of <code>0.2236</code>. Batch Normalization stabilized internal covariate shifts,
+                lowest validation loss. Batch Normalization stabilized internal covariate shifts,
                 allowing
                 steady gradient flow, while spatial <code>Dropout2d</code> and pooling preserved high representation
                 generalization,
-                reaching <code>91.85%</code> accuracy without observable late-stage divergence.</li>
+                reaching <code>92.08%</code> accuracy without observable late-stage divergence.</li>
               <li><strong>Checkpoint Selection:</strong> The exact model weights corresponding to the minimum validation
                 loss
-                (<code>best_val_loss</code>) were successfully preserved and restored for testing (Linear at epoch 38,
-                MLP
-                at epoch
-                104, CNN at epoch 86).</li>
+                (<code>best_val_loss</code>) were successfully preserved and restored for testing 
             </ul>
 
-            <!-- 3.3.2 Quantitative Results -->
             <h3
               style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 14px; color:var(--ink);">
               2. Quantitative results &amp; metric comparison</h3>
@@ -885,38 +914,38 @@
                     <td style="text-align: center;"><strong>1</strong></td>
                     <td><strong>Linear / Softmax</strong></td>
                     <td style="text-align: center;"><code>7,850</code></td>
-                    <td style="text-align: center;"><strong>74.60%</strong></td>
-                    <td style="text-align: center;">0.7413</td>
-                    <td style="text-align: center;">0.7460</td>
-                    <td style="text-align: center;">0.7408</td>
-                    <td style="text-align: center;">0.7189</td>
-                    <td style="text-align: center;">0.1599 ms</td>
-                    <td style="text-align: center;">~1,142.2 s</td>
+                    <td style="text-align: center;">74.98%</td>
+                    <td style="text-align: center;">74.49%</td>
+                    <td style="text-align: center;">74.98%</td>
+                    <td style="text-align: center;">74.62%</td>
+                    <td style="text-align: center;">0.7125</td>
+                    <td style="text-align: center;">0.1845 ms</td>
+                    <td style="text-align: center;"><strong>10m 18.9s</strong></td>
                   </tr>
                   <tr>
                     <td style="text-align: center;"><strong>2</strong></td>
                     <td><strong>MLP</strong></td>
                     <td style="text-align: center;"><code>242,762</code></td>
-                    <td style="text-align: center;"><strong>88.05%</strong></td>
-                    <td style="text-align: center;">0.8797</td>
-                    <td style="text-align: center;">0.8805</td>
-                    <td style="text-align: center;">0.8798</td>
-                    <td style="text-align: center;">0.3223</td>
-                    <td style="text-align: center;">0.1590 ms</td>
-                    <td style="text-align: center;">~1,845.3 s</td>
+                    <td style="text-align: center;">87.20%</td>
+                    <td style="text-align: center;">87.06%</td>
+                    <td style="text-align: center;">87.20%</td>
+                    <td style="text-align: center;">87.08%</td>
+                    <td style="text-align: center;">0.3493</td>
+                    <td style="text-align: center;"><strong>0.1590 ms</strong></td>
+                    <td style="text-align: center;">36m 52s</td>
                   </tr>
                   <tr style="background: rgba(42, 68, 148, 0.04);">
                     <td style="text-align: center;"><strong>3</strong></td>
-                    <td><strong>CNN (SimpleCNN)</strong> <span
+                    <td><strong>CNN</strong> <span
                         style="font-size:13px; color:#2a4494; font-weight:bold; margin-left:4px;">★ Best</span></td>
                     <td style="text-align: center;"><code>231,626</code></td>
-                    <td style="text-align: center; color:#1c2f6b; font-weight:bold;"><strong>91.85%</strong></td>
-                    <td style="text-align: center; font-weight:bold;">0.9192</td>
-                    <td style="text-align: center; font-weight:bold;">0.9185</td>
-                    <td style="text-align: center; color:#1c2f6b; font-weight:bold;"><strong>0.9187</strong></td>
-                    <td style="text-align: center; font-weight:bold;">0.2236</td>
-                    <td style="text-align: center;">0.1616 ms</td>
-                    <td style="text-align: center;">~1,811.7 s</td>
+                    <td style="text-align: center;"><strong>92.08%</strong></td>
+                    <td style="text-align: center;"><strong>92.02%</strong></td>
+                    <td style="text-align: center;"><strong>92.08%</strong></td>
+                    <td style="text-align: center;"><strong>92.03%</strong></td>
+                    <td style="text-align: center;"><strong>0.2185</strong></td>
+                    <td style="text-align: center;">0.1623 ms</td>
+                    <td style="text-align: center;">44m 1.5s</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;"><strong>4</strong></td>
@@ -941,7 +970,7 @@
                 Parameter Count, and Inference Latency.</p>
             </div>
 
-            <!-- Detailed Per-Class Breakdown -->
+          
             <h4
               style="font-family:var(--font-display); font-size:22px; font-weight:bold; margin:28px 0 12px; color:var(--ink);">
               Per-class precision, recall, and F1-score breakdown</h4>
@@ -955,122 +984,155 @@
                   <tr>
                     <th style="width: 45px; text-align: center;">ID</th>
                     <th style="min-width: 130px;">Class Name</th>
+                    <th style="text-align: center;">Linear Precision</th>
+                    <th style="text-align: center;">Linear Recall</th>
                     <th style="text-align: center;">Linear F1</th>
+                    <th style="text-align: center;">MLP Precision</th>
+                    <th style="text-align: center;">MLP Recall</th>
                     <th style="text-align: center;">MLP F1</th>
-                    <th style="text-align: center;">CNN F1</th>
                     <th style="text-align: center;">CNN Precision</th>
                     <th style="text-align: center;">CNN Recall</th>
-                    <th style="min-width: 220px;">Category Diagnostic Note</th>
+                    <th style="text-align: center;">CNN F1</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td style="text-align: center;">0</td>
                     <td><strong>T-shirt/top</strong></td>
-                    <td style="text-align: center;">0.7479</td>
-                    <td style="text-align: center;">0.8246</td>
-                    <td style="text-align: center;"><strong>0.8632</strong></td>
-                    <td style="text-align: center;">0.8780</td>
-                    <td style="text-align: center;">0.8490</td>
-                    <td>Moderate confusion with Shirt and Dress.</td>
+                    <td style="text-align: center;">0.7221</td>
+                    <td style="text-align: center;">0.7640</td>
+                    <td style="text-align: center;">0.7425</td>
+                    <td style="text-align: center;">0.7917</td>
+                    <td style="text-align: center;">0.8250</td>
+                    <td style="text-align: center;">0.8080</td>
+                    <td style="text-align: center;">0.8636</td>
+                    <td style="text-align: center;">0.8740</td>
+                    <td style="text-align: center;">0.8688</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">1</td>
                     <td><strong>Trouser</strong></td>
-                    <td style="text-align: center;">0.8974</td>
-                    <td style="text-align: center;">0.9790</td>
-                    <td style="text-align: center;"><strong>0.9880</strong></td>
-                    <td style="text-align: center;">0.9890</td>
-                    <td style="text-align: center;">0.9870</td>
-                    <td>Highly distinctive elongated vertical shape; easiest category.</td>
+                    <td style="text-align: center;">0.8918</td>
+                    <td style="text-align: center;">0.9070</td>
+                    <td style="text-align: center;">0.8994</td>
+                    <td style="text-align: center;">0.9878</td>
+                    <td style="text-align: center;">0.9730</td>
+                    <td style="text-align: center;">0.9804</td>
+                    <td style="text-align: center;">0.9920</td>
+                    <td style="text-align: center;">0.9880</td>
+                    <td style="text-align: center;">0.9900</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">2</td>
                     <td><strong>Pullover</strong></td>
-                    <td style="text-align: center;">0.6119</td>
-                    <td style="text-align: center;">0.7917</td>
-                    <td style="text-align: center;"><strong>0.8882</strong></td>
-                    <td style="text-align: center;">0.8905</td>
-                    <td style="text-align: center;">0.8860</td>
-                    <td>Long sleeves occasionally confused with Coat and Shirt.</td>
+                    <td style="text-align: center;">0.6351</td>
+                    <td style="text-align: center;">0.5640</td>
+                    <td style="text-align: center;">0.5975</td>
+                    <td style="text-align: center;">0.7847</td>
+                    <td style="text-align: center;">0.7980</td>
+                    <td style="text-align: center;">0.7913</td>
+                    <td style="text-align: center;">0.8919</td>
+                    <td style="text-align: center;">0.8990</td>
+                    <td style="text-align: center;">0.8954</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">3</td>
                     <td><strong>Dress</strong></td>
-                    <td style="text-align: center;">0.7718</td>
-                    <td style="text-align: center;">0.8864</td>
-                    <td style="text-align: center;"><strong>0.9194</strong></td>
-                    <td style="text-align: center;">0.9268</td>
-                    <td style="text-align: center;">0.9120</td>
-                    <td>Vertical elongation captured well by convolutional receptive field.</td>
+                    <td style="text-align: center;">0.7288</td>
+                    <td style="text-align: center;">0.8170</td>
+                    <td style="text-align: center;">0.7704</td>
+                    <td style="text-align: center;">0.8581</td>
+                    <td style="text-align: center;">0.9010</td>
+                    <td style="text-align: center;">0.8790</td>
+                    <td style="text-align: center;">0.9209</td>
+                    <td style="text-align: center;">0.9310</td>
+                    <td style="text-align: center;">0.9259</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">4</td>
                     <td><strong>Coat</strong></td>
-                    <td style="text-align: center;">0.6907</td>
-                    <td style="text-align: center;">0.7971</td>
-                    <td style="text-align: center;"><strong>0.8713</strong></td>
-                    <td style="text-align: center;">0.8657</td>
-                    <td style="text-align: center;">0.8770</td>
-                    <td>Overlaps visually with Pullovers; collars and buttons provide discriminative cues.</td>
+                    <td style="text-align: center;">0.6509</td>
+                    <td style="text-align: center;">0.6880</td>
+                    <td style="text-align: center;">0.6689</td>
+                    <td style="text-align: center;">0.7797</td>
+                    <td style="text-align: center;">0.8070</td>
+                    <td style="text-align: center;">0.7931</td>
+                    <td style="text-align: center;">0.8609</td>
+                    <td style="text-align: center;">0.8910</td>
+                    <td style="text-align: center;">0.8757</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">5</td>
                     <td><strong>Sandal</strong></td>
-                    <td style="text-align: center;">0.8025</td>
-                    <td style="text-align: center;">0.9673</td>
-                    <td style="text-align: center;"><strong>0.9845</strong></td>
-                    <td style="text-align: center;">0.9850</td>
-                    <td style="text-align: center;">0.9840</td>
-                    <td>Open footwear structure well separated from closed shoes.</td>
+                    <td style="text-align: center;">0.8175</td>
+                    <td style="text-align: center;">0.8150</td>
+                    <td style="text-align: center;">0.8162</td>
+                    <td style="text-align: center;">0.9682</td>
+                    <td style="text-align: center;">0.9430</td>
+                    <td style="text-align: center;">0.9554</td>
+                    <td style="text-align: center;">0.9899</td>
+                    <td style="text-align: center;">0.9780</td>
+                    <td style="text-align: center;">0.9839</td>
                   </tr>
                   <tr style="background: rgba(220, 53, 69, 0.04);">
                     <td style="text-align: center;">6</td>
                     <td><strong>Shirt</strong> <span
                         style="font-size:12px; color:#c53030; font-weight:bold;">(Hardest)</span>
                     </td>
-                    <td style="text-align: center;">0.3473</td>
-                    <td style="text-align: center;">0.6698</td>
-                    <td style="text-align: center; color:#b91c1c; font-weight:bold;"><strong>0.7495</strong></td>
-                    <td style="text-align: center;">0.7365</td>
-                    <td style="text-align: center;">0.7630</td>
-                    <td>Highest error rate across all models due to visual ambiguity with T-shirts and Coats.</td>
+                    <td style="text-align: center;">0.4405</td>
+                    <td style="text-align: center;">0.3700</td>
+                    <td style="text-align: center;">0.4022</td>
+                    <td style="text-align: center;">0.6950</td>
+                    <td style="text-align: center;">0.5970</td>
+                    <td style="text-align: center;">0.6423</td>
+                    <td style="text-align: center;">0.7774</td>
+                    <td style="text-align: center;">0.7230</td>
+                    <td style="text-align: center; color:#b91c1c; font-weight:bold;">0.7492</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">7</td>
                     <td><strong>Sneaker</strong></td>
-                    <td style="text-align: center;">0.8306</td>
-                    <td style="text-align: center;">0.9489</td>
-                    <td style="text-align: center;"><strong>0.9650</strong></td>
-                    <td style="text-align: center;">0.9505</td>
-                    <td style="text-align: center;">0.9800</td>
-                    <td>Occasional confusion with Ankle boot ankle collars.</td>
+                    <td style="text-align: center;">0.8231</td>
+                    <td style="text-align: center;">0.8420</td>
+                    <td style="text-align: center;">0.8324</td>
+                    <td style="text-align: center;">0.9254</td>
+                    <td style="text-align: center;">0.9550</td>
+                    <td style="text-align: center;">0.9400</td>
+                    <td style="text-align: center;">0.9432</td>
+                    <td style="text-align: center;">0.9790</td>
+                    <td style="text-align: center;">0.9607</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">8</td>
                     <td><strong>Bag</strong></td>
-                    <td style="text-align: center;">0.8647</td>
-                    <td style="text-align: center;">0.9715</td>
-                    <td style="text-align: center;"><strong>0.9890</strong></td>
-                    <td style="text-align: center;">0.9861</td>
-                    <td style="text-align: center;">0.9920</td>
-                    <td>Handles and geometric borders provide robust localized activations.</td>
+                    <td style="text-align: center;">0.9156</td>
+                    <td style="text-align: center;">0.8460</td>
+                    <td style="text-align: center;">0.8794</td>
+                    <td style="text-align: center;">0.9641</td>
+                    <td style="text-align: center;">0.9660</td>
+                    <td style="text-align: center;">0.9650</td>
+                    <td style="text-align: center;">0.9860</td>
+                    <td style="text-align: center;">0.9890</td>
+                    <td style="text-align: center;">0.9875</td>
                   </tr>
                   <tr>
                     <td style="text-align: center;">9</td>
                     <td><strong>Ankle boot</strong></td>
-                    <td style="text-align: center;">0.8431</td>
-                    <td style="text-align: center;">0.9623</td>
-                    <td style="text-align: center;"><strong>0.9691</strong></td>
-                    <td style="text-align: center;">0.9835</td>
+                    <td style="text-align: center;">0.8233</td>
+                    <td style="text-align: center;">0.8850</td>
+                    <td style="text-align: center;">0.8530</td>
+                    <td style="text-align: center;">0.9512</td>
                     <td style="text-align: center;">0.9550</td>
-                    <td>High-top profile clearly distinguishes it from low-cut sneakers.</td>
+                    <td style="text-align: center;">0.9531</td>
+                    <td style="text-align: center;">0.9765</td>
+                    <td style="text-align: center;">0.9560</td>
+                    <td style="text-align: center;">0.9661</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <!-- 3.3.3 Qualitative Results -->
+
             <h3
               style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 14px; color:var(--ink);">
               3. Qualitative results &amp; prediction diagnostics</h3>
@@ -1082,26 +1144,21 @@
             <div class="figure-card">
               <img src="Assignment1/05_results/assets/results_confusion_matrices.png"
                 alt="Confusion Matrices for Linear, MLP, and CNN" loading="lazy">
-              <p class="figure-caption">Figure 3: Normalized test set confusion matrices across the 10 Fashion-MNIST
-                categories.
-                Off-diagonal dispersion rapidly concentrates along the diagonal from Linear Classifier to CNN.</p>
+              <p class="figure-caption">Figure 3: test set confusion matrices across the 10 Fashion-MNIST
+                categories.</p>
             </div>
 
             <div class="figure-card">
               <img src="Assignment1/05_results/assets/results_qualitative_correct.png"
                 alt="Correctly Classified Test Samples" loading="lazy">
-              <p class="figure-caption">Figure 4: Correctly classified test samples (Ground Truth vs. Predicted label).
-                Shows
-                high-confidence discrimination of footwear, trousers, and clear silhouette garments.</p>
+              <p class="figure-caption">Figure 4: Correctly classified test samples (Ground Truth vs. Predicted label).</p>
             </div>
 
             <div class="figure-card">
               <img src="Assignment1/05_results/assets/results_qualitative_incorrect.png"
                 alt="Misclassified Test Samples" loading="lazy">
-              <p class="figure-caption">Figure 5: Failure analysis: challenging misclassified test samples. The primary
-                error modes
-                stem from high inter-class visual overlap between Shirt, T-shirt, and Coat at 28×28 grayscale
-                resolution.
+              <p class="figure-caption">Figure 5: Failure analysis: challenging misclassified test samples.
+                
               </p>
             </div>
           </section>
@@ -1154,23 +1211,12 @@
                         target="_blank" rel="noopener">GitHub repository</a></td>
                   </tr>
                   <tr>
-                    <td>Methodology (Models &amp; Pipeline)</td>
+                    <td>EDA; Dataset/DataLoader; train/val loop; Linear + MLP + CNN runnable w</td>
                     <td><a
-                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/03_methodology"
-                        target="_blank" rel="noopener">Assignment1/03_methodology</a></td>
+                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/Assignment1/Assignment1.ipynb"
+                        target="_blank" rel="noopener">Jupyter Notebook</a></td>
                   </tr>
-                  <tr>
-                    <td>Experimental Setup (Protocol &amp; Specs)</td>
-                    <td><a
-                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/04_experimental_setup"
-                        target="_blank" rel="noopener">Assignment1/04_experimental_setup</a></td>
-                  </tr>
-                  <tr>
-                    <td>Results (Metrics, Curves &amp; Visualizations)</td>
-                    <td><a
-                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/05_results"
-                        target="_blank" rel="noopener">Assignment1/05_results</a></td>
-                  </tr>
+                
                 </tbody>
               </table>
             </div>
