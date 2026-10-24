@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 2 — CO3133 Group Site</title>
+  <title>Assignment 2 - CO3133 Group Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -76,7 +76,224 @@
 
       <section>
         <h2 class="section-title">Dataset description and EDA</h2>
-        <div class="stub-note"></div>
+
+        <h3>Dataset description</h3>
+        <h4>Source, task and license</h4>
+        <p><strong>Original source and version.</strong> Food-11 was released by the <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">Multimedia Signal Processing Group (MMSPG) at EPFL</a> and introduced by Singla, Yuan and Ebrahimi (2016) in <a style="color: #000;" href="https://doi.org/10.1145/2986035.2986039" target="_blank" rel="noopener">Food/Non-Food Image Classification and Food Categorization Using Pre-Trained GoogLeNet Model</a>. This project uses the <a style="color: #000;" href="https://www.kaggle.com/datasets/trolukovich/food11-image-dataset" target="_blank" rel="noopener">Kaggle mirror maintained by trolukovich</a>; the EDA notebook pins its automatic download to version 1. EPFL is the original dataset source.</p>
+        <p><strong>Collection and category design.</strong> Section 4.2 of the <a style="color: #000;" href="https://infoscience.epfl.ch/record/221610/files/madima2016_food_recognition.pdf" target="_blank" rel="noopener">original paper</a> describes categories adapted from major USDA food groups. Images were mainly collected from Food-101, UEC-FOOD-100 and UEC-FOOD-256, with additional Flickr and Instagram images for Dairy product and Vegetable-Fruit. The authors included varied food items within each category and selected images whose main content belonged to that category.</p>
+        <p><strong>Task and annotations.</strong> The task is supervised, single-label classification: given one RGB food photograph, predict one of 11 broad food categories. The prediction unit is one image. In the Kaggle distribution used here, labels come from class folders and are mapped to integer IDs 0–10 as listed in Table 2. A mixed dish still receives one supplied category label. The group preserves the provided annotations and official training, validation and evaluation partitions without manual relabeling or duplicate removal.</p>
+        <p><strong>License and use.</strong> The <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">EPFL conditions of use</a> permit use, copying, modification and distribution of the dataset and its documentation for research purposes only and prohibit commercial distribution. This project uses Food-11 for academic coursework and research under those published conditions.</p>
+
+        <h4>Format, counts and size</h4>
+        <div class="table-wrap">
+          <table class="members">
+            <thead>
+              <tr><th>Property</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Dataset version</td><td>Version 1 of the Kaggle distribution; original Food-11 release by EPFL</td></tr>
+              <tr><td>Total samples</td><td>16,643 (train 9,866; validation 3,430; evaluation/test 3,347)</td></tr>
+              <tr><td>Classes</td><td>11 food categories; one integer label per image</td></tr>
+              <tr><td>Raw format</td><td>JPEG, RGB, uint8 in [0, 255]</td></tr>
+              <tr><td>Model input</td><td>float32 tensor, 3 × 512 × 512 after resize, padding and normalization</td></tr>
+              <tr><td>Size on disk</td><td>≈ 1,133 MiB (median 48 KiB; largest 9.6 MiB; 1 KiB = 1,024 bytes)</td></tr>
+              <tr><td>License</td><td>EPFL MMSPG: use for research purposes only</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 1 - Food-11 overview</p>
+
+        <p>Table 2 gives class counts by split; Figure 1 compares total counts by class. Dessert and Soup are the largest classes; Rice is the smallest. The largest-to-smallest ratio is 5.36 in train and 5.30 overall, so accuracy should be read alongside macro-F1 and per-class recall.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead>
+              <tr><th>Label</th><th>Class</th><th>Train</th><th>Val</th><th>Test</th><th>Total</th><th>Share</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">0</td><td>Bread</td><td class="mono">994</td><td class="mono">362</td><td class="mono">368</td><td class="mono">1,724</td><td class="mono">10.4%</td></tr>
+              <tr><td class="mono">1</td><td>Dairy product</td><td class="mono">429</td><td class="mono">144</td><td class="mono">148</td><td class="mono">721</td><td class="mono">4.3%</td></tr>
+              <tr><td class="mono">2</td><td>Dessert</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
+              <tr><td class="mono">3</td><td>Egg</td><td class="mono">986</td><td class="mono">327</td><td class="mono">335</td><td class="mono">1,648</td><td class="mono">9.9%</td></tr>
+              <tr><td class="mono">4</td><td>Fried food</td><td class="mono">848</td><td class="mono">326</td><td class="mono">287</td><td class="mono">1,461</td><td class="mono">8.8%</td></tr>
+              <tr><td class="mono">5</td><td>Meat</td><td class="mono">1,325</td><td class="mono">449</td><td class="mono">432</td><td class="mono">2,206</td><td class="mono">13.3%</td></tr>
+              <tr><td class="mono">6</td><td>Noodles-Pasta</td><td class="mono">440</td><td class="mono">147</td><td class="mono">147</td><td class="mono">734</td><td class="mono">4.4%</td></tr>
+              <tr><td class="mono">7</td><td>Rice</td><td class="mono">280</td><td class="mono">96</td><td class="mono">96</td><td class="mono">472</td><td class="mono">2.8%</td></tr>
+              <tr><td class="mono">8</td><td>Seafood</td><td class="mono">855</td><td class="mono">347</td><td class="mono">303</td><td class="mono">1,505</td><td class="mono">9.0%</td></tr>
+              <tr><td class="mono">9</td><td>Soup</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
+              <tr><td class="mono">10</td><td>Vegetable-Fruit</td><td class="mono">709</td><td class="mono">232</td><td class="mono">231</td><td class="mono">1,172</td><td class="mono">7.0%</td></tr>
+              <tr><td></td><td><strong>All classes</strong></td><td class="mono"><strong>9,866</strong></td><td class="mono"><strong>3,430</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>16,643</strong></td><td class="mono"><strong>100.0%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 2 - Official sample counts by class and split</p>
+
+        <h4>Bias and limitations</h4>
+        <ul>
+          <li>Classes are imbalanced, with fewer examples for Rice, Dairy product and Noodles-Pasta.</li>
+          <li>Each image has one label; representative sample inspection includes composite plates and images that appear off-topic.</li>
+          <li>Photographic style differs by class and repeated images occur across the official splits; both can affect evaluation.</li>
+        </ul>
+
+        <h3>Exploratory data analysis (EDA)</h3>
+        <p>The EDA scans all files in the official release. File integrity and original image dimensions are audited before preprocessing. Pixel statistics are computed after longer-side resize to 512 px, with padding excluded; normalization statistics are fitted on the training split only.</p>
+
+        <h4>Data integrity and splitting</h4>
+        <p>All 16,643 files decode as RGB JPEGs; no file is empty, unreadable or inconsistent with its extension. The same 11 class folders appear in all three official splits. Of 1,887 files with a non-default EXIF orientation tag, 1,884 have the invalid value 0 and only three have a real 90° rotation; images are read as stored.</p>
+        <p>The official 59.3% / 20.6% / 20.1% training/validation/evaluation (test) split is retained. All 16,643 images are used; the group does not create a custom split or select a subset. The split unit is an individual image. No project-level random seed or stratification applies because the group does not resplit the data; the EPFL download page lists the three partitions but does not state the original split seed or whether the split was stratified.</p>
+        <p>Exact copies across the published splits mean image-level splitting does not eliminate leakage. Class proportions are similar across splits (χ² test p = 0.806; Cramér's V = 0.021).</p>
+
+        <h4>Class distribution</h4>
+        <figure class="figure-large">
+          <img src="Assignment2/02_dataset_and_eda/a2_fig1_class_distribution.png"
+            alt="Horizontal bar chart of images per class over the whole dataset, from Soup and Dessert with 2,500 images each down to Rice with 472; a dashed line marks the uniform level of 1,513 images"
+            loading="lazy">
+          <figcaption>Figure 1 - Images per class over the whole dataset (N = 16,643)</figcaption>
+        </figure>
+        <p>An always-Dessert predictor reaches 0.146 accuracy but only 0.023 macro-F1 on validation. This is why macro-F1 and per-class recall should be read alongside accuracy.</p>
+
+        <h4>Input size and aspect ratio</h4>
+        <p>There are 825 distinct image shapes; the longer side ranges from 270 to 9,542 px, with a median of 512 px. Table 3 summarizes resizing and padding by split. The aspect-ratio groups in Table 4 show why padding is concentrated in non-square images. Figure 2 illustrates the transformation.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Split</th><th>Upsampled (%)</th><th>Longer side = 512 (%)</th><th>Downsampled (%)</th><th>Needs padding (%)</th><th>Mean padding (%)</th><th>Max padding (%)</th></tr></thead>
+            <tbody>
+              <tr><td>train</td><td class="mono">2.4</td><td class="mono">92.1</td><td class="mono">5.5</td><td class="mono">43.6</td><td class="mono">11.7</td><td class="mono">55.1</td></tr>
+              <tr><td>val</td><td class="mono">1.6</td><td class="mono">93.2</td><td class="mono">5.2</td><td class="mono">38.0</td><td class="mono">10.3</td><td class="mono">61.7</td></tr>
+              <tr><td>test</td><td class="mono">2.0</td><td class="mono">91.7</td><td class="mono">6.3</td><td class="mono">40.5</td><td class="mono">10.9</td><td class="mono">47.5</td></tr>
+              <tr><td>all</td><td class="mono">2.1</td><td class="mono">92.2</td><td class="mono">5.6</td><td class="mono">41.8</td><td class="mono">11.3</td><td class="mono">61.7</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 3 - Resize and padding statistics by split (percentages rounded independently)</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Aspect-ratio group (longer / shorter)</th><th>Images</th><th>Share (%)</th><th>Mean padding (%)</th></tr></thead>
+            <tbody>
+              <tr><td>1:1</td><td class="mono">9,683</td><td class="mono">58.2</td><td class="mono">0.0</td></tr>
+              <tr><td>1.00–1.32</td><td class="mono">536</td><td class="mono">3.2</td><td class="mono">8.3</td></tr>
+              <tr><td>≈4:3 (1.32–1.34)</td><td class="mono">3,759</td><td class="mono">22.6</td><td class="mono">25.0</td></tr>
+              <tr><td>1.34–1.45</td><td class="mono">959</td><td class="mono">5.8</td><td class="mono">25.8</td></tr>
+              <tr><td>≈3:2 (1.45–1.55)</td><td class="mono">845</td><td class="mono">5.1</td><td class="mono">33.4</td></tr>
+              <tr><td>1.55–1.85 (5:3, 16:9)</td><td class="mono">841</td><td class="mono">5.0</td><td class="mono">41.7</td></tr>
+              <tr><td>&gt;1.85</td><td class="mono">20</td><td class="mono">0.1</td><td class="mono">49.6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 4 - Aspect ratio and resulting padding</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig2_resize_pad_demo.jpg"
+            alt="Four example images in their original shape (top row) and after resizing and padding to 512 by 512 (bottom row), with padding of 44, 0, 25 and 55 percent"
+            loading="lazy">
+          <figcaption>Figure 2 - Original images and examples of model inputs after longer-side resize to 512 px and centre padding to 512 × 512</figcaption>
+        </figure>
+
+        <h4>Duplicates and split leakage</h4>
+        <p>Exact duplicates have identical file bytes; matching 64-bit dHashes mark possible near-duplicates that need visual review. Table 5 summarizes pairwise overlap; Table 5b breaks exact-copy overlap down by test class. The official split is retained; report results on the full test set and on the 2,787 images without a byte-identical train/validation copy.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Split pair</th><th>Byte-identical files (MD5)</th><th>Shared dHashes</th></tr></thead>
+            <tbody>
+              <tr><td>train–val</td><td class="mono">51</td><td class="mono">58</td></tr>
+              <tr><td>train–test</td><td class="mono">249</td><td class="mono">254</td></tr>
+              <tr><td>val–test</td><td class="mono">311</td><td class="mono">314</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 5 - Pairwise duplicate audit (dHash counts include byte-identical pairs)</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Class</th><th>Test images</th><th>Exact copy in train/validation</th><th>Rate (%)</th><th>Test images without exact train/validation copy</th></tr></thead>
+            <tbody>
+              <tr><td>Bread</td><td class="mono">368</td><td class="mono">100</td><td class="mono">27.2</td><td class="mono">268</td></tr>
+              <tr><td>Dairy product</td><td class="mono">148</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">148</td></tr>
+              <tr><td>Dessert</td><td class="mono">500</td><td class="mono">60</td><td class="mono">12.0</td><td class="mono">440</td></tr>
+              <tr><td>Egg</td><td class="mono">335</td><td class="mono">5</td><td class="mono">1.5</td><td class="mono">330</td></tr>
+              <tr><td>Fried food</td><td class="mono">287</td><td class="mono">66</td><td class="mono">23.0</td><td class="mono">221</td></tr>
+              <tr><td>Meat</td><td class="mono">432</td><td class="mono">109</td><td class="mono">25.2</td><td class="mono">323</td></tr>
+              <tr><td>Noodles-Pasta</td><td class="mono">147</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">147</td></tr>
+              <tr><td>Rice</td><td class="mono">96</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">96</td></tr>
+              <tr><td>Seafood</td><td class="mono">303</td><td class="mono">100</td><td class="mono">33.0</td><td class="mono">203</td></tr>
+              <tr><td>Soup</td><td class="mono">500</td><td class="mono">116</td><td class="mono">23.2</td><td class="mono">384</td></tr>
+              <tr><td>Vegetable-Fruit</td><td class="mono">231</td><td class="mono">4</td><td class="mono">1.7</td><td class="mono">227</td></tr>
+              <tr><td><strong>All</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>560</strong></td><td class="mono"><strong>16.7</strong></td><td class="mono"><strong>2,787</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 5b - Test images with a byte-identical copy in train or validation, by class</p>
+        <p>Of 568 test images sharing a dHash with train or validation, 560 are byte-identical and eight are dHash-only candidates: six in Rice and two in Vegetable-Fruit. dHash matches are possible near-duplicates, not confirmed duplicates.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig3_cross_split_duplicates.jpg"
+            alt="Five pairs of identical images, with the train or validation copy in the top row and the test copy below it: a cake, a meat dish, mussels, flatbread and chicken wings"
+            loading="lazy">
+          <figcaption>Figure 3 - Examples of identical files shared between splits</figcaption>
+        </figure>
+        <p>Seafood has the highest exact-copy rate (33.0%). Dessert also has 60 affected test images (12.0%). Dairy product, Noodles-Pasta and Rice have no byte-identical test copies in train or validation.</p>
+        <p>Additional byte-identical copies within the same split are 5 in train, 3 in validation and 4 in test; these copies are retained. In addition, 51 validation images are byte-identical to images in train, so validation-based checkpoint selection and early stopping could be optimistic for those examples. This is a limitation of the provided split.</p>
+
+        <h4>Input size versus class</h4>
+        <p>Table 6 shows that longer side, file size and bits per pixel carry the strongest class signal. The effect-size labels use rule-of-thumb thresholds: ε² &lt; 0.01 negligible, &lt; 0.06 small, &lt; 0.14 moderate and ≥ 0.14 large. The metadata-only random forest reaches 0.251 accuracy and 0.193 macro-F1 on validation, above the majority-class baseline (0.146 and 0.023). Vegetable-Fruit is the clearest size outlier, so its results should be interpreted with care.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Size feature</th><th>All 11 classes</th><th>Without Vegetable-Fruit</th></tr></thead>
+            <tbody>
+              <tr><td>Longer side</td><td class="mono">0.184 (large)</td><td class="mono">0.046 (small)</td></tr>
+              <tr><td>Shorter side</td><td class="mono">0.045 (small)</td><td class="mono">0.013 (small)</td></tr>
+              <tr><td>Aspect ratio</td><td class="mono">0.046 (small)</td><td class="mono">0.014 (small)</td></tr>
+              <tr><td>File size</td><td class="mono">0.166 (large)</td><td class="mono">0.087 (moderate)</td></tr>
+              <tr><td>Bits per pixel</td><td class="mono">0.161 (large)</td><td class="mono">0.118 (moderate)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 6 - Effect size of class on image-size features (ε²)</p>
+
+        <h4>Pixel intensity</h4>
+        <p>Table 7 reports the training-set RGB statistics used for normalization, computed after resize with padding excluded. Food-11 is warmer and has a wider pixel spread than the ImageNet reference. Figure 4 shows the channel distributions.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Channel</th><th>Train mean</th><th>Train std</th><th>ImageNet mean</th><th>ImageNet std</th></tr></thead>
+            <tbody>
+              <tr><td>R</td><td class="mono">0.5586</td><td class="mono">0.2722</td><td class="mono">0.485</td><td class="mono">0.229</td></tr>
+              <tr><td>G</td><td class="mono">0.4520</td><td class="mono">0.2755</td><td class="mono">0.456</td><td class="mono">0.224</td></tr>
+              <tr><td>B</td><td class="mono">0.3434</td><td class="mono">0.2821</td><td class="mono">0.406</td><td class="mono">0.225</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 7 - Training-set RGB statistics and ImageNet reference</p>
+        <figure class="figure-large">
+          <img src="Assignment2/02_dataset_and_eda/a2_fig4_pixel_intensity.png"
+            alt="Two line plots of per-channel pixel-intensity histograms of the training split, linear scale on the left and log scale on the right, with spikes at 0 and 255"
+            loading="lazy">
+          <figcaption>Figure 4 - Training-set pixel-intensity distributions (right: log scale)</figcaption>
+        </figure>
+
+        <h4>Sample inspection</h4>
+        <p>The samples in Figure 5 show broad within-class variety, composite dishes assigned one class label, examples that appear off-topic and visually similar classes such as Noodles-Pasta/Soup and Meat/Egg/Fried food. These qualitative observations motivate hypotheses for later error analysis; their prevalence has not been quantified.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig5_samples_per_class.jpg"
+            alt="Grid of seven random training images for each of the 11 food classes"
+            loading="lazy">
+          <figcaption>Figure 5 - Random training images per class (seed 42)</figcaption>
+        </figure>
+        <p>Figure 6 highlights unusual image sizes and brightness, which reflect photographic-style differences across categories.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig6_extremes.jpg"
+            alt="Grid of training images with the smallest longer side, the most elongated shape, the lowest mean luminance and the highest mean luminance"
+            loading="lazy">
+          <figcaption>Figure 6 - Training-set size and brightness extremes. The butter image shares a dHash with another training image, indicating a near-duplicate candidate.</figcaption>
+        </figure>
+
+        <h4>Data preprocessing</h4>
+        <p>For model input, images are decoded as stored, converted to RGB, resized with Lanczos so the longer side is 512 px and centre-padded with the rounded training mean (142, 115, 88). Values are scaled to [0, 1] and standardized with the training-only means and standard deviations in Table 7. Each image produces a float32 tensor with shape [3, 512, 512]; a batch has shape [B, 3, 512, 512]. The EDA uses no augmentation; any training-time augmentation belongs to the model-training protocol and is not assessed here.</p>
+        <p><strong>Example batch after preprocessing.</strong> Figure 7 shows an actual PyTorch DataLoader batch of eight training images sampled without replacement for illustration (seed 42). The batch uses the pipeline above with no augmentation. Its recorded output is:</p>
+        <pre style="white-space: pre-wrap;"><samp>images: shape [8, 3, 512, 512], dtype torch.float32
+labels: shape [8], dtype torch.int64
+label IDs: [2, 0, 4, 4, 3, 2, 2, 9]</samp></pre>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig7_preprocessed_batch.jpg"
+            alt="Eight preprocessed training images arranged in two rows, labeled Dessert, Bread, Fried food, Fried food, Egg, Dessert, Dessert and Soup; non-square images show centred padding"
+            loading="lazy">
+          <figcaption>Figure 7 - An example training batch after resize, padding and normalization. Normalization is reversed for display; the model-input tensors remain standardized.</figcaption>
+        </figure>
       </section>
 
       <section>
@@ -110,7 +327,7 @@
       </section>
 
       <section id="ai-disclosure">
-        <p class="section-label">AI usage — this assignment</p>
+        <p class="section-label">AI usage - this assignment</p>
         <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
         <div class="disclosure-box">
           <h4>Where AI was used</h4>
