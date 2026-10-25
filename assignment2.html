@@ -1,137 +1,1037 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assignment 2 — CO3133 Group Site</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2 — CO3133 Group Site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<header class="topnav">
-  <div class="wrap">
-    <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
-    <nav>
-      <a href="index.html#course">Course</a>
-      <a href="index.html#group">Group</a>
-      <a href="index.html#assignments">Assignments</a>
-      <a href="index.html#ai-disclosure">AI Disclosure</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="wrap">
-    <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
-
-    <section class="hero" style="padding-top:32px;">
-      <p class="eyebrow">Assignment 2</p>
-      <h1 class="title">Deep Learning on Large-Scale Data and Specialized Tasks</h1>
-      <p class="institution">Deep Learning on Large-Scale Data for Specialized Computer Vision or Language
-Tasks</p>
-      <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="10" y1="17" x2="890" y2="17"></line>
-        <circle class="pulse" cx="10" cy="17" r="8"></circle>
-        <circle cx="10" cy="17" r="3.5"></circle>
-        <circle cx="300" cy="17" r="3.5"></circle>
-        <circle cx="600" cy="17" r="3.5"></circle>
-        <circle class="pulse" cx="890" cy="17" r="8"></circle>
-        <circle cx="890" cy="17" r="3.5"></circle>
-      </svg>
-    </section>
-
-    <section class="assignment-people">
-      <h2 class="section-title">Instructor</h2>
-      <p class="assignment-detail">Lê Thành Sách</p>
-    </section>
-
-    <section class="assignment-people">
-      <h2 class="section-title">Group members</h2>
-      <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
-    </section>
-
-    
-
-
-    <section>
-      <h2 class="section-title">Problem statement</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Dataset description and EDA</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Methodology</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Experimental setup</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Results</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Comparison and discussion</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Error analysis</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section>
-      <h2 class="section-title">Limitations and conclusion</h2>
-      <div class="stub-note"></div>
-    </section>
-
-    <section id="ai-disclosure">
-      <p class="section-label">AI usage — this assignment</p>
-      <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
-      <div class="disclosure-box">
-        <h4>Where AI was used</h4>
-        <ul><li class="placeholder"></li></ul>
-        <h4>Where AI was NOT used</h4>
-        <ul><li class="placeholder"></li></ul>
+  <body>
+    <header class="topnav">
+      <div class="wrap">
+        <a class="brand" href="index.html"
+          ><strong>CO3133</strong> · Group 07</a
+        >
+        <nav>
+          <a href="index.html#course">Course</a>
+          <a href="index.html#group">Group</a>
+          <a href="index.html#assignments">Assignments</a>
+          <a href="index.html#ai-disclosure">AI Disclosure</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section>
-      <h2 class="section-title">Links</h2>
-      <div class="table-wrap">
-        <table class="links-table">
-          <thead>
-            <tr>
-              <th>Content</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Source code</td>
-              <td><a href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2" target="_blank" rel="noopener">GitHub repository</a></td>
-            </tr>
-          </tbody>
-        </table>
+    <main>
+      <div class="wrap">
+        <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
+        <p style="margin: 20px 0">
+          <a
+            href="./Assignment2/A2_dataset_proposal.pdf"
+            target="_blank"
+            rel="noopener"
+            style="
+              display: inline-block;
+              padding: 12px 22px;
+              background: #2563eb;
+              color: #ffffff;
+              font-size: 16px;
+              font-weight: 700;
+              text-decoration: none;
+              border-radius: 8px;
+              box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            "
+          >
+            Dataset Proposal ↗
+          </a>
+        </p>
+        <section class="hero" style="padding-top: 32px">
+          <p class="eyebrow">Assignment 2</p>
+          <h1 class="title">
+            Deep Learning on Large-Scale Data and Specialized Tasks
+          </h1>
+          <p class="institution">
+            Deep Learning on Large-Scale Data for Specialized Computer Vision or
+            Language Tasks
+          </p>
+          <svg
+            class="node-divider"
+            viewBox="0 0 900 34"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <line x1="10" y1="17" x2="890" y2="17"></line>
+            <circle class="pulse" cx="10" cy="17" r="8"></circle>
+            <circle cx="10" cy="17" r="3.5"></circle>
+            <circle cx="300" cy="17" r="3.5"></circle>
+            <circle cx="600" cy="17" r="3.5"></circle>
+            <circle class="pulse" cx="890" cy="17" r="8"></circle>
+            <circle cx="890" cy="17" r="3.5"></circle>
+          </svg>
+        </section>
+
+        <section class="assignment-people">
+          <h2 class="section-title">Instructor</h2>
+          <p class="assignment-detail">Lê Thành Sách</p>
+        </section>
+
+        <section class="assignment-people">
+          <h2 class="section-title">Group members</h2>
+          <p class="assignment-detail">
+            Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc
+          </p>
+        </section>
+
+        <section id="problem-statement">
+          <h2 class="section-title">Problem statement</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="dataset-eda">
+          <h2 class="section-title">Dataset description and EDA</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="methodology">
+          <h2 class="section-title">Methodology</h2>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 26px;
+              font-weight: bold;
+              margin: 0 0 14px;
+              color: var(--ink);
+            "
+          >
+            Pipeline overview
+          </h3>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            The classification pipeline follows a strict, end-to-end sequential
+            workflow across all experiments on the Food-11 dataset:
+          </p>
+
+          <div class="pipeline-card">
+            <div class="pipeline-flow-steps">
+              <span class="pipeline-pill">Raw data</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Preprocessing</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Data loader</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Model</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-arrow" style="display: none"></span>
+              <span class="pipeline-pill">Loss</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Optimization</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Prediction</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Post-processing</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-pill">Evaluation</span>
+            </div>
+          </div>
+
+          <ul
+            class="pipeline-notes-list"
+            style="margin-top: 18px; margin-bottom: 28px"
+          >
+            <li>
+              <strong>Raw data &amp; Split Preservation:</strong> The official
+              Food-11 partitions (<code>9,866</code> training,
+              <code>3,430</code> validation, and
+              <code>3,347</code> evaluation/test RGB images across 11 food
+              categories) are preserved without re-splitting or automatic
+              deletion. An automated MD5 and 64-bit difference hash (dHash)
+              audit logs exact and near-duplicates across splits to
+              transparently document potential data leakage risk.
+            </li>
+            <li>
+              <strong
+                >Aspect-Preserving Preprocessing &amp; Train-Only
+                Normalization:</strong
+              >
+              Each image is decoded in RGB and its longer side is resized to
+              <code>512</code> pixels via Lanczos interpolation while preserving
+              aspect ratio. Channel-wise RGB mean and population standard
+              deviation (<code>ddof=0</code>) are fitted once exclusively on
+              resized, unaugmented training image pixels (excluding synthetic
+              padding) and cached in <code>train_normalization.json</code>.
+              Images are then centrally padded to
+              <code>512 &times; 512</code> using the rounded training-mean RGB
+              values and standardized via
+              <code>(x - train_mean) / train_std</code>. Training images
+              additionally undergo random horizontal flipping and color jitter
+              (brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05) prior to
+              resizing and padding.
+            </li>
+            <li>
+              <strong>Data Loader:</strong> Custom PyTorch
+              <code>DataLoader</code> instances group tensors of shape
+              <code>(B, 3, 512, 512)</code> with
+              <code>batch_size = 32</code> and <code>drop_last = False</code>.
+              Training uses seeded random shuffling (<code
+                >torch.Generator().manual_seed(seed)</code
+              >
+              and deterministic <code>seed_worker</code>), while validation and
+              test loaders evaluate deterministically in fixed order.
+            </li>
+            <li>
+              <strong>Model, Loss &amp; Optimization:</strong> A custom 4-stage
+              scratch baseline (<code>SimpleCNN</code>) and four
+              transfer-learning configurations (<code>ResNet-18</code> and
+              <code>ResNet-50</code> under both frozen-backbone linear probing
+              and full end-to-end fine-tuning) map inputs to 11 class logits.
+              Models are trained with label-smoothed Cross-Entropy Loss (<code
+                >label_smoothing = 0.1</code
+              >), optimized via <code>AdamW</code> with discriminative learning
+              rates, 1-epoch linear warmup + cosine annealing, gradient norm
+              clipping (<code>1.0</code>), and Automatic Mixed Precision (AMP).
+            </li>
+            <li>
+              <strong>Prediction, Post-processing &amp; Evaluation:</strong>
+              Forward logits are converted in FP32 to class probabilities via
+              softmax and class decisions via <code>argmax</code>.
+              Post-processing includes Expected Calibration Error (ECE, 10 bins)
+              and Grad-CAM visual attribution on <code>layer4[-1]</code>. Dual
+              validation checkpoints (best validation <code>macro_f1</code> and
+              best validation <code>accuracy</code>) are tracked and evaluated
+              across three independent seeds (<code>[42, 43, 44]</code>),
+              accompanied by paired seed differences, 1,000-iteration bootstrap
+              95% CIs, and exact McNemar tests.
+            </li>
+          </ul>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 26px;
+              font-weight: bold;
+              margin: 36px 0 18px;
+              color: var(--ink);
+            "
+          >
+            Baseline and main methods
+          </h3>
+
+          <div class="mandatory-table-wrap">
+            <table class="mandatory-models-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center">#</th>
+                  <th style="min-width: 155px">Model / Variant</th>
+                  <th style="min-width: 265px">Architecture</th>
+                  <th style="min-width: 175px">Input representation</th>
+                  <th style="min-width: 165px">Loss</th>
+                  <th style="min-width: 215px">Metrics</th>
+                  <th style="min-width: 275px">Strengths &amp; limits</th>
+                  <th style="min-width: 115px; text-align: center">
+                    Params (Total / Trainable)
+                  </th>
+                  <th style="min-width: 215px">Library vs. Self-implemented</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"><strong>1</strong></td>
+                  <td>
+                    <strong>SimpleCNN</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Scratch Baseline)</span
+                    >
+                  </td>
+                  <td>
+                    Custom 9-conv-layer network trained from random
+                    initialization:<br />
+                    • <strong>Stem:</strong>
+                    <code>Conv2d(3, 32, 3, stride=2, pad=1, bias=False)</code> →
+                    <code>BN</code> → <code>ReLU</code> (512→256)<br />
+                    • <strong>4 Stages</strong> with widths
+                    <code>(32, 64, 128, 256)</code>: each stage has two
+                    <code>[Conv2d(3×3, pad=1, bias=False) → BN → ReLU]</code>
+                    blocks followed by
+                    <code>MaxPool2d(2)</code> (256→128→64→32→16)<br />
+                    • <strong>Head:</strong> <code>AdaptiveAvgPool2d(1)</code> →
+                    <code>Flatten()</code> → <code>Dropout(0.3)</code> →
+                    <code>Linear(256, 11)</code>.
+                  </td>
+                  <td>
+                    Aspect-preserved, padded &amp; train-normalized 3D RGB
+                    tensor <code>X ∈ ℝ^{B×3×512×512}</code>
+                  </td>
+                  <td>
+                    <code>nn.CrossEntropyLoss</code> with
+                    <code>label_smoothing=0.1</code>
+                  </td>
+                  <td>
+                    • <strong>Primary:</strong> Macro-F1, Macro-Precision,
+                    Macro-Recall<br />
+                    • <strong>Secondary:</strong> Top-1 Accuracy, Test Loss,
+                    ECE<br />
+                    • <strong>Class-level:</strong> Per-class P/R/F1, Confusion
+                    Matrix<br />
+                    • <strong>Efficiency:</strong> GFLOPs, Train time (min),
+                    Peak VRAM (MiB), Latency (bs=1), Throughput (bs=32)
+                  </td>
+                  <td>
+                    <strong>Strengths:</strong> Compact (~1.19M params), fast
+                    forward pass, zero external pretraining dependency, clean
+                    spatial inductive bias benchmark.<br />
+                    <strong>Limits:</strong> Lacks residual skip connections;
+                    limited depth and receptive field struggle with high
+                    intra-class food variation when trained from scratch on
+                    9,866 images.
+                  </td>
+                  <td style="text-align: center">
+                    <span class="tag-placeholder">1,185,323</span><br />
+                    <span style="font-size: 12px; color: var(--ink-soft)"
+                      >Trainable: 1,185,323 (100%)</span
+                    >
+                  </td>
+                  <td>
+                    <strong>Self-implemented:</strong> Complete
+                    <code>SimpleCNN</code> class, stem + 4-stage generator loop,
+                    custom head.<br />
+                    <strong>Library:</strong> <code>torch.nn.Conv2d</code>,
+                    <code>BatchNorm2d</code>, <code>ReLU</code>,
+                    <code>MaxPool2d</code>, <code>AdaptiveAvgPool2d</code>,
+                    <code>Dropout</code>, <code>Linear</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>2</strong></td>
+                  <td>
+                    <strong>ResNet-18 (Frozen)</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Ablation / Linear Probe)</span
+                    >
+                  </td>
+                  <td>
+                    Pretrained <code>torchvision.models.resnet18</code> (<code
+                      >IMAGENET1K_V1</code
+                    >
+                    weights):<br />
+                    • <strong>Backbone (Frozen):</strong> 7×7 conv stride-2 +
+                    maxpool stem, 4 residual stages of 2 basic blocks each
+                    (widths <code>64, 128, 256, 512</code>). All weights frozen
+                    (<code>requires_grad=False</code>) and
+                    <code>BatchNorm2d</code> locked in
+                    <code>eval()</code> mode.<br />
+                    • <strong>Head (Trainable):</strong>
+                    <code>Sequential(Dropout(0.3), Linear(512, 11))</code>.
+                  </td>
+                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
+                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
+                  <td>
+                    Same primary, secondary, class-level, and efficiency metrics
+                    across 3 seeds + dual checkpoints
+                  </td>
+                  <td>
+                    <strong>Strengths:</strong> Ultra-low trainable parameter
+                    count (5,643); rapid convergence; minimal backward-pass
+                    memory; isolates off-the-shelf ImageNet feature quality.<br />
+                    <strong>Limits:</strong> Cannot adapt convolutional filters
+                    or BatchNorm statistics to fine-grained culinary textures
+                    and domain-specific lighting.
+                  </td>
+                  <td style="text-align: center">
+                    <span class="tag-placeholder">11,182,155</span><br />
+                    <span style="font-size: 12px; color: var(--ink-soft)"
+                      >Trainable: 5,643 (0.05%)</span
+                    >
+                  </td>
+                  <td>
+                    <strong>Self-implemented:</strong> Head replacement wrapper,
+                    split-mode <code>set_mode()</code> locking backbone BN in
+                    <code>eval()</code>.<br />
+                    <strong>Library:</strong>
+                    <code>torchvision.models.resnet18</code>
+                    (<code>IMAGENET1K_V1</code>).
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>3</strong></td>
+                  <td>
+                    <strong>ResNet-18 (Full Fine-Tuning)</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Controlled Study)</span
+                    >
+                  </td>
+                  <td>
+                    Same <code>ResNet-18</code> (<code>IMAGENET1K_V1</code>)
+                    architecture and
+                    <code>Dropout(0.3) → Linear(512, 11)</code> head, but
+                    <strong>all</strong> backbone residual blocks, BatchNorm
+                    layers, and classification head are unfrozen and jointly
+                    optimized end-to-end with discriminative learning rates
+                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>).
+                  </td>
+                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
+                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
+                  <td>
+                    Same primary, secondary, class-level, and efficiency metrics
+                    across 3 seeds + dual checkpoints
+                  </td>
+                  <td>
+                    <strong>Strengths:</strong> Adapts multi-scale residual
+                    representations specifically to Food-11 categories while
+                    maintaining moderate compute cost (~11.18M params).<br />
+                    <strong>Limits:</strong> Higher training time and VRAM than
+                    frozen probing; shallower 2-conv basic blocks have lower
+                    representational ceiling than bottleneck architectures.
+                  </td>
+                  <td style="text-align: center">
+                    <span class="tag-placeholder">11,182,155</span><br />
+                    <span style="font-size: 12px; color: var(--ink-soft)"
+                      >Trainable: 11,182,155 (100%)</span
+                    >
+                  </td>
+                  <td>
+                    <strong>Self-implemented:</strong> Parameter-group splitter
+                    (<code>make_optimizer</code>) for differential backbone/head
+                    learning rates.<br />
+                    <strong>Library:</strong>
+                    <code>torchvision.models.resnet18</code>,
+                    <code>torch.optim.AdamW</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>4</strong></td>
+                  <td>
+                    <strong>ResNet-50 (Frozen)</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Ablation / Linear Probe)</span
+                    >
+                  </td>
+                  <td>
+                    Pretrained <code>torchvision.models.resnet50</code> (<code
+                      >IMAGENET1K_V2</code
+                    >
+                    weights):<br />
+                    • <strong>Backbone (Frozen):</strong> 4 residual stages with
+                    <code>(3, 4, 6, 3)</code> bottleneck blocks (1×1 → 3×3 → 1×1
+                    convs, expansion factor 4, output channels
+                    <code>256, 512, 1024, 2048</code>). Locked in
+                    <code>eval()</code> mode.<br />
+                    • <strong>Head (Trainable):</strong>
+                    <code>Sequential(Dropout(0.3), Linear(2048, 11))</code>.
+                  </td>
+                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
+                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
+                  <td>
+                    Same primary, secondary, class-level, and efficiency metrics
+                    across 3 seeds + dual checkpoints
+                  </td>
+                  <td>
+                    <strong>Strengths:</strong> Leverages rich 2,048-dim
+                    high-level semantic features from TorchVision's upgraded V2
+                    recipe while training only 22,539 parameters.<br />
+                    <strong>Limits:</strong> High forward-pass FLOPs at 512×512
+                    resolution despite frozen weights; linear head alone cannot
+                    resolve subtle cross-class food overlaps.
+                  </td>
+                  <td style="text-align: center">
+                    <span class="tag-placeholder">23,530,571</span><br />
+                    <span style="font-size: 12px; color: var(--ink-soft)"
+                      >Trainable: 22,539 (0.10%)</span
+                    >
+                  </td>
+                  <td>
+                    <strong>Self-implemented:</strong> Head replacement wrapper
+                    and frozen BN enforcement.<br />
+                    <strong>Library:</strong>
+                    <code>torchvision.models.resnet50</code>
+                    (<code>IMAGENET1K_V2</code>).
+                  </td>
+                </tr>
+                <tr style="background: rgba(42, 68, 148, 0.04)">
+                  <td style="text-align: center"><strong>5</strong></td>
+                  <td>
+                    <strong>ResNet-50 (Full Fine-Tuning)</strong><br /><span
+                      style="font-size: 13px; color: #2a4494; font-weight: bold"
+                      >★ Primary Model</span
+                    >
+                  </td>
+                  <td>
+                    Deep 50-layer bottleneck architecture initialized with
+                    <code>IMAGENET1K_V2</code> weights and custom
+                    <code>Dropout(0.3) → Linear(2048, 11)</code> head. Entire
+                    network (<code>23,530,571</code> parameters) is fine-tuned
+                    end-to-end using discriminative AdamW
+                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>)
+                    and cosine decay.
+                  </td>
+                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
+                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
+                  <td>
+                    Same primary, secondary, class-level, and efficiency metrics
+                    + Grad-CAM visual attribution &amp; ECE calibration
+                  </td>
+                  <td>
+                    <strong>Strengths:</strong> Highest representational
+                    capacity and hierarchical receptive field; adapts deep
+                    bottleneck filters to complex food compositions, garnish
+                    details, and plating.<br />
+                    <strong>Limits:</strong> Largest memory footprint and
+                    longest per-epoch training time at 512×512 resolution;
+                    requires careful regularization to prevent overfitting.
+                  </td>
+                  <td style="text-align: center">
+                    <span class="tag-placeholder">23,530,571</span><br />
+                    <span style="font-size: 12px; color: var(--ink-soft)"
+                      >Trainable: 23,530,571 (100%)</span
+                    >
+                  </td>
+                  <td>
+                    <strong>Self-implemented:</strong> End-to-end differential
+                    fine-tuning loop, dual-best checkpoint manager, custom
+                    Grad-CAM hooks.<br />
+                    <strong>Library:</strong>
+                    <code>torchvision.models.resnet50</code>
+                    (<code>IMAGENET1K_V2</code>), PyTorch AMP &amp; autograd.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="experimental-setup">
+          <h2 class="section-title">Experimental setup</h2>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            To ensure strict experimental fairness and reproducibility across
+            all 15 core training runs (5 model configurations &times; 3 random
+            seeds), a unified training protocol and predeclared experimental
+            design were enforced.
+          </p>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 24px;
+              font-weight: bold;
+              margin: 24px 0 14px;
+              color: var(--ink);
+            "
+          >
+            1. Standardized training setup &amp; hyperparameters
+          </h3>
+
+          <div class="mandatory-table-wrap">
+            <table class="mandatory-models-table">
+              <thead>
+                <tr>
+                  <th style="width: 45px; text-align: center">#</th>
+                  <th style="min-width: 210px">Setup / Hyperparameter</th>
+                  <th style="min-width: 260px">Value / Policy</th>
+                  <th style="min-width: 380px">
+                    Design Rationale &amp; Protocol Notes
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"><strong>1</strong></td>
+                  <td><strong>Optimizer</strong></td>
+                  <td>
+                    <code>torch.optim.AdamW</code> (<code
+                      >weight_decay = 0.01</code
+                    >)
+                  </td>
+                  <td>
+                    Decoupled weight decay regularizes high-capacity backbones
+                    effectively during transfer learning and scratch training
+                    alike.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>2</strong></td>
+                  <td><strong>Learning rate</strong></td>
+                  <td>
+                    • <strong>Classifier head / Scratch:</strong>
+                    <code>lr_head = 1e-3</code><br />
+                    • <strong>Pretrained backbone:</strong>
+                    <code>lr_backbone = 1e-4</code>
+                  </td>
+                  <td>
+                    Discriminative learning rates allow the randomly initialized
+                    classification head to adapt quickly while preventing
+                    catastrophic forgetting in pretrained ImageNet weights.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>3</strong></td>
+                  <td><strong>Batch size &amp; Input</strong></td>
+                  <td>
+                    <code>batch_size = 32</code> at
+                    <code>512 &times; 512</code> resolution
+                  </td>
+                  <td>
+                    Consistent across train, validation, and test loaders (<code
+                      >drop_last = False</code
+                    >). Aspect-preserving Lanczos resize + center train-mean RGB
+                    padding preserves food geometry.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>4</strong></td>
+                  <td><strong>Epochs</strong></td>
+                  <td>
+                    Up to <code>100</code> epochs (<code>EP_SCRATCH = 100</code
+                    >, <code>EP_FT = 100</code>)
+                  </td>
+                  <td>
+                    Matched maximum epoch budget across all five configurations,
+                    bounded by dual-criterion early stopping.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>5</strong></td>
+                  <td><strong>Scheduler</strong></td>
+                  <td>
+                    <code>LambdaLR</code>: 1-epoch linear warmup → cosine
+                    annealing (<code>min_ratio = 0.01</code>)
+                  </td>
+                  <td>
+                    Stepped per iteration/batch. Warmup stabilizes early
+                    gradients in the new linear head before smooth cosine decay
+                    to 1% of peak LR.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>6</strong></td>
+                  <td><strong>Regularization &amp; Augmentation</strong></td>
+                  <td>
+                    • <strong>Loss:</strong> Cross-Entropy with
+                    <code>label_smoothing = 0.1</code><br />
+                    • <strong>Head:</strong> <code>Dropout(p = 0.3)</code><br />
+                    • <strong>Gradients:</strong> Global L2 norm clipping at
+                    <code>1.0</code><br />
+                    • <strong>Train Aug:</strong>
+                    <code>RandomHorizontalFlip(0.5)</code> +
+                    <code>ColorJitter(0.3, 0.3, 0.3, 0.05)</code>
+                  </td>
+                  <td>
+                    Mitigates overconfidence on visually ambiguous or noisy
+                    web-scraped food labels and improves robustness to
+                    lighting/color shifts.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>7</strong></td>
+                  <td><strong>Early stopping</strong></td>
+                  <td>
+                    <code>patience = 10</code> epochs (shared dual-criterion
+                    counter)
+                  </td>
+                  <td>
+                    Patience resets to <code>0</code> whenever
+                    <em>either</em> validation <code>macro_f1</code> or
+                    validation <code>accuracy</code> improves (ties broken by
+                    lower validation loss). Training stops only when neither
+                    improves for 10 consecutive epochs.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>8</strong></td>
+                  <td><strong>Checkpoint criterion</strong></td>
+                  <td>
+                    Dual validation checkpoints:
+                    <code>best_macro_f1.pt</code> (primary) &amp;
+                    <code>best_accuracy.pt</code>
+                  </td>
+                  <td>
+                    Both checkpoints are saved independently on validation and
+                    evaluated on the test set in §9. Primary comparisons and
+                    plots strictly use <code>best_macro_f1</code> to account for
+                    class imbalance.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>9</strong></td>
+                  <td><strong>Seeds &amp; Repeated runs</strong></td>
+                  <td>
+                    <code>THREE_SEEDS = [42, 43, 44]</code> (3 independent runs
+                    / config)
+                  </td>
+                  <td>
+                    Seeds control Python, NumPy, PyTorch, CUDA,
+                    <code>cudnn.deterministic=True</code>, and DataLoader
+                    shuffling while keeping the official data split invariant.
+                    Results reported as <code>mean ± sample std (ddof=1)</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>10</strong></td>
+                  <td><strong>Hardware &amp; Environment</strong></td>
+                  <td>
+                    CUDA GPU (Colab / Kaggle environment logged in
+                    <code>environment.json</code>)
+                  </td>
+                  <td>
+                    Full environment provenance, SHA-256 split fingerprint
+                    (<code>SPLIT_SHA</code>), and run signatures verified
+                    automatically before reusing or evaluating checkpoints.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>11</strong></td>
+                  <td><strong>Mixed precision</strong></td>
+                  <td>
+                    Enabled (<code>AMP_ENABLED = True</code>,
+                    <code>torch.float16</code> autocast +
+                    <code>GradScaler</code>)
+                  </td>
+                  <td>
+                    Accelerates 512×512 convolutional training and reduces peak
+                    VRAM allocation; evaluation loss accumulation is cast back
+                    to FP32 for numerical exactness.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>12</strong></td>
+                  <td><strong>Training time &amp; Cost tracking</strong></td>
+                  <td>
+                    Per-epoch &amp; total wall-clock time, Peak GPU VRAM (MiB),
+                    GFLOPs, Latency (<code>bs=1</code>) &amp; Throughput
+                    (<code>bs=32</code>)
+                  </td>
+                  <td>
+                    Measured via <code>time.perf_counter()</code> (including
+                    validation), <code>torch.cuda.max_memory_allocated()</code>,
+                    <code>FlopCounterMode</code> (1 MAC = 2 FLOPs), and
+                    warmed-up CUDA-synchronized synthetic inference benchmarks.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>13</strong></td>
+                  <td><strong>Hyperparameter selection method</strong></td>
+                  <td>
+                    Proposal-locked controlled recipe (no per-model test tuning)
+                  </td>
+                  <td>
+                    All hyperparameters were fixed a priori in the approved
+                    proposal to isolate the effects of pretraining, backbone
+                    freezing vs. full fine-tuning, and backbone depth without
+                    hyperparameter-search confounding.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 24px;
+              font-weight: bold;
+              margin: 36px 0 14px;
+              color: var(--ink);
+            "
+          >
+            2. Experimental design &amp; controlled comparisons
+          </h3>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            Every controlled comparison states its predeclared hypothesis,
+            changed factor, fixed factors, evaluation metrics, and decision
+            criterion prior to inspecting test outcomes:
+          </p>
+
+          <div class="mandatory-table-wrap">
+            <table class="mandatory-models-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center">#</th>
+                  <th style="min-width: 190px">Comparison Study</th>
+                  <th style="min-width: 170px">Reference vs. Alternative</th>
+                  <th style="min-width: 250px">Predeclared Hypothesis</th>
+                  <th style="min-width: 210px">Changed Factor(s)</th>
+                  <th style="min-width: 240px">Fixed Factors</th>
+                  <th style="min-width: 250px">
+                    Metrics &amp; Decision Criterion
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"><strong>1</strong></td>
+                  <td>
+                    <strong>Transfer Learning &amp; Architecture</strong
+                    ><br /><span style="font-size: 13px; color: var(--ink-soft)"
+                      >(Baseline vs. Main)</span
+                    >
+                  </td>
+                  <td>
+                    <code>simple_cnn</code><br />vs.<br /><code
+                      >resnet50_full</code
+                    >
+                  </td>
+                  <td>
+                    Deep residual architecture initialized with ImageNet
+                    pretraining substantially improves Food-11 test Macro-F1
+                    over a compact CNN trained from scratch, at the cost of
+                    higher compute and memory.
+                  </td>
+                  <td>
+                    Backbone architecture/depth (9-layer SimpleCNN vs. 50-layer
+                    bottleneck ResNet) and initialization (random vs.
+                    ImageNet-1K V2 + discriminative LR).
+                  </td>
+                  <td>
+                    Official Food-11 split, 512×512 aspect-preserving
+                    resize/pad, train-only RGB normalization, augmentation,
+                    AdamW, epoch budget (100), dual-criterion early stopping,
+                    batch size (32), seeds <code>[42, 43, 44]</code>.
+                  </td>
+                  <td>
+                    • <strong>Primary:</strong> Paired Δ Test Macro-F1 across
+                    seeds.<br />
+                    • <strong>Criterion:</strong> Mean paired
+                    <code>Δ Macro-F1 ≥ +0.01</code> (1.0 pp) indicates a
+                    practical gain for <code>alt</code>; report sample std, sign
+                    consistency, seed-42 bootstrap 95% CI, and McNemar
+                    <em>p</em>-value.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>2</strong></td>
+                  <td>
+                    <strong>Backbone Adaptation (Shallow)</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Ablation Study 1)</span
+                    >
+                  </td>
+                  <td>
+                    <code>resnet18_frozen</code><br />vs.<br /><code
+                      >resnet18_full</code
+                    >
+                  </td>
+                  <td>
+                    Unfreezing and adapting the ResNet-18 backbone end-to-end
+                    yields a practical gain (≥ 1.0 pp) in Food-11 Macro-F1 over
+                    a frozen linear probe by specializing convolutional filters
+                    to food textures, at higher training cost.
+                  </td>
+                  <td>
+                    Backbone parameter trainability (<code>requires_grad</code>)
+                    and <code>BatchNorm2d</code> behavior (locked
+                    <code>eval()</code> vs. active
+                    <code>train()</code> statistics).
+                  </td>
+                  <td>
+                    ResNet-18 architecture, ImageNet-1K V1 initialization,
+                    classifier head (<code>Dropout(0.3) + Linear(512, 11)</code
+                    >), data split, 512×512 preprocessing, optimizer/schedule,
+                    batch size, seeds.
+                  </td>
+                  <td>
+                    Same paired multi-seed decision rule (practical threshold
+                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
+                    VRAM trade-off analysis.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>3</strong></td>
+                  <td>
+                    <strong>Backbone Adaptation (Deep)</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Ablation Study 2)</span
+                    >
+                  </td>
+                  <td>
+                    <code>resnet50_frozen</code><br />vs.<br /><code
+                      >resnet50_full</code
+                    >
+                  </td>
+                  <td>
+                    Full end-to-end fine-tuning of ResNet-50 significantly
+                    outperforms a frozen ResNet-50 feature extractor,
+                    demonstrating that domain adaptation of deep bottleneck
+                    layers is critical for fine-grained food classification.
+                  </td>
+                  <td>
+                    Backbone parameter trainability (22.5K vs. 23.53M trainable
+                    params) and <code>BatchNorm2d</code> train/eval mode.
+                  </td>
+                  <td>
+                    ResNet-50 architecture, ImageNet-1K V2 initialization,
+                    classifier head (<code>Dropout(0.3) + Linear(2048, 11)</code
+                    >), data split, 512×512 preprocessing, optimizer/schedule,
+                    batch size, seeds.
+                  </td>
+                  <td>
+                    Same paired multi-seed decision rule (practical threshold
+                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
+                    VRAM trade-off analysis.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>4</strong></td>
+                  <td>
+                    <strong>Backbone Capacity Scaling</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Controlled Study)</span
+                    >
+                  </td>
+                  <td>
+                    <code>resnet18_full</code><br />vs.<br /><code
+                      >resnet50_full</code
+                    >
+                  </td>
+                  <td>
+                    Scaling from ResNet-18 (basic blocks) to ResNet-50
+                    (bottleneck blocks) under full fine-tuning improves test
+                    Macro-F1 by capturing richer hierarchical food features,
+                    while increasing GFLOPs and latency.
+                  </td>
+                  <td>
+                    Backbone architecture/depth (18-layer basic vs. 50-layer
+                    bottleneck, 11.18M vs. 23.53M params) and corresponding
+                    TorchVision ImageNet weight recipe (V1 vs. V2).
+                  </td>
+                  <td>
+                    Full fine-tuning regime (<code>lr_backbone=1e-4</code>,
+                    <code>lr_head=1e-3</code>), official split, 512×512
+                    preprocessing, augmentation, epoch budget, early stopping,
+                    batch size, seeds.
+                  </td>
+                  <td>
+                    Same paired multi-seed decision rule (practical threshold
+                    <code>|Δ Macro-F1| ≥ 0.01</code>) evaluated alongside
+                    GFLOPs, latency, and F1-per-GFLOP efficiency.
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>5</strong></td>
+                  <td>
+                    <strong>Data Augmentation Ablation</strong><br /><span
+                      style="font-size: 13px; color: var(--ink-soft)"
+                      >(Optional Protocol)</span
+                    >
+                  </td>
+                  <td>
+                    <code>resnet50_full_noaug</code><br />vs.<br /><code
+                      >resnet50_full</code
+                    >
+                  </td>
+                  <td>
+                    Applying random horizontal flips and color jitter during
+                    training reduces overfitting and improves test
+                    generalization on Food-11 (controlled via
+                    <code>RUN_AUG_ABLATION</code> flag).
+                  </td>
+                  <td>
+                    Presence vs. absence of training-time data augmentation
+                    (<code>RandomHorizontalFlip</code> +
+                    <code>ColorJitter</code>).
+                  </td>
+                  <td>
+                    ResNet-50 architecture, ImageNet-1K V2 weights, full
+                    fine-tuning recipe, 512×512 resize/pad &amp; train-only
+                    normalization, batch size, seeds.
+                  </td>
+                  <td>
+                    Same paired multi-seed decision rule (practical threshold
+                    <code>|Δ Macro-F1| ≥ 0.01</code>) and generalization gap
+                    (<code>train_acc - val_acc</code>) inspection.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="results">
+          <h2 class="section-title">Results</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="comparison">
+          <h2 class="section-title">Comparison and discussion</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="error-analysis">
+          <h2 class="section-title">Error analysis</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="limitations">
+          <h2 class="section-title">Limitations and conclusion</h2>
+          <div class="stub-note"></div>
+        </section>
+
+        <section id="ai-disclosure">
+          <p class="section-label">AI usage — this assignment</p>
+          <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
+          <div class="disclosure-box">
+            <h4>Where AI was used</h4>
+            <ul>
+              <li class="placeholder"></li>
+            </ul>
+            <h4>Where AI was NOT used</h4>
+            <ul>
+              <li class="placeholder"></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Links</h2>
+          <div class="table-wrap">
+            <table class="links-table">
+              <thead>
+                <tr>
+                  <th>Content</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Source code</td>
+                  <td>
+                    <a
+                      href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2"
+                      target="_blank"
+                      rel="noopener"
+                      >GitHub repository</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-</main>
+    </main>
 
-<footer>
-  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
-    <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
-    <span><a href="index.html" style="color:inherit; text-decoration:none;">← Group home</a></span>
-  </div>
-</footer>
-
-</body>
+    <footer>
+      <div
+        class="wrap"
+        style="
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 8px;
+        "
+      >
+        <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
+        <span
+          ><a href="index.html" style="color: inherit; text-decoration: none"
+            >← Group home</a
+          ></span
+        >
+      </div>
+    </footer>
+  </body>
 </html>
+assignment2.html Displaying assignment2.html.
