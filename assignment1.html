@@ -7,10 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 1 — CO3133 Group Site</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .assignment-one [id] { scroll-margin-top:90px; }
+    .assignment-one .report-nav { display:flex; flex-wrap:wrap; gap:10px 20px; margin:24px 0; font-size:17px; }
+    .assignment-one .report-nav a { text-decoration:underline; text-underline-offset:3px; }
+    .assignment-one .report-model { border:1px solid #dcdfe8; border-radius:10px; margin:18px 0; background:var(--paper); }
+    .assignment-one .report-model summary { cursor:pointer; padding:18px 20px; color:var(--ink); font-size:21px; font-weight:700; }
+    .assignment-one .report-model summary span { display:block; margin:6px 0 0 20px; font-size:16px; font-weight:400; color:var(--ink-soft); }
+    .assignment-one .report-model-content { padding:0 18px 14px; min-width:0; }
+    .assignment-one .report-figure-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
+    .assignment-one .report-figure-grid .figure-card { margin:8px 0 16px; min-width:0; padding:12px; }
+    .assignment-one .report-table th, .assignment-one .report-table td { white-space:nowrap; font-size:17px; padding:13px 16px; }
+    .assignment-one .report-setup-table tbody th, .assignment-one .report-table tbody th { background:transparent; color:var(--ink); border-bottom:1px solid #eef1f6; }
+    .assignment-one .report-table caption { text-align:left; padding:14px 16px; font-size:17px; color:var(--ink-soft); }
+    .assignment-one .report-note { color:var(--ink-soft); font-size:17px; line-height:1.6; }
+    .assignment-one .report-model img { width:100%; }
+    .assignment-one figcaption, .assignment-one .figure-caption { font-style:normal; }
+    .assignment-one .figure-card a:focus-visible, .assignment-one summary:focus-visible { outline:3px solid #2a4494; outline-offset:4px; }
+    @media (max-width:600px) { .assignment-one .report-model-content {padding:0 10px 10px;} .assignment-one .report-model summary {padding:16px 12px;} }
+  </style>
 </head>
 
 
-<body>
+<body class="assignment-one">
 
   <header class="topnav">
     <div class="wrap">
@@ -27,8 +47,7 @@
   <main>
     <div class="wrap">
       <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
-      <main>
-        <div class="wrap">
+<nav class="report-nav" aria-label="Assignment report sections"><a href="#dataset-eda">Dataset and EDA</a><a href="#methodology">Methodology</a><a href="#experimental-setup">Experimental setup</a><a href="#results">Results</a><a href="#comparison-discussion">Discussion</a><a href="#error-analysis">Error analysis</a><a href="#limitations-conclusion">Conclusion</a></nav>
           <section class="hero" style="padding-top:32px;">
             <p class="eyebrow">Assignment 1</p>
             <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
@@ -79,7 +98,7 @@
               representation.</p>
           </section>
 
-          <section>
+          <section id="dataset-eda">
             <h2 class="section-title">Dataset description and EDA</h2>
 
             <h3>Dataset description</h3>
@@ -91,7 +110,7 @@
               before
               any longer training run. It appears in none of the reported tables or figures. Fashion-MNIST is the
               primary
-              dataset, and all five architectures (Linear/softmax, MLP, CNN, GRU/LSTM and Transformer) are trained,
+              dataset, and all five architectures (Linear/softmax, MLP, CNN, LSTM and Transformer) are trained,
               validated and tested on it with an identical split and evaluation protocol.</p>
             <p>Fashion-MNIST was released in 2017 by Zalando Research (Han Xiao, Kashif Rasul and Roland Vollgraf) as a
               drop-in replacement for MNIST. It keeps the 28 × 28 grayscale format, the 10 classes and the 60,000 /
@@ -274,8 +293,11 @@
             <h4>Data splitting</h4>
             <p>After the integrity gate passed, the official 60,000-image training pool was split once with stratified sampling and seed 42 into an 80/20 train-validation split. This stratified partitioning enforces consistent class proportions across both splits.</p>
 
+<div class="mandatory-table-wrap"><table class="mandatory-models-table report-table"><caption>Fixed data partitions (split seed 42).</caption><thead><tr><th scope="col">Partition</th><th scope="col">Images</th><th scope="col">Images per class</th></tr></thead><tbody><tr><th scope="row">Training</th><td>48,000</td><td>4,800</td></tr><tr><th scope="row">Validation</th><td>12,000</td><td>1,200</td></tr><tr><th scope="row">Official test</th><td>10,000</td><td>1,000</td></tr></tbody></table></div>
             <h4>Class Distribution</h4>
-            <p>Figure 1 presents the class distribution after the canonical split. Stratification preserves exactly
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/eda_official_class_distribution.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Official Fashion-MNIST class distribution: 6,000 training and 1,000 test images in each class"><img src="Assignment1/05_results/assets/report_figures/eda_official_class_distribution.png" alt="Official Fashion-MNIST class distribution: 6,000 training and 1,000 test images in each class" loading="lazy" decoding="async" width="790" height="409"></a><figcaption class="figure-caption">EDA Figure 1. Class counts in the official training and test partitions.</figcaption></figure>
+
+            <p>EDA Figure 2 presents the class distribution after the canonical split. Stratification preserves exactly
               4,800 training and 1,200 validation samples per class, so the standard deviation of class counts is zero
               within both development partitions. Since all classes are equally represented, the majority-class
               baseline accuracy is 10%.
@@ -292,24 +314,24 @@
               provides a
               clearer view of classification difficulties that may not be visible from overall accuracy alone.</p>
             <figure>
-              <img src="Assignment1/02_dataset_and_eda/a1_fig1_class_distribution.png"
+              <img src="Assignment1/05_results/assets/report_figures/eda_train_validation_class_distribution.png"
                 alt="Grouped bar chart of the seeded Fashion-MNIST split: 4,800 training and 1,200 validation images per class"
-                loading="lazy">
-              <figcaption>Figure 1 — Class counts in the seeded training and validation splits</figcaption>
+                loading="lazy" width="900" height="450">
+              <figcaption>EDA Figure 2 — Class counts in the seeded training and validation splits</figcaption>
             </figure>
 
             <h4>Pixel intensity</h4>
             <p>Over the 48,000 × 28 × 28 = 37,632,000 pixels of the raw training split, the global statistics on the
-              0–255 scale are μ<sub>raw</sub> = 72.99 and σ<sub>raw</sub> = 90.06. The log-scale histogram in Figure 2
+              0–255 scale are μ<sub>raw</sub> = 72.99 and σ<sub>raw</sub> = 90.06. The log-scale histogram in EDA Figure 3
               is
               strongly
-              bimodal. Exactly 50.2% of all pixels are zero, which is the black background, and the remaining mass spreads
+              bimodal. About 50.2% of all pixels are zero, which is the black background, and the remaining mass spreads
               over 1–255 and corresponds to the garment body, folds and surface texture.</p>
             <figure class="figure-large">
-              <img src="Assignment1/02_dataset_and_eda/a1_fig2_pixel_intensity.png"
+              <img src="Assignment1/05_results/assets/report_figures/eda_pixel_intensity.png"
                 alt="Log-scale histogram of pixel intensities in the training set, with a large spike at 0 and a broad, lower mass from 1 to 255"
-                loading="lazy">
-              <figcaption>Figure 2 — Log-scale pixel intensity distribution, 48,000-image training split</figcaption>
+                loading="lazy" width="690" height="390">
+              <figcaption>EDA Figure 3 — Log-scale pixel intensity distribution, 48,000-image training split</figcaption>
             </figure>
 
             <div class="table-wrap">
@@ -382,16 +404,10 @@
             </div>
             <p class="table-caption">Table 3 — Mean raw pixel intensity by class, 48,000-image training split</p>
 
-            <p>Mean intensity per class (Table 3) works as a rough proxy for how much of the frame a
-              garment
-              fills. Sandal (34.80) and Sneaker (42.84) are lowest because of the wide empty margins around them.
-              Pullover
-              (96.49) and Coat (98.10) are highest, since they take up most of the frame. Total foreground area is
-              therefore
-              a low-level cue that even a linear model can use to separate footwear from apparel.</p>
+            <p>Mean intensity per class (Table 3) is a rough proxy for how much of the image an item fills, but also depends on garment brightness and texture. Sandal (34.80) and Sneaker (42.84) have the lowest means; Pullover (96.49) and Coat (98.10) have the highest. Mean intensity alone is not sufficient to distinguish the classes.</p>
 
             <h4>Sample inspection</h4>
-            <p>Figures 3 and 4 show seven randomly selected images per class from the 48,000-image training split
+            <p>EDA Figures 4 and 5 show seven randomly selected images per class from the 48,000-image training split
               (sampling seed 42). Two patterns stand out.
               Some classes vary a great deal internally: Bag covers handbags, backpacks and clutches with different
               shapes
@@ -401,23 +417,23 @@
               likely
               source of confusion-matrix errors, a hypothesis we revisit in the error analysis.</p>
             <figure>
-              <img src="Assignment1/02_dataset_and_eda/a1_fig3_samples_classes_0-4.png"
+              <img src="Assignment1/05_results/assets/report_figures/eda_samples_classes_0-4.png"
                 alt="Grid of training samples for T-shirt/top, Trouser, Pullover, Dress and Coat, seven images per class"
-                loading="lazy">
-              <figcaption>Figure 3 — Randomly sampled training-split images, classes 0–4 (seed 42)</figcaption>
+                loading="lazy" width="824" height="600">
+              <figcaption>EDA Figure 4 — Randomly sampled training-split images, classes 0–4 (seed 42)</figcaption>
             </figure>
             <figure>
-              <img src="Assignment1/02_dataset_and_eda/a1_fig4_samples_classes_5-9.png"
+              <img src="Assignment1/05_results/assets/report_figures/eda_samples_classes_5-9.png"
                 alt="Grid of training samples for Sandal, Shirt, Sneaker, Bag and Ankle boot, seven images per class"
-                loading="lazy">
-              <figcaption>Figure 4 — Randomly sampled training-split images, classes 5–9 (seed 42)</figcaption>
+                loading="lazy" width="824" height="600">
+              <figcaption>EDA Figure 5 — Randomly sampled training-split images, classes 5–9 (seed 42)</figcaption>
             </figure>
 
             
             <h4>Data Preprocessing</h4>
             <p><strong>Intensity scaling and zero-centered standardization:</strong> Raw pixel values span [0, 255] as
-              integers. As demonstrated in Figure 2, exactly 50.2% of all
-              pixels are zero (the black studio background), while the remaining 49.8% form a broad foreground mass
+              integers. As demonstrated in EDA Figure 3, about 50.2% of all
+              pixels are zero (the black studio background), while approximately 49.8% form a broad foreground mass
               spanning 1 to 255. To eliminate numerical saturation and gradient instabilities, inputs are first scaled
               to [0.0, 1.0] via <code>torchvision.transforms.ToTensor()</code> (which also introduces the channel
               dimension to form a 1 &times; 28 &times; 28 tensor) and then standardized via channel-wise Z-score
@@ -458,7 +474,7 @@
               </li>
               <li><strong>Evaluation pipeline (<code>eval_transform</code>):</strong> Validation is evaluated
                 deterministically throughout training. After all development decisions and the checkpoint roster are
-                fixed, the same deterministic pipeline is applied once to the official test set. Samples pass through
+                fixed, the same deterministic pipeline is applied to each selected checkpoint for final evaluation on the official test set. Samples pass through
                 <code>transforms.ToTensor()</code> followed by <code>transforms.Normalize((0.2863,), (0.3532,))</code>
                 using the training split's statistics.
               </li>
@@ -490,27 +506,7 @@
               Pipeline overview diagram:
             </p>
 
-            <div class="pipeline-card">
-              <div class="pipeline-flow-steps">
-                <span class="pipeline-pill">Raw data</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Preprocessing</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Data loader</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Model</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Loss</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Optimization</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Prediction</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Post-processing</span>
-                <span class="pipeline-arrow">→</span>
-                <span class="pipeline-pill">Evaluation</span>
-              </div>
-            </div>
+            <div class="pipeline-card"><div class="pipeline-flow-steps"><span class="pipeline-pill">Fashion-MNIST</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Fixed train/validation/test split</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Preprocessing and DataLoaders</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Model logits and loss</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Adam optimization</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Validation and best checkpoint</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Test evaluation</span><span class="pipeline-arrow">&rarr;</span><span class="pipeline-pill">Three-seed aggregation</span></div></div>
 
             <h3
               style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 18px; color:var(--ink);">
@@ -545,15 +541,14 @@
                     <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code> (1×28×28 pixels)</td>
                     <td><code>nn.CrossEntropyLoss</code></td>
                     <td>
-                      • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
-                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
-                      • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                      &bull; <strong>Primary:</strong> Top-1 Accuracy<br>
+                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Macro-F1, Test Loss<br>
+                      • <strong>Class-level:</strong> One-vs-rest accuracy, Precision, Recall, F1, Confusion Matrix<br>
                       • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
                     </td>
                     <td>
-                      <strong>Strengths:</strong> Highly interpretable linear weights, minimal compute &amp; memory
-                      ($O(1)$), convex loss surface.<br>
-                      <strong>Limits:</strong> Severe underfitting; incapable of capturing non-linear interactions or
+                      <strong>Strengths:</strong> Interpretable pixel weights and a small parameter count.<br>
+                      <strong>Limits:</strong> Limited capacity to capture nonlinear interactions or
                       spatial hierarchies.
                     </td>
                     <td style="text-align: center;"><span class="tag-placeholder">7,850</span></td>
@@ -578,14 +573,13 @@
                     <td>Flattened 1D vector <code>x ∈ ℝ⁷⁸⁴</code></td>
                     <td><code>nn.CrossEntropyLoss</code></td>
                     <td>
-                      • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
-                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
-                      • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                      &bull; <strong>Primary:</strong> Top-1 Accuracy<br>
+                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Macro-F1, Test Loss<br>
+                      • <strong>Class-level:</strong> One-vs-rest accuracy, Precision, Recall, F1, Confusion Matrix<br>
                       • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
                     </td>
                     <td>
-                      <strong>Strengths:</strong> Universal function approximator capable of non-linear decision
-                      boundaries.<br>
+                      <strong>Strengths:</strong> Learns nonlinear interactions and hierarchical features from pixel values.<br>
                       <strong>Limits:</strong> Destroys 2D geometry upon flattening; lacks translation invariance; dense
                       parameters prone to overfitting.
                     </td>
@@ -617,17 +611,16 @@
                     <td>2D spatial tensor <code>(B, 1, 28, 28)</code> preserving image coordinate grid</td>
                     <td><code>nn.CrossEntropyLoss</code></td>
                     <td>
-                      • <strong>Primary:</strong> Top-1 Accuracy, Macro-F1<br>
-                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Test Loss<br>
-                      • <strong>Class-level:</strong> Per-class Precision, Recall, F1, Confusion Matrix<br>
+                      &bull; <strong>Primary:</strong> Top-1 Accuracy<br>
+                      • <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Macro-F1, Test Loss<br>
+                      • <strong>Class-level:</strong> One-vs-rest accuracy, Precision, Recall, F1, Confusion Matrix<br>
                       • <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
                     </td>
                     <td>
                       <strong>Strengths:</strong> Strong spatial inductive bias (locality &amp; translation
                       equivariance);
-                      multi-stage 2D dropout and batch normalization prevent overfitting.<br>
-                      <strong>Limits:</strong> Slower training per batch than MLP; fixed receptive field determined by
-                      kernel size and depth.
+                      shared filters reuse learned patterns across spatial positions.<br>
+                      <strong>Limits:</strong> Feature maps increase computation and memory use; pooling loses exact spatial detail.
                     </td>
                     <td style="text-align: center;"><span class="tag-placeholder">231,626</span></td>
                     <td>
@@ -640,540 +633,249 @@
                       <code>torch.nn.Flatten</code>, <code>torch.nn.Dropout</code>, <code>torch.nn.Linear</code>.
                     </td>
                   </tr>
-                  <tr>
+                                    <tr>
                     <td style="text-align: center;"><strong>4</strong></td>
-                    <td><strong>LSTM or GRU</strong></td>
-                    <td colspan="7"
-                      style="text-align: center; vertical-align: middle; padding: 22px 16px; background: rgba(237, 241, 248, 0.35);">
-                      <span class="tag-underdev">Under development</span>
-                      <div style="font-size: 16px; color: var(--ink-soft); font-style: italic; margin-top: 6px;">
-                        Architecture, input representation, parameters, and evaluation are currently in progress.
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>5</strong></td>
-                    <td><strong>Transformer</strong></td>
-                    <td colspan="7"
-                      style="text-align: center; vertical-align: middle; padding: 22px 16px; background: rgba(237, 241, 248, 0.35);">
-                      <span class="tag-underdev">Under development</span>
-                      <div style="font-size: 16px; color: var(--ink-soft); font-style: italic; margin-top: 6px;">
-                        Vision Transformer patch tokenization, attention layers, and evaluation are currently in
-                        progress.
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </section>
-
-          <section id="experimental-setup">
-            <h2 class="section-title">Experimental setup</h2>
-            <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              To ensure strict experimental fairness, all models were trained
-              under a unified, identical protocol. The hyperparameters, optimization policies, and execution environment
-              are
-              detailed below:
-            </p>
-
-            <div class="mandatory-table-wrap">
-              <table class="mandatory-models-table">
-                <thead>
-                  <tr>
-                    <th style="width: 45px; text-align: center;">#</th>
-                    <th style="min-width: 210px;">Setup / Hyperparameter</th>
-                    <th style="min-width: 260px;">Value / Policy</th>
-                    <th style="min-width: 380px;">Design Rationale &amp; Protocol Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align: center;"><strong>1</strong></td>
-                    <td><strong>Optimizer</strong></td>
-                    <td><code>torch.optim.Adam</code></td>
-                    <td>Uniform optimizer family applied across all architectures</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>2</strong></td>
-                    <td><strong>Learning rate</strong></td>
-                    <td>Initial <code>lr = 1e-3</code> (0.001); minimum <code>min_lr = 1e-6</code></td>
-                    <td>Standard robust baseline for Adam on normalized Fashion-MNIST pixel tensors; dynamically reduced
-                      upon plateauing.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>3</strong></td>
-                    <td><strong>Batch size</strong></td>
-                    <td><code>128</code></td>
-                    <td>Constant across <code>train_loader</code>, <code>val_loader</code>, and <code>test_loader</code>
-                      (with <code>drop_last=False</code> and <code>num_workers=2</code>). Balances gradient estimation
-                      stability with GPU throughput.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>4</strong></td>
-                    <td><strong>Epochs</strong></td>
-                    <td>Maximum <code>200</code> epochs</td>
-                    <td>Upper bound ensuring complete convergence. Actual epochs executed before early stopping trigger: Linear = 31 epochs, MLP = 110 epochs, CNN = 129 epochs.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>5</strong></td>
-                    <td><strong>Scheduler</strong></td>
-                    <td><code>ReduceLROnPlateau(mode="min", factor=0.5, patience=3, threshold=1e-4)</code></td>
-                    <td>Monitors validation loss; decays learning rate by 50% when validation loss doesn't
-                      improve for 3 consecutive epochs, enabling fine-grained convergence near local minima.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>6</strong></td>
-                    <td><strong>Regularization</strong></td>
+                    <td><strong>LSTM (RowLSTM)</strong></td>
                     <td>
-                      • <strong>Linear:</strong> None (unregularized baseline).<br>
-                      • <strong>MLP:</strong> <code>Dropout(p=0.3)</code> after each hidden ReLU layer.<br>
-                      • <strong>CNN:</strong> <code>BatchNorm2d</code> across all conv blocks + spatial
-                      <code>Dropout2d(0.25, 0.3)</code> in conv features + <code>Dropout(p=0.3)</code> in classification
-                      head.
+                      Two-layer unidirectional LSTM (<code>hidden_size=132</code>) processes 28 image rows as 28
+                      timesteps, with dropout (0.3) between recurrent layers. The final hidden state passes through
+                      <code>Dropout(0.3)</code> &rarr; <code>Linear(132, 64)</code> &rarr; ReLU &rarr;
+                      <code>Dropout(0.3)</code> &rarr; <code>Linear(64, 10)</code> logits.
                     </td>
-                    <td>Prevents co-adaptation of hidden features and mitigates overfitting, with Batch Normalization
-                      providing additional implicit regularization.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>7</strong></td>
-                    <td><strong>Early stopping</strong></td>
-                    <td><code>patience = 8</code> epochs
-                    </td>
-                    <td>Automatically ends the training if <code>val_loss &lt; best_val_loss</code> is not achieved
-                      within 8 consecutive epochs, saving computation and mitigating late-stage over-adaptation.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>8</strong></td>
-                    <td><strong>Checkpoint criterion</strong></td>
-                    <td>Minimum Validation Loss (<code>best_val_loss</code>)</td>
-                    <td>The exact model state (<code>state_dict</code>) yielding the lowest validation loss is
-                      deep-copied
-                      in memory and persisted to Google Drive (<code>CKPT_DIR</code>). Automatically restored for final
-                      test
-                      evaluation.</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>9</strong></td>
-                    <td><strong>Seed</strong></td>
-                    <td><code>SEED = 42</code></td>
-                    <td>Deterministic random seed set across <code>random.seed(42)</code>,
-                      <code>numpy.random.seed(42)</code>, <code>torch.manual_seed(42)</code>, and
-                      <code>torch.cuda.manual_seed_all(42)</code> to ensure bit-exact reproducibility.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>10</strong></td>
-                    <td><strong>Hardware</strong></td>
-                    <td>NVIDIA Tesla T4 GPU (15,360 MiB VRAM), Google Colab instance</td>
-                    <td>OS: Linux 6.6 x86_64, PyTorch 2.11.0+cu128, Python 3.13.15. Device accelerated via CUDA
-                      (<code>device = "cuda"</code>).</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>11</strong></td>
-                    <td><strong>Mixed precision</strong></td>
-                    <td>Not used (Standard Single Precision FP32 across all models)</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>12</strong></td>
-                    <td><strong>Training time</strong></td>
+                    <td>Row sequence: <code>(B, 1, 28, 28)</code> reshaped to <code>(B, 28, 28)</code>; 28 timesteps, 28 pixel values per row.</td>
+                    <td><code>nn.CrossEntropyLoss</code></td>
                     <td>
-                      • <strong>Linear:</strong> 10 min 18.9s<br>
-                      • <strong>MLP:</strong> 36 min 52s<br>
-                      • <strong>CNN:</strong> 44 min 1.5s<br>
-
+                      &bull; <strong>Primary:</strong> Top-1 Accuracy<br>
+                      &bull; <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Macro-F1, Test Loss<br>
+                      &bull; <strong>Class-level:</strong> One-vs-rest accuracy, Precision, Recall, F1, Confusion Matrix<br>
+                      &bull; <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
                     </td>
-                    <td>Wall-clock execution time measured from initialization through early stopping trigger on
-                      identical
-                      hardware under GPU acceleration.</td>
+                    <td>
+                      <strong>Strengths:</strong> Recurrent state captures dependencies across image rows; weights are shared across all 28 steps.<br>
+                      <strong>Limits:</strong> Sequential computation limits parallelism; row ordering does not preserve full 2D locality and reads only top to bottom.
+                    </td>
+                    <td style="text-align: center;"><span class="tag-placeholder">235,146</span></td>
+                    <td>
+                      <strong>Self-implemented:</strong> Row-sequence formulation, final-hidden-state selection, and <code>RowLSTM</code> classifier head.<br>
+                      <strong>Library:</strong> <code>torch.nn.LSTM</code>, dropout, ReLU, and linear layers.
+                    </td>
                   </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>13</strong></td>
-                    <td><strong>Hyperparameter selection method</strong></td>
-                    <td>Matched parameter budget target (~230K–245K params) &amp; manual tuning</td>
-                    <td>Layer dimensions and channel capacities were systematically sized to adhere to a matched
-                      capacity
-                      range (~230K–245K parameters; MLP: 242,762; CNN: 231,626) to enable fair, rigorous comparison
-                      across
-                      architectural families under comparable representation capacity. Optimization hyperparameters
-                      (learning rate, batch size, scheduler) were held strictly uniform across models.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-
-          </section>
-
-          <section id="results">
-            <h2 class="section-title">Results</h2>
-            <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 20px;">
-              The analysis covers training convergence behavior, quantitative metrics (primary/secondary metrics,
-              compute
-              cost, and per-class breakdown), and qualitative prediction diagnostics.
-            </p>
-
-           
-            <div class="results-kpi-grid">
-              <div class="results-kpi-card highlight">
-                <div class="results-kpi-value">92.08%</div>
-                <div class="results-kpi-label">Top-1 Accuracy (CNN Best)</div>
-              </div>
-              <div class="results-kpi-card highlight">
-                <div class="results-kpi-value">0.9203</div>
-                <div class="results-kpi-label">Macro-F1 Score (CNN Best)</div>
-              </div>
-              <div class="results-kpi-card">
-                <div class="results-kpi-value">0.16 ms</div>
-                <div class="results-kpi-label">Avg. Latency / Sample</div>
-              </div>
-              <div class="results-kpi-card">
-                <div class="results-kpi-value">100%</div>
-                <div class="results-kpi-label">Seed Reproducibility</div>
-              </div>
-            </div>
-
-            
-            <h3
-              style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:32px 0 14px; color:var(--ink);">
-              1. Training behavior &amp; learning curves</h3>
-            <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              Training and validation loss and accuracy trajectories over epochs were continuously monitored to diagnose
-              convergence rates, optimization stability, and the onset of overfitting or underfitting:
-            </p>
-
-            <div class="figure-card">
-              <img src="Assignment1/05_results/assets/results_training_curves.png"
-                alt="Training and Validation Loss and Accuracy Curves" loading="lazy">
-              <p class="figure-caption">Figure 1: Training and validation loss curves across epochs
-                for
-                Linear
-                Classifier, MLP, and SimpleCNN on Fashion-MNIST under Adam optimization and ReduceLROnPlateau
-                scheduling.
-              </p>
-            </div>
-
-            <ul class="pipeline-notes-list" style="margin-bottom:28px;">
-              <li><strong>Linear Classifier:</strong> Rapidly converged within ~19–38 epochs before triggering early
-                stopping. The lack of hidden layers severely restricts the hypothesis
-                space
-                to
-                simple linear hyperplanes.</li>
-              <li><strong>Multilayer Perceptron (MLP):</strong> Exhibited smooth convergence with validation loss
-                steadily
-                decreasing. The <code>Dropout(p=0.3)</code> layers effectively curbed the
-                generalization gap,
-                preventing over-memorization of training samples across 242,762 dense parameters. Learning rate decayed
-                upon
-                plateaus to achieve <code>87.20%</code> test accuracy.</li>
-              <li><strong>Convolutional Neural Network (CNN):</strong> Demonstrated superior optimization dynamics and
-                the
-                lowest validation loss. Batch Normalization stabilized internal covariate shifts,
-                allowing
-                steady gradient flow, while spatial <code>Dropout2d</code> and pooling preserved high representation
-                generalization,
-                reaching <code>92.08%</code> accuracy without observable late-stage divergence.</li>
-              <li><strong>Checkpoint Selection:</strong> The exact model weights corresponding to the minimum validation
-                loss
-                (<code>best_val_loss</code>) were successfully preserved and restored for testing 
-            </ul>
-
-            <h3
-              style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 14px; color:var(--ink);">
-              2. Quantitative results &amp; metric comparison</h3>
-            <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              Summary comparison across primary and secondary metrics, parameter counts, inference latency, and training
-              execution
-              times on the 10,000-sample Fashion-MNIST test set (evaluated strictly on saved checkpoints):
-            </p>
-
-            <div class="mandatory-table-wrap">
-              <table class="mandatory-models-table">
-                <thead>
-                  <tr>
-                    <th style="width: 45px; text-align: center;">#</th>
-                    <th style="min-width: 140px;">Model</th>
-                    <th style="min-width: 90px; text-align: center;">Params</th>
-                    <th style="min-width: 110px; text-align: center;">Test Acc</th>
-                    <th style="min-width: 100px; text-align: center;">Macro-Prec</th>
-                    <th style="min-width: 100px; text-align: center;">Macro-Rec</th>
-                    <th style="min-width: 100px; text-align: center;">Macro-F1</th>
-                    <th style="min-width: 90px; text-align: center;">Test Loss</th>
-                    <th style="min-width: 130px; text-align: center;">Latency</th>
-                    <th style="min-width: 120px; text-align: center;">Training Time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align: center;"><strong>1</strong></td>
-                    <td><strong>Linear / Softmax</strong></td>
-                    <td style="text-align: center;"><code>7,850</code></td>
-                    <td style="text-align: center;">74.98%</td>
-                    <td style="text-align: center;">74.49%</td>
-                    <td style="text-align: center;">74.98%</td>
-                    <td style="text-align: center;">74.62%</td>
-                    <td style="text-align: center;">0.7125</td>
-                    <td style="text-align: center;">0.1845 ms</td>
-                    <td style="text-align: center;"><strong>10m 18.9s</strong></td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>2</strong></td>
-                    <td><strong>MLP</strong></td>
-                    <td style="text-align: center;"><code>242,762</code></td>
-                    <td style="text-align: center;">87.20%</td>
-                    <td style="text-align: center;">87.06%</td>
-                    <td style="text-align: center;">87.20%</td>
-                    <td style="text-align: center;">87.08%</td>
-                    <td style="text-align: center;">0.3493</td>
-                    <td style="text-align: center;"><strong>0.1590 ms</strong></td>
-                    <td style="text-align: center;">36m 52s</td>
-                  </tr>
-                  <tr style="background: rgba(42, 68, 148, 0.04);">
-                    <td style="text-align: center;"><strong>3</strong></td>
-                    <td><strong>CNN</strong> <span
-                        style="font-size:13px; color:#2a4494; font-weight:bold; margin-left:4px;">★ Best</span></td>
-                    <td style="text-align: center;"><code>231,626</code></td>
-                    <td style="text-align: center;"><strong>92.08%</strong></td>
-                    <td style="text-align: center;"><strong>92.02%</strong></td>
-                    <td style="text-align: center;"><strong>92.08%</strong></td>
-                    <td style="text-align: center;"><strong>92.03%</strong></td>
-                    <td style="text-align: center;"><strong>0.2185</strong></td>
-                    <td style="text-align: center;">0.1623 ms</td>
-                    <td style="text-align: center;">44m 1.5s</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;"><strong>4</strong></td>
-                    <td><strong>LSTM / GRU</strong></td>
-                    <td style="text-align: center;" colspan="8"><span class="tag-underdev">Under development</span></td>
-                  </tr>
-                  <tr>
+                                    <tr>
                     <td style="text-align: center;"><strong>5</strong></td>
                     <td><strong>Transformer (ViT)</strong></td>
-                    <td style="text-align: center;" colspan="8"><span class="tag-underdev">Under development</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="figure-card">
-              <img src="Assignment1/05_results/assets/results_quantitative_comparison.png"
-                alt="Quantitative Metric Comparison Bar Chart" loading="lazy">
-              <p class="figure-caption">Figure 2: Multi-metric performance comparison across Accuracy, Precision,
-                Recall,
-                Macro-F1,
-                Parameter Count, and Inference Latency.</p>
-            </div>
-
-          
-            <h4
-              style="font-family:var(--font-display); font-size:22px; font-weight:bold; margin:28px 0 12px; color:var(--ink);">
-              Per-class precision, recall, and F1-score breakdown</h4>
-            <p style="color:var(--ink-soft); font-size:18px; margin:0 0 14px;">
-              Performance evaluation across each individual garment and footwear category (1,000 test items per class):
-            </p>
-
-            <div class="mandatory-table-wrap">
-              <table class="mandatory-models-table">
-                <thead>
-                  <tr>
-                    <th style="width: 45px; text-align: center;">ID</th>
-                    <th style="min-width: 130px;">Class Name</th>
-                    <th style="text-align: center;">Linear Precision</th>
-                    <th style="text-align: center;">Linear Recall</th>
-                    <th style="text-align: center;">Linear F1</th>
-                    <th style="text-align: center;">MLP Precision</th>
-                    <th style="text-align: center;">MLP Recall</th>
-                    <th style="text-align: center;">MLP F1</th>
-                    <th style="text-align: center;">CNN Precision</th>
-                    <th style="text-align: center;">CNN Recall</th>
-                    <th style="text-align: center;">CNN F1</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="text-align: center;">0</td>
-                    <td><strong>T-shirt/top</strong></td>
-                    <td style="text-align: center;">0.7221</td>
-                    <td style="text-align: center;">0.7640</td>
-                    <td style="text-align: center;">0.7425</td>
-                    <td style="text-align: center;">0.7917</td>
-                    <td style="text-align: center;">0.8250</td>
-                    <td style="text-align: center;">0.8080</td>
-                    <td style="text-align: center;">0.8636</td>
-                    <td style="text-align: center;">0.8740</td>
-                    <td style="text-align: center;">0.8688</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">1</td>
-                    <td><strong>Trouser</strong></td>
-                    <td style="text-align: center;">0.8918</td>
-                    <td style="text-align: center;">0.9070</td>
-                    <td style="text-align: center;">0.8994</td>
-                    <td style="text-align: center;">0.9878</td>
-                    <td style="text-align: center;">0.9730</td>
-                    <td style="text-align: center;">0.9804</td>
-                    <td style="text-align: center;">0.9920</td>
-                    <td style="text-align: center;">0.9880</td>
-                    <td style="text-align: center;">0.9900</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">2</td>
-                    <td><strong>Pullover</strong></td>
-                    <td style="text-align: center;">0.6351</td>
-                    <td style="text-align: center;">0.5640</td>
-                    <td style="text-align: center;">0.5975</td>
-                    <td style="text-align: center;">0.7847</td>
-                    <td style="text-align: center;">0.7980</td>
-                    <td style="text-align: center;">0.7913</td>
-                    <td style="text-align: center;">0.8919</td>
-                    <td style="text-align: center;">0.8990</td>
-                    <td style="text-align: center;">0.8954</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">3</td>
-                    <td><strong>Dress</strong></td>
-                    <td style="text-align: center;">0.7288</td>
-                    <td style="text-align: center;">0.8170</td>
-                    <td style="text-align: center;">0.7704</td>
-                    <td style="text-align: center;">0.8581</td>
-                    <td style="text-align: center;">0.9010</td>
-                    <td style="text-align: center;">0.8790</td>
-                    <td style="text-align: center;">0.9209</td>
-                    <td style="text-align: center;">0.9310</td>
-                    <td style="text-align: center;">0.9259</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">4</td>
-                    <td><strong>Coat</strong></td>
-                    <td style="text-align: center;">0.6509</td>
-                    <td style="text-align: center;">0.6880</td>
-                    <td style="text-align: center;">0.6689</td>
-                    <td style="text-align: center;">0.7797</td>
-                    <td style="text-align: center;">0.8070</td>
-                    <td style="text-align: center;">0.7931</td>
-                    <td style="text-align: center;">0.8609</td>
-                    <td style="text-align: center;">0.8910</td>
-                    <td style="text-align: center;">0.8757</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">5</td>
-                    <td><strong>Sandal</strong></td>
-                    <td style="text-align: center;">0.8175</td>
-                    <td style="text-align: center;">0.8150</td>
-                    <td style="text-align: center;">0.8162</td>
-                    <td style="text-align: center;">0.9682</td>
-                    <td style="text-align: center;">0.9430</td>
-                    <td style="text-align: center;">0.9554</td>
-                    <td style="text-align: center;">0.9899</td>
-                    <td style="text-align: center;">0.9780</td>
-                    <td style="text-align: center;">0.9839</td>
-                  </tr>
-                  <tr style="background: rgba(220, 53, 69, 0.04);">
-                    <td style="text-align: center;">6</td>
-                    <td><strong>Shirt</strong> <span
-                        style="font-size:12px; color:#c53030; font-weight:bold;">(Hardest)</span>
+                    <td>
+                      Splits each image into 49 non-overlapping <code>4&times;4</code> patches, projects each 16-value patch to a 64-dimensional token, and prepends a learned <code>[CLS]</code> token with learned positional embeddings (50 tokens total). Six pre-norm encoder layers use 4-head self-attention and a <code>64&rarr;160&rarr;64</code> GELU feed-forward network with dropout (0.1); the <code>[CLS]</code> output is normalized and mapped to 10 logits.
                     </td>
-                    <td style="text-align: center;">0.4405</td>
-                    <td style="text-align: center;">0.3700</td>
-                    <td style="text-align: center;">0.4022</td>
-                    <td style="text-align: center;">0.6950</td>
-                    <td style="text-align: center;">0.5970</td>
-                    <td style="text-align: center;">0.6423</td>
-                    <td style="text-align: center;">0.7774</td>
-                    <td style="text-align: center;">0.7230</td>
-                    <td style="text-align: center; color:#b91c1c; font-weight:bold;">0.7492</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">7</td>
-                    <td><strong>Sneaker</strong></td>
-                    <td style="text-align: center;">0.8231</td>
-                    <td style="text-align: center;">0.8420</td>
-                    <td style="text-align: center;">0.8324</td>
-                    <td style="text-align: center;">0.9254</td>
-                    <td style="text-align: center;">0.9550</td>
-                    <td style="text-align: center;">0.9400</td>
-                    <td style="text-align: center;">0.9432</td>
-                    <td style="text-align: center;">0.9790</td>
-                    <td style="text-align: center;">0.9607</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">8</td>
-                    <td><strong>Bag</strong></td>
-                    <td style="text-align: center;">0.9156</td>
-                    <td style="text-align: center;">0.8460</td>
-                    <td style="text-align: center;">0.8794</td>
-                    <td style="text-align: center;">0.9641</td>
-                    <td style="text-align: center;">0.9660</td>
-                    <td style="text-align: center;">0.9650</td>
-                    <td style="text-align: center;">0.9860</td>
-                    <td style="text-align: center;">0.9890</td>
-                    <td style="text-align: center;">0.9875</td>
-                  </tr>
-                  <tr>
-                    <td style="text-align: center;">9</td>
-                    <td><strong>Ankle boot</strong></td>
-                    <td style="text-align: center;">0.8233</td>
-                    <td style="text-align: center;">0.8850</td>
-                    <td style="text-align: center;">0.8530</td>
-                    <td style="text-align: center;">0.9512</td>
-                    <td style="text-align: center;">0.9550</td>
-                    <td style="text-align: center;">0.9531</td>
-                    <td style="text-align: center;">0.9765</td>
-                    <td style="text-align: center;">0.9560</td>
-                    <td style="text-align: center;">0.9661</td>
+                    <td>Patch tokens from <code>(B, 1, 28, 28)</code>: <code>(B, 49, 16)</code>, then 50 tokens of width 64 after projection, <code>[CLS]</code>, and positional embeddings.</td>
+                    <td><code>nn.CrossEntropyLoss</code></td>
+                    <td>
+                      &bull; <strong>Primary:</strong> Top-1 Accuracy<br>
+                      &bull; <strong>Secondary:</strong> Macro-Precision, Macro-Recall, Macro-F1, Test Loss<br>
+                      &bull; <strong>Class-level:</strong> One-vs-rest accuracy, Precision, Recall, F1, Confusion Matrix<br>
+                      &bull; <strong>Efficiency:</strong> Training time (sec), Inference latency (ms/sample)
+                    </td>
+                    <td>
+                      <strong>Strengths:</strong> Self-attention relates distant patches, and all tokens can be processed in parallel.<br>
+                      <strong>Limits:</strong> Coarse patches compress pixel detail; locality is learned rather than built in, and attention cost grows quadratically with token count.
+                    </td>
+                    <td style="text-align: center;"><span class="tag-placeholder">230,730</span></td>
+                    <td>
+                      <strong>Self-implemented:</strong> Patch extraction/projection, <code>[CLS]</code> and positional embeddings, and <code>PatchTransformer</code> classifier head; no pretrained backbone.<br>
+                      <strong>Library:</strong> <code>torch.nn.TransformerEncoderLayer</code>, <code>TransformerEncoder</code>, <code>LayerNorm</code>, <code>Linear</code>, dropout, and GELU.
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-
-            <h3
-              style="font-family:var(--font-display); font-size:26px; font-weight:bold; margin:36px 0 14px; color:var(--ink);">
-              3. Qualitative results &amp; prediction diagnostics</h3>
-            <p style="color:var(--ink-soft); font-size:18.5px; margin:0 0 16px;">
-              To investigate model behaviors beyond aggregated scalar numbers, we examined full confusion matrices and
-              individual test instance predictions:
-            </p>
-
-            <div class="figure-card">
-              <img src="Assignment1/05_results/assets/results_confusion_matrices.png"
-                alt="Confusion Matrices for Linear, MLP, and CNN" loading="lazy">
-              <p class="figure-caption">Figure 3: test set confusion matrices across the 10 Fashion-MNIST
-                categories.</p>
-            </div>
-
-            <div class="figure-card">
-              <img src="Assignment1/05_results/assets/results_qualitative_correct.png"
-                alt="Correctly Classified Test Samples" loading="lazy">
-              <p class="figure-caption">Figure 4: Correctly classified test samples (Ground Truth vs. Predicted label).</p>
-            </div>
-
-            <div class="figure-card">
-              <img src="Assignment1/05_results/assets/results_qualitative_incorrect.png"
-                alt="Misclassified Test Samples" loading="lazy">
-              <p class="figure-caption">Figure 5: Failure analysis: challenging misclassified test samples.
-                
-              </p>
-            </div>
           </section>
 
-          <section>
-            <h2 class="section-title">Comparison and discussion</h2>
-            <div class="stub-note"></div>
-          </section>
+<section id="experimental-setup"><h2 class="section-title">Experimental setup</h2><p>All five models share the same data partitions, preprocessing, optimizer, evaluation protocol and checkpoint-selection rule. Model-specific architecture and regularization settings are listed above.</p>
+<div class="mandatory-table-wrap"><table class="mandatory-models-table report-setup-table">
+<thead><tr><th scope="col">Setup / Hyperparameter</th><th scope="col">Value / Policy</th><th scope="col">Protocol</th></tr></thead>
+<tbody>
+<tr><th scope="row">Optimizer and loss</th><td><code>Adam</code>; <code>CrossEntropyLoss</code></td><td>Learning rate 0.001; Adam beta values 0.9 and 0.999; no weight decay. Models return ten raw logits.</td></tr>
+<tr><th scope="row">Learning-rate schedule</th><td>Initial <code>1e-3</code>; minimum <code>1e-6</code></td><td><code>ReduceLROnPlateau(mode="min", factor=0.5, patience=3, threshold=1e-4, threshold_mode="abs")</code>, stepped on validation loss.</td></tr>
+<tr><th scope="row">Batch sizes</th><td>128 training; 256 validation and test</td><td>Shuffle training samples; evaluate validation and test without shuffling. Incomplete final batches are retained.</td></tr>
+<tr><th scope="row">Training budget</th><td>Maximum 200 epochs per run</td><td>Early stopping determines the executed epochs. The mean and sample SD for each model are reported in the results.</td></tr>
+<tr><th scope="row">Training augmentation</th><td>Rotation &plusmn;10&deg;; flip probability 0.5; crop 28&times;28 with padding 2</td><td>Apply augmentation before tensor conversion and normalization; validation and test use only deterministic conversion and normalization.</td></tr>
+<tr><th scope="row">Regularization</th><td>Model-specific dropout and normalization</td><td>Linear: none. MLP: dropout 0.3. CNN: BatchNorm2d, Dropout2d 0.25/0.25/0.3 and head dropout 0.3. LSTM: inter-layer and head dropout 0.3. Transformer: pre-LayerNorm and dropout 0.1.</td></tr>
+<tr><th scope="row">Early stopping</th><td>Patience 8 epochs</td><td>Stop after eight consecutive epochs without improving validation cross-entropy loss.</td></tr>
+<tr><th scope="row">Checkpoint selection</th><td>Minimum validation loss</td><td>Select each run independently and restore its best weights before evaluation on the official 10,000-image test set.</td></tr>
+<tr><th scope="row">Seeds and fixed split</th><td>Training seeds 42, 43 and 44; split seed 42</td><td>All runs share the same 48,000/12,000/10,000 train/validation/test partitions. Seed Python, NumPy, PyTorch, CUDA and the DataLoader generator. Deterministic cuDNN mode was not enforced.</td></tr>
+<tr><th scope="row">Hardware and software</th><td>NVIDIA Tesla T4 GPU; Google Colab</td><td>Linux; Python 3.13.15; PyTorch 2.11.0+cu130; Torchvision 0.26.0+cu130.</td></tr>
+<tr><th scope="row">Numerical precision</th><td>FP32</td><td>Full single precision; no mixed precision.</td></tr>
+<tr><th scope="row">Timing protocol</th><td>Complete training and inference pipelines</td><td>Training includes loading, augmentation, device transfer, forward/backward passes, optimizer updates, metrics, validation, scheduling, logging and in-memory best-state copies; excludes dataset preparation and checkpoint-file writing. Inference includes loading, preprocessing, transfer and forward passes with batch size 256.</td></tr>
+<tr><th scope="row">Capacity and tuning</th><td>Approximately 231K&ndash;243K parameters for nonlinear models</td><td>MLP 242,762; CNN 231,626; LSTM 235,146; Transformer 230,730. Linear is a smaller baseline with 7,850 parameters. Capacities and hyperparameters were tuned manually on the validation split.</td></tr>
+</tbody></table></div>
+</section>
+<section id="results"><h2 class="section-title">Results</h2>
+<p>The five architectures are evaluated on the same 10,000 Fashion-MNIST test images. Overall and per-class metrics are mean &plusmn; sample standard deviation across training seeds 42, 43 and 44, using a fixed data split with seed 42. Each run restores the checkpoint with minimum validation loss.</p>
+<nav class="report-nav" aria-label="Results sections"><a href="#learning-curves">Learning curves</a><a href="#quantitative-results">Metric comparison</a><a href="#per-class-results">Per-class results and matrices</a><a href="#prediction-examples">Prediction examples</a></nav>
+<div class="results-kpi-grid"><div class="results-kpi-card"><div class="results-kpi-value">91.54%</div><div class="results-kpi-label">CNN mean test accuracy</div></div><div class="results-kpi-card"><div class="results-kpi-value">91.51%</div><div class="results-kpi-label">CNN mean Macro-F1</div></div><div class="results-kpi-card"><div class="results-kpi-value">0.2301</div><div class="results-kpi-label">CNN mean test CE loss</div></div><div class="results-kpi-card"><div class="results-kpi-value">3</div><div class="results-kpi-label">Training seeds: 42, 43, 44</div></div></div>
+<h3 id="learning-curves">1. Training behavior &amp; learning curves</h3>
+<p>All five models improve rapidly at first and then make smaller gains. Training metrics accumulate over changing weights and augmented batches; validation uses the epoch-end weights and unaugmented images. Dropout and batch normalization also behave differently during evaluation. A training&ndash;validation gap or a plateau alone does not establish overfitting or underfitting.</p>
+<details class="report-model" id="curves-linear" open><summary>Linear / Softmax <span>Loss and accuracy across three training seeds</span></summary><div class="report-model-content"><p>The compact linear baseline reaches a plateau below the nonlinear models, consistent with its limited ability to represent nonlinear image features.</p><div class="report-figure-grid"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_loss_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear training and validation cross-entropy loss across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/linear_loss_seeds.png" alt="Linear training and validation cross-entropy loss across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R1a. Linear / Softmax training and validation loss across three seeds.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_acc_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear training and validation accuracy across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/linear_acc_seeds.png" alt="Linear training and validation accuracy across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R1b. Linear / Softmax training and validation accuracy across three seeds.</figcaption></figure>
+</div><p class="report-note">The figure markers select minimum-validation-loss checkpoints at epochs 23, 15 and 25 for seeds 42, 43 and 44, respectively. The executed-epoch counts in the training-duration table below include the additional epochs before early stopping.</p></div></details>
+<details class="report-model" id="curves-mlp" open><summary>MLP <span>Loss and accuracy across three training seeds</span></summary><div class="report-model-content"><p>The dense network learns nonlinear pixel interactions. Validation curves remain above training accuracy under the different augmentation and dropout conditions.</p><div class="report-figure-grid"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_loss_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP training and validation cross-entropy loss across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/mlp_loss_seeds.png" alt="MLP training and validation cross-entropy loss across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R2a. MLP training and validation loss across three seeds.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_acc_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP training and validation accuracy across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/mlp_acc_seeds.png" alt="MLP training and validation accuracy across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R2b. MLP training and validation accuracy across three seeds.</figcaption></figure>
+</div><p class="report-note">The figure markers select minimum-validation-loss checkpoints at epochs 102, 108 and 118 for seeds 42, 43 and 44, respectively. The executed-epoch counts in the training-duration table below include the additional epochs before early stopping.</p></div></details>
+<details class="report-model" id="curves-cnn" open><summary>CNN <span>Loss and accuracy across three training seeds</span></summary><div class="report-model-content"><p>Spatial feature extraction produces the strongest overall test metrics. The three runs have closely matched learning trajectories.</p><div class="report-figure-grid"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_loss_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN training and validation cross-entropy loss across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/cnn_loss_seeds.png" alt="CNN training and validation cross-entropy loss across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R3a. CNN training and validation loss across three seeds.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_acc_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN training and validation accuracy across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/cnn_acc_seeds.png" alt="CNN training and validation accuracy across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R3b. CNN training and validation accuracy across three seeds.</figcaption></figure>
+</div><p class="report-note">The figure markers select minimum-validation-loss checkpoints at epochs 120, 108 and 118 for seeds 42, 43 and 44, respectively. The executed-epoch counts in the training-duration table below include the additional epochs before early stopping.</p></div></details>
+<details class="report-model" id="curves-lstm" open><summary>LSTM (RowLSTM) <span>Loss and accuracy across three training seeds</span></summary><div class="report-model-content"><p>The recurrent model processes image rows sequentially and reaches competitive predictive performance with fewer executed epochs than the CNN.</p><div class="report-figure-grid"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_loss_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM training and validation cross-entropy loss across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/lstm_loss_seeds.png" alt="LSTM training and validation cross-entropy loss across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2129" height="1406"></a><figcaption class="figure-caption">Figure R4a. LSTM (RowLSTM) training and validation loss across three seeds.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_acc_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM training and validation accuracy across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/lstm_acc_seeds.png" alt="LSTM training and validation accuracy across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2129" height="1406"></a><figcaption class="figure-caption">Figure R4b. LSTM (RowLSTM) training and validation accuracy across three seeds.</figcaption></figure>
+</div><p class="report-note">The figure markers select minimum-validation-loss checkpoints at epochs 57, 59 and 57 for seeds 42, 43 and 44, respectively. The executed-epoch counts in the training-duration table below include the additional epochs before early stopping.</p></div></details>
+<details class="report-model" id="curves-transformer" open><summary>Transformer (ViT) <span>Loss and accuracy across three training seeds</span></summary><div class="report-model-content"><p>Patch self-attention learns global relationships. Validation fluctuates more during early training, and the model has the highest measured time per epoch.</p><div class="report-figure-grid"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_loss_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer training and validation cross-entropy loss across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/transformer_loss_seeds.png" alt="Transformer training and validation cross-entropy loss across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R5a. Transformer (ViT) training and validation loss across three seeds.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_acc_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer training and validation accuracy across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/transformer_acc_seeds.png" alt="Transformer training and validation accuracy across seeds 42, 43 and 44" loading="lazy" decoding="async" width="2130" height="1406"></a><figcaption class="figure-caption">Figure R5b. Transformer (ViT) training and validation accuracy across three seeds.</figcaption></figure>
+</div><p class="report-note">The figure markers select minimum-validation-loss checkpoints at epochs 90, 81 and 92 for seeds 42, 43 and 44, respectively. The executed-epoch counts in the training-duration table below include the additional epochs before early stopping.</p></div></details>
+<h3 id="quantitative-results">2. Quantitative results &amp; metric comparison</h3><p>Comparison of the saved best checkpoints. Percentages and runtime measurements are reported as mean &plusmn; sample SD across the three training seeds; parameter counts are fixed.</p>
+<div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Model</th><th scope="col">Params</th><th scope="col">Test Acc (%)</th><th scope="col">Macro-Prec (%)</th><th scope="col">Macro-Rec (%)</th><th scope="col">Macro-F1 (%)</th><th scope="col">Test CE loss</th><th scope="col">Inference (ms/sample)</th><th scope="col">Train time / run (s)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Linear / Softmax</th><td>7,850</td><td>74.77 &plusmn; 0.35</td><td>74.49 &plusmn; 0.14</td><td>74.77 &plusmn; 0.35</td><td>74.48 &plusmn; 0.12</td><td>0.7141 &plusmn; 0.0028</td><td>0.1681 &plusmn; 0.0062</td><td>526.7 &plusmn; 107.6</td></tr>
+<tr><th scope="row">MLP</th><td>242,762</td><td>87.30 &plusmn; 0.11</td><td>87.15 &plusmn; 0.10</td><td>87.30 &plusmn; 0.11</td><td>87.18 &plusmn; 0.10</td><td>0.3486 &plusmn; 0.0047</td><td>0.1688 &plusmn; 0.0125</td><td>2,141.9 &plusmn; 181.8</td></tr>
+<tr><th scope="row">CNN</th><td>231,626</td><td>91.54 &plusmn; 0.20</td><td>91.52 &plusmn; 0.19</td><td>91.54 &plusmn; 0.20</td><td>91.51 &plusmn; 0.19</td><td>0.2301 &plusmn; 0.0030</td><td>0.1727 &plusmn; 0.0010</td><td>2,380.5 &plusmn; 213.7</td></tr>
+<tr><th scope="row">LSTM (RowLSTM)</th><td>235,146</td><td>90.85 &plusmn; 0.10</td><td>90.79 &plusmn; 0.08</td><td>90.85 &plusmn; 0.10</td><td>90.80 &plusmn; 0.09</td><td>0.2654 &plusmn; 0.0032</td><td>0.1804 &plusmn; 0.0047</td><td>1,270.6 &plusmn; 26.6</td></tr>
+<tr><th scope="row">Transformer (ViT)</th><td>230,730</td><td>90.43 &plusmn; 0.22</td><td>90.43 &plusmn; 0.18</td><td>90.43 &plusmn; 0.22</td><td>90.37 &plusmn; 0.25</td><td>0.2643 &plusmn; 0.0094</td><td>0.1738 &plusmn; 0.0052</td><td>2,183.0 &plusmn; 123.0</td></tr>
+</tbody></table></div>
+<div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<caption>Training duration: mean &plusmn; sample SD across seeds 42, 43 and 44.</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">Executed epochs</th><th scope="col">Train time / epoch (s)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Linear / Softmax</th><td>29.00 &plusmn; 5.29</td><td>18.11 &plusmn; 0.51</td></tr>
+<tr><th scope="row">MLP</th><td>117.33 &plusmn; 8.08</td><td>18.25 &plusmn; 0.80</td></tr>
+<tr><th scope="row">CNN</th><td>123.33 &plusmn; 6.43</td><td>19.28 &plusmn; 0.77</td></tr>
+<tr><th scope="row">LSTM (RowLSTM)</th><td>65.67 &plusmn; 1.15</td><td>19.36 &plusmn; 0.74</td></tr>
+<tr><th scope="row">Transformer (ViT)</th><td>95.67 &plusmn; 5.86</td><td>22.83 &plusmn; 0.33</td></tr>
+</tbody></table></div>
+<p class="report-note">Macro-recall equals top-1 accuracy because the test set contains exactly 1,000 images per class. Runtime includes shared pipeline operations; inference time per sample is measured with batches of 256 and does not represent the latency of processing a single image independently.</p>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/results_quantitative_comparison.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Five-model comparison of mean accuracy, macro precision, macro recall, macro F1, parameter counts and inference time; error bars show sample standard deviation"><img src="Assignment1/05_results/assets/results_quantitative_comparison.png" alt="Five-model comparison of mean accuracy, macro precision, macro recall, macro F1, parameter counts and inference time; error bars show sample standard deviation" loading="lazy" decoding="async" width="3060" height="864"></a><figcaption class="figure-caption">Figure R6. Comparison replotted from Table 10 of the report. Error bars show sample SD across seeds 42, 43 and 44; parameter counts are fixed.</figcaption></figure>
+<h3 id="per-class-results">3. Per-class results &amp; confusion matrices</h3><p>Each class has 1,000 test examples per run. All percentages are mean &plusmn; sample SD across the three training seeds. Per-class accuracy is one-vs-rest accuracy: 9,000 negative examples contribute to each class, so a model that never predicts a class would still obtain 90% one-vs-rest accuracy for it. Recall and F1 provide a clearer account of class-specific difficulty.</p>
+<details class="report-model" id="metrics-linear" open><summary>Linear / Softmax <span>Ten-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
+<tbody>
+<tr><th scope="row">T-shirt/top</th><td>94.81 &plusmn; 0.12</td><td>73.05 &plusmn; 1.15</td><td>76.20 &plusmn; 0.72</td><td>74.59 &plusmn; 0.32</td></tr>
+<tr><th scope="row">Trouser</th><td>97.98 &plusmn; 0.02</td><td>90.06 &plusmn; 1.25</td><td>89.73 &plusmn; 1.34</td><td>89.88 &plusmn; 0.06</td></tr>
+<tr><th scope="row">Pullover</th><td>92.33 &plusmn; 0.29</td><td>62.59 &plusmn; 1.43</td><td>57.83 &plusmn; 2.84</td><td>60.10 &plusmn; 1.94</td></tr>
+<tr><th scope="row">Dress</th><td>95.12 &plusmn; 0.07</td><td>73.30 &plusmn; 0.61</td><td>80.60 &plusmn; 0.95</td><td>76.77 &plusmn; 0.34</td></tr>
+<tr><th scope="row">Coat</th><td>93.18 &plusmn; 0.19</td><td>65.46 &plusmn; 3.00</td><td>68.30 &plusmn; 5.97</td><td>66.65 &plusmn; 1.35</td></tr>
+<tr><th scope="row">Sandal</th><td>96.29 &plusmn; 0.11</td><td>82.57 &plusmn; 0.88</td><td>79.77 &plusmn; 2.50</td><td>81.12 &plusmn; 0.92</td></tr>
+<tr><th scope="row">Shirt</th><td>88.71 &plusmn; 0.52</td><td>42.83 &plusmn; 1.41</td><td>37.43 &plusmn; 7.16</td><td>39.64 &plusmn; 3.65</td></tr>
+<tr><th scope="row">Sneaker</th><td>96.64 &plusmn; 0.12</td><td>81.33 &plusmn; 1.32</td><td>86.27 &plusmn; 1.80</td><td>83.71 &plusmn; 0.61</td></tr>
+<tr><th scope="row">Bag</th><td>97.59 &plusmn; 0.09</td><td>91.55 &plusmn; 0.88</td><td>83.63 &plusmn; 1.59</td><td>87.40 &plusmn; 0.58</td></tr>
+<tr><th scope="row">Ankle boot</th><td>96.89 &plusmn; 0.12</td><td>82.19 &plusmn; 0.56</td><td>87.97 &plusmn; 0.68</td><td>84.98 &plusmn; 0.59</td></tr>
+</tbody></table></div>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_confusion_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/linear_confusion_seeds.png" alt="Linear test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44" loading="lazy" decoding="async" width="3386" height="3012"></a><figcaption class="figure-caption">Figure R7. Linear / Softmax confusion matrix. Rows are true classes and columns are predicted classes; cells report mean counts &plusmn; sample SD across seeds 42, 43 and 44.</figcaption></figure>
+</div></details>
+<details class="report-model" id="metrics-mlp" open><summary>MLP <span>Ten-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
+<tbody>
+<tr><th scope="row">T-shirt/top</th><td>96.15 &plusmn; 0.06</td><td>79.18 &plusmn; 0.07</td><td>83.40 &plusmn; 0.79</td><td>81.23 &plusmn; 0.39</td></tr>
+<tr><th scope="row">Trouser</th><td>99.59 &plusmn; 0.02</td><td>98.58 &plusmn; 0.17</td><td>97.33 &plusmn; 0.06</td><td>97.95 &plusmn; 0.08</td></tr>
+<tr><th scope="row">Pullover</th><td>95.86 &plusmn; 0.07</td><td>78.96 &plusmn; 0.44</td><td>79.93 &plusmn; 0.15</td><td>79.44 &plusmn; 0.29</td></tr>
+<tr><th scope="row">Dress</th><td>97.59 &plusmn; 0.09</td><td>86.44 &plusmn; 0.68</td><td>90.07 &plusmn; 0.25</td><td>88.21 &plusmn; 0.43</td></tr>
+<tr><th scope="row">Coat</th><td>95.85 &plusmn; 0.09</td><td>78.58 &plusmn; 0.62</td><td>80.47 &plusmn; 0.49</td><td>79.51 &plusmn; 0.42</td></tr>
+<tr><th scope="row">Sandal</th><td>99.09 &plusmn; 0.03</td><td>96.42 &plusmn; 0.34</td><td>94.37 &plusmn; 0.12</td><td>95.38 &plusmn; 0.15</td></tr>
+<tr><th scope="row">Shirt</th><td>93.40 &plusmn; 0.06</td><td>69.65 &plusmn; 0.28</td><td>60.20 &plusmn; 0.46</td><td>64.58 &plusmn; 0.36</td></tr>
+<tr><th scope="row">Sneaker</th><td>98.74 &plusmn; 0.05</td><td>92.42 &plusmn; 0.14</td><td>95.17 &plusmn; 0.49</td><td>93.78 &plusmn; 0.24</td></tr>
+<tr><th scope="row">Bag</th><td>99.30 &plusmn; 0.01</td><td>96.26 &plusmn; 0.27</td><td>96.80 &plusmn; 0.26</td><td>96.53 &plusmn; 0.03</td></tr>
+<tr><th scope="row">Ankle boot</th><td>99.03 &plusmn; 0.06</td><td>95.02 &plusmn; 0.62</td><td>95.27 &plusmn; 0.25</td><td>95.14 &plusmn; 0.27</td></tr>
+</tbody></table></div>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_confusion_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/mlp_confusion_seeds.png" alt="MLP test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44" loading="lazy" decoding="async" width="3386" height="3012"></a><figcaption class="figure-caption">Figure R8. MLP confusion matrix. Rows are true classes and columns are predicted classes; cells report mean counts &plusmn; sample SD across seeds 42, 43 and 44.</figcaption></figure>
+</div></details>
+<details class="report-model" id="metrics-cnn" open><summary>CNN <span>Ten-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
+<tbody>
+<tr><th scope="row">T-shirt/top</th><td>97.25 &plusmn; 0.11</td><td>85.98 &plusmn; 0.66</td><td>86.63 &plusmn; 0.55</td><td>86.30 &plusmn; 0.53</td></tr>
+<tr><th scope="row">Trouser</th><td>99.79 &plusmn; 0.02</td><td>99.29 &plusmn; 0.00</td><td>98.57 &plusmn; 0.21</td><td>98.93 &plusmn; 0.11</td></tr>
+<tr><th scope="row">Pullover</th><td>97.79 &plusmn; 0.08</td><td>89.07 &plusmn; 0.42</td><td>88.80 &plusmn; 0.52</td><td>88.93 &plusmn; 0.38</td></tr>
+<tr><th scope="row">Dress</th><td>98.28 &plusmn; 0.09</td><td>91.27 &plusmn; 0.63</td><td>91.57 &plusmn; 0.85</td><td>91.41 &plusmn; 0.45</td></tr>
+<tr><th scope="row">Coat</th><td>97.32 &plusmn; 0.07</td><td>84.81 &plusmn; 0.64</td><td>89.13 &plusmn; 0.42</td><td>86.92 &plusmn; 0.27</td></tr>
+<tr><th scope="row">Sandal</th><td>99.58 &plusmn; 0.03</td><td>98.84 &plusmn; 0.15</td><td>96.93 &plusmn; 0.35</td><td>97.88 &plusmn; 0.18</td></tr>
+<tr><th scope="row">Shirt</th><td>94.86 &plusmn; 0.16</td><td>75.71 &plusmn; 1.20</td><td>71.53 &plusmn; 1.21</td><td>73.56 &plusmn; 0.78</td></tr>
+<tr><th scope="row">Sneaker</th><td>99.15 &plusmn; 0.06</td><td>93.92 &plusmn; 0.32</td><td>97.87 &plusmn; 0.31</td><td>95.85 &plusmn; 0.27</td></tr>
+<tr><th scope="row">Bag</th><td>99.72 &plusmn; 0.02</td><td>98.70 &plusmn; 0.10</td><td>98.53 &plusmn; 0.12</td><td>98.62 &plusmn; 0.08</td></tr>
+<tr><th scope="row">Ankle boot</th><td>99.35 &plusmn; 0.04</td><td>97.59 &plusmn; 0.30</td><td>95.87 &plusmn; 0.31</td><td>96.72 &plusmn; 0.20</td></tr>
+</tbody></table></div>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_confusion_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/cnn_confusion_seeds.png" alt="CNN test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44" loading="lazy" decoding="async" width="3386" height="3012"></a><figcaption class="figure-caption">Figure R9. CNN confusion matrix. Rows are true classes and columns are predicted classes; cells report mean counts &plusmn; sample SD across seeds 42, 43 and 44.</figcaption></figure>
+</div></details>
+<details class="report-model" id="metrics-lstm" open><summary>LSTM (RowLSTM) <span>Ten-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
+<tbody>
+<tr><th scope="row">T-shirt/top</th><td>96.98 &plusmn; 0.05</td><td>83.98 &plusmn; 0.44</td><td>86.30 &plusmn; 0.46</td><td>85.12 &plusmn; 0.22</td></tr>
+<tr><th scope="row">Trouser</th><td>99.78 &plusmn; 0.02</td><td>99.16 &plusmn; 0.06</td><td>98.60 &plusmn; 0.17</td><td>98.88 &plusmn; 0.11</td></tr>
+<tr><th scope="row">Pullover</th><td>97.12 &plusmn; 0.07</td><td>86.34 &plusmn; 0.92</td><td>84.60 &plusmn; 1.23</td><td>85.45 &plusmn; 0.38</td></tr>
+<tr><th scope="row">Dress</th><td>98.25 &plusmn; 0.01</td><td>90.05 &plusmn; 0.82</td><td>92.80 &plusmn; 1.14</td><td>91.40 &plusmn; 0.13</td></tr>
+<tr><th scope="row">Coat</th><td>97.02 &plusmn; 0.09</td><td>84.25 &plusmn; 1.34</td><td>86.43 &plusmn; 1.97</td><td>85.31 &plusmn; 0.54</td></tr>
+<tr><th scope="row">Sandal</th><td>99.52 &plusmn; 0.05</td><td>97.89 &plusmn; 0.19</td><td>97.27 &plusmn; 0.57</td><td>97.58 &plusmn; 0.23</td></tr>
+<tr><th scope="row">Shirt</th><td>94.88 &plusmn; 0.03</td><td>76.25 &plusmn; 0.61</td><td>70.90 &plusmn; 1.23</td><td>73.47 &plusmn; 0.40</td></tr>
+<tr><th scope="row">Sneaker</th><td>99.16 &plusmn; 0.04</td><td>94.41 &plusmn; 0.20</td><td>97.33 &plusmn; 0.21</td><td>95.85 &plusmn; 0.20</td></tr>
+<tr><th scope="row">Bag</th><td>99.64 &plusmn; 0.05</td><td>97.91 &plusmn; 0.44</td><td>98.47 &plusmn; 0.23</td><td>98.19 &plusmn; 0.23</td></tr>
+<tr><th scope="row">Ankle boot</th><td>99.35 &plusmn; 0.02</td><td>97.69 &plusmn; 0.41</td><td>95.80 &plusmn; 0.26</td><td>96.74 &plusmn; 0.10</td></tr>
+</tbody></table></div>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_confusion_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/lstm_confusion_seeds.png" alt="LSTM test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44" loading="lazy" decoding="async" width="3386" height="3012"></a><figcaption class="figure-caption">Figure R10. LSTM (RowLSTM) confusion matrix. Rows are true classes and columns are predicted classes; cells report mean counts &plusmn; sample SD across seeds 42, 43 and 44.</figcaption></figure>
+</div></details>
+<details class="report-model" id="metrics-transformer" open><summary>Transformer (ViT) <span>Ten-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
+<thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
+<tbody>
+<tr><th scope="row">T-shirt/top</th><td>97.04 &plusmn; 0.08</td><td>84.19 &plusmn; 0.87</td><td>86.73 &plusmn; 1.05</td><td>85.44 &plusmn; 0.37</td></tr>
+<tr><th scope="row">Trouser</th><td>99.70 &plusmn; 0.04</td><td>98.60 &plusmn; 0.39</td><td>98.37 &plusmn; 0.06</td><td>98.48 &plusmn; 0.17</td></tr>
+<tr><th scope="row">Pullover</th><td>97.03 &plusmn; 0.29</td><td>82.32 &plusmn; 2.41</td><td>89.57 &plusmn; 0.55</td><td>85.78 &plusmn; 1.17</td></tr>
+<tr><th scope="row">Dress</th><td>98.09 &plusmn; 0.11</td><td>89.71 &plusmn; 1.26</td><td>91.37 &plusmn; 0.35</td><td>90.52 &plusmn; 0.48</td></tr>
+<tr><th scope="row">Coat</th><td>96.87 &plusmn; 0.12</td><td>84.67 &plusmn; 0.51</td><td>83.93 &plusmn; 0.75</td><td>84.30 &plusmn; 0.63</td></tr>
+<tr><th scope="row">Sandal</th><td>99.40 &plusmn; 0.06</td><td>98.93 &plusmn; 0.42</td><td>95.07 &plusmn; 1.01</td><td>96.96 &plusmn; 0.35</td></tr>
+<tr><th scope="row">Shirt</th><td>95.02 &plusmn; 0.04</td><td>78.64 &plusmn; 2.08</td><td>69.10 &plusmn; 2.52</td><td>73.51 &plusmn; 0.56</td></tr>
+<tr><th scope="row">Sneaker</th><td>98.94 &plusmn; 0.10</td><td>92.55 &plusmn; 0.94</td><td>97.23 &plusmn; 0.12</td><td>94.83 &plusmn; 0.44</td></tr>
+<tr><th scope="row">Bag</th><td>99.62 &plusmn; 0.04</td><td>98.52 &plusmn; 0.46</td><td>97.63 &plusmn; 0.21</td><td>98.07 &plusmn; 0.17</td></tr>
+<tr><th scope="row">Ankle boot</th><td>99.16 &plusmn; 0.03</td><td>96.20 &plusmn; 0.19</td><td>95.33 &plusmn; 0.38</td><td>95.76 &plusmn; 0.14</td></tr>
+</tbody></table></div>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_confusion_seeds.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44"><img src="Assignment1/05_results/assets/report_figures/transformer_confusion_seeds.png" alt="Transformer test confusion matrix with mean sample counts and sample standard deviations across seeds 42, 43 and 44" loading="lazy" decoding="async" width="3386" height="3012"></a><figcaption class="figure-caption">Figure R11. Transformer (ViT) confusion matrix. Rows are true classes and columns are predicted classes; cells report mean counts &plusmn; sample SD across seeds 42, 43 and 44.</figcaption></figure>
+</div></details>
+<h3 id="prediction-examples">4. Qualitative results &amp; prediction diagnostics</h3><p>All examples below use the minimum-validation-loss checkpoint for training seed 42. Difficult-but-correct candidates have small gaps between their two highest softmax scores and were inspected visually. These selected examples illustrate behavior and confidence; they do not estimate how frequently each outcome occurs. Select a figure to view its full resolution.</p>
+<details class="report-model" id="examples-linear" open><summary>Linear / Softmax <span>Correct, difficult-but-correct and incorrect predictions (seed 42)</span></summary><div class="report-model-content"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_correct_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear / Softmax correct predictions for seed 42 with annotated ground-truth and predicted labels"><img src="Assignment1/05_results/assets/report_figures/linear_correct_seed42.png" alt="Linear / Softmax correct predictions for seed 42 with annotated ground-truth and predicted labels" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R12. Linear / Softmax: correct predictions, seed 42. Ground-truth and predicted labels agree.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear / Softmax difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/linear_difficult_seed42.png" alt="Linear / Softmax difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R13. Linear / Softmax: difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/linear_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Linear / Softmax incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/linear_failures_seed42.png" alt="Linear / Softmax incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R14. Linear / Softmax: incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
+</div></details>
+<details class="report-model" id="examples-mlp" open><summary>MLP <span>Correct, difficult-but-correct and incorrect predictions (seed 42)</span></summary><div class="report-model-content"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_correct_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP correct predictions for seed 42 with annotated ground-truth and predicted labels"><img src="Assignment1/05_results/assets/report_figures/mlp_correct_seed42.png" alt="MLP correct predictions for seed 42 with annotated ground-truth and predicted labels" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R15. MLP: correct predictions, seed 42. Ground-truth and predicted labels agree.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/mlp_difficult_seed42.png" alt="MLP difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R16. MLP: difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/mlp_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: MLP incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/mlp_failures_seed42.png" alt="MLP incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R17. MLP: incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
+</div></details>
+<details class="report-model" id="examples-cnn" open><summary>CNN <span>Correct, difficult-but-correct and incorrect predictions (seed 42)</span></summary><div class="report-model-content"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_correct_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN correct predictions for seed 42 with annotated ground-truth and predicted labels"><img src="Assignment1/05_results/assets/report_figures/cnn_correct_seed42.png" alt="CNN correct predictions for seed 42 with annotated ground-truth and predicted labels" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R18. CNN: correct predictions, seed 42. Ground-truth and predicted labels agree.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/cnn_difficult_seed42.png" alt="CNN difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R19. CNN: difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/cnn_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: CNN incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/cnn_failures_seed42.png" alt="CNN incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R20. CNN: incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
+</div></details>
+<details class="report-model" id="examples-lstm" open><summary>LSTM (RowLSTM) <span>Correct, difficult-but-correct and incorrect predictions (seed 42)</span></summary><div class="report-model-content"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_correct_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM (RowLSTM) correct predictions for seed 42 with annotated ground-truth and predicted labels"><img src="Assignment1/05_results/assets/report_figures/lstm_correct_seed42.png" alt="LSTM (RowLSTM) correct predictions for seed 42 with annotated ground-truth and predicted labels" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R21. LSTM (RowLSTM): correct predictions, seed 42. Ground-truth and predicted labels agree.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM (RowLSTM) difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/lstm_difficult_seed42.png" alt="LSTM (RowLSTM) difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R22. LSTM (RowLSTM): difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/lstm_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LSTM (RowLSTM) incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/lstm_failures_seed42.png" alt="LSTM (RowLSTM) incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R23. LSTM (RowLSTM): incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
+</div></details>
+<details class="report-model" id="examples-transformer" open><summary>Transformer (ViT) <span>Correct, difficult-but-correct and incorrect predictions (seed 42)</span></summary><div class="report-model-content"><figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_correct_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer (ViT) correct predictions for seed 42 with annotated ground-truth and predicted labels"><img src="Assignment1/05_results/assets/report_figures/transformer_correct_seed42.png" alt="Transformer (ViT) correct predictions for seed 42 with annotated ground-truth and predicted labels" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R24. Transformer (ViT): correct predictions, seed 42. Ground-truth and predicted labels agree.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer (ViT) difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/transformer_difficult_seed42.png" alt="Transformer (ViT) difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R25. Transformer (ViT): difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
+<figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer (ViT) incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/transformer_failures_seed42.png" alt="Transformer (ViT) incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Figure R26. Transformer (ViT): incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
+</div></details>
+</section>
+          <section id="comparison-discussion"><h2 class="section-title">Comparison and discussion</h2>
+<h3>Predictive performance and model capacity</h3>
+<p>The CNN has the highest mean accuracy (91.54 &plusmn; 0.20%), highest Macro-F1 (91.51 &plusmn; 0.19%) and lowest test cross-entropy loss (0.2301 &plusmn; 0.0030). Its accuracy exceeds the Linear baseline, MLP, LSTM and Transformer by 16.77, 4.24, 0.69 and 1.11 percentage points, respectively. The MLP improves over the Linear baseline by 12.53 percentage points.</p>
+<p>The nonlinear models use 230,730&ndash;242,762 parameters, compared with 7,850 for Linear. CNN locality and shared filters suit clothing images; LSTM represents rows sequentially, while Transformer relates patch tokens through attention. These results compare complete configurations with different depth, normalization and regularization, so the differences cannot be attributed to input representation alone.</p>
+<h3>Execution time and variability</h3>
+<p>LSTM reaches 90.85 &plusmn; 0.10% mean accuracy while using 65.67 &plusmn; 1.15 epochs and 1,270.6 &plusmn; 26.6 seconds per run, compared with CNN's 123.33 &plusmn; 6.43 epochs and 2,380.5 &plusmn; 213.7 seconds. Transformer has the highest mean time per epoch, 22.83 &plusmn; 0.33 seconds. Linear has the lowest measured inference mean, 0.1681 &plusmn; 0.0062 ms/sample. The small timing differences include pipeline overhead and are not a measurement of model execution alone.</p>
+<p>Three seeds describe training variability for one fixed data split. Mean differences and error bars do not establish statistical significance, and the experiment does not measure sensitivity to alternative train/validation partitions.</p>
+</section>
 
-          <section>
-            <h2 class="section-title">Error analysis</h2>
-            <div class="stub-note"></div>
-          </section>
+          <section id="error-analysis"><h2 class="section-title">Error analysis</h2>
+<p>Shirt is the weakest class for all five models. Its mean recall rises from 37.43 &plusmn; 7.16% for Linear to 71.53 &plusmn; 1.21% for CNN, a gain of 34.10 percentage points. Its mean F1 rises from 39.64 &plusmn; 3.65% to 73.56 &plusmn; 0.78%. In the confusion matrices this corresponds to 374.3 &plusmn; 71.6 versus 715.3 &plusmn; 12.1 correctly classified Shirt images per 1,000 test items.</p>
+<p>Similar upper-body silhouettes remain difficult: Shirt, T-shirt/top, Pullover and Coat account for recurring confusions. By contrast, Trouser is the class with the highest mean F1 within every model. Low resolution and missing color or fabric detail plausibly contribute to the upper-body errors, without establishing that those errors are unavoidable.</p>
+<p>The best overall model does not lead on every class metric. LSTM's Dress recall is 92.80 &plusmn; 1.14%, compared with CNN's 91.57 &plusmn; 0.85%, while CNN has higher Dress precision (91.27 &plusmn; 0.63% versus 90.05 &plusmn; 0.82%). Their Dress F1 values are close: 91.41 &plusmn; 0.45% for CNN and 91.40 &plusmn; 0.13% for LSTM.</p>
+<p>The seed-42 examples show both uncertain correct decisions and confident errors. Softmax confidence is not proof of correctness or calibration. Examples were selected separately for each model and therefore do not support a direct comparison on identical test images.</p>
+</section>
 
-          <section>
-            <h2 class="section-title">Limitations and conclusion</h2>
-            <div class="stub-note"></div>
-          </section>
+          <section id="limitations-conclusion"><h2 class="section-title">Limitations and conclusion</h2>
+<p>The evaluated nonlinear models outperform the Linear baseline, and CNN provides the strongest overall predictive performance within the matched nonlinear parameter budget. LSTM provides a competitive alternative with fewer training epochs, while the patch Transformer learns useful global relations under the same data and evaluation protocol.</p>
+<p>The evidence is limited to three training seeds on a single fixed split of Fashion-MNIST. The models also differ in architecture-specific regularization and normalization. Results do not establish universal superiority of one model family or isolate the effect of a single architectural component. Selected qualitative examples illustrate failure modes rather than their population frequency.</p>
+<p>Fashion-MNIST consists of balanced, centered, low-resolution studio images. These findings do not directly establish performance on consumer photographs, class imbalance, clutter, different viewpoints or other datasets. Runtime includes loading and preprocessing and is specific to the reported hardware and batch settings.</p>
+</section>
 
           <section id="ai-disclosure">
             <p class="section-label">AI usage — this assignment</p>
@@ -1208,7 +910,7 @@
                         target="_blank" rel="noopener">GitHub repository</a></td>
                   </tr>
                   <tr>
-                    <td>EDA; Dataset/DataLoader; train/val loop; Linear + MLP + CNN runnable w</td>
+                    <td>EDA and training-pipeline development notebook</td>
                     <td><a
                         href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/EDA_training_pipeline.ipynb"
                         target="_blank" rel="noopener">Jupyter Notebook</a></td>
