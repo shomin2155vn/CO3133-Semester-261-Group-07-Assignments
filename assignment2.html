@@ -951,7 +951,349 @@
 
         <section id="results">
           <h2 class="section-title">Results</h2>
-          <div class="stub-note"></div>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 20px"
+          >
+            The analysis covers training curves and convergence behavior,
+            quantitative performance metrics across primary and secondary
+            evaluation criteria, parameter counts, compute costs, and
+            qualitative findings.
+          </p>
+
+          <!-- KPI Grid -->
+          <div class="results-kpi-grid">
+            <div class="results-kpi-card highlight">
+              <div class="results-kpi-value">94.17%</div>
+              <div class="results-kpi-label">
+                Top-1 Accuracy (ResNet-50 Full)
+              </div>
+            </div>
+            <div class="results-kpi-card highlight">
+              <div class="results-kpi-value">0.9461</div>
+              <div class="results-kpi-label">
+                Macro-F1 Score (ResNet-50 Full)
+              </div>
+            </div>
+            <div class="results-kpi-card">
+              <div class="results-kpi-value">6.87 ms</div>
+              <div class="results-kpi-label">Inference Latency (bs=1)</div>
+            </div>
+            <div class="results-kpi-card">
+              <div class="results-kpi-value">253 img/s</div>
+              <div class="results-kpi-label">Throughput (bs=32)</div>
+            </div>
+          </div>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 26px;
+              font-weight: bold;
+              margin: 32px 0 14px;
+              color: var(--ink);
+            "
+          >
+            1. Training behavior &amp; convergence curves
+          </h3>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            Training dynamics under the 100-epoch budget and shared
+            dual-criterion early stopping:
+          </p>
+
+          <div class="figure-card">
+            <img
+              src="results_training_curves.png"
+              alt="Training Curves (Loss and Validation Macro-F1)"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'figures/training_curves.png';
+              "
+            />
+            <p class="figure-caption">
+              Figure 1: Training curves across the five model configurations
+              (SimpleCNN scratch, ResNet-18/50 frozen vs. full fine-tuning) on
+              Food-11 under aspect-preserving 512×512 preprocessing and
+              train-only normalization.
+            </p>
+          </div>
+
+          <ul class="pipeline-notes-list" style="margin-bottom: 28px">
+            <li>
+              <strong>SimpleCNN (Scratch Baseline):</strong> Reached best
+              validation macro-F1 at epoch 59 out of 110.7 minutes total
+              training time, reflecting slower convergence from random
+              initialization without shortcut connections.
+            </li>
+            <li>
+              <strong>ResNet-18 &amp; ResNet-50 (Frozen Backbones):</strong>
+              Exhibited rapid early convergence (best epoch 25 for ResNet-18
+              frozen, 37 for ResNet-50 frozen) as only the classification head
+              was trained. However, performance plateaued earlier due to frozen
+              feature extractors unable to specialize on culinary nuances.
+            </li>
+            <li>
+              <strong>ResNet-18 &amp; ResNet-50 (Full Fine-Tuning):</strong>
+              Benefited significantly from end-to-end adaptation, with ResNet-50
+              achieving top performance at epoch 16 while maintaining robust
+              stability through AdamW and cosine decay.
+            </li>
+          </ul>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 26px;
+              font-weight: bold;
+              margin: 36px 0 14px;
+              color: var(--ink);
+            "
+          >
+            2. Quantitative results &amp; compute cost summary
+          </h3>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            Proposal primary evaluation (best validation macro-F1 checkpoint
+            selection) and operational compute costs across all evaluated
+            architectures (Seed 42 single-run evaluation):
+          </p>
+
+          <div class="mandatory-table-wrap">
+            <table class="mandatory-models-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center">#</th>
+                  <th style="min-width: 155px">Experiment</th>
+                  <th style="min-width: 80px; text-align: center">
+                    Runs / Seed
+                  </th>
+                  <th style="min-width: 100px; text-align: center">
+                    Test Accuracy
+                  </th>
+                  <th style="min-width: 105px; text-align: center">
+                    Test Precision
+                  </th>
+                  <th style="min-width: 100px; text-align: center">
+                    Test Recall
+                  </th>
+                  <th style="min-width: 100px; text-align: center">
+                    Test Macro-F1
+                  </th>
+                  <th style="min-width: 95px; text-align: center">
+                    Val Macro-F1
+                  </th>
+                  <th style="min-width: 85px; text-align: center">
+                    Params (M)
+                  </th>
+                  <th style="min-width: 95px; text-align: center">
+                    Trainable (M)
+                  </th>
+                  <th style="min-width: 85px; text-align: center">GFLOPs</th>
+                  <th style="min-width: 100px; text-align: center">
+                    Train Time (min)
+                  </th>
+                  <th style="min-width: 85px; text-align: center">
+                    Best Epoch
+                  </th>
+                  <th style="min-width: 110px; text-align: center">
+                    Latency bs=1 (ms)
+                  </th>
+                  <th style="min-width: 110px; text-align: center">
+                    Throughput (img/s)
+                  </th>
+                  <th style="min-width: 120px; text-align: center">
+                    Peak GPU Mem (MiB)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center"><strong>1</strong></td>
+                  <td><code>simple_cnn</code></td>
+                  <td style="text-align: center">1 / 42</td>
+                  <td style="text-align: center">82.61%</td>
+                  <td style="text-align: center">83.19%</td>
+                  <td style="text-align: center">83.29%</td>
+                  <td style="text-align: center">82.99%</td>
+                  <td style="text-align: center">80.42%</td>
+                  <td style="text-align: center">1.19</td>
+                  <td style="text-align: center">1.19</td>
+                  <td style="text-align: center">1.99</td>
+                  <td style="text-align: center">110.7</td>
+                  <td style="text-align: center">59.0</td>
+                  <td style="text-align: center">1.40 ms</td>
+                  <td style="text-align: center">1,035</td>
+                  <td style="text-align: center">3,139 MiB</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>2</strong></td>
+                  <td><code>resnet18_frozen</code></td>
+                  <td style="text-align: center">1 / 42</td>
+                  <td style="text-align: center">84.43%</td>
+                  <td style="text-align: center">85.38%</td>
+                  <td style="text-align: center">84.39%</td>
+                  <td style="text-align: center">84.59%</td>
+                  <td style="text-align: center">82.74%</td>
+                  <td style="text-align: center">11.18</td>
+                  <td style="text-align: center">0.01</td>
+                  <td style="text-align: center">4.74</td>
+                  <td style="text-align: center">55.2</td>
+                  <td style="text-align: center">25.0</td>
+                  <td style="text-align: center">3.83 ms</td>
+                  <td style="text-align: center">591</td>
+                  <td style="text-align: center">1,245 MiB</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>3</strong></td>
+                  <td><code>resnet18_full</code></td>
+                  <td style="text-align: center">1 / 42</td>
+                  <td style="text-align: center">91.81%</td>
+                  <td style="text-align: center">91.87%</td>
+                  <td style="text-align: center">92.34%</td>
+                  <td style="text-align: center">92.01%</td>
+                  <td style="text-align: center">91.32%</td>
+                  <td style="text-align: center">11.18</td>
+                  <td style="text-align: center">11.18</td>
+                  <td style="text-align: center">4.74</td>
+                  <td style="text-align: center">39.6</td>
+                  <td style="text-align: center">13.0</td>
+                  <td style="text-align: center">3.92 ms</td>
+                  <td style="text-align: center">591</td>
+                  <td style="text-align: center">3,994 MiB</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center"><strong>4</strong></td>
+                  <td><code>resnet50_frozen</code></td>
+                  <td style="text-align: center">1 / 42</td>
+                  <td style="text-align: center">90.56%</td>
+                  <td style="text-align: center">91.50%</td>
+                  <td style="text-align: center">90.58%</td>
+                  <td style="text-align: center">91.00%</td>
+                  <td style="text-align: center">89.26%</td>
+                  <td style="text-align: center">23.53</td>
+                  <td style="text-align: center">0.02</td>
+                  <td style="text-align: center">10.68</td>
+                  <td style="text-align: center">82.7</td>
+                  <td style="text-align: center">37.0</td>
+                  <td style="text-align: center">7.31 ms</td>
+                  <td style="text-align: center">218</td>
+                  <td style="text-align: center">1,869 MiB</td>
+                </tr>
+                <tr style="background: rgba(42, 68, 148, 0.04)">
+                  <td style="text-align: center"><strong>5</strong></td>
+                  <td>
+                    <code>resnet50_full</code>
+                    <span
+                      style="
+                        font-size: 13px;
+                        color: #2a4494;
+                        font-weight: bold;
+                        margin-left: 4px;
+                      "
+                      >★ Best</span
+                    >
+                  </td>
+                  <td style="text-align: center">1 / 42</td>
+                  <td style="text-align: center"><strong>94.17%</strong></td>
+                  <td style="text-align: center"><strong>94.55%</strong></td>
+                  <td style="text-align: center"><strong>94.72%</strong></td>
+                  <td style="text-align: center"><strong>94.61%</strong></td>
+                  <td style="text-align: center"><strong>93.25%</strong></td>
+                  <td style="text-align: center">23.53</td>
+                  <td style="text-align: center">23.53</td>
+                  <td style="text-align: center">10.68</td>
+                  <td style="text-align: center">67.8</td>
+                  <td style="text-align: center">16.0</td>
+                  <td style="text-align: center">6.87 ms</td>
+                  <td style="text-align: center">253</td>
+                  <td style="text-align: center">14,517 MiB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p
+            style="
+              color: var(--ink-soft);
+              font-size: 16px;
+              margin: 12px 0 24px;
+              font-style: italic;
+            "
+          >
+            Note: Values reflect single-seed evaluation (seed 42). Standard
+            deviations across multiple seeds are currently uninitialized pending
+            full 3-seed aggregation runs.
+          </p>
+
+          <div class="figure-card">
+            <img
+              src="results_tradeoffs.png"
+              alt="Trade-off Analysis (Macro-F1 vs Parameters, GFLOPs, Training Time, Latency)"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'figures/tradeoffs.png';
+              "
+            />
+            <p class="figure-caption">
+              Figure 2: Accuracy–cost trade-off plots illustrating test Macro-F1
+              against parameter count (log scale), GFLOPs per image, training
+              time, and batch-size-1 inference latency.
+            </p>
+          </div>
+
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: 26px;
+              font-weight: bold;
+              margin: 36px 0 14px;
+              color: var(--ink);
+            "
+          >
+            3. Qualitative &amp; visual diagnostics
+          </h3>
+          <p
+            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+          >
+            Inspection of confusion matrices, error categories, and Grad-CAM
+            activations on test images:
+          </p>
+
+          <div class="figure-card">
+            <img
+              src="results_confusion_matrices.png"
+              alt="Row-normalized Confusion Matrices"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'figures/confusion_matrices.png';
+              "
+            />
+            <p class="figure-caption">
+              Figure 3: Row-normalized confusion matrices for baseline SimpleCNN
+              and main ResNet-50 full model on the Food-11 test split.
+            </p>
+          </div>
+
+          <div class="figure-card">
+            <img
+              src="results_gradcam.png"
+              alt="Grad-CAM Visualizations"
+              loading="lazy"
+              onerror="
+                this.onerror = null;
+                this.src = 'figures/gradcam.png';
+              "
+            />
+            <p class="figure-caption">
+              Figure 4: Grad-CAM visual attributions on ResNet-50 layer4[-1]
+              showing regions of the food dish driving model classification.
+            </p>
+          </div>
         </section>
 
         <section id="comparison">
