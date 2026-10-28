@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-24T11:30:47",
+  "python": "3.13.16",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "numpy": "2.1.3",
+  "pandas": "2.2.3",
+  "pillow": "11.3.0",
+  "seed": 42,
+  "img_size": 512,
+  "data_root": "/root/.cache/kagglehub/datasets/trolukovich/food11-image-dataset/versions/1",
+  "compare_splits_pixel": true,
+  "smoke": false
+}

@@ -1,0 +1,230 @@
+{
+  "n_indexed": 16643,
+  "n_ok": 16643,
+  "n_bad": 0,
+  "split_counts": {
+    "train": 9866,
+    "val": 3430,
+    "test": 3347
+  },
+  "total_mb": 1133.3872909545898,
+  "n_ext_mismatch": 0,
+  "n_nonrgb": 0,
+  "n_exif": 1887,
+  "n_tiny": 0,
+  "formats": [
+    "JPEG"
+  ],
+  "modes": [
+    "RGB"
+  ],
+  "n_unique_sizes": 825,
+  "top_size": [
+    512,
+    512
+  ],
+  "top_size_share": 0.5792224959442408,
+  "long_med": 512.0,
+  "long_min": 270,
+  "long_max": 9542,
+  "short_med": 512.0,
+  "short_min": 207,
+  "aspect_med": 1.0,
+  "aspect_min": 0.560546875,
+  "aspect_max": 2.613793103448276,
+  "ar_sym_p95": 1.6,
+  "ar_sym_max": 2.613793103448276,
+  "kb_med": 48.3232421875,
+  "kb_min": 6.1953125,
+  "kb_max": 9874.5,
+  "pct_square": 58.18061647539506,
+  "pct_landscape": 29.910472871477502,
+  "pct_portrait": 11.90891065312744,
+  "pct_up": 2.133028901039476,
+  "pct_unchanged": 92.23096797452382,
+  "pct_down": 5.636003124436701,
+  "pct_needs_pad": 41.819383524604945,
+  "mean_pad_pct": 11.258228872498949,
+  "max_pad_pct": 61.71875,
+  "test_exact": 560,
+  "test_near": 568,
+  "test_n": 3347,
+  "val_exact": 51,
+  "n_md5_conflict": 0,
+  "n_dh_conflict": 0,
+  "within_exact": {
+    "train": 5,
+    "val": 3,
+    "test": 4
+  },
+  "dup_pairs": {
+    "train-val": 51,
+    "train-test": 249,
+    "val-test": 311
+  },
+  "dup_dhash_pairs": {
+    "train-val": 58,
+    "train-test": 254,
+    "val-test": 314
+  },
+  "N_total": 16643,
+  "class_counts": {
+    "Bread": 1724,
+    "Dairy product": 721,
+    "Dessert": 2500,
+    "Egg": 1648,
+    "Fried food": 1461,
+    "Meat": 2206,
+    "Noodles-Pasta": 734,
+    "Rice": 472,
+    "Seafood": 1505,
+    "Soup": 2500,
+    "Vegetable-Fruit": 1172
+  },
+  "largest_class": "Dessert",
+  "largest_n": 2500,
+  "smallest_class": "Rice",
+  "smallest_n": 472,
+  "split_ratio": {
+    "train": 59.28017785255062,
+    "val": 20.609265156522262,
+    "test": 20.110556990927115
+  },
+  "tv_val": 0.028386206065061897,
+  "tv_test": 0.014255317641214477,
+  "tv_val_test": 0.021765629722801234,
+  "chi2_p": 0.8063556440758823,
+  "cramers_v": 0.020843643098398836,
+  "train_share_min": 56.810631229235874,
+  "train_share_max": 60.49488054607508,
+  "imb_ratio": {
+    "train": 5.357142857142857,
+    "val": 5.208333333333333,
+    "test": 5.208333333333333,
+    "total": 5.296610169491525
+  },
+  "norm_entropy": {
+    "train": 0.9558489139395905,
+    "val": 0.9570124122800613,
+    "test": 0.9571040382090247,
+    "total": 0.9565199017622469
+  },
+  "eff_classes": {
+    "train": 9.894960550600334,
+    "val": 9.922605513852513,
+    "test": 9.924785842887667,
+    "total": 9.910893946412212
+  },
+  "gini_train": 0.25334021340508284,
+  "majority_class": "Dessert",
+  "maj_val_acc": 0.1457725947521866,
+  "maj_test_acc": 0.14938751120406335,
+  "maj_val_f1": 0.023132084200786492,
+  "maj_test_f1": 0.023631164780112013,
+  "kw": {
+    "long_side": {
+      "eps2": 0.1840266743342551,
+      "p": 0.0,
+      "effect": "large"
+    },
+    "short_side": {
+      "eps2": 0.04533208173054495,
+      "p": 1.148208435345899e-157,
+      "effect": "small"
+    },
+    "aspect": {
+      "eps2": 0.04560849934845615,
+      "p": 1.1806145692347401e-158,
+      "effect": "small"
+    },
+    "kb": {
+      "eps2": 0.16564843397045156,
+      "p": 0.0,
+      "effect": "large"
+    },
+    "bpp": {
+      "eps2": 0.1608846621839773,
+      "p": 0.0,
+      "effect": "large"
+    }
+  },
+  "bucket_cramers_v": 0.42836311730257515,
+  "bucket_p": 0.0,
+  "meta_acc": 0.2510204081632653,
+  "meta_f1": 0.19285920577196827,
+  "maj_val_share": 0.1457725947521866,
+  "cls_pad_min": 7.945649383983573,
+  "cls_pad_max": 21.793841990187712,
+  "cls_pad_min_name": "Fried food",
+  "cls_pad_max_name": "Vegetable-Fruit",
+  "cls_long_min": 512.0,
+  "cls_long_max": 700.0,
+  "cls_kb_min": 40.62255859375,
+  "cls_kb_max": 133.4208984375,
+  "train_mean": [
+    0.5586106678908568,
+    0.452027398256193,
+    0.34342469071365356
+  ],
+  "train_std": [
+    0.27217133567514035,
+    0.27550910409690293,
+    0.28208924963905413
+  ],
+  "train_mean_255": [
+    142.44572031216848,
+    115.26698655532921,
+    87.57329613198166
+  ],
+  "train_std_255": [
+    69.40369059716079,
+    70.25482154471025,
+    71.9327586579588
+  ],
+  "padding_rgb": [
+    142,
+    115,
+    88
+  ],
+  "content_pixels": 2283237376,
+  "d_mean_vs_imagenet": [
+    0.0736106678908568,
+    -0.003972601743807036,
+    -0.06257530928634647
+  ],
+  "d_std_vs_imagenet": [
+    0.04317133567514034,
+    0.05150910409690293,
+    0.057089249639054124
+  ],
+  "sat_black": [
+    0.47744746624189804,
+    0.6834658614137894,
+    2.667167927440235
+  ],
+  "sat_white": [
+    1.4160547361327007,
+    1.0540443255252667,
+    0.8197389021718607
+  ],
+  "luma_mean_train": 119.75829129583367,
+  "luma_mean_std_train": 28.969621182755304,
+  "luma_std_train": 58.810426927384455,
+  "flag_dark_train": 32,
+  "flag_bright_train": 41,
+  "flag_lowc_train": 27,
+  "cls_mean_spread": [
+    0.0734,
+    0.1171,
+    0.1332
+  ],
+  "cls_brightest": "Dairy product",
+  "cls_darkest": "Meat",
+  "cls_luma_max": 139.40140573906075,
+  "cls_luma_min": 111.19565284300322,
+  "cls_warmest": "Fried food",
+  "cls_coolest": "Dairy product",
+  "max_dmean_split": 0.007025406145304891,
+  "max_dstd_split": 0.0034445253428299627,
+  "ks_max_D": 0.03129482117439721
+}
