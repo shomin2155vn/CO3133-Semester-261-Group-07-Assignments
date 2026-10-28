@@ -1,0 +1,132 @@
+{
+  "architecture": "PatchTransformer(\n  (patch_embed): Linear(in_features=16, out_features=64, bias=True)\n  (embed_drop): Dropout(p=0.0, inplace=False)\n  (encoder): TransformerEncoder(\n    (layers): ModuleList(\n      (0-5): 6 x TransformerEncoderLayer(\n        (self_attn): MultiheadAttention(\n          (out_proj): NonDynamicallyQuantizableLinear(in_features=64, out_features=64, bias=True)\n        )\n        (linear1): Linear(in_features=64, out_features=160, bias=True)\n        (dropout): Dropout(p=0.0, inplace=False)\n        (linear2): Linear(in_features=160, out_features=64, bias=True)\n        (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)\n        (norm2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)\n        (dropout1): Dropout(p=0.0, inplace=False)\n        (dropout2): Dropout(p=0.0, inplace=False)\n      )\n    )\n  )\n  (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)\n  (head): Linear(in_features=64, out_features=10, bias=True)\n)",
+  "trainable_parameters": 230730,
+  "variant": "NoDropout",
+  "training_config": {
+    "protocol": "fixed_split_independent_loaders_multiseed_v1",
+    "architecture_tag": "200K_v4",
+    "variant": "NoDropout",
+    "split_seed": 42,
+    "data_signature": "7a18ccb7286c589df2310f783f01b4fe6238ea26a3e5cc500436c54d9a10934c",
+    "pixel_mean": 0.2862528489520806,
+    "pixel_std": 0.3531738779381928,
+    "train_transform": "Compose(\n    RandomRotation(degrees=[-10.0, 10.0], interpolation=nearest, expand=False, fill=0)\n    RandomHorizontalFlip(p=0.5)\n    RandomCrop(size=(28, 28), padding=2)\n    ToTensor()\n    Normalize(mean=(0.2862528489520806,), std=(0.3531738779381928,))\n)",
+    "eval_transform": "Compose(\n    ToTensor()\n    Normalize(mean=(0.2862528489520806,), std=(0.3531738779381928,))\n)",
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "loss": "cross_entropy",
+    "max_epochs": 200,
+    "early_stopping_patience": 8,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 3,
+    "scheduler_threshold": 0.0001,
+    "scheduler_threshold_mode": "abs",
+    "min_lr": 1e-06,
+    "train_batch_size": 128,
+    "eval_batch_size": 256,
+    "num_workers": 2
+  },
+  "dropout_settings": [
+    {
+      "module": "embed_drop",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.0.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.0.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.0.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.0.dropout2",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.1.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.1.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.1.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.1.dropout2",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.2.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.2.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.2.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.2.dropout2",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.3.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.3.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.3.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.3.dropout2",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.4.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.4.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.4.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.4.dropout2",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.5.self_attn",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.5.dropout",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.5.dropout1",
+      "p": 0.0
+    },
+    {
+      "module": "encoder.layers.5.dropout2",
+      "p": 0.0
+    }
+  ]
+}
