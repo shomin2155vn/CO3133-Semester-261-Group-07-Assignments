@@ -14,19 +14,18 @@ The group takes full responsibility for all submitted code, numerical results, f
 
 - **Task:** Reviewing and refining a member-written draft of the FashionMNIST pipeline, covering data preparation, training, evaluation, checkpoint selection, and reproducibility.
 
-- **Prompt summary:** Reviewed the supplied pipeline
-    and suggested improvements to data preparation,
-    training, evaluation, checkpoint selection,
+- **Prompt summary:** Provided an existing member-written pipeline
+    and specified the required workflow, current implementation of EDA,
+    train/validation/test splitting, preprocessing
+    and augmentation, model training pipeline,
+    evaluation metrics, checkpoint selection,
     and reproducibility.
-    Recommended saving model configurations,
-    dataset split indices, seed settings,
-    dependency versions, hardware information,
-    checkpoints, metric summaries, and training histories.
-    Suggested linking these artifacts through
-    experiment IDs to support result traceability.
-    Helped modify visualization code
-    for learning curves, confusion matrices,
-    and prediction examples.
+    Requested a review of the workflow,
+    explanations of technical issues,
+    and suggestions for improving reproducibility.
+    Also requested appropriate ways to organize
+    and save checkpoints, configurations,
+    experimental outputs.
 
 - **AI contribution:** Reviewed the supplied pipeline and suggested improvements to data preparation, training, evaluation, checkpoint selection, and reproducibility. Recommended saving model configurations, dataset split indices, seed settings, dependency versions, hardware information, checkpoints, metric summaries, and training histories. Suggested linking these artifacts through experiment IDs to support result traceability. Helped modify visualization code for learning curves, confusion matrices, and prediction examples.
 
@@ -94,7 +93,7 @@ The group takes full responsibility for all submitted code, numerical results, f
 
 - **Affected files/sections:** Report, Readme.md, assignment1.html
 
-- **Responsible member:** Lê Nguyễn Gia Phúc.
+- **Responsible member:** Hoàng Xuân Bách, Lê Nguyễn Gia Phúc, Nguyễn Việt Hùng.
 
 ## AI-Assisted Github Pages Skeleton
 
