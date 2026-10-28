@@ -1,0 +1,31 @@
+{
+  "experiment_id": "exp_a83ce106c0d045999343324efc7935a7",
+  "run_id": "LSTM_200K_v4_Baseline_seed44",
+  "checkpoint_path": "/content/drive/MyDrive/CO3133_Assignments/A1_Foundations_FashionMNIST/multiseed_42_43_44/checkpoints/LSTM_200K_v4_Baseline_seed44.pt",
+  "training_source_provenance": null,
+  "training_environment": {
+    "split_seed": 42,
+    "training_seeds": [
+      44
+    ],
+    "python_version": "3.13.16",
+    "torch_version": "2.11.0+cu130",
+    "torchvision_version": "0.26.0+cu130",
+    "device": "cuda",
+    "gpu_name": "Tesla T4",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39"
+  },
+  "evaluation_source": "recomputed_from_weights",
+  "inference_source": "remeasured_current_environment",
+  "training_time_source": "stored_checkpoint",
+  "prediction_disagreements": 0,
+  "stored_test_metrics": {
+    "test_loss": 0.26200712015628813,
+    "test_accuracy": 0.9094,
+    "test_precision": 0.9085358381887353,
+    "test_recall": 0.9094,
+    "test_macro_f1": 0.9086689934647032,
+    "inference_ms_per_sample": 0.18443219661712645,
+    "epochs_run": 65
+  }
+}

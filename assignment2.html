@@ -1,1379 +1,378 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2 — CO3133 Group Site</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <header class="topnav">
-      <div class="wrap">
-        <a class="brand" href="index.html"
-          ><strong>CO3133</strong> · Group 07</a
-        >
-        <nav>
-          <a href="index.html#course">Course</a>
-          <a href="index.html#group">Group</a>
-          <a href="index.html#assignments">Assignments</a>
-          <a href="index.html#ai-disclosure">AI Disclosure</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2 - CO3133 Group Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <main>
-      <div class="wrap">
-        <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
-        <p style="margin: 20px 0">
-          <a
-            href="./Assignment2/A2_dataset_proposal.pdf"
-            target="_blank"
-            rel="noopener"
-            style="
-              display: inline-block;
-              padding: 12px 22px;
-              background: #2563eb;
-              color: #ffffff;
-              font-size: 16px;
-              font-weight: 700;
-              text-decoration: none;
-              border-radius: 8px;
-              box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-            "
-          >
-            Dataset Proposal ↗
-          </a>
-        </p>
-        <section class="hero" style="padding-top: 32px">
-          <p class="eyebrow">Assignment 2</p>
-          <h1 class="title">
-            Deep Learning on Large-Scale Data and Specialized Tasks
-          </h1>
-          <p class="institution">
-            Deep Learning on Large-Scale Data for Specialized Computer Vision or
-            Language Tasks
-          </p>
-          <svg
-            class="node-divider"
-            viewBox="0 0 900 34"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <line x1="10" y1="17" x2="890" y2="17"></line>
-            <circle class="pulse" cx="10" cy="17" r="8"></circle>
-            <circle cx="10" cy="17" r="3.5"></circle>
-            <circle cx="300" cy="17" r="3.5"></circle>
-            <circle cx="600" cy="17" r="3.5"></circle>
-            <circle class="pulse" cx="890" cy="17" r="8"></circle>
-            <circle cx="890" cy="17" r="3.5"></circle>
-          </svg>
-        </section>
+<body>
 
-        <section class="assignment-people">
-          <h2 class="section-title">Instructor</h2>
-          <p class="assignment-detail">Lê Thành Sách</p>
-        </section>
+  <header class="topnav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
+      <nav>
+        <a href="index.html#course">Course</a>
+        <a href="index.html#group">Group</a>
+        <a href="index.html#assignments">Assignments</a>
+        <a href="index.html#ai-disclosure">AI Disclosure</a>
+      </nav>
+    </div>
+  </header>
 
-        <section class="assignment-people">
-          <h2 class="section-title">Group members</h2>
-          <p class="assignment-detail">
-            Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc
-          </p>
-        </section>
+  <main>
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
+      <p style="margin: 20px 0;">
+        <a href="./Assignment2/A2_dataset_proposal.pdf" target="_blank" rel="noopener" style="
+       display: inline-block;
+       padding: 12px 22px;
+       background: #2563eb;
+       color: #ffffff;
+       font-size: 16px;
+       font-weight: 700;
+       text-decoration: none;
+       border-radius: 8px;
+       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+     ">
+          Dataset Proposal ↗
+        </a>
+      </p>
+      <section class="hero" style="padding-top:32px;">
+        <p class="eyebrow">Assignment 2</p>
+        <h1 class="title">Deep Learning on Large-Scale Data and Specialized Tasks</h1>
+        <p class="institution">Deep Learning on Large-Scale Data for Specialized Computer Vision or Language
+          Tasks</p>
+        <svg class="node-divider" viewBox="0 0 900 34" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="10" y1="17" x2="890" y2="17"></line>
+          <circle class="pulse" cx="10" cy="17" r="8"></circle>
+          <circle cx="10" cy="17" r="3.5"></circle>
+          <circle cx="300" cy="17" r="3.5"></circle>
+          <circle cx="600" cy="17" r="3.5"></circle>
+          <circle class="pulse" cx="890" cy="17" r="8"></circle>
+          <circle cx="890" cy="17" r="3.5"></circle>
+        </svg>
+      </section>
 
-        <section id="problem-statement">
-          <h2 class="section-title">Problem statement</h2>
-          <div class="stub-note"></div>
-        </section>
+      <section class="assignment-people">
+        <h2 class="section-title">Instructor</h2>
+        <p class="assignment-detail">Lê Thành Sách</p>
+      </section>
 
-        <section id="dataset-eda">
-          <h2 class="section-title">Dataset description and EDA</h2>
-          <div class="stub-note"></div>
-        </section>
+      <section class="assignment-people">
+        <h2 class="section-title">Group members</h2>
+        <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
+      </section>
 
-        <section id="methodology">
-          <h2 class="section-title">Methodology</h2>
 
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 0 0 14px;
-              color: var(--ink);
-            "
-          >
-            Pipeline overview
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            The classification pipeline follows a strict, end-to-end sequential
-            workflow across all experiments on the Food-11 dataset:
-          </p>
 
-          <div class="pipeline-card">
-            <div class="pipeline-flow-steps">
-              <span class="pipeline-pill">Raw data</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Preprocessing</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Data loader</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Model</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-arrow" style="display: none"></span>
-              <span class="pipeline-pill">Loss</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Optimization</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Prediction</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Post-processing</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Evaluation</span>
-            </div>
-          </div>
 
-          <ul
-            class="pipeline-notes-list"
-            style="margin-top: 18px; margin-bottom: 28px"
-          >
-            <li>
-              <strong>Raw data &amp; Split Preservation:</strong> The official
-              Food-11 partitions (<code>9,866</code> training,
-              <code>3,430</code> validation, and
-              <code>3,347</code> evaluation/test RGB images across 11 food
-              categories) are preserved without re-splitting or automatic
-              deletion. An automated MD5 and 64-bit difference hash (dHash)
-              audit logs exact and near-duplicates across splits to
-              transparently document potential data leakage risk.
-            </li>
-            <li>
-              <strong
-                >Aspect-Preserving Preprocessing &amp; Train-Only
-                Normalization:</strong
-              >
-              Each image is decoded in RGB and its longer side is resized to
-              <code>512</code> pixels via Lanczos interpolation while preserving
-              aspect ratio. Channel-wise RGB mean and population standard
-              deviation (<code>ddof=0</code>) are fitted once exclusively on
-              resized, unaugmented training image pixels (excluding synthetic
-              padding) and cached in <code>train_normalization.json</code>.
-              Images are then centrally padded to
-              <code>512 &times; 512</code> using the rounded training-mean RGB
-              values and standardized via
-              <code>(x - train_mean) / train_std</code>. Training images
-              additionally undergo random horizontal flipping and color jitter
-              (brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05) prior to
-              resizing and padding.
-            </li>
-            <li>
-              <strong>Data Loader:</strong> Custom PyTorch
-              <code>DataLoader</code> instances group tensors of shape
-              <code>(B, 3, 512, 512)</code> with
-              <code>batch_size = 32</code> and <code>drop_last = False</code>.
-              Training uses seeded random shuffling (<code
-                >torch.Generator().manual_seed(seed)</code
-              >
-              and deterministic <code>seed_worker</code>), while validation and
-              test loaders evaluate deterministically in fixed order.
-            </li>
-            <li>
-              <strong>Model, Loss &amp; Optimization:</strong> A custom 4-stage
-              scratch baseline (<code>SimpleCNN</code>) and four
-              transfer-learning configurations (<code>ResNet-18</code> and
-              <code>ResNet-50</code> under both frozen-backbone linear probing
-              and full end-to-end fine-tuning) map inputs to 11 class logits.
-              Models are trained with label-smoothed Cross-Entropy Loss (<code
-                >label_smoothing = 0.1</code
-              >), optimized via <code>AdamW</code> with discriminative learning
-              rates, 1-epoch linear warmup + cosine annealing, gradient norm
-              clipping (<code>1.0</code>), and Automatic Mixed Precision (AMP).
-            </li>
-            <li>
-              <strong>Prediction, Post-processing &amp; Evaluation:</strong>
-              Forward logits are converted in FP32 to class probabilities via
-              softmax and class decisions via <code>argmax</code>.
-              Post-processing includes Expected Calibration Error (ECE, 10 bins)
-              and Grad-CAM visual attribution on <code>layer4[-1]</code>. Dual
-              validation checkpoints (best validation <code>macro_f1</code> and
-              best validation <code>accuracy</code>) are tracked and evaluated
-              across three independent seeds (<code>[42, 43, 44]</code>),
-              accompanied by paired seed differences, 1,000-iteration bootstrap
-              95% CIs, and exact McNemar tests.
-            </li>
+      <section>
+        <h2 class="section-title">Problem statement</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Dataset description and EDA</h2>
+
+        <h3>Dataset description</h3>
+        <h4>Source, task and license</h4>
+        <p><strong>Original source and version.</strong> Food-11 was released by the <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">Multimedia Signal Processing Group (MMSPG) at EPFL</a> and introduced by Singla, Yuan and Ebrahimi (2016) in <a style="color: #000;" href="https://doi.org/10.1145/2986035.2986039" target="_blank" rel="noopener">Food/Non-Food Image Classification and Food Categorization Using Pre-Trained GoogLeNet Model</a>. This project uses the <a style="color: #000;" href="https://www.kaggle.com/datasets/trolukovich/food11-image-dataset" target="_blank" rel="noopener">Kaggle mirror maintained by trolukovich</a>; the EDA notebook pins its automatic download to version 1. EPFL is the original dataset source.</p>
+        <p><strong>Collection and category design.</strong> Section 4.2 of the <a style="color: #000;" href="https://infoscience.epfl.ch/record/221610/files/madima2016_food_recognition.pdf" target="_blank" rel="noopener">original paper</a> describes categories adapted from major USDA food groups. Images were mainly collected from Food-101, UEC-FOOD-100 and UEC-FOOD-256, with additional Flickr and Instagram images for Dairy product and Vegetable-Fruit. The authors included varied food items within each category and selected images whose main content belonged to that category.</p>
+        <p><strong>Task and annotations.</strong> The task is supervised, single-label classification: given one RGB food photograph, predict one of 11 broad food categories. The prediction unit is one image. In the Kaggle distribution used here, labels come from class folders and are mapped to integer IDs 0–10 as listed in Table 2. A mixed dish still receives one supplied category label. The group preserves the provided annotations and official training, validation and evaluation partitions without manual relabeling or duplicate removal.</p>
+        <p><strong>License and use.</strong> The <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">EPFL conditions of use</a> permit use, copying, modification and distribution of the dataset and its documentation for research purposes only and prohibit commercial distribution. This project uses Food-11 for academic coursework and research under those published conditions.</p>
+
+        <h4>Format, counts and size</h4>
+        <div class="table-wrap">
+          <table class="members">
+            <thead>
+              <tr><th>Property</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Dataset version</td><td>Version 1 of the Kaggle distribution; original Food-11 release by EPFL</td></tr>
+              <tr><td>Total samples</td><td>16,643 (train 9,866; validation 3,430; evaluation/test 3,347)</td></tr>
+              <tr><td>Classes</td><td>11 food categories; one integer label per image</td></tr>
+              <tr><td>Raw format</td><td>JPEG, RGB, uint8 in [0, 255]</td></tr>
+              <tr><td>Model input</td><td>float32 tensor, 3 × 512 × 512 after resize, padding and normalization</td></tr>
+              <tr><td>Size on disk</td><td>≈ 1,133 MiB (median 48 KiB; largest 9.6 MiB; 1 KiB = 1,024 bytes)</td></tr>
+              <tr><td>License</td><td>EPFL MMSPG: use for research purposes only</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 1 - Food-11 overview</p>
+
+        <p>Table 2 gives class counts by split; Figure 1 compares total counts by class. Dessert and Soup are the largest classes; Rice is the smallest. The largest-to-smallest ratio is 5.36 in train and 5.30 overall, so accuracy should be read alongside macro-F1 and per-class recall.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead>
+              <tr><th>Label</th><th>Class</th><th>Train</th><th>Val</th><th>Test</th><th>Total</th><th>Share</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="mono">0</td><td>Bread</td><td class="mono">994</td><td class="mono">362</td><td class="mono">368</td><td class="mono">1,724</td><td class="mono">10.4%</td></tr>
+              <tr><td class="mono">1</td><td>Dairy product</td><td class="mono">429</td><td class="mono">144</td><td class="mono">148</td><td class="mono">721</td><td class="mono">4.3%</td></tr>
+              <tr><td class="mono">2</td><td>Dessert</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
+              <tr><td class="mono">3</td><td>Egg</td><td class="mono">986</td><td class="mono">327</td><td class="mono">335</td><td class="mono">1,648</td><td class="mono">9.9%</td></tr>
+              <tr><td class="mono">4</td><td>Fried food</td><td class="mono">848</td><td class="mono">326</td><td class="mono">287</td><td class="mono">1,461</td><td class="mono">8.8%</td></tr>
+              <tr><td class="mono">5</td><td>Meat</td><td class="mono">1,325</td><td class="mono">449</td><td class="mono">432</td><td class="mono">2,206</td><td class="mono">13.3%</td></tr>
+              <tr><td class="mono">6</td><td>Noodles-Pasta</td><td class="mono">440</td><td class="mono">147</td><td class="mono">147</td><td class="mono">734</td><td class="mono">4.4%</td></tr>
+              <tr><td class="mono">7</td><td>Rice</td><td class="mono">280</td><td class="mono">96</td><td class="mono">96</td><td class="mono">472</td><td class="mono">2.8%</td></tr>
+              <tr><td class="mono">8</td><td>Seafood</td><td class="mono">855</td><td class="mono">347</td><td class="mono">303</td><td class="mono">1,505</td><td class="mono">9.0%</td></tr>
+              <tr><td class="mono">9</td><td>Soup</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
+              <tr><td class="mono">10</td><td>Vegetable-Fruit</td><td class="mono">709</td><td class="mono">232</td><td class="mono">231</td><td class="mono">1,172</td><td class="mono">7.0%</td></tr>
+              <tr><td></td><td><strong>All classes</strong></td><td class="mono"><strong>9,866</strong></td><td class="mono"><strong>3,430</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>16,643</strong></td><td class="mono"><strong>100.0%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 2 - Official sample counts by class and split</p>
+
+        <h4>Bias and limitations</h4>
+        <ul>
+          <li>Classes are imbalanced, with fewer examples for Rice, Dairy product and Noodles-Pasta.</li>
+          <li>Each image has one label; representative sample inspection includes composite plates and images that appear off-topic.</li>
+          <li>Photographic style differs by class and repeated images occur across the official splits; both can affect evaluation.</li>
+        </ul>
+
+        <h3>Exploratory data analysis (EDA)</h3>
+        <p>The EDA scans all files in the official release. File integrity and original image dimensions are audited before preprocessing. Pixel statistics are computed after longer-side resize to 512 px, with padding excluded; normalization statistics are fitted on the training split only.</p>
+
+        <h4>Data integrity and splitting</h4>
+        <p>All 16,643 files decode as RGB JPEGs; no file is empty, unreadable or inconsistent with its extension. The same 11 class folders appear in all three official splits. Of 1,887 files with a non-default EXIF orientation tag, 1,884 have the invalid value 0 and only three have a real 90° rotation; images are read as stored.</p>
+        <p>The official 59.3% / 20.6% / 20.1% training/validation/evaluation (test) split is retained. All 16,643 images are used; the group does not create a custom split or select a subset. The split unit is an individual image. No project-level random seed or stratification applies because the group does not resplit the data; the EPFL download page lists the three partitions but does not state the original split seed or whether the split was stratified.</p>
+        <p>Exact copies across the published splits mean image-level splitting does not eliminate leakage. Class proportions are similar across splits (χ² test p = 0.806; Cramér's V = 0.021).</p>
+
+        <h4>Class distribution</h4>
+        <figure class="figure-large">
+          <img src="Assignment2/02_dataset_and_eda/a2_fig1_class_distribution.png"
+            alt="Horizontal bar chart of images per class over the whole dataset, from Soup and Dessert with 2,500 images each down to Rice with 472; a dashed line marks the uniform level of 1,513 images"
+            loading="lazy">
+          <figcaption>Figure 1 - Images per class over the whole dataset (N = 16,643)</figcaption>
+        </figure>
+        <p>An always-Dessert predictor reaches 0.146 accuracy but only 0.023 macro-F1 on validation. This is why macro-F1 and per-class recall should be read alongside accuracy.</p>
+
+        <h4>Input size and aspect ratio</h4>
+        <p>There are 825 distinct image shapes; the longer side ranges from 270 to 9,542 px, with a median of 512 px. Table 3 summarizes resizing and padding by split. The aspect-ratio groups in Table 4 show why padding is concentrated in non-square images. Figure 2 illustrates the transformation.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Split</th><th>Upsampled (%)</th><th>Longer side = 512 (%)</th><th>Downsampled (%)</th><th>Needs padding (%)</th><th>Mean padding (%)</th><th>Max padding (%)</th></tr></thead>
+            <tbody>
+              <tr><td>train</td><td class="mono">2.4</td><td class="mono">92.1</td><td class="mono">5.5</td><td class="mono">43.6</td><td class="mono">11.7</td><td class="mono">55.1</td></tr>
+              <tr><td>val</td><td class="mono">1.6</td><td class="mono">93.2</td><td class="mono">5.2</td><td class="mono">38.0</td><td class="mono">10.3</td><td class="mono">61.7</td></tr>
+              <tr><td>test</td><td class="mono">2.0</td><td class="mono">91.7</td><td class="mono">6.3</td><td class="mono">40.5</td><td class="mono">10.9</td><td class="mono">47.5</td></tr>
+              <tr><td>all</td><td class="mono">2.1</td><td class="mono">92.2</td><td class="mono">5.6</td><td class="mono">41.8</td><td class="mono">11.3</td><td class="mono">61.7</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 3 - Resize and padding statistics by split (percentages rounded independently)</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Aspect-ratio group (longer / shorter)</th><th>Images</th><th>Share (%)</th><th>Mean padding (%)</th></tr></thead>
+            <tbody>
+              <tr><td>1:1</td><td class="mono">9,683</td><td class="mono">58.2</td><td class="mono">0.0</td></tr>
+              <tr><td>1.00–1.32</td><td class="mono">536</td><td class="mono">3.2</td><td class="mono">8.3</td></tr>
+              <tr><td>≈4:3 (1.32–1.34)</td><td class="mono">3,759</td><td class="mono">22.6</td><td class="mono">25.0</td></tr>
+              <tr><td>1.34–1.45</td><td class="mono">959</td><td class="mono">5.8</td><td class="mono">25.8</td></tr>
+              <tr><td>≈3:2 (1.45–1.55)</td><td class="mono">845</td><td class="mono">5.1</td><td class="mono">33.4</td></tr>
+              <tr><td>1.55–1.85 (5:3, 16:9)</td><td class="mono">841</td><td class="mono">5.0</td><td class="mono">41.7</td></tr>
+              <tr><td>&gt;1.85</td><td class="mono">20</td><td class="mono">0.1</td><td class="mono">49.6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 4 - Aspect ratio and resulting padding</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig2_resize_pad_demo.jpg"
+            alt="Four example images in their original shape (top row) and after resizing and padding to 512 by 512 (bottom row), with padding of 44, 0, 25 and 55 percent"
+            loading="lazy">
+          <figcaption>Figure 2 - Original images and examples of model inputs after longer-side resize to 512 px and centre padding to 512 × 512</figcaption>
+        </figure>
+
+        <h4>Duplicates and split leakage</h4>
+        <p>Exact duplicates have identical file bytes; matching 64-bit dHashes mark possible near-duplicates that need visual review. Table 5 summarizes pairwise overlap; Table 5b breaks exact-copy overlap down by test class. The official split is retained; report results on the full test set and on the 2,787 images without a byte-identical train/validation copy.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Split pair</th><th>Byte-identical files (MD5)</th><th>Shared dHashes</th></tr></thead>
+            <tbody>
+              <tr><td>train–val</td><td class="mono">51</td><td class="mono">58</td></tr>
+              <tr><td>train–test</td><td class="mono">249</td><td class="mono">254</td></tr>
+              <tr><td>val–test</td><td class="mono">311</td><td class="mono">314</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 5 - Pairwise duplicate audit (dHash counts include byte-identical pairs)</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Class</th><th>Test images</th><th>Exact copy in train/validation</th><th>Rate (%)</th><th>Test images without exact train/validation copy</th></tr></thead>
+            <tbody>
+              <tr><td>Bread</td><td class="mono">368</td><td class="mono">100</td><td class="mono">27.2</td><td class="mono">268</td></tr>
+              <tr><td>Dairy product</td><td class="mono">148</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">148</td></tr>
+              <tr><td>Dessert</td><td class="mono">500</td><td class="mono">60</td><td class="mono">12.0</td><td class="mono">440</td></tr>
+              <tr><td>Egg</td><td class="mono">335</td><td class="mono">5</td><td class="mono">1.5</td><td class="mono">330</td></tr>
+              <tr><td>Fried food</td><td class="mono">287</td><td class="mono">66</td><td class="mono">23.0</td><td class="mono">221</td></tr>
+              <tr><td>Meat</td><td class="mono">432</td><td class="mono">109</td><td class="mono">25.2</td><td class="mono">323</td></tr>
+              <tr><td>Noodles-Pasta</td><td class="mono">147</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">147</td></tr>
+              <tr><td>Rice</td><td class="mono">96</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">96</td></tr>
+              <tr><td>Seafood</td><td class="mono">303</td><td class="mono">100</td><td class="mono">33.0</td><td class="mono">203</td></tr>
+              <tr><td>Soup</td><td class="mono">500</td><td class="mono">116</td><td class="mono">23.2</td><td class="mono">384</td></tr>
+              <tr><td>Vegetable-Fruit</td><td class="mono">231</td><td class="mono">4</td><td class="mono">1.7</td><td class="mono">227</td></tr>
+              <tr><td><strong>All</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>560</strong></td><td class="mono"><strong>16.7</strong></td><td class="mono"><strong>2,787</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 5b - Test images with a byte-identical copy in train or validation, by class</p>
+        <p>Of 568 test images sharing a dHash with train or validation, 560 are byte-identical and eight are dHash-only candidates: six in Rice and two in Vegetable-Fruit. dHash matches are possible near-duplicates, not confirmed duplicates.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig3_cross_split_duplicates.jpg"
+            alt="Five pairs of identical images, with the train or validation copy in the top row and the test copy below it: a cake, a meat dish, mussels, flatbread and chicken wings"
+            loading="lazy">
+          <figcaption>Figure 3 - Examples of identical files shared between splits</figcaption>
+        </figure>
+        <p>Seafood has the highest exact-copy rate (33.0%). Dessert also has 60 affected test images (12.0%). Dairy product, Noodles-Pasta and Rice have no byte-identical test copies in train or validation.</p>
+        <p>Additional byte-identical copies within the same split are 5 in train, 3 in validation and 4 in test; these copies are retained. In addition, 51 validation images are byte-identical to images in train, so validation-based checkpoint selection and early stopping could be optimistic for those examples. This is a limitation of the provided split.</p>
+
+        <h4>Input size versus class</h4>
+        <p>Table 6 shows that longer side, file size and bits per pixel carry the strongest class signal. The effect-size labels use rule-of-thumb thresholds: ε² &lt; 0.01 negligible, &lt; 0.06 small, &lt; 0.14 moderate and ≥ 0.14 large. The metadata-only random forest reaches 0.251 accuracy and 0.193 macro-F1 on validation, above the majority-class baseline (0.146 and 0.023). Vegetable-Fruit is the clearest size outlier, so its results should be interpreted with care.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Size feature</th><th>All 11 classes</th><th>Without Vegetable-Fruit</th></tr></thead>
+            <tbody>
+              <tr><td>Longer side</td><td class="mono">0.184 (large)</td><td class="mono">0.046 (small)</td></tr>
+              <tr><td>Shorter side</td><td class="mono">0.045 (small)</td><td class="mono">0.013 (small)</td></tr>
+              <tr><td>Aspect ratio</td><td class="mono">0.046 (small)</td><td class="mono">0.014 (small)</td></tr>
+              <tr><td>File size</td><td class="mono">0.166 (large)</td><td class="mono">0.087 (moderate)</td></tr>
+              <tr><td>Bits per pixel</td><td class="mono">0.161 (large)</td><td class="mono">0.118 (moderate)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 6 - Effect size of class on image-size features (ε²)</p>
+
+        <h4>Pixel intensity</h4>
+        <p>Table 7 reports the training-set RGB statistics used for normalization, computed after resize with padding excluded. Food-11 is warmer and has a wider pixel spread than the ImageNet reference. Figure 4 shows the channel distributions.</p>
+        <div class="table-wrap">
+          <table class="members">
+            <thead><tr><th>Channel</th><th>Train mean</th><th>Train std</th><th>ImageNet mean</th><th>ImageNet std</th></tr></thead>
+            <tbody>
+              <tr><td>R</td><td class="mono">0.5586</td><td class="mono">0.2722</td><td class="mono">0.485</td><td class="mono">0.229</td></tr>
+              <tr><td>G</td><td class="mono">0.4520</td><td class="mono">0.2755</td><td class="mono">0.456</td><td class="mono">0.224</td></tr>
+              <tr><td>B</td><td class="mono">0.3434</td><td class="mono">0.2821</td><td class="mono">0.406</td><td class="mono">0.225</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 7 - Training-set RGB statistics and ImageNet reference</p>
+        <figure class="figure-large">
+          <img src="Assignment2/02_dataset_and_eda/a2_fig4_pixel_intensity.png"
+            alt="Two line plots of per-channel pixel-intensity histograms of the training split, linear scale on the left and log scale on the right, with spikes at 0 and 255"
+            loading="lazy">
+          <figcaption>Figure 4 - Training-set pixel-intensity distributions (right: log scale)</figcaption>
+        </figure>
+
+        <h4>Sample inspection</h4>
+        <p>The samples in Figure 5 show broad within-class variety, composite dishes assigned one class label, examples that appear off-topic and visually similar classes such as Noodles-Pasta/Soup and Meat/Egg/Fried food. These qualitative observations motivate hypotheses for later error analysis; their prevalence has not been quantified.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig5_samples_per_class.jpg"
+            alt="Grid of seven random training images for each of the 11 food classes"
+            loading="lazy">
+          <figcaption>Figure 5 - Random training images per class (seed 42)</figcaption>
+        </figure>
+        <p>Figure 6 highlights unusual image sizes and brightness, which reflect photographic-style differences across categories.</p>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig6_extremes.jpg"
+            alt="Grid of training images with the smallest longer side, the most elongated shape, the lowest mean luminance and the highest mean luminance"
+            loading="lazy">
+          <figcaption>Figure 6 - Training-set size and brightness extremes. The butter image shares a dHash with another training image, indicating a near-duplicate candidate.</figcaption>
+        </figure>
+
+        <h4>Data preprocessing</h4>
+        <p>For model input, images are decoded as stored, converted to RGB, resized with Lanczos so the longer side is 512 px and centre-padded with the rounded training mean (142, 115, 88). Values are scaled to [0, 1] and standardized with the training-only means and standard deviations in Table 7. Each image produces a float32 tensor with shape [3, 512, 512]; a batch has shape [B, 3, 512, 512]. The EDA uses no augmentation; any training-time augmentation belongs to the model-training protocol and is not assessed here.</p>
+        <p><strong>Example batch after preprocessing.</strong> Figure 7 shows an actual PyTorch DataLoader batch of eight training images sampled without replacement for illustration (seed 42). The batch uses the pipeline above with no augmentation. Its recorded output is:</p>
+        <pre style="white-space: pre-wrap;"><samp>images: shape [8, 3, 512, 512], dtype torch.float32
+labels: shape [8], dtype torch.int64
+label IDs: [2, 0, 4, 4, 3, 2, 2, 9]</samp></pre>
+        <figure>
+          <img src="Assignment2/02_dataset_and_eda/a2_fig7_preprocessed_batch.jpg"
+            alt="Eight preprocessed training images arranged in two rows, labeled Dessert, Bread, Fried food, Fried food, Egg, Dessert, Dessert and Soup; non-square images show centred padding"
+            loading="lazy">
+          <figcaption>Figure 7 - An example training batch after resize, padding and normalization. Normalization is reversed for display; the model-input tensors remain standardized.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 class="section-title">Methodology</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Experimental setup</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Results</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Comparison and discussion</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Error analysis</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Limitations and conclusion</h2>
+        <div class="stub-note"></div>
+      </section>
+
+      <section id="ai-disclosure">
+        <p class="section-label">AI usage - this assignment</p>
+        <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
+        <div class="disclosure-box">
+          <h4>Where AI was used</h4>
+          <ul>
+            <li class="placeholder"></li>
           </ul>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 36px 0 18px;
-              color: var(--ink);
-            "
-          >
-            Baseline and main methods
-          </h3>
-
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 155px">Model / Variant</th>
-                  <th style="min-width: 265px">Architecture</th>
-                  <th style="min-width: 175px">Input representation</th>
-                  <th style="min-width: 165px">Loss</th>
-                  <th style="min-width: 215px">Metrics</th>
-                  <th style="min-width: 275px">Strengths &amp; limits</th>
-                  <th style="min-width: 115px; text-align: center">
-                    Params (Total / Trainable)
-                  </th>
-                  <th style="min-width: 215px">Library vs. Self-implemented</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td>
-                    <strong>SimpleCNN</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Scratch Baseline)</span
-                    >
-                  </td>
-                  <td>
-                    Custom 9-conv-layer network trained from random
-                    initialization:<br />
-                    • <strong>Stem:</strong>
-                    <code>Conv2d(3, 32, 3, stride=2, pad=1, bias=False)</code> →
-                    <code>BN</code> → <code>ReLU</code> (512→256)<br />
-                    • <strong>4 Stages</strong> with widths
-                    <code>(32, 64, 128, 256)</code>: each stage has two
-                    <code>[Conv2d(3×3, pad=1, bias=False) → BN → ReLU]</code>
-                    blocks followed by
-                    <code>MaxPool2d(2)</code> (256→128→64→32→16)<br />
-                    • <strong>Head:</strong> <code>AdaptiveAvgPool2d(1)</code> →
-                    <code>Flatten()</code> → <code>Dropout(0.3)</code> →
-                    <code>Linear(256, 11)</code>.
-                  </td>
-                  <td>
-                    Aspect-preserved, padded &amp; train-normalized 3D RGB
-                    tensor <code>X ∈ ℝ^{B×3×512×512}</code>
-                  </td>
-                  <td>
-                    <code>nn.CrossEntropyLoss</code> with
-                    <code>label_smoothing=0.1</code>
-                  </td>
-                  <td>
-                    • <strong>Primary:</strong> Macro-F1, Macro-Precision,
-                    Macro-Recall<br />
-                    • <strong>Secondary:</strong> Top-1 Accuracy, Test Loss,
-                    ECE<br />
-                    • <strong>Class-level:</strong> Per-class P/R/F1, Confusion
-                    Matrix<br />
-                    • <strong>Efficiency:</strong> GFLOPs, Train time (min),
-                    Peak VRAM (MiB), Latency (bs=1), Throughput (bs=32)
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Compact (~1.19M params), fast
-                    forward pass, zero external pretraining dependency, clean
-                    spatial inductive bias benchmark.<br />
-                    <strong>Limits:</strong> Lacks residual skip connections;
-                    limited depth and receptive field struggle with high
-                    intra-class food variation when trained from scratch on
-                    9,866 images.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">1,185,323</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 1,185,323 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Complete
-                    <code>SimpleCNN</code> class, stem + 4-stage generator loop,
-                    custom head.<br />
-                    <strong>Library:</strong> <code>torch.nn.Conv2d</code>,
-                    <code>BatchNorm2d</code>, <code>ReLU</code>,
-                    <code>MaxPool2d</code>, <code>AdaptiveAvgPool2d</code>,
-                    <code>Dropout</code>, <code>Linear</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td>
-                    <strong>ResNet-18 (Frozen)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation / Linear Probe)</span
-                    >
-                  </td>
-                  <td>
-                    Pretrained <code>torchvision.models.resnet18</code> (<code
-                      >IMAGENET1K_V1</code
-                    >
-                    weights):<br />
-                    • <strong>Backbone (Frozen):</strong> 7×7 conv stride-2 +
-                    maxpool stem, 4 residual stages of 2 basic blocks each
-                    (widths <code>64, 128, 256, 512</code>). All weights frozen
-                    (<code>requires_grad=False</code>) and
-                    <code>BatchNorm2d</code> locked in
-                    <code>eval()</code> mode.<br />
-                    • <strong>Head (Trainable):</strong>
-                    <code>Sequential(Dropout(0.3), Linear(512, 11))</code>.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Ultra-low trainable parameter
-                    count (5,643); rapid convergence; minimal backward-pass
-                    memory; isolates off-the-shelf ImageNet feature quality.<br />
-                    <strong>Limits:</strong> Cannot adapt convolutional filters
-                    or BatchNorm statistics to fine-grained culinary textures
-                    and domain-specific lighting.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">11,182,155</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 5,643 (0.05%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Head replacement wrapper,
-                    split-mode <code>set_mode()</code> locking backbone BN in
-                    <code>eval()</code>.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet18</code>
-                    (<code>IMAGENET1K_V1</code>).
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td>
-                    <strong>ResNet-18 (Full Fine-Tuning)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Controlled Study)</span
-                    >
-                  </td>
-                  <td>
-                    Same <code>ResNet-18</code> (<code>IMAGENET1K_V1</code>)
-                    architecture and
-                    <code>Dropout(0.3) → Linear(512, 11)</code> head, but
-                    <strong>all</strong> backbone residual blocks, BatchNorm
-                    layers, and classification head are unfrozen and jointly
-                    optimized end-to-end with discriminative learning rates
-                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>).
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Adapts multi-scale residual
-                    representations specifically to Food-11 categories while
-                    maintaining moderate compute cost (~11.18M params).<br />
-                    <strong>Limits:</strong> Higher training time and VRAM than
-                    frozen probing; shallower 2-conv basic blocks have lower
-                    representational ceiling than bottleneck architectures.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">11,182,155</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 11,182,155 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Parameter-group splitter
-                    (<code>make_optimizer</code>) for differential backbone/head
-                    learning rates.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet18</code>,
-                    <code>torch.optim.AdamW</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td>
-                    <strong>ResNet-50 (Frozen)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation / Linear Probe)</span
-                    >
-                  </td>
-                  <td>
-                    Pretrained <code>torchvision.models.resnet50</code> (<code
-                      >IMAGENET1K_V2</code
-                    >
-                    weights):<br />
-                    • <strong>Backbone (Frozen):</strong> 4 residual stages with
-                    <code>(3, 4, 6, 3)</code> bottleneck blocks (1×1 → 3×3 → 1×1
-                    convs, expansion factor 4, output channels
-                    <code>256, 512, 1024, 2048</code>). Locked in
-                    <code>eval()</code> mode.<br />
-                    • <strong>Head (Trainable):</strong>
-                    <code>Sequential(Dropout(0.3), Linear(2048, 11))</code>.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Leverages rich 2,048-dim
-                    high-level semantic features from TorchVision's upgraded V2
-                    recipe while training only 22,539 parameters.<br />
-                    <strong>Limits:</strong> High forward-pass FLOPs at 512×512
-                    resolution despite frozen weights; linear head alone cannot
-                    resolve subtle cross-class food overlaps.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">23,530,571</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 22,539 (0.10%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Head replacement wrapper
-                    and frozen BN enforcement.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet50</code>
-                    (<code>IMAGENET1K_V2</code>).
-                  </td>
-                </tr>
-                <tr style="background: rgba(42, 68, 148, 0.04)">
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <strong>ResNet-50 (Full Fine-Tuning)</strong><br /><span
-                      style="font-size: 13px; color: #2a4494; font-weight: bold"
-                      >★ Primary Model</span
-                    >
-                  </td>
-                  <td>
-                    Deep 50-layer bottleneck architecture initialized with
-                    <code>IMAGENET1K_V2</code> weights and custom
-                    <code>Dropout(0.3) → Linear(2048, 11)</code> head. Entire
-                    network (<code>23,530,571</code> parameters) is fine-tuned
-                    end-to-end using discriminative AdamW
-                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>)
-                    and cosine decay.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    + Grad-CAM visual attribution &amp; ECE calibration
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Highest representational
-                    capacity and hierarchical receptive field; adapts deep
-                    bottleneck filters to complex food compositions, garnish
-                    details, and plating.<br />
-                    <strong>Limits:</strong> Largest memory footprint and
-                    longest per-epoch training time at 512×512 resolution;
-                    requires careful regularization to prevent overfitting.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">23,530,571</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 23,530,571 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> End-to-end differential
-                    fine-tuning loop, dual-best checkpoint manager, custom
-                    Grad-CAM hooks.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet50</code>
-                    (<code>IMAGENET1K_V2</code>), PyTorch AMP &amp; autograd.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="experimental-setup">
-          <h2 class="section-title">Experimental setup</h2>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            To ensure strict experimental fairness and reproducibility across
-            all 15 core training runs (5 model configurations &times; 3 random
-            seeds), a unified training protocol and predeclared experimental
-            design were enforced.
-          </p>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 24px;
-              font-weight: bold;
-              margin: 24px 0 14px;
-              color: var(--ink);
-            "
-          >
-            1. Standardized training setup &amp; hyperparameters
-          </h3>
-
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 45px; text-align: center">#</th>
-                  <th style="min-width: 210px">Setup / Hyperparameter</th>
-                  <th style="min-width: 260px">Value / Policy</th>
-                  <th style="min-width: 380px">
-                    Design Rationale &amp; Protocol Notes
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td><strong>Optimizer</strong></td>
-                  <td>
-                    <code>torch.optim.AdamW</code> (<code
-                      >weight_decay = 0.01</code
-                    >)
-                  </td>
-                  <td>
-                    Decoupled weight decay regularizes high-capacity backbones
-                    effectively during transfer learning and scratch training
-                    alike.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td><strong>Learning rate</strong></td>
-                  <td>
-                    • <strong>Classifier head / Scratch:</strong>
-                    <code>lr_head = 1e-3</code><br />
-                    • <strong>Pretrained backbone:</strong>
-                    <code>lr_backbone = 1e-4</code>
-                  </td>
-                  <td>
-                    Discriminative learning rates allow the randomly initialized
-                    classification head to adapt quickly while preventing
-                    catastrophic forgetting in pretrained ImageNet weights.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td><strong>Batch size &amp; Input</strong></td>
-                  <td>
-                    <code>batch_size = 32</code> at
-                    <code>512 &times; 512</code> resolution
-                  </td>
-                  <td>
-                    Consistent across train, validation, and test loaders (<code
-                      >drop_last = False</code
-                    >). Aspect-preserving Lanczos resize + center train-mean RGB
-                    padding preserves food geometry.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td><strong>Epochs</strong></td>
-                  <td>
-                    Up to <code>100</code> epochs (<code>EP_SCRATCH = 100</code
-                    >, <code>EP_FT = 100</code>)
-                  </td>
-                  <td>
-                    Matched maximum epoch budget across all five configurations,
-                    bounded by dual-criterion early stopping.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td><strong>Scheduler</strong></td>
-                  <td>
-                    <code>LambdaLR</code>: 1-epoch linear warmup → cosine
-                    annealing (<code>min_ratio = 0.01</code>)
-                  </td>
-                  <td>
-                    Stepped per iteration/batch. Warmup stabilizes early
-                    gradients in the new linear head before smooth cosine decay
-                    to 1% of peak LR.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>6</strong></td>
-                  <td><strong>Regularization &amp; Augmentation</strong></td>
-                  <td>
-                    • <strong>Loss:</strong> Cross-Entropy with
-                    <code>label_smoothing = 0.1</code><br />
-                    • <strong>Head:</strong> <code>Dropout(p = 0.3)</code><br />
-                    • <strong>Gradients:</strong> Global L2 norm clipping at
-                    <code>1.0</code><br />
-                    • <strong>Train Aug:</strong>
-                    <code>RandomHorizontalFlip(0.5)</code> +
-                    <code>ColorJitter(0.3, 0.3, 0.3, 0.05)</code>
-                  </td>
-                  <td>
-                    Mitigates overconfidence on visually ambiguous or noisy
-                    web-scraped food labels and improves robustness to
-                    lighting/color shifts.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>7</strong></td>
-                  <td><strong>Early stopping</strong></td>
-                  <td>
-                    <code>patience = 10</code> epochs (shared dual-criterion
-                    counter)
-                  </td>
-                  <td>
-                    Patience resets to <code>0</code> whenever
-                    <em>either</em> validation <code>macro_f1</code> or
-                    validation <code>accuracy</code> improves (ties broken by
-                    lower validation loss). Training stops only when neither
-                    improves for 10 consecutive epochs.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>8</strong></td>
-                  <td><strong>Checkpoint criterion</strong></td>
-                  <td>
-                    Dual validation checkpoints:
-                    <code>best_macro_f1.pt</code> (primary) &amp;
-                    <code>best_accuracy.pt</code>
-                  </td>
-                  <td>
-                    Both checkpoints are saved independently on validation and
-                    evaluated on the test set in §9. Primary comparisons and
-                    plots strictly use <code>best_macro_f1</code> to account for
-                    class imbalance.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>9</strong></td>
-                  <td><strong>Seeds &amp; Repeated runs</strong></td>
-                  <td>
-                    <code>THREE_SEEDS = [42, 43, 44]</code> (3 independent runs
-                    / config)
-                  </td>
-                  <td>
-                    Seeds control Python, NumPy, PyTorch, CUDA,
-                    <code>cudnn.deterministic=True</code>, and DataLoader
-                    shuffling while keeping the official data split invariant.
-                    Results reported as <code>mean ± sample std (ddof=1)</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>10</strong></td>
-                  <td><strong>Hardware &amp; Environment</strong></td>
-                  <td>
-                    CUDA GPU (Colab / Kaggle environment logged in
-                    <code>environment.json</code>)
-                  </td>
-                  <td>
-                    Full environment provenance, SHA-256 split fingerprint
-                    (<code>SPLIT_SHA</code>), and run signatures verified
-                    automatically before reusing or evaluating checkpoints.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>11</strong></td>
-                  <td><strong>Mixed precision</strong></td>
-                  <td>
-                    Enabled (<code>AMP_ENABLED = True</code>,
-                    <code>torch.float16</code> autocast +
-                    <code>GradScaler</code>)
-                  </td>
-                  <td>
-                    Accelerates 512×512 convolutional training and reduces peak
-                    VRAM allocation; evaluation loss accumulation is cast back
-                    to FP32 for numerical exactness.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>12</strong></td>
-                  <td><strong>Training time &amp; Cost tracking</strong></td>
-                  <td>
-                    Per-epoch &amp; total wall-clock time, Peak GPU VRAM (MiB),
-                    GFLOPs, Latency (<code>bs=1</code>) &amp; Throughput
-                    (<code>bs=32</code>)
-                  </td>
-                  <td>
-                    Measured via <code>time.perf_counter()</code> (including
-                    validation), <code>torch.cuda.max_memory_allocated()</code>,
-                    <code>FlopCounterMode</code> (1 MAC = 2 FLOPs), and
-                    warmed-up CUDA-synchronized synthetic inference benchmarks.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>13</strong></td>
-                  <td><strong>Hyperparameter selection method</strong></td>
-                  <td>
-                    Proposal-locked controlled recipe (no per-model test tuning)
-                  </td>
-                  <td>
-                    All hyperparameters were fixed a priori in the approved
-                    proposal to isolate the effects of pretraining, backbone
-                    freezing vs. full fine-tuning, and backbone depth without
-                    hyperparameter-search confounding.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 24px;
-              font-weight: bold;
-              margin: 36px 0 14px;
-              color: var(--ink);
-            "
-          >
-            2. Experimental design &amp; controlled comparisons
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Every controlled comparison states its predeclared hypothesis,
-            changed factor, fixed factors, evaluation metrics, and decision
-            criterion prior to inspecting test outcomes:
-          </p>
-
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 190px">Comparison Study</th>
-                  <th style="min-width: 170px">Reference vs. Alternative</th>
-                  <th style="min-width: 250px">Predeclared Hypothesis</th>
-                  <th style="min-width: 210px">Changed Factor(s)</th>
-                  <th style="min-width: 240px">Fixed Factors</th>
-                  <th style="min-width: 250px">
-                    Metrics &amp; Decision Criterion
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td>
-                    <strong>Transfer Learning &amp; Architecture</strong
-                    ><br /><span style="font-size: 13px; color: var(--ink-soft)"
-                      >(Baseline vs. Main)</span
-                    >
-                  </td>
-                  <td>
-                    <code>simple_cnn</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Deep residual architecture initialized with ImageNet
-                    pretraining substantially improves Food-11 test Macro-F1
-                    over a compact CNN trained from scratch, at the cost of
-                    higher compute and memory.
-                  </td>
-                  <td>
-                    Backbone architecture/depth (9-layer SimpleCNN vs. 50-layer
-                    bottleneck ResNet) and initialization (random vs.
-                    ImageNet-1K V2 + discriminative LR).
-                  </td>
-                  <td>
-                    Official Food-11 split, 512×512 aspect-preserving
-                    resize/pad, train-only RGB normalization, augmentation,
-                    AdamW, epoch budget (100), dual-criterion early stopping,
-                    batch size (32), seeds <code>[42, 43, 44]</code>.
-                  </td>
-                  <td>
-                    • <strong>Primary:</strong> Paired Δ Test Macro-F1 across
-                    seeds.<br />
-                    • <strong>Criterion:</strong> Mean paired
-                    <code>Δ Macro-F1 ≥ +0.01</code> (1.0 pp) indicates a
-                    practical gain for <code>alt</code>; report sample std, sign
-                    consistency, seed-42 bootstrap 95% CI, and McNemar
-                    <em>p</em>-value.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td>
-                    <strong>Backbone Adaptation (Shallow)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation Study 1)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet18_frozen</code><br />vs.<br /><code
-                      >resnet18_full</code
-                    >
-                  </td>
-                  <td>
-                    Unfreezing and adapting the ResNet-18 backbone end-to-end
-                    yields a practical gain (≥ 1.0 pp) in Food-11 Macro-F1 over
-                    a frozen linear probe by specializing convolutional filters
-                    to food textures, at higher training cost.
-                  </td>
-                  <td>
-                    Backbone parameter trainability (<code>requires_grad</code>)
-                    and <code>BatchNorm2d</code> behavior (locked
-                    <code>eval()</code> vs. active
-                    <code>train()</code> statistics).
-                  </td>
-                  <td>
-                    ResNet-18 architecture, ImageNet-1K V1 initialization,
-                    classifier head (<code>Dropout(0.3) + Linear(512, 11)</code
-                    >), data split, 512×512 preprocessing, optimizer/schedule,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
-                    VRAM trade-off analysis.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td>
-                    <strong>Backbone Adaptation (Deep)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation Study 2)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet50_frozen</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Full end-to-end fine-tuning of ResNet-50 significantly
-                    outperforms a frozen ResNet-50 feature extractor,
-                    demonstrating that domain adaptation of deep bottleneck
-                    layers is critical for fine-grained food classification.
-                  </td>
-                  <td>
-                    Backbone parameter trainability (22.5K vs. 23.53M trainable
-                    params) and <code>BatchNorm2d</code> train/eval mode.
-                  </td>
-                  <td>
-                    ResNet-50 architecture, ImageNet-1K V2 initialization,
-                    classifier head (<code>Dropout(0.3) + Linear(2048, 11)</code
-                    >), data split, 512×512 preprocessing, optimizer/schedule,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
-                    VRAM trade-off analysis.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td>
-                    <strong>Backbone Capacity Scaling</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Controlled Study)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet18_full</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Scaling from ResNet-18 (basic blocks) to ResNet-50
-                    (bottleneck blocks) under full fine-tuning improves test
-                    Macro-F1 by capturing richer hierarchical food features,
-                    while increasing GFLOPs and latency.
-                  </td>
-                  <td>
-                    Backbone architecture/depth (18-layer basic vs. 50-layer
-                    bottleneck, 11.18M vs. 23.53M params) and corresponding
-                    TorchVision ImageNet weight recipe (V1 vs. V2).
-                  </td>
-                  <td>
-                    Full fine-tuning regime (<code>lr_backbone=1e-4</code>,
-                    <code>lr_head=1e-3</code>), official split, 512×512
-                    preprocessing, augmentation, epoch budget, early stopping,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) evaluated alongside
-                    GFLOPs, latency, and F1-per-GFLOP efficiency.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <strong>Data Augmentation Ablation</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Optional Protocol)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet50_full_noaug</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Applying random horizontal flips and color jitter during
-                    training reduces overfitting and improves test
-                    generalization on Food-11 (controlled via
-                    <code>RUN_AUG_ABLATION</code> flag).
-                  </td>
-                  <td>
-                    Presence vs. absence of training-time data augmentation
-                    (<code>RandomHorizontalFlip</code> +
-                    <code>ColorJitter</code>).
-                  </td>
-                  <td>
-                    ResNet-50 architecture, ImageNet-1K V2 weights, full
-                    fine-tuning recipe, 512×512 resize/pad &amp; train-only
-                    normalization, batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) and generalization gap
-                    (<code>train_acc - val_acc</code>) inspection.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="results">
-          <h2 class="section-title">Results</h2>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 20px"
-          >
-            The analysis covers training curves and convergence behavior,
-            quantitative performance metrics across primary and secondary
-            evaluation criteria, parameter counts, compute costs, and
-            qualitative findings.
-          </p>
-
-          <!-- KPI Grid -->
-          <div class="results-kpi-grid">
-            <div class="results-kpi-card highlight">
-              <div class="results-kpi-value">94.17%</div>
-              <div class="results-kpi-label">
-                Top-1 Accuracy (ResNet-50 Full)
-              </div>
-            </div>
-            <div class="results-kpi-card highlight">
-              <div class="results-kpi-value">0.9461</div>
-              <div class="results-kpi-label">
-                Macro-F1 Score (ResNet-50 Full)
-              </div>
-            </div>
-            <div class="results-kpi-card">
-              <div class="results-kpi-value">6.87 ms</div>
-              <div class="results-kpi-label">Inference Latency (bs=1)</div>
-            </div>
-            <div class="results-kpi-card">
-              <div class="results-kpi-value">253 img/s</div>
-              <div class="results-kpi-label">Throughput (bs=32)</div>
-            </div>
-          </div>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 32px 0 14px;
-              color: var(--ink);
-            "
-          >
-            1. Training behavior &amp; convergence curves
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Training dynamics under the 100-epoch budget and shared
-            dual-criterion early stopping:
-          </p>
-
-          <div class="figure-card">
-            <img
-              src="results_training_curves.png"
-              alt="Training Curves (Loss and Validation Macro-F1)"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/training_curves.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 1: Training curves across the five model configurations
-              (SimpleCNN scratch, ResNet-18/50 frozen vs. full fine-tuning) on
-              Food-11 under aspect-preserving 512×512 preprocessing and
-              train-only normalization.
-            </p>
-          </div>
-
-          <ul class="pipeline-notes-list" style="margin-bottom: 28px">
-            <li>
-              <strong>SimpleCNN (Scratch Baseline):</strong> Reached best
-              validation macro-F1 at epoch 59 out of 110.7 minutes total
-              training time, reflecting slower convergence from random
-              initialization without shortcut connections.
-            </li>
-            <li>
-              <strong>ResNet-18 &amp; ResNet-50 (Frozen Backbones):</strong>
-              Exhibited rapid early convergence (best epoch 25 for ResNet-18
-              frozen, 37 for ResNet-50 frozen) as only the classification head
-              was trained. However, performance plateaued earlier due to frozen
-              feature extractors unable to specialize on culinary nuances.
-            </li>
-            <li>
-              <strong>ResNet-18 &amp; ResNet-50 (Full Fine-Tuning):</strong>
-              Benefited significantly from end-to-end adaptation, with ResNet-50
-              achieving top performance at epoch 16 while maintaining robust
-              stability through AdamW and cosine decay.
-            </li>
+          <h4>Where AI was NOT used</h4>
+          <ul>
+            <li class="placeholder"></li>
           </ul>
+        </div>
+      </section>
 
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 36px 0 14px;
-              color: var(--ink);
-            "
-          >
-            2. Quantitative results &amp; compute cost summary
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Proposal primary evaluation (best validation macro-F1 checkpoint
-            selection) and operational compute costs across all evaluated
-            architectures (Seed 42 single-run evaluation):
-          </p>
+      <section>
+        <h2 class="section-title">Links</h2>
+        <div class="table-wrap">
+          <table class="links-table">
+            <thead>
+              <tr>
+                <th>Content</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Source code</td>
+                <td><a
+                    href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2"
+                    target="_blank" rel="noopener">GitHub repository</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
 
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 155px">Experiment</th>
-                  <th style="min-width: 80px; text-align: center">
-                    Runs / Seed
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Accuracy
-                  </th>
-                  <th style="min-width: 105px; text-align: center">
-                    Test Precision
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Recall
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Macro-F1
-                  </th>
-                  <th style="min-width: 95px; text-align: center">
-                    Val Macro-F1
-                  </th>
-                  <th style="min-width: 85px; text-align: center">
-                    Params (M)
-                  </th>
-                  <th style="min-width: 95px; text-align: center">
-                    Trainable (M)
-                  </th>
-                  <th style="min-width: 85px; text-align: center">GFLOPs</th>
-                  <th style="min-width: 100px; text-align: center">
-                    Train Time (min)
-                  </th>
-                  <th style="min-width: 85px; text-align: center">
-                    Best Epoch
-                  </th>
-                  <th style="min-width: 110px; text-align: center">
-                    Latency bs=1 (ms)
-                  </th>
-                  <th style="min-width: 110px; text-align: center">
-                    Throughput (img/s)
-                  </th>
-                  <th style="min-width: 120px; text-align: center">
-                    Peak GPU Mem (MiB)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td><code>simple_cnn</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">82.61%</td>
-                  <td style="text-align: center">83.19%</td>
-                  <td style="text-align: center">83.29%</td>
-                  <td style="text-align: center">82.99%</td>
-                  <td style="text-align: center">80.42%</td>
-                  <td style="text-align: center">1.19</td>
-                  <td style="text-align: center">1.19</td>
-                  <td style="text-align: center">1.99</td>
-                  <td style="text-align: center">110.7</td>
-                  <td style="text-align: center">59.0</td>
-                  <td style="text-align: center">1.40 ms</td>
-                  <td style="text-align: center">1,035</td>
-                  <td style="text-align: center">3,139 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td><code>resnet18_frozen</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">84.43%</td>
-                  <td style="text-align: center">85.38%</td>
-                  <td style="text-align: center">84.39%</td>
-                  <td style="text-align: center">84.59%</td>
-                  <td style="text-align: center">82.74%</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">0.01</td>
-                  <td style="text-align: center">4.74</td>
-                  <td style="text-align: center">55.2</td>
-                  <td style="text-align: center">25.0</td>
-                  <td style="text-align: center">3.83 ms</td>
-                  <td style="text-align: center">591</td>
-                  <td style="text-align: center">1,245 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td><code>resnet18_full</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">91.81%</td>
-                  <td style="text-align: center">91.87%</td>
-                  <td style="text-align: center">92.34%</td>
-                  <td style="text-align: center">92.01%</td>
-                  <td style="text-align: center">91.32%</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">4.74</td>
-                  <td style="text-align: center">39.6</td>
-                  <td style="text-align: center">13.0</td>
-                  <td style="text-align: center">3.92 ms</td>
-                  <td style="text-align: center">591</td>
-                  <td style="text-align: center">3,994 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td><code>resnet50_frozen</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">90.56%</td>
-                  <td style="text-align: center">91.50%</td>
-                  <td style="text-align: center">90.58%</td>
-                  <td style="text-align: center">91.00%</td>
-                  <td style="text-align: center">89.26%</td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">0.02</td>
-                  <td style="text-align: center">10.68</td>
-                  <td style="text-align: center">82.7</td>
-                  <td style="text-align: center">37.0</td>
-                  <td style="text-align: center">7.31 ms</td>
-                  <td style="text-align: center">218</td>
-                  <td style="text-align: center">1,869 MiB</td>
-                </tr>
-                <tr style="background: rgba(42, 68, 148, 0.04)">
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <code>resnet50_full</code>
-                    <span
-                      style="
-                        font-size: 13px;
-                        color: #2a4494;
-                        font-weight: bold;
-                        margin-left: 4px;
-                      "
-                      >★ Best</span
-                    >
-                  </td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center"><strong>94.17%</strong></td>
-                  <td style="text-align: center"><strong>94.55%</strong></td>
-                  <td style="text-align: center"><strong>94.72%</strong></td>
-                  <td style="text-align: center"><strong>94.61%</strong></td>
-                  <td style="text-align: center"><strong>93.25%</strong></td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">10.68</td>
-                  <td style="text-align: center">67.8</td>
-                  <td style="text-align: center">16.0</td>
-                  <td style="text-align: center">6.87 ms</td>
-                  <td style="text-align: center">253</td>
-                  <td style="text-align: center">14,517 MiB</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+  <footer>
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
+      <span><a href="index.html" style="color:inherit; text-decoration:none;">← Group home</a></span>
+    </div>
+  </footer>
 
-          <p
-            style="
-              color: var(--ink-soft);
-              font-size: 16px;
-              margin: 12px 0 24px;
-              font-style: italic;
-            "
-          >
-            Note: Values reflect single-seed evaluation (seed 42). Standard
-            deviations across multiple seeds are currently uninitialized pending
-            full 3-seed aggregation runs.
-          </p>
+</body>
 
-          <div class="figure-card">
-            <img
-              src="results_tradeoffs.png"
-              alt="Trade-off Analysis (Macro-F1 vs Parameters, GFLOPs, Training Time, Latency)"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/tradeoffs.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 2: Accuracy–cost trade-off plots illustrating test Macro-F1
-              against parameter count (log scale), GFLOPs per image, training
-              time, and batch-size-1 inference latency.
-            </p>
-          </div>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 36px 0 14px;
-              color: var(--ink);
-            "
-          >
-            3. Qualitative &amp; visual diagnostics
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Inspection of confusion matrices, error categories, and Grad-CAM
-            activations on test images:
-          </p>
-
-          <div class="figure-card">
-            <img
-              src="results_confusion_matrices.png"
-              alt="Row-normalized Confusion Matrices"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/confusion_matrices.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 3: Row-normalized confusion matrices for baseline SimpleCNN
-              and main ResNet-50 full model on the Food-11 test split.
-            </p>
-          </div>
-
-          <div class="figure-card">
-            <img
-              src="results_gradcam.png"
-              alt="Grad-CAM Visualizations"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/gradcam.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 4: Grad-CAM visual attributions on ResNet-50 layer4[-1]
-              showing regions of the food dish driving model classification.
-            </p>
-          </div>
-        </section>
-
-        <section id="comparison">
-          <h2 class="section-title">Comparison and discussion</h2>
-          <div class="stub-note"></div>
-        </section>
-
-        <section id="error-analysis">
-          <h2 class="section-title">Error analysis</h2>
-          <div class="stub-note"></div>
-        </section>
-
-        <section id="limitations">
-          <h2 class="section-title">Limitations and conclusion</h2>
-          <div class="stub-note"></div>
-        </section>
-
-        <section id="ai-disclosure">
-          <p class="section-label">AI usage — this assignment</p>
-          <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
-          <div class="disclosure-box">
-            <h4>Where AI was used</h4>
-            <ul>
-              <li class="placeholder"></li>
-            </ul>
-            <h4>Where AI was NOT used</h4>
-            <ul>
-              <li class="placeholder"></li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="section-title">Links</h2>
-          <div class="table-wrap">
-            <table class="links-table">
-              <thead>
-                <tr>
-                  <th>Content</th>
-                  <th>Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Source code</td>
-                  <td>
-                    <a
-                      href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2"
-                      target="_blank"
-                      rel="noopener"
-                      >GitHub repository</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer>
-      <div
-        class="wrap"
-        style="
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 8px;
-        "
-      >
-        <span class="placeholder">Group 07 · CO3133 · Semester 261</span>
-        <span
-          ><a href="index.html" style="color: inherit; text-decoration: none"
-            >← Group home</a
-          ></span
-        >
-      </div>
-    </footer>
-  </body>
 </html>
 assignment2.html Displaying assignment2.html.
