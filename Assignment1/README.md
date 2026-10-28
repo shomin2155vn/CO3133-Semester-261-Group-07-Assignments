@@ -19,7 +19,7 @@ Open the notebook in Google Colab and select **Runtime â†’ Change runtime type â
 | Matplotlib | 3.10.0 |
 | Pillow | 11.3.0 |
 
-Download `fmnist_install_config.json` from an experiment directory under `Reproducibility/multiseed_42_43_44/results/reproducibility/` and upload it to Colab as:
+Download `fmnist_install_config.json` from `Assignment1/Reproducibility/multiseed_42_43_44` and upload it to Colab as:
 
 ```text
 /content/fmnist_install_config.json
