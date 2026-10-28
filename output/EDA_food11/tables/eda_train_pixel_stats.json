@@ -1,0 +1,37 @@
+{
+  "method": "train_resized_content_rgb_population (EDA recomputation)",
+  "fitted_split": "train",
+  "image_size": 512,
+  "interpolation": "PIL_LANCZOS",
+  "input_scale": "0_to_1",
+  "variance_ddof": 0,
+  "augmentation_included": false,
+  "padding_included": false,
+  "train_images": 9866,
+  "content_pixels": 2283237376,
+  "mean": [
+    0.5586106678908568,
+    0.452027398256193,
+    0.34342469071365356
+  ],
+  "std": [
+    0.27217133567514035,
+    0.27550910409690293,
+    0.28208924963905413
+  ],
+  "mean_0_255": [
+    142.44572031216848,
+    115.26698655532921,
+    87.57329613198166
+  ],
+  "std_0_255": [
+    69.40369059716079,
+    70.25482154471025,
+    71.9327586579588
+  ],
+  "padding_rgb": [
+    142,
+    115,
+    88
+  ]
+}
