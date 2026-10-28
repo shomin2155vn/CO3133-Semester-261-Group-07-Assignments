@@ -9,9 +9,38 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .assignment-one [id] { scroll-margin-top:90px; }
-    .assignment-one .report-nav { display:flex; flex-wrap:wrap; gap:10px 20px; margin:24px 0; font-size:17px; }
-    .assignment-one .report-nav a { text-decoration:underline; text-underline-offset:3px; }
+    .assignment-one [id] { scroll-margin-top:28px; }
+    .assignment-layout { display:grid; grid-template-columns:240px minmax(0,1fr); max-width:1400px; margin:0 auto; }
+    .assignment-layout main { min-width:0; }
+    .assignment-sidebar { position:sticky; top:0; align-self:start; height:100dvh; overflow-y:auto; padding:28px 18px; border-right:1px solid var(--line); background:var(--bg); }
+    .sidebar-brand { display:block; color:var(--ink); text-decoration:none; font-size:21px; }
+    .sidebar-brand strong { color:var(--accent); }
+    .sidebar-home { display:inline-block; margin:8px 0 26px; color:var(--ink-soft); font-size:15px; }
+    .sidebar-label { margin:0 10px 12px; color:var(--ink-faint); font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
+    .sidebar-nav { display:grid; gap:3px; }
+    .sidebar-nav a { display:block; padding:8px 10px; border-radius:6px; color:var(--ink-soft); text-decoration:none; font-size:16px; line-height:1.4; }
+    .sidebar-nav a:hover, .sidebar-nav a[aria-current="location"] { color:var(--accent); background:var(--accent-soft); }
+    .sidebar-nav a[aria-current="location"] { font-weight:700; }
+    .sidebar-results summary { cursor:pointer; padding:8px 10px; color:var(--ink-soft); font-size:16px; }
+    .sidebar-results:has(a[aria-current="location"]) summary { color:var(--accent); font-weight:700; }
+    .sidebar-results a { margin-left:14px; border-left:1px solid var(--line); border-radius:0 6px 6px 0; font-size:15px; }
+    .sidebar-toggle { display:none; }
+    .assignment-sidebar a:focus-visible, .assignment-sidebar summary:focus-visible, .sidebar-toggle:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+    @media (max-width:900px) {
+      .assignment-one [id] { scroll-margin-top:96px; }
+      .assignment-layout { display:block; }
+      .assignment-sidebar { z-index:20; height:auto; max-height:85dvh; padding:14px 20px; border-right:0; border-bottom:1px solid var(--line); }
+      .sidebar-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+      .sidebar-toggle { display:block; padding:8px 12px; border:1px solid var(--line); border-radius:6px; background:var(--paper); color:var(--ink); font:inherit; font-size:15px; cursor:pointer; }
+      .sidebar-home { margin:8px 0 0; }
+      .sidebar-label { display:none; }
+      .sidebar-nav { display:none; margin-top:16px; }
+      .assignment-sidebar.is-open .sidebar-nav { display:grid; }
+    }
+    @media print {
+      .assignment-layout { display:block; }
+      .assignment-sidebar { display:none; }
+    }
     .assignment-one .report-model { border:1px solid #dcdfe8; border-radius:10px; margin:18px 0; background:var(--paper); }
     .assignment-one .report-model summary { cursor:pointer; padding:18px 20px; color:var(--ink); font-size:21px; font-weight:700; }
     .assignment-one .report-model summary span { display:block; margin:6px 0 0 20px; font-size:16px; font-weight:400; color:var(--ink-soft); }
@@ -27,27 +56,15 @@
     .assignment-one .figure-card a:focus-visible, .assignment-one summary:focus-visible { outline:3px solid #2a4494; outline-offset:4px; }
     @media (max-width:600px) { .assignment-one .report-model-content {padding:0 10px 10px;} .assignment-one .report-model summary {padding:16px 12px;} }
   </style>
+  <noscript><style>.assignment-sidebar .sidebar-nav { display:grid; } .sidebar-toggle { display:none; }</style></noscript>
 </head>
 
 
 <body class="assignment-one">
 
-  <header class="topnav">
-    <div class="wrap">
-      <a class="brand" href="index.html"><strong>CO3133</strong> · Group 07</a>
-      <nav>
-        <a href="index.html#course">Course</a>
-        <a href="index.html#group">Group</a>
-        <a href="index.html#assignments">Assignments</a>
-        <a href="index.html#ai-disclosure">AI Disclosure</a>
-      </nav>
-    </div>
-  </header>
-
+  
   <main>
     <div class="wrap">
-      <p class="breadcrumb"><a href="index.html">← Back to group home</a></p>
-<nav class="report-nav" aria-label="Assignment report sections"><a href="#dataset-eda">Dataset and EDA</a><a href="#methodology">Methodology</a><a href="#experimental-setup">Experimental setup</a><a href="#results">Results</a><a href="#comparison-discussion">Discussion</a><a href="#error-analysis">Error analysis</a><a href="#limitations-conclusion">Conclusion</a></nav>
           <section class="hero" style="padding-top:32px;">
             <p class="eyebrow">Assignment 1</p>
             <h1 class="title">Foundations of Deep Learning Pipelines and Architectures</h1>
@@ -64,14 +81,63 @@
             </svg>
           </section>
 
-          <section class="assignment-people">
-            <h2 class="section-title">Instructor</h2>
-            <p class="assignment-detail">Lê Thành Sách</p>
+          <section id="course" class="assignment-people" aria-labelledby="course-details-title">
+            <h2 id="course-details-title" class="section-title">Course details</h2>
+            <dl class="kv-grid">
+              <div class="kv-item">
+                <dt>Course name</dt>
+                <dd>Deep Learning and Its Applications</dd>
+              </div>
+              <div class="kv-item">
+                <dt>Instructor</dt>
+                <dd><strong>Lê Thành Sách</strong></dd>
+              </div>
+              <div class="kv-item">
+                <dt>Course code</dt>
+                <dd class="mono">CO3133</dd>
+              </div>
+              <div class="kv-item">
+                <dt>Semester</dt>
+                <dd class="mono">261</dd>
+              </div>
+            </dl>
           </section>
 
-          <section class="assignment-people">
+          <section id="group-members" class="assignment-people">
             <h2 class="section-title">Group members</h2>
-            <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
+            <div class="table-wrap">
+              <table class="members">
+                <thead>
+                  <tr>
+                    <th>Full name</th>
+                    <th>Student ID</th>
+                    <th>Main role / contribution</th>
+                    <th>GitHub profile</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Hoàng Xuân Bách</td>
+                    <td class="mono">2352082</td>
+                    <td>EDA, Method (MLP, CNN), Error Analysis</td>
+                    <td><a href="https://github.com/bachkhmt" target="_blank" rel="noopener">bachkhmt</a></td>
+                  </tr>
+                  <tr>
+                    <td>Nguyễn Việt Hùng</td>
+                    <td class="mono">2352424</td>
+                    <td>Modelling, Method (Linear), Ablation Study</td>
+                    <td><a href="https://github.com/taro1026205" target="_blank" rel="noopener">taro1026205</a></td>
+                  </tr>
+                  <tr>
+                    <td>Lê Nguyễn Gia Phúc</td>
+                    <td class="mono">2352931</td>
+                    <td>Method (LSTM, Transformer), Training, Reproducibility</td>
+                    <td><a href="https://github.com/shomin2155vn" target="_blank" rel="noopener">shomin2155vn</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
           </section>
 
 
@@ -703,7 +769,11 @@
 <tr><th scope="row">Early stopping</th><td>Patience 8 epochs</td><td>Stop after eight consecutive epochs without improving validation cross-entropy loss.</td></tr>
 <tr><th scope="row">Checkpoint selection</th><td>Minimum validation loss</td><td>Select each run independently and restore its best weights before evaluation on the official 10,000-image test set.</td></tr>
 <tr><th scope="row">Seeds and fixed split</th><td>Training seeds 42, 43 and 44; split seed 42</td><td>All runs share the same 48,000/12,000/10,000 train/validation/test partitions. Seed Python, NumPy, PyTorch, CUDA and the DataLoader generator</td></tr>
-<tr><th scope="row">Hardware and software</th><td>NVIDIA Tesla T4 GPU; Google Colab</td><td>Linux; Python 3.13.15; PyTorch 2.11.0+cu130; Torchvision 0.26.0+cu130.</td></tr>
+<tr><th scope="row">Hardware and software</th><td>NVIDIA Tesla T4 GPU; Google Colab</td><td>Linux; Python 3.13.15; torch 2.11.0+cu130,
+    torchvision 0.26.0+cu130,
+    numpy 2.1.3,
+    pandas 2.2.3,
+    scikit-learn 1.6.1.</td></tr>
 <tr><th scope="row">Numerical precision</th><td>FP32</td><td>Full single precision; no mixed precision.</td></tr>
 <tr><th scope="row">Timing protocol</th><td>Complete training and inference pipelines</td><td>Training includes loading, augmentation, device transfer, forward/backward passes, optimizer updates, metrics, validation, scheduling, logging and in-memory best-state copies; excludes dataset preparation and checkpoint-file writing. Inference includes loading, preprocessing, transfer and forward passes with batch size 256.</td></tr>
 <tr><th scope="row">Capacity and tuning</th><td>Approximately 231K&ndash;243K parameters for nonlinear models</td><td>MLP 242,762; CNN 231,626; LSTM 235,146; Transformer 230,730. Linear is a smaller baseline with 7,850 parameters. Capacities and hyperparameters were tuned manually on the validation split.</td></tr>
@@ -711,7 +781,6 @@
 </section>
 <section id="results"><h2 class="section-title">Results</h2>
 <p>The five architectures are evaluated on the same 10,000 Fashion-MNIST test images. Overall and per-class metrics are mean &plusmn; sample standard deviation across training seeds 42, 43 and 44, using a fixed data split with seed 42. Each run restores the checkpoint with minimum validation loss.</p>
-<nav class="report-nav" aria-label="Results sections"><a href="#learning-curves">Learning curves</a><a href="#quantitative-results">Metric comparison</a><a href="#per-class-results">Per-class results and matrices</a><a href="#prediction-examples">Prediction examples</a></nav>
 <div class="results-kpi-grid"><div class="results-kpi-card"><div class="results-kpi-value">91.54%</div><div class="results-kpi-label">CNN mean test accuracy</div></div><div class="results-kpi-card"><div class="results-kpi-value">91.51%</div><div class="results-kpi-label">CNN mean Macro-F1</div></div><div class="results-kpi-card"><div class="results-kpi-value">0.2301</div><div class="results-kpi-label">CNN mean test CE loss</div></div><div class="results-kpi-card"><div class="results-kpi-value">3</div><div class="results-kpi-label">Training seeds: 42, 43, 44</div></div></div>
 <h3 id="learning-curves">1. Training behavior &amp; learning curves</h3>
 <p>All five models improve rapidly at first and then make smaller gains. Training metrics accumulate over changing weights and augmented batches; validation uses the epoch-end weights and unaugmented images. Dropout and batch normalization also behave differently during evaluation. A training&ndash;validation gap or a plateau alone does not establish overfitting or underfitting.</p>
@@ -751,6 +820,7 @@
 <tr><th scope="row">Transformer (ViT)</th><td>95.67 &plusmn; 5.86</td><td>22.83 &plusmn; 0.33</td></tr>
 </tbody></table></div>
 <p class="report-note">Macro-recall equals top-1 accuracy because the test set contains exactly 1,000 images per class. Runtime includes shared pipeline operations; inference time per sample is measured with batches of 256 and does not represent the latency of processing a single image independently.</p>
+<h3 id="per-class-results">3. Per-class results and confusion matrices</h3>
 <details class="report-model" id="metrics-linear" open><summary>Linear / Softmax <span>Per-class metrics and test confusion matrix</span></summary><div class="report-model-content"><div class="mandatory-table-wrap"><table class="mandatory-models-table report-table">
 <thead><tr><th scope="col">Class</th><th scope="col">One-vs-rest Acc (%)</th><th scope="col">Precision (%)</th><th scope="col">Recall (%)</th><th scope="col">F1 (%)</th></tr></thead>
 <tbody>
@@ -852,6 +922,7 @@
 <figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_difficult_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer (ViT) difficult but correctly classified candidates for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/transformer_difficult_seed42.png" alt="Transformer (ViT) difficult but correctly classified candidates for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Transformer (ViT): difficult but correctly classified candidates, seed 42. The two highest softmax scores are close; confidence alone does not establish visual difficulty.</figcaption></figure>
 <figure class="figure-card"><a href="Assignment1/05_results/assets/report_figures/transformer_failures_seed42.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Transformer (ViT) incorrect predictions for seed 42 with annotated labels and model scores"><img src="Assignment1/05_results/assets/report_figures/transformer_failures_seed42.png" alt="Transformer (ViT) incorrect predictions for seed 42 with annotated labels and model scores" loading="lazy" decoding="async" width="4354" height="2794"></a><figcaption class="figure-caption">Transformer (ViT): incorrect predictions, seed 42. Ground-truth and predicted labels disagree; the annotated softmax scores show the model's confidence.</figcaption></figure>
 </div></details>
+</section>
 <section id="comparison-discussion">
   <h2 class="section-title">Comparison and discussion</h2>
 
@@ -876,8 +947,17 @@
   <p>Transformer has the highest mean epoch time (22.83 &plusmn; 0.33 seconds). Linear records the lowest mean inference time (0.1681 &plusmn; 0.0062 ms/sample), followed closely by MLP (0.1688 &plusmn; 0.0125 ms/sample). Training and inference measurements include data-pipeline operations and do not isolate model computation. Inference uses batches of 256, so time per sample does not represent single-image latency; the small timing differences should also be interpreted alongside variability across runs.</p>
 
   <h3>Hypothesis assessment and limitations</h3>
-  <p>The results support the hypothesis that the evaluated nonlinear configurations outperform Linear on the primary and overall secondary predictive metrics, and that CNN achieves the highest overall accuracy. LSTM has the smallest observed sample standard deviation in accuracy (0.10 percentage points), while CNN achieves the highest mean. Predictive performance and consistency across runs therefore describe different aspects of the results.</p>
-  <p>All results are reported as mean &plusmn; sample standard deviation across training seeds 42, 43, and 44 on one fixed data split. These summaries do not establish statistical significance or sensitivity to alternative train/validation partitions. The findings support CNN under the evaluated conditions, but do not establish universal superiority or isolate convolution as the cause of its advantage.</p>
+  <p>The results support the hypothesis that
+the evaluated nonlinear configurations
+outperform the linear classifier on
+the primary metric and the overall secondary
+predictive metrics.
+They also support the expectation that
+the CNN achieves the highest overall accuracy
+among the evaluated configurations.
+However, the class-specific exceptions show
+that this conclusion does not extend
+to every class and metric.</p>
 </section>
 <section id="error-analysis">
   <h2 class="section-title">Error analysis</h2>
@@ -897,150 +977,125 @@
 on the validation set could be evaluated on the test set.
 This method adjusts confidence scores without changing
 the predicted class</p>
+</section>
 <section id="limitations-conclusion">
   <h2 class="section-title">Limitations and conclusion</h2>
 
   <h3>Limitations</h3>
-  <p>The study uses balanced, 28 &times; 28 grayscale Fashion-MNIST images. Fine details that distinguish similar garments and footwear may be difficult to identify at this resolution. The results do not establish performance under class imbalance, different backgrounds, viewpoints, lighting conditions, or other datasets.</p>
-  <p>Each architecture is represented by one configuration. Although the nonlinear models have approximately comparable parameter counts, they differ in depth, normalization, dropout, and input representation. The shared training settings may not be equally suitable for every architecture, and the experiments do not establish the best achievable performance of each model family or isolate the contribution of individual components.</p>
-  <p>Three training seeds on one fixed train/validation split provide a limited estimate of training variability. The reported means and sample standard deviations do not establish statistical significance or sensitivity to alternative partitions. Qualitative examples use seed 42 and are selected separately for each model, so they do not estimate failure frequency or provide comparisons on identical images. Selected high-confidence errors also do not establish systematic miscalibration.</p>
-  <p>Training and inference times include data-pipeline operations and do not isolate model computation. Inference uses batches of 256, so the reported time per sample does not represent single-image latency. Timing results depend on the reported hardware and execution settings.</p>
 
+<h4>Data limitations</h4>
+
+<p>
+  The study uses Fashion-MNIST images with a fixed resolution of
+  28 &times; 28 pixels and a single grayscale channel.
+  Fine details such as collars, garment openings, and footwear structures
+  can be difficult to distinguish at this resolution.
+  The recurring confusion among similar upper-body garments is consistent
+  with this limitation, although the experiments do not isolate the
+  contribution of image resolution to these errors.
+</p>
+
+<p>
+  The balanced test set provides equal representation across classes,
+  but does not evaluate performance under different class distributions.
+  Furthermore, the dataset does not establish how the models would perform
+  on photographs with different backgrounds, viewpoints, lighting conditions,
+  or image acquisition procedures.
+</p>
+
+<h4>Method limitations</h4>
+
+<p>
+  Each architecture is represented by one specific configuration.
+  Although the nonlinear models have approximately comparable parameter
+  counts, they differ in depth, normalization, dropout, and input
+  representation. The comparisons therefore do not isolate the contribution
+  of convolution, recurrence, self-attention, or individual regularization
+  components.
+</p>
+
+<p>
+  The shared optimization and augmentation settings provide a common
+  experimental protocol, but may not be equally suitable for every
+  architecture. Consequently, the results may not establish the best
+  achievable performance of each model family.
+</p>
+
+<p>
+  Training and inference times include data-pipeline operations and do not
+  isolate model computation. Inference uses batches of 256, so the reported
+  time per sample does not represent single-image latency. Timing results
+  depend on the reported hardware and execution settings.
+</p>
   <h3>Generalization and future work</h3>
   <p>The held-out test results demonstrate generalization to unseen Fashion-MNIST images under the evaluated protocol. Further experiments could use additional training seeds, alternative train/validation partitions, controlled architectural and regularization ablations, and validation-based hyperparameter tuning. Shirt recognition and confusion among similar classes remain priorities. Confidence calibration, separate computation benchmarks, and evaluation under distribution shifts would provide a broader assessment.</p>
 
   <h3>Conclusion</h3>
-  <p>All evaluated nonlinear configurations outperform the Linear baseline on the overall predictive metrics. CNN achieves the highest mean test Top-1 Accuracy (91.54 &plusmn; 0.20%), highest Macro-F1 (91.51 &plusmn; 0.19%), and lowest test cross-entropy loss (0.2301 &plusmn; 0.0030). Its mean accuracy exceeds Linear by 16.77 percentage points. LSTM provides a competitive alternative, achieving 90.85 &plusmn; 0.10% accuracy with fewer training epochs.</p>
-  <p>The results support the suitability of the CNN configuration for this task, while highlighting persistent confusion between Shirt and visually similar garment classes as a priority for further improvement.</p>
+
+<p>
+  Under the shared evaluation protocol, the CNN is the most effective
+  configuration for Fashion-MNIST classification.
+  It achieves the highest mean test top-1 accuracy of
+  91.54 &plusmn; 0.20%, the highest mean Macro-F1 of
+  91.51 &plusmn; 0.19%, and the lowest mean test cross-entropy loss of
+  0.2301 &plusmn; 0.0030.
+  Its mean accuracy exceeds the linear classifier by
+  16.77 percentage points.
+</p>
+
+<p>
+  The results support the hypothesis that
+the evaluated nonlinear configurations
+outperform the linear classifier on
+the primary metric and the overall secondary
+predictive metrics.
+They also support the expectation that
+the CNN achieves the highest overall accuracy
+among the evaluated configurations.
+However, the class-specific exceptions show
+that this conclusion does not extend
+to every class and metric.
+</p>
+
+<p>
+  The results support the suitability of the CNN configuration
+  for this task, while highlighting persistent confusion between
+  Shirt and visually similar garment classes as a priority
+  for further improvement.
+</p>
 </section>
 
 <section id="ai-disclosure" class="landing-disclosure-section">
-  <p class="section-label">04 — AI usage</p>
-  <h2 class="section-title">AI assistance for website development and verification</h2>
-
+  <p class="section-label">04 — AI usage Disclosure</p>
   <div class="disclosure-box landing-disclosure">
-    <h3>AI-assisted GitHub Pages skeleton</h3>
-    <dl>
-      <div class="disclosure-row">
-        <dt>Tool:</dt>
-        <dd>GPT-5.6 Sol</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Used by:</dt>
-        <dd>Hoàng Xuân Bách, Lê Nguyễn Gia Phúc, Nguyễn Việt Hùng</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Development stage:</dt>
-        <dd>Planning</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Task:</dt>
-        <dd>Creating the initial GitHub Pages skeleton.</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Prompt summary:</dt>
-        <dd>
-          Requested a standard landing page layout and a basic HTML/CSS
-          skeleton with placeholders.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>AI contribution:</dt>
-        <dd>
-          Assisted with creating the initial landing page skeleton,
-          including basic HTML structure and layout suggestions.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Student verification:</dt>
-        <dd>
-          Group members reviewed and refactored the generated HTML skeleton
-          to align with the project specifications. They manually populated
-          project-specific content, including team member profiles, course
-          details, and assignment descriptions, and verified the semantic
-          structure, navigation links, and responsive layouts across
-          different screen sizes.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Affected files/sections:</dt>
-        <dd>
-          index.html, style.css, assignment1.html, assignment2.html,
-          assignment3.html
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Responsible members:</dt>
-        <dd>Hoàng Xuân Bách, Lê Nguyễn Gia Phúc, Nguyễn Việt Hùng</dd>
-      </div>
-    </dl>
-  </div>
+    <p>
+      In accordance with the course's AI-use disclosure requirements,
+      AI assistance during implementation, analysis, report writing,
+      and website development is documented in
+      <a
+        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/blob/main/Assignment1/AI_USAGE.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >AI_USAGE.md</a>.
+      The records describe the tools used, tasks, AI contributions,
+      student verification, and responsible members.
+    </p>
 
-  <div class="disclosure-box landing-disclosure">
-    <h3>Consistency verification between experimental outputs and GitHub Pages</h3>
-    <dl>
-      <div class="disclosure-row">
-        <dt>Tool:</dt>
-        <dd>GPT-5.6 Sol</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Used by:</dt>
-        <dd>Hoàng Xuân Bách</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Development stage:</dt>
-        <dd>Final revision</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Task:</dt>
-        <dd>
-          Supporting the final consistency check between experimental
-          outputs and the results presented on GitHub Pages.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Prompt summary:</dt>
-        <dd>
-          Provided the final experimental outputs and the corresponding
-          GitHub Pages content. Requested assistance with checking whether
-          the published numerical summaries, tables, figures, and
-          explanations accurately represented the completed experiments.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>AI contribution:</dt>
-        <dd>
-          Assisted with reviewing the consistency of displayed metrics,
-          model names, variant labels, units, and figure descriptions.
-          Suggested checking that published figures and summaries used
-          the final results, with single-seed examples distinguished
-          from results aggregated across three seeds.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Student verification:</dt>
-        <dd>
-          Compared the Assignment 1 results displayed on GitHub Pages
-          with the final notebook outputs. Checked numerical summaries,
-          table entries, figure versions, captions, and model labels.
-          Corrected outdated content and inspected the rendered pages
-          to confirm that the updated results and figures were
-          displayed correctly.
-        </dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Affected files/sections:</dt>
-        <dd>assignment1.html</dd>
-      </div>
-      <div class="disclosure-row">
-        <dt>Responsible member:</dt>
-        <dd>Hoàng Xuân Bách</dd>
-      </div>
-    </dl>
+    <p>
+      The group takes full responsibility for all submitted code,
+      numerical results, figures, claims, and text.
+      AI tools supported learning, code and draft refinement,
+      website development, formatting, and language editing.
+      All reported experimental metrics were obtained from runs
+      executed by the group, and result figures were produced
+      from those outputs. Group members reviewed the adopted
+      suggestions and checked them against the implementation,
+      experimental evidence, and assignment requirements.
+    </p>
   </div>
 </section>
 
-          <section>
+          <section id="resources">
             <h2 class="section-title">Links</h2>
             <div class="table-wrap">
               <table class="links-table">
@@ -1056,6 +1111,12 @@ the predicted class</p>
                     <td><a
                         href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1"
                         target="_blank" rel="noopener">GitHub repository</a></td>
+                  </tr>
+                  <tr>
+                    <td>Assignment 1 Report</td>
+                    <td><a
+                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/G07_A1_Report.pdf"
+                        target="_blank" rel="noopener">Report</a></td>
                   </tr>
                   <tr>
                     <td>Assignment 1 Jupyter Notebook</td>
@@ -1079,7 +1140,7 @@ the predicted class</p>
                   <tr>
                     <td>Assignment 1 Reconstruction Instructions</td>
                     <td><a
-                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/Reproducibility/multiseed_42_43_44/README.md"
+                        href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment1/README.md"
                         target="_blank" rel="noopener">Reconstruction Instructions</a></td>
                   </tr>
 
@@ -1097,6 +1158,7 @@ the predicted class</p>
           </section>
         </div>
       </main>
+  </div>
 
       <footer>
         <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
@@ -1104,6 +1166,62 @@ the predicted class</p>
           <span><a href="index.html" style="color:inherit; text-decoration:none;">← Group home</a></span>
         </div>
       </footer>
+
+  <script>
+    (() => {
+      const sidebar = document.querySelector('.assignment-sidebar');
+      const toggle = document.querySelector('.sidebar-toggle');
+      const navigation = document.querySelector('.sidebar-nav');
+      const mobile = window.matchMedia('(max-width: 900px)');
+      const links = Array.from(navigation.querySelectorAll('a[href^="#"]'));
+      const targets = links.map(link => ({ link, target: document.querySelector(link.hash) }));
+      const setMenuOpen = open => {
+        sidebar.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!sidebar.classList.contains('is-open')));
+      navigation.addEventListener('click', event => {
+        const link = event.target.closest('a');
+        if (link && mobile.matches) {
+          setMenuOpen(false);
+          const target = document.querySelector(link.hash);
+          if (target) {
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
+          }
+        }
+      });
+      sidebar.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && mobile.matches && sidebar.classList.contains('is-open')) {
+          setMenuOpen(false);
+          toggle.focus();
+        }
+      });
+      mobile.addEventListener('change', () => setMenuOpen(false));
+      let scheduled = false;
+      const updateCurrent = () => {
+        scheduled = false;
+        let current = null;
+        for (const item of targets) {
+          if (item.target && item.target.getBoundingClientRect().top <= (mobile.matches ? 110 : 80)) current = item.link;
+        }
+        links.forEach(link => {
+          if (link === current) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      const scheduleUpdate = () => {
+        if (!scheduled) {
+          scheduled = true;
+          requestAnimationFrame(updateCurrent);
+        }
+      };
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate);
+      window.addEventListener('load', scheduleUpdate);
+      updateCurrent();
+    })();
+  </script>
 
 </body>
 

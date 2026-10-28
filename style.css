@@ -673,7 +673,7 @@ table.links-table a:hover {
 
 .disclosure-box p,
 .disclosure-box li {
-  font-size: 15px;
+  font-size: 18.5px;
   color: var(--ink);
 }
 
@@ -714,7 +714,7 @@ table.links-table a:hover {
 .landing-disclosure dl {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.75;
 }
 
