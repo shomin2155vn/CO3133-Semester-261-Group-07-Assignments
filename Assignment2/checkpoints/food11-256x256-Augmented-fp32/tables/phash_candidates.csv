@@ -1,0 +1,197 @@
+split_a,split_b,path_a,path_b,phash_distance
+train,val,/kaggle/input/food11-image-dataset/training/Rice/22.jpg,/kaggle/input/food11-image-dataset/validation/Rice/28.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/150.jpg,/kaggle/input/food11-image-dataset/validation/Rice/15.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/203.jpg,/kaggle/input/food11-image-dataset/validation/Rice/4.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/158.jpg,/kaggle/input/food11-image-dataset/validation/Rice/75.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/9.jpg,/kaggle/input/food11-image-dataset/validation/Rice/78.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/234.jpg,/kaggle/input/food11-image-dataset/validation/Rice/51.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Rice/206.jpg,/kaggle/input/food11-image-dataset/validation/Rice/30.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/126.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/36.jpg,0
+train,val,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/454.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/16.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Dairy product/72.jpg,/kaggle/input/food11-image-dataset/evaluation/Dairy product/16.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/526.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/208.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/526.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/71.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Rice/78.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/80.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Rice/208.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/52.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Rice/29.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/81.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/35.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/56.jpg,0
+val,test,/kaggle/input/food11-image-dataset/validation/Rice/91.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/87.jpg,0
+val,test,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/158.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/217.jpg,0
+val,test,/kaggle/input/food11-image-dataset/validation/Rice/17.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/53.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1107.jpg,/kaggle/input/food11-image-dataset/training/Dessert/513.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/18.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/364.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/234.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/278.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/320.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/365.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Bread/384.jpg,/kaggle/input/food11-image-dataset/training/Bread/854.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/47.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/157.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/526.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/112.jpg,0
+train,test,/kaggle/input/food11-image-dataset/training/Rice/277.jpg,/kaggle/input/food11-image-dataset/evaluation/Rice/47.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/298.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/374.jpg,0
+val,val,/kaggle/input/food11-image-dataset/validation/Dairy product/124.jpg,/kaggle/input/food11-image-dataset/validation/Dairy product/50.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Egg/195.jpg,/kaggle/input/food11-image-dataset/training/Egg/232.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Egg/678.jpg,/kaggle/input/food11-image-dataset/training/Egg/860.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Egg/632.jpg,/kaggle/input/food11-image-dataset/training/Egg/960.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/34.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/402.jpg,0
+train,train,/kaggle/input/food11-image-dataset/training/Soup/330.jpg,/kaggle/input/food11-image-dataset/training/Soup/892.jpg,0
+val,val,/kaggle/input/food11-image-dataset/validation/Rice/41.jpg,/kaggle/input/food11-image-dataset/validation/Rice/45.jpg,0
+val,val,/kaggle/input/food11-image-dataset/validation/Dessert/1.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/183.jpg,0
+test,test,/kaggle/input/food11-image-dataset/evaluation/Egg/113.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/305.jpg,2
+test,test,/kaggle/input/food11-image-dataset/evaluation/Meat/420.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/70.jpg,2
+train,test,/kaggle/input/food11-image-dataset/training/Meat/216.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/70.jpg,2
+train,train,/kaggle/input/food11-image-dataset/training/Soup/1114.jpg,/kaggle/input/food11-image-dataset/training/Soup/929.jpg,4
+test,test,/kaggle/input/food11-image-dataset/evaluation/Meat/133.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/149.jpg,4
+train,val,/kaggle/input/food11-image-dataset/training/Soup/1235.jpg,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/92.jpg,6
+train,train,/kaggle/input/food11-image-dataset/training/Soup/195.jpg,/kaggle/input/food11-image-dataset/training/Soup/79.jpg,6
+train,train,/kaggle/input/food11-image-dataset/training/Egg/254.jpg,/kaggle/input/food11-image-dataset/training/Egg/425.jpg,6
+train,test,/kaggle/input/food11-image-dataset/training/Dairy product/164.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/36.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Meat/651.jpg,/kaggle/input/food11-image-dataset/training/Soup/1406.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Soup/406.jpg,/kaggle/input/food11-image-dataset/training/Soup/8.jpg,8
+val,val,/kaggle/input/food11-image-dataset/validation/Rice/80.jpg,/kaggle/input/food11-image-dataset/validation/Soup/458.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/789.jpg,/kaggle/input/food11-image-dataset/training/Soup/1487.jpg,8
+train,val,/kaggle/input/food11-image-dataset/training/Soup/705.jpg,/kaggle/input/food11-image-dataset/validation/Soup/297.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1177.jpg,/kaggle/input/food11-image-dataset/training/Meat/776.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1150.jpg,/kaggle/input/food11-image-dataset/training/Soup/772.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Soup/946.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/163.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Soup/72.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/56.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/336.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/56.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/21.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/375.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Soup/406.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/4.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/164.jpg,/kaggle/input/food11-image-dataset/training/Soup/1380.jpg,8
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1247.jpg,/kaggle/input/food11-image-dataset/validation/Soup/323.jpg,8
+test,test,/kaggle/input/food11-image-dataset/evaluation/Meat/97.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/129.jpg,8
+train,train,/kaggle/input/food11-image-dataset/training/Meat/853.jpg,/kaggle/input/food11-image-dataset/training/Meat/868.jpg,8
+train,val,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/376.jpg,/kaggle/input/food11-image-dataset/validation/Soup/60.jpg,8
+train,val,/kaggle/input/food11-image-dataset/training/Meat/197.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,8
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/779.jpg,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/18.jpg,8
+train,test,/kaggle/input/food11-image-dataset/training/Meat/398.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/101.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Meat/196.jpg,/kaggle/input/food11-image-dataset/evaluation/Noodles-Pasta/137.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/610.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/265.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/271.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/17.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Dessert/162.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/290.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Dessert/836.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/429.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Dessert/106.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/56.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Dairy product/402.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/4.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/311.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/149.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Dairy product/179.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/250.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/508.jpg,/kaggle/input/food11-image-dataset/validation/Bread/230.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Bread/509.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/250.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/755.jpg,/kaggle/input/food11-image-dataset/validation/Egg/80.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/869.jpg,/kaggle/input/food11-image-dataset/validation/Soup/235.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/877.jpg,/kaggle/input/food11-image-dataset/validation/Soup/273.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/911.jpg,/kaggle/input/food11-image-dataset/validation/Soup/421.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/1130.jpg,/kaggle/input/food11-image-dataset/validation/Soup/325.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Seafood/6.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/1439.jpg,/kaggle/input/food11-image-dataset/validation/Soup/229.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/1291.jpg,/kaggle/input/food11-image-dataset/validation/Soup/221.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/582.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/75.jpg,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/95.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/1492.jpg,/kaggle/input/food11-image-dataset/validation/Meat/285.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Soup/279.jpg,/kaggle/input/food11-image-dataset/validation/Soup/456.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Seafood/340.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/253.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/260.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1492.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/190.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1380.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/36.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/253.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/395.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Meat/836.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/72.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Meat/573.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/149.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Meat/615.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/263.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/767.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/42.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/338.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/321.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/590.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/445.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/506.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/491.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/595.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/455.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/611.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/166.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/618.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/104.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/736.jpg,/kaggle/input/food11-image-dataset/evaluation/Noodles-Pasta/103.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Meat/44.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/250.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1028.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/177.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1287.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/214.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/324.jpg,/kaggle/input/food11-image-dataset/validation/Meat/245.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/674.jpg,/kaggle/input/food11-image-dataset/validation/Meat/433.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/886.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/41.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/113.jpg,/kaggle/input/food11-image-dataset/validation/Rice/52.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/262.jpg,/kaggle/input/food11-image-dataset/validation/Dairy product/38.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Seafood/131.jpg,/kaggle/input/food11-image-dataset/validation/Soup/317.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/243.jpg,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/2.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Meat/133.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/69.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Egg/576.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/323.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/779.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/302.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/836.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/72.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/484.jpg,/kaggle/input/food11-image-dataset/validation/Egg/77.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/65.jpg,/kaggle/input/food11-image-dataset/validation/Soup/162.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/196.jpg,/kaggle/input/food11-image-dataset/validation/Soup/60.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Fried food/610.jpg,/kaggle/input/food11-image-dataset/validation/Fried food/150.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Egg/606.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/119.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Bread/620.jpg,/kaggle/input/food11-image-dataset/validation/Soup/52.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1457.jpg,/kaggle/input/food11-image-dataset/validation/Soup/208.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1457.jpg,/kaggle/input/food11-image-dataset/validation/Soup/229.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dairy product/221.jpg,/kaggle/input/food11-image-dataset/validation/Dairy product/42.jpg,10
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/129.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/149.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/129.jpg,/kaggle/input/food11-image-dataset/training/Dessert/1418.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1114.jpg,/kaggle/input/food11-image-dataset/training/Dessert/1224.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1014.jpg,/kaggle/input/food11-image-dataset/training/Rice/265.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/1061.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/210.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Bread/562.jpg,/kaggle/input/food11-image-dataset/training/Bread/630.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Bread/394.jpg,/kaggle/input/food11-image-dataset/training/Soup/1208.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/179.jpg,/kaggle/input/food11-image-dataset/training/Soup/753.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/72.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/429.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/14.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/439.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/285.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/295.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/48.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/131.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Noodles-Pasta/40.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/126.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/122.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/208.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/148.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/411.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Bread/114.jpg,/kaggle/input/food11-image-dataset/training/Egg/900.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/563.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/283.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Dairy product/92.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/56.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Dairy product/108.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/108.jpg,10
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/150.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/141.jpg,10
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1329.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/191.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Egg/505.jpg,/kaggle/input/food11-image-dataset/training/Soup/258.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Egg/854.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/196.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Fried food/4.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/255.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/744.jpg,/kaggle/input/food11-image-dataset/training/Egg/445.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/69.jpg,/kaggle/input/food11-image-dataset/training/Rice/162.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/65.jpg,/kaggle/input/food11-image-dataset/training/Soup/13.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/613.jpg,/kaggle/input/food11-image-dataset/training/Soup/596.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Egg/494.jpg,/kaggle/input/food11-image-dataset/training/Soup/1498.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/836.jpg,/kaggle/input/food11-image-dataset/training/Soup/141.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Fried food/354.jpg,/kaggle/input/food11-image-dataset/training/Soup/1008.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/249.jpg,/kaggle/input/food11-image-dataset/training/Dessert/836.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/108.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/21.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/102.jpg,/kaggle/input/food11-image-dataset/training/Soup/1034.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/994.jpg,/kaggle/input/food11-image-dataset/training/Rice/91.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/403.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/28.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/196.jpg,/kaggle/input/food11-image-dataset/training/Soup/1130.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/328.jpg,/kaggle/input/food11-image-dataset/training/Soup/1287.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/1149.jpg,/kaggle/input/food11-image-dataset/training/Soup/173.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/183.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/381.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Fried food/807.jpg,/kaggle/input/food11-image-dataset/training/Rice/34.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Fried food/763.jpg,/kaggle/input/food11-image-dataset/training/Meat/96.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Meat/1042.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/6.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Fried food/812.jpg,/kaggle/input/food11-image-dataset/training/Meat/1179.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/1049.jpg,/kaggle/input/food11-image-dataset/training/Soup/834.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Seafood/131.jpg,/kaggle/input/food11-image-dataset/training/Soup/194.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Rice/19.jpg,/kaggle/input/food11-image-dataset/training/Soup/984.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/255.jpg,/kaggle/input/food11-image-dataset/training/Soup/1335.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/253.jpg,/kaggle/input/food11-image-dataset/training/Soup/777.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/258.jpg,/kaggle/input/food11-image-dataset/training/Soup/922.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/1348.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/301.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/194.jpg,/kaggle/input/food11-image-dataset/training/Soup/596.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/1329.jpg,/kaggle/input/food11-image-dataset/training/Soup/590.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Seafood/70.jpg,/kaggle/input/food11-image-dataset/training/Soup/667.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/1028.jpg,/kaggle/input/food11-image-dataset/training/Soup/554.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/854.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/563.jpg,10
+val,val,/kaggle/input/food11-image-dataset/validation/Meat/108.jpg,/kaggle/input/food11-image-dataset/validation/Meat/178.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/474.jpg,/kaggle/input/food11-image-dataset/training/Soup/922.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Soup/74.jpg,/kaggle/input/food11-image-dataset/training/Soup/772.jpg,10
+val,val,/kaggle/input/food11-image-dataset/validation/Rice/71.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,10
+test,test,/kaggle/input/food11-image-dataset/evaluation/Dessert/295.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/190.jpg,10
+val,val,/kaggle/input/food11-image-dataset/validation/Seafood/216.jpg,/kaggle/input/food11-image-dataset/validation/Soup/20.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/470.jpg,/kaggle/input/food11-image-dataset/training/Seafood/197.jpg,10
+train,train,/kaggle/input/food11-image-dataset/training/Dessert/416.jpg,/kaggle/input/food11-image-dataset/training/Soup/437.jpg,10
+test,test,/kaggle/input/food11-image-dataset/evaluation/Fried food/141.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/265.jpg,10
+test,test,/kaggle/input/food11-image-dataset/evaluation/Egg/140.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/66.jpg,10
+test,test,/kaggle/input/food11-image-dataset/evaluation/Meat/60.jpg,/kaggle/input/food11-image-dataset/evaluation/Noodles-Pasta/2.jpg,10
+test,test,/kaggle/input/food11-image-dataset/evaluation/Soup/191.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/445.jpg,10

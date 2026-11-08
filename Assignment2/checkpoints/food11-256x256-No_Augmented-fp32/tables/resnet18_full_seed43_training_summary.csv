@@ -1,0 +1,2 @@
+run_name,seed,epochs_run,selected_epoch,selected_val_loss,selected_val_accuracy,selected_val_macro_f1,train_minus_val_f1_pp,last_val_loss_minus_min,train_val_minutes,mean_epoch_seconds,diagnosis
+resnet18_full_seed43,43,25,10,0.3899767498765916,0.8986325802615933,0.9041111637401547,9.588883625984534,0.04090146498929592,58.13643239009996,139.5274377362399,Not manually assessed

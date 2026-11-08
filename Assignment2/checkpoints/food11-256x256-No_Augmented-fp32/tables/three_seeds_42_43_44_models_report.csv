@@ -1,0 +1,4 @@
+model,n_runs,std_ddof,total_parameters,trainable_parameters,test_macro_f1,test_accuracy,test_macro_precision,test_macro_recall,test_loss,training_time_minutes,mean_epoch_seconds,inference_time_ms_per_image
+simple_cnn,3,1,99339,99339,0.5709 ± 0.0181,0.6001 ± 0.0147,0.6241 ± 0.0091,0.5679 ± 0.0143,1.2211 ± 0.0196,49.7827 ± 2.3053,119.4784 ± 5.5328,0.7730 ± 0.1372
+resnet18_frozen,3,1,11182155,5643,0.8485 ± 0.0011,0.8433 ± 0.0006,0.8550 ± 0.0004,0.8452 ± 0.0011,0.4988 ± 0.0022,50.0559 ± 2.9177,120.1341 ± 7.0025,2.6282 ± 0.3645
+resnet18_full,3,1,11182155,11182155,0.9112 ± 0.0005,0.9076 ± 0.0007,0.9112 ± 0.0014,0.9118 ± 0.0004,0.3423 ± 0.0087,61.7166 ± 3.2387,148.1198 ± 7.7730,2.5325 ± 0.3221

@@ -1,0 +1,25 @@
+path,true_label,predicted_label,true_class,predicted_class,top1_score,top2_class,top2_score,top1_top2_gap,true_class_score,correct,selection
+/kaggle/input/food11-image-dataset/evaluation/Bread/83.jpg,0,0,Bread,Bread,0.5609414,Dessert,0.13771176,0.42322963,0.5609414,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Seafood/5.jpg,8,8,Seafood,Seafood,0.74171287,Dessert,0.09196462,0.64974827,0.74171287,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Soup/475.jpg,9,9,Soup,Soup,0.937753,Dessert,0.024940144,0.9128129,0.937753,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Seafood/185.jpg,8,8,Seafood,Seafood,0.35387242,Meat,0.17316459,0.18070783,0.35387242,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Meat/147.jpg,5,5,Meat,Meat,0.42074734,Dessert,0.23366554,0.1870818,0.42074734,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Meat/161.jpg,5,5,Meat,Meat,0.78862077,Dessert,0.06502147,0.7235993,0.78862077,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Bread/95.jpg,0,0,Bread,Bread,0.58462965,Fried food,0.19280116,0.39182848,0.58462965,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Soup/254.jpg,9,9,Soup,Soup,0.986074,Egg,0.006135862,0.9799381,0.986074,True,correct
+/kaggle/input/food11-image-dataset/evaluation/Dessert/247.jpg,2,2,Dessert,Dessert,0.25097016,Bread,0.2505845,0.00038564205,0.25097016,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Egg/90.jpg,3,3,Egg,Egg,0.2000879,Noodles-Pasta,0.19965321,0.00043469667,0.2000879,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Egg/82.jpg,3,3,Egg,Egg,0.2728166,Bread,0.27196708,0.0008495152,0.2728166,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Meat/416.jpg,5,5,Meat,Meat,0.20504501,Bread,0.20376612,0.0012788922,0.20504501,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Egg/200.jpg,3,3,Egg,Egg,0.3049445,Noodles-Pasta,0.30199203,0.0029524565,0.3049445,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Soup/3.jpg,9,9,Soup,Soup,0.24098723,Dessert,0.23790339,0.00308384,0.24098723,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Bread/135.jpg,0,0,Bread,Bread,0.24861428,Dessert,0.24519415,0.0034201294,0.24861428,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Dessert/499.jpg,2,2,Dessert,Dessert,0.21018893,Seafood,0.20671691,0.0034720153,0.21018893,True,difficult_correct_candidates
+/kaggle/input/food11-image-dataset/evaluation/Egg/193.jpg,3,0,Egg,Bread,0.475933,Egg,0.3248292,0.1511038,0.3248292,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Noodles-Pasta/9.jpg,6,7,Noodles-Pasta,Rice,0.45541352,Noodles-Pasta,0.2666827,0.1887308,0.2666827,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Egg/315.jpg,3,4,Egg,Fried food,0.3302071,Egg,0.29792804,0.032279074,0.29792804,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Dessert/486.jpg,2,5,Dessert,Meat,0.8223096,Dessert,0.14373891,0.6785707,0.14373891,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Dairy product/124.jpg,1,4,Dairy product,Fried food,0.5539235,Bread,0.12589091,0.42803258,0.0064301123,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Seafood/14.jpg,8,2,Seafood,Dessert,0.3603691,Seafood,0.27276897,0.08760011,0.27276897,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Egg/289.jpg,3,0,Egg,Bread,0.37336713,Egg,0.34029752,0.03306961,0.34029752,False,failures
+/kaggle/input/food11-image-dataset/evaluation/Dairy product/51.jpg,1,9,Dairy product,Soup,0.33555305,Dessert,0.26826334,0.06728971,0.18738945,False,failures

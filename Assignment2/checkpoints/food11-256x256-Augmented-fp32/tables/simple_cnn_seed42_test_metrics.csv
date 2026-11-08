@@ -1,0 +1,2 @@
+run_name,seed,best_epoch,loss,accuracy,macro_precision,macro_recall,macro_f1
+simple_cnn_seed42,42,22,1.2223572214587932,0.6014440433212996,0.6109187226175489,0.5674329804661311,0.5664967297360526

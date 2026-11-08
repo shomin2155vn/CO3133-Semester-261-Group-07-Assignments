@@ -1,0 +1,12 @@
+true_class,Bread,Dairy product,Dessert,Egg,Fried food,Meat,Noodles-Pasta,Rice,Seafood,Soup,Vegetable-Fruit
+Bread,228,2,4,10,14,8,0,0,1,1,0
+Dairy product,1,119,17,3,1,4,0,1,0,0,1
+Dessert,9,10,379,9,2,9,0,2,9,8,3
+Egg,11,5,7,297,3,2,0,1,2,1,0
+Fried food,3,1,9,3,193,7,0,1,2,1,1
+Meat,5,0,9,3,9,290,0,1,2,2,0
+Noodles-Pasta,0,0,0,2,0,1,144,0,0,0,0
+Rice,0,0,1,0,0,0,0,89,0,0,0
+Seafood,2,2,6,2,0,2,0,1,187,0,1
+Soup,2,1,4,0,1,1,0,0,3,371,1
+Vegetable-Fruit,0,1,2,0,0,0,0,0,2,0,215

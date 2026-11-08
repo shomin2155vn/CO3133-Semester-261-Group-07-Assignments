@@ -1,0 +1,4 @@
+model,n_runs,total_parameters,trainable_parameters,test_macro_f1,test_accuracy,test_macro_precision,test_macro_recall,test_loss,train_val_seconds,latency_bs1_ms,throughput_img_s
+simple_cnn,1,99339,99339,0.5918 (SD N/A),0.6170 (SD N/A),0.6183 (SD N/A),0.5836 (SD N/A),1.2027 (SD N/A),2828.1861 (SD N/A),0.7524 (SD N/A),2402.6963 (SD N/A)
+resnet18_frozen,1,11182155,5643,0.8482 (SD N/A),0.8437 (SD N/A),0.8552 (SD N/A),0.8445 (SD N/A),0.4967 (SD N/A),2803.6806 (SD N/A),2.1215 (SD N/A),963.7722 (SD N/A)
+resnet18_full,1,11182155,11182155,0.9110 (SD N/A),0.9083 (SD N/A),0.9114 (SD N/A),0.9115 (SD N/A),0.3329 (SD N/A),3488.1859 (SD N/A),2.7282 (SD N/A),951.8993 (SD N/A)

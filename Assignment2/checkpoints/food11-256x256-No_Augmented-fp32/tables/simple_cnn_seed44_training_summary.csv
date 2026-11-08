@@ -1,0 +1,2 @@
+run_name,seed,epochs_run,selected_epoch,selected_val_loss,selected_val_accuracy,selected_val_macro_f1,train_minus_val_f1_pp,last_val_loss_minus_min,train_val_minutes,mean_epoch_seconds,diagnosis
+simple_cnn_seed44,44,25,25,1.3070958691885015,0.5633174791914387,0.5408729573028391,2.150022274651786,0.029715092301227042,51.35612058623333,123.25468940695998,Not manually assessed

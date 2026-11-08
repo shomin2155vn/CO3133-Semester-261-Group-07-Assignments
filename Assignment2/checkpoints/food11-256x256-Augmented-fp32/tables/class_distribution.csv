@@ -1,0 +1,12 @@
+label_name,train,val,test
+Bread,994,362,368
+Dairy product,429,144,148
+Dessert,1500,500,500
+Egg,986,327,335
+Fried food,848,326,287
+Meat,1325,449,432
+Noodles-Pasta,440,147,147
+Rice,280,96,96
+Seafood,855,347,303
+Soup,1500,500,500
+Vegetable-Fruit,709,232,231

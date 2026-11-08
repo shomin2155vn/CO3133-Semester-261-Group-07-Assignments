@@ -1,0 +1,625 @@
+split_a,split_b,path_a,path_b,md5
+train,val,/kaggle/input/food11-image-dataset/training/Dairy product/185.jpg,/kaggle/input/food11-image-dataset/validation/Dairy product/123.jpg,7c80d2448a2f86ad8d65aaf77c52008f
+train,val,/kaggle/input/food11-image-dataset/training/Dairy product/328.jpg,/kaggle/input/food11-image-dataset/validation/Dairy product/129.jpg,9d444538ac0de7672656af5102c3012a
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1004.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/331.jpg,d426843cad0a59abaf04055521bdc7b0
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1046.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/154.jpg,fc0eaca16c2500b30d39b982d5e73929
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/107.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/378.jpg,c3003a47dcfb41c4fc744c4def23c409
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1072.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/209.jpg,814b54069b666486d7fbd5ad479536f3
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1112.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/325.jpg,8681b0ba49b7980a560ff58a3d80d0b4
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/112.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/394.jpg,42e63f365630a851a8dba7fb93b84969
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1124.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/442.jpg,3a42e6bbb246f07b63bd930bacc9995e
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1202.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/244.jpg,633bc99d2119f9667161efdd1de4c9b1
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1206.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/37.jpg,274cced03fd587d862521f66810bd2e0
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1233.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/148.jpg,c81055ab0a5ffd38eda38d1af2d49f23
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1239.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/463.jpg,9087a59a7243655f7ea2f22db0a5f5a2
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1241.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/400.jpg,945f60aed378ee76b8c5e761d8302b3d
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1246.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/236.jpg,8dca83c82ce6774f453ea35daacb4ffc
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1321.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/147.jpg,6c35c23e22f4d1beaa0a64db78d3524e
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1328.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/388.jpg,9ec7877f5aa67c717a0ecc2d58cb4dd3
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1332.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/424.jpg,149274c780a1f4974dbf9224ab8f980e
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1387.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/177.jpg,af1c8747b0a75e01b89033ad855925b0
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1418.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/149.jpg,81692546e84ce5dd7b9148c1c63c5e00
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1426.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/75.jpg,bd552c3a8cd7ce634c1de130e91253f7
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1429.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/211.jpg,d3c7e64a371ce13069687e0986b0a4c1
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/146.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/216.jpg,501a4b8a741903e8d9111198537d35d7
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/1481.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/172.jpg,30ee9a9b0146a92749acc321812191e1
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/188.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/224.jpg,d8223df85adc37a5011d4ef32cd9ef3d
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/21.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/297.jpg,cd9e433c08baf3006665731ca6c013fe
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/258.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/428.jpg,1d4bd42b432140918fac3776db82ca74
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/277.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/19.jpg,5cbb7db76ab471eb0a32971cbe291fff
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/294.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/33.jpg,8cd32529cdb06a0e7ec7596a6728f1b5
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/37.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/278.jpg,040db5cdb3c99a3ca0fee8d87df63507
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/386.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/140.jpg,bc84b97b8629b3940e04a6bee8760fce
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/394.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/130.jpg,67fdcf5cd33b1b0d996dd393a355836e
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/425.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/390.jpg,e40c941f61432fb4d3b8d3fa65bf2237
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/429.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/131.jpg,e7c39d8295754e2e6a1a7689edcdb957
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/521.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/156.jpg,6f23c8f10a3055a798463d0018d90de2
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/540.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/282.jpg,6884ee400d897de0e9dbfba7ffb52f68
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/604.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/310.jpg,57d190fb5534d464b9fea7bf24d89f3a
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/645.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/235.jpg,197eed4b41e7d553e20968d5dcf2b26a
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/704.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/100.jpg,3d45aa31fc6949a2f74ec8c156313323
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/710.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/375.jpg,aa361fc118dd1e5b370448a11288e2df
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/738.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/381.jpg,b24c4d8080869dcdf81dc881ffe0fc20
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/765.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/469.jpg,ed0ee2f1a3566128afb939b7e03be079
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/778.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/415.jpg,6f949bcd9376a332990ea2ecaf0d7e65
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/78.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/231.jpg,a3e4ad80cf4fae13b7608fe70a01066a
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/867.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/14.jpg,8a21a4392479c35c2c3bd544c7ca7d9f
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/878.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/431.jpg,e8afbe012c4a621bb9ba4ccdc6fc17ca
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/88.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/217.jpg,a2693e3c74fc5c29931abc69e13d9457
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/884.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/11.jpg,ac2943991b35a752ce94aa070d377894
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/912.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/57.jpg,b39c5be1a6743ef1f13c6527fa2a7090
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/921.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/427.jpg,601c4f390e3b9996d61ae8d82b0d27be
+train,val,/kaggle/input/food11-image-dataset/training/Dessert/926.jpg,/kaggle/input/food11-image-dataset/validation/Dessert/109.jpg,8283a96f04eec8fbcf50e0aae1aaef5e
+train,test,/kaggle/input/food11-image-dataset/training/Bread/106.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/131.jpg,730837e9f63de6e8ee10cb5d3972f09c
+train,test,/kaggle/input/food11-image-dataset/training/Bread/115.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/240.jpg,de5950a128b83396da4affeac339c258
+train,test,/kaggle/input/food11-image-dataset/training/Bread/128.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/33.jpg,f1d0c388af77c85877bc347f64fbaebe
+train,test,/kaggle/input/food11-image-dataset/training/Bread/186.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/139.jpg,fcaace771f52218ab2afab2f5021e340
+train,test,/kaggle/input/food11-image-dataset/training/Bread/207.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/354.jpg,76919f6fad2ccd9f45d562fb47ff2301
+train,test,/kaggle/input/food11-image-dataset/training/Bread/26.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/177.jpg,674d5da6f706fbf3c2ca8829ca7142a2
+train,test,/kaggle/input/food11-image-dataset/training/Bread/269.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/285.jpg,15a224e3d6de766351295b1f86f6435f
+train,test,/kaggle/input/food11-image-dataset/training/Bread/280.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/294.jpg,f401b752763118d926c22e27aca63718
+train,test,/kaggle/input/food11-image-dataset/training/Bread/321.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/24.jpg,3347782df6cf16e6591c77c005e6e3a6
+train,test,/kaggle/input/food11-image-dataset/training/Bread/414.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/271.jpg,158c4b83b036c07fd95eb461f57621f6
+train,test,/kaggle/input/food11-image-dataset/training/Bread/419.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/203.jpg,44bea90f1e46683a32666ad0bda2598c
+train,test,/kaggle/input/food11-image-dataset/training/Bread/466.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/109.jpg,3abe0331025b7e233e4b46c4b2097dbe
+train,test,/kaggle/input/food11-image-dataset/training/Bread/49.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/195.jpg,6390f45b0989768575cd339da97f4b91
+train,test,/kaggle/input/food11-image-dataset/training/Bread/493.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/123.jpg,347e47f9cb5903d20968a37cdcdcac69
+train,test,/kaggle/input/food11-image-dataset/training/Bread/518.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/367.jpg,e5830817a547239a299f40e5acb673a2
+train,test,/kaggle/input/food11-image-dataset/training/Bread/543.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/112.jpg,57198dd07bae4098b42f206ae1731812
+train,test,/kaggle/input/food11-image-dataset/training/Bread/578.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/100.jpg,84125a4d87d3d5e7abcbced3ba606c3d
+train,test,/kaggle/input/food11-image-dataset/training/Bread/583.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/346.jpg,cd6de93ec66cb0fc1a1ed3bf64f3404a
+train,test,/kaggle/input/food11-image-dataset/training/Bread/586.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/330.jpg,acd2c7093181de29b35842b934f47f69
+train,test,/kaggle/input/food11-image-dataset/training/Bread/594.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/140.jpg,48f4684eb4e5a00c311e7582fd9c9776
+train,test,/kaggle/input/food11-image-dataset/training/Bread/616.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/233.jpg,6fc623151d9726afb88aca3596ab8235
+train,test,/kaggle/input/food11-image-dataset/training/Bread/62.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/15.jpg,e435d7bb9b6709cd8600a6d32a6d07d9
+train,test,/kaggle/input/food11-image-dataset/training/Bread/625.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/176.jpg,1bac5dc13ca693319210be90c4d043fe
+train,test,/kaggle/input/food11-image-dataset/training/Bread/645.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/170.jpg,3096c3c9db3a0eb5c0d41572b578ea62
+train,test,/kaggle/input/food11-image-dataset/training/Bread/688.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/245.jpg,0a087a9d8a6581205e191f47b0fc7854
+train,test,/kaggle/input/food11-image-dataset/training/Bread/704.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/279.jpg,ee8e94a73a27ccabd31480fe27fd3931
+train,test,/kaggle/input/food11-image-dataset/training/Bread/71.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/216.jpg,f406edea30741ebb8a33898618d4956b
+train,test,/kaggle/input/food11-image-dataset/training/Bread/764.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/183.jpg,73617696f45052380ef4fa1ab5ebb837
+train,test,/kaggle/input/food11-image-dataset/training/Bread/774.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/101.jpg,064f936e5f4da6dfb0df2054ec724fab
+train,test,/kaggle/input/food11-image-dataset/training/Bread/793.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/226.jpg,f51b2bb4b6085eab2c3c86cc55617d3e
+train,test,/kaggle/input/food11-image-dataset/training/Bread/80.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/352.jpg,bcd765eb38e05d76c0f77ae758c63fc6
+train,test,/kaggle/input/food11-image-dataset/training/Bread/800.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/322.jpg,5f371d9ae096287058db426be6660cfc
+train,test,/kaggle/input/food11-image-dataset/training/Bread/806.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/333.jpg,9d8b9b89f5ea07c3f1c6cfdb7663b985
+train,test,/kaggle/input/food11-image-dataset/training/Bread/81.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/291.jpg,e9bc9589fbbb39b21b1ec9cc92464a5c
+train,test,/kaggle/input/food11-image-dataset/training/Bread/812.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/12.jpg,dfb402901d3275f52d492028e63a46ed
+train,test,/kaggle/input/food11-image-dataset/training/Bread/896.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/175.jpg,c4d3e8dd9967caa87b5fed9ba467b8df
+train,test,/kaggle/input/food11-image-dataset/training/Bread/910.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/310.jpg,4cf03068d2b2ba13574310c13064f690
+train,test,/kaggle/input/food11-image-dataset/training/Bread/913.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/29.jpg,69ba7cfe9a9d306e1f76d24ae6d6e0fa
+train,test,/kaggle/input/food11-image-dataset/training/Bread/917.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/9.jpg,e3234dd0b34075dd6e8dede39ce8dd62
+train,test,/kaggle/input/food11-image-dataset/training/Bread/924.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/147.jpg,eac3f7b49d6d9c4421105efe602f526e
+train,test,/kaggle/input/food11-image-dataset/training/Bread/970.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/71.jpg,ba1ba429c4bd948e55b2baacccba3a69
+train,test,/kaggle/input/food11-image-dataset/training/Bread/973.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/204.jpg,2484476dc365391374e8e1ddd357a685
+train,test,/kaggle/input/food11-image-dataset/training/Bread/975.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/124.jpg,d76c7c671456fa7b06be313ffa3d4039
+train,test,/kaggle/input/food11-image-dataset/training/Bread/984.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/192.jpg,df748ecbc8176d2fb2d074a6a14c9b06
+train,test,/kaggle/input/food11-image-dataset/training/Egg/27.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/89.jpg,b21c2bf656559b12e2468aadf764338b
+train,test,/kaggle/input/food11-image-dataset/training/Egg/437.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/57.jpg,ba8e35468e50185482b365454bcee3a7
+train,test,/kaggle/input/food11-image-dataset/training/Egg/624.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/43.jpg,a4f0466fa996b4248ace39fa71837bb5
+train,test,/kaggle/input/food11-image-dataset/training/Egg/792.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/34.jpg,3dd2f316329a4c3926623dee1061f18b
+train,test,/kaggle/input/food11-image-dataset/training/Egg/831.jpg,/kaggle/input/food11-image-dataset/evaluation/Egg/117.jpg,716f6ee61508b9aad682370ab3a14a74
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/116.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/275.jpg,36116313d18365a5ab8d14e960b14f15
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/167.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/123.jpg,3cbbb45d2746b03841b1ad71b1903168
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/236.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/89.jpg,5f6d4b2f2fab869a6d0e5625ab9ec294
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/249.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/93.jpg,7bb5cb9c839a4a301031939eabe22486
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/253.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/192.jpg,7abfe6b6611e31bd50e71a0f0df66078
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/262.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/110.jpg,a25ee7c826377c3fc9d51d976daf23b8
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/270.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/193.jpg,7f9ccd6e76d40c61e7b4c8e90c87a952
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/275.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/229.jpg,5f9b18772b723efcd19c16780274b318
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/28.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/164.jpg,ae5e2a9ee27a302eec61bf69a6255f4f
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/292.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/78.jpg,6da90dd663816c52ba3bb2280c47e450
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/313.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/40.jpg,714b37ad62dc328f44a0a39e21345c90
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/317.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/28.jpg,88ac2f099998f4e35e1384a8e5e69440
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/323.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/98.jpg,bceb18c2e69feb60c11a53afda0f7a98
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/328.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/256.jpg,6e2cfcbc1455293817a1221389d73e7b
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/352.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/96.jpg,7c595abc02f15eccf259b8878750de4e
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/383.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/2.jpg,949f6e6b020231938ea00a054cf66e04
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/386.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/169.jpg,8549887eea0aacbb23e8113a01cdb1c7
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/419.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/254.jpg,91aa376b5038e2213245ede90474e1e6
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/43.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/119.jpg,4c3515e031464478ad7eb22ac6b634b5
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/452.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/126.jpg,ec10ba7e9e58f9209158a9069fdf6674
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/531.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/37.jpg,c09d5dc295746996ae5225efe3174e08
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/562.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/264.jpg,582ab27a4aa78c4b3326891693c049e5
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/570.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/95.jpg,492b6b367eab1d13a789e98e26d33267
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/584.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/91.jpg,81b452ec5db0aa8e55d96dfe6cf0cc62
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/598.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/116.jpg,588060d82fb47934ce0e937681af40df
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/610.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/141.jpg,32712aa0417288dbf5b1cc1c51e28fe5
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/611.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/199.jpg,193c90b2aaac97ff4c056d63fa58a598
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/619.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/148.jpg,f3736ca083a235df02b5f5c0d59a24fb
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/651.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/179.jpg,9962f6cee388df5cc3e13f707b5cffe9
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/686.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/118.jpg,83343aef90315bd4cf301c945a975c91
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/712.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/24.jpg,26de7d5c251fd3ee6d0e032139c31f2b
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/739.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/109.jpg,bcfceae537aa3b471d036621d2810d04
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/750.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/253.jpg,51e59c1cfda3fc67a2ffcffd9cc85402
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/761.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/281.jpg,f0dd1fc60ca7caa61458b277e1dd0242
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/817.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/62.jpg,2f2ffd05ea4df2d0644dc7013da4793d
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/836.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/12.jpg,f6da12d0e4c005f4ecf27e1587f6b249
+train,test,/kaggle/input/food11-image-dataset/training/Fried food/843.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/44.jpg,05b3c0db3c4297e02b2c2db96ee2b8ab
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1081.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/21.jpg,a6e0d65c55654348ec5c8b4905e33ac3
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1107.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/425.jpg,a26217bee327cda2e0f815534e8b0202
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1145.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/304.jpg,31ce8172db929e1d7f0a0385106c6b2f
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1182.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/92.jpg,01a9cd23cf3d9c7db2c2c77fd25849f2
+train,test,/kaggle/input/food11-image-dataset/training/Meat/119.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/41.jpg,84546cd1ee1dbaed30701287a00eac32
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1261.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/144.jpg,a99888cdb29eab2fbbc2d2384dd8deca
+train,test,/kaggle/input/food11-image-dataset/training/Meat/1286.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/305.jpg,7b55260ceef3fb33da6783983719742e
+train,test,/kaggle/input/food11-image-dataset/training/Meat/203.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/85.jpg,b4b5ae2503df5a8eac7239134a4b14d8
+train,test,/kaggle/input/food11-image-dataset/training/Meat/216.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/420.jpg,6c7c7ce29b9810ade2af8ce289f5834e
+train,test,/kaggle/input/food11-image-dataset/training/Meat/246.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/9.jpg,ee58771706d16f6d64ecc52e0e9b6b23
+train,test,/kaggle/input/food11-image-dataset/training/Meat/261.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/64.jpg,863074c07a91177daec149ad85e76bb4
+train,test,/kaggle/input/food11-image-dataset/training/Meat/276.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/86.jpg,a9b84c5dd5bc4d7839933a296957addc
+train,test,/kaggle/input/food11-image-dataset/training/Meat/288.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/154.jpg,e54844f2807f1971f458905db5d722fe
+train,test,/kaggle/input/food11-image-dataset/training/Meat/387.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/385.jpg,1bad0ce3218219694da9db88029550fe
+train,test,/kaggle/input/food11-image-dataset/training/Meat/413.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/84.jpg,d23677d9850d64bd0ac6e08c2ff6490f
+train,test,/kaggle/input/food11-image-dataset/training/Meat/416.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/221.jpg,b60fcd30d0c481529c39c47be09c232b
+train,test,/kaggle/input/food11-image-dataset/training/Meat/442.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/376.jpg,372ac2f108da7b9a37c7ab952ec9c562
+train,test,/kaggle/input/food11-image-dataset/training/Meat/506.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/368.jpg,23cf9658009a1255c2c433216ef64976
+train,test,/kaggle/input/food11-image-dataset/training/Meat/534.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/207.jpg,70bb518ce483c14a4964882d528b3fb7
+train,test,/kaggle/input/food11-image-dataset/training/Meat/678.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/142.jpg,e945517dcd56c7259357b54e4f143469
+train,test,/kaggle/input/food11-image-dataset/training/Meat/705.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/404.jpg,a1f420b553e6e0a50d88fd9a63c9031a
+train,test,/kaggle/input/food11-image-dataset/training/Meat/711.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/220.jpg,36ba00d7a3ef48eeeb36ffdd8b5c79c6
+train,test,/kaggle/input/food11-image-dataset/training/Meat/715.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/203.jpg,6239ef6d50c325bff65c8c36814f1be7
+train,test,/kaggle/input/food11-image-dataset/training/Meat/719.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/273.jpg,56a55452c0ca172dd3539745c3bca175
+train,test,/kaggle/input/food11-image-dataset/training/Meat/72.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/168.jpg,083399d186e62eefdee8b9664e3148f9
+train,test,/kaggle/input/food11-image-dataset/training/Meat/732.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/15.jpg,94c80ffd032dcae05ef943e8bb01a829
+train,test,/kaggle/input/food11-image-dataset/training/Meat/766.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/223.jpg,1b7f0ea2ca87f407ecfcf84c16f3f953
+train,test,/kaggle/input/food11-image-dataset/training/Meat/773.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/126.jpg,ec7811b399b0f9af174860442f2f082f
+train,test,/kaggle/input/food11-image-dataset/training/Meat/793.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/299.jpg,c4c787e20f445625b01730ce934e832f
+train,test,/kaggle/input/food11-image-dataset/training/Meat/850.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/268.jpg,03bb22fcabf22696a2c5ab37bd00d737
+train,test,/kaggle/input/food11-image-dataset/training/Meat/864.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/423.jpg,41b691345478371de5115ed3cda06c0b
+train,test,/kaggle/input/food11-image-dataset/training/Meat/867.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/290.jpg,f9969a06eeded8286285072973e54faf
+train,test,/kaggle/input/food11-image-dataset/training/Meat/915.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/104.jpg,86ff6dc4175de63b94d164d5a9a3dedd
+train,test,/kaggle/input/food11-image-dataset/training/Meat/930.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/177.jpg,e09224a661551b05b1d5f26602e9e820
+train,test,/kaggle/input/food11-image-dataset/training/Meat/963.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/123.jpg,0d3b807a313e14c00891c4c37e6cd478
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/129.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/41.jpg,c2fc0825dc8e5dd7b557e5f414238848
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/149.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/47.jpg,3201440659e36b41cd555afe343c24d4
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/210.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/68.jpg,bbb56a7e1167be3647c9613db3e9b8b6
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/212.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/69.jpg,f14b788d1090ea72b7315dfc2232e294
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/272.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/94.jpg,258db4ff7785e196d5c3ea909f9056ee
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/274.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/96.jpg,239bffb0054bb74ad87c22fe5ae54024
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/276.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/97.jpg,3d82cd821b1f59f8951bbb764b209b66
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/283.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/101.jpg,9144a11f75665dec94999dba947194d1
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/287.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/102.jpg,b682f94b8bcf01bbc7a9d982e6cd8d32
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/296.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/105.jpg,b4f0978ec44aaf90eb64b10fa0138a47
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/300.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/106.jpg,00e528794ca9e3d6b1c0b8728769874e
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/307.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/110.jpg,35270f816374823d324aaf97fb512294
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/315.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/113.jpg,d438c737a3f12edc6a57281bcd27ce57
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/337.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/121.jpg,9626c998e25062df2c2862962ad6f49b
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/340.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/122.jpg,9f42f02cc62e066b056c85986e5d560d
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/345.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/124.jpg,f95532484c523e8239058c26590ce3e5
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/355.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/128.jpg,cc73659542fe7b383b8102745826e5f5
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/371.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/133.jpg,38754b621151ed942f7fc07b312beb44
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/373.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/135.jpg,59aa401a35368a62a9eb4b9d111a2701
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/374.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/136.jpg,13cec47ea6f181579497650d5376fdd7
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/386.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/141.jpg,31f7fa68561042e9a7da6e958e7bfb0d
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/390.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/143.jpg,8a887bc0ea1103915b5535593a33a771
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/408.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/149.jpg,7a17c28812991cb0f12846a8e4d0bb63
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/413.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/152.jpg,3c5abf0f78845063f5cb107ae2372286
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/440.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/167.jpg,470625113a89c5f4ebc7625f05312ba3
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/455.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/170.jpg,9235d65201bb2f5083520e00d2945860
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/483.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/184.jpg,baf852284750b76d95192758c09df743
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/496.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/188.jpg,0f9014a3b3cbe2b986d6d0c9e20101ed
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/506.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/194.jpg,5ca297c4a33169d9f4d5b3f5be8f8179
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/522.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/200.jpg,13b220ac59a96fb14c01eefdb15355fd
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/554.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/213.jpg,c7fd58b7dee72074e1ef7c98fea46075
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/555.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/214.jpg,eeee81dad038b37d2e8a535aeb001d26
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/560.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/216.jpg,5b222bce2511a42cbe3971ab6285eab5
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/657.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/247.jpg,da60cdfb9646f6f6df7f9307db219f40
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/667.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/249.jpg,3c720e3ebd0810ef56f58152ee62c951
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/684.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/253.jpg,b869088c0d07d9f3060d19cdddaa0bc1
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/695.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/257.jpg,991c3401f89a89ed856accab7b6ff797
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/702.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/261.jpg,e31eb2845fb5d6c3d58945fe80638019
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/743.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/272.jpg,2ec492e2ae38fd209da2ad8a0594c21a
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/770.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/278.jpg,75bfeea09b93056994f7414d40eecb90
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/789.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/284.jpg,dec50e4b5e859d46ff2de3741029ca48
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/799.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/287.jpg,2f4dd3ea503ab454506cbd81b78fca3d
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/805.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/289.jpg,a4b5274e060fd5fa29e7425596551715
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/829.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/295.jpg,6232a2bb1ab56638a892171e2af6045a
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/834.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/297.jpg,56ce2bbf9fd30001d5ec89afe968cd18
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/835.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/299.jpg,02fa83cf970b7ae8126de77db30e6afa
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/843.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/302.jpg,36aec0fd018c1c03aaa1e4f2fe00c83d
+train,test,/kaggle/input/food11-image-dataset/training/Seafood/91.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/32.jpg,22f5974999f0d8401bbcceacd291d881
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1012.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/335.jpg,f9dc691be35d96116f49047ae41f5d05
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1031.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/340.jpg,d8d048654c5712d25927a06cf89035af
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1098.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/362.jpg,dacc55fed6255489a6c169762d0f072d
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1109.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/365.jpg,0749292c88d9d64a99f659cbb8a6fb41
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1139.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/373.jpg,deb6c646dcec544fc75ff80c1bd7270f
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1146.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/379.jpg,363e1f6bb65f491fe420adb419bac224
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1160.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/385.jpg,a3b9d82438fef2d49a706bc8f578e70e
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1186.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/393.jpg,a3ab5c024bafebe348226d2d08ac1b65
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1191.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/396.jpg,8251fb72a7bb3c6beac53c661317723b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/122.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/39.jpg,512dcfe3fcc80faf4113f829f966827b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1230.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/407.jpg,95d17a37815543bde2fbe625dadfa217
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1271.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/422.jpg,2cebd0336359c23d9fa0afcd875ab7df
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1329.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/445.jpg,ad75233625476ad6a801569e197ea6ec
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1351.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/452.jpg,44dd2d6c9a278abcc25892d71affa537
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1353.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/454.jpg,1f14204f7fd7b9794aa109dfd7dec696
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1358.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/456.jpg,6678ab419df8db76032ae222979d8244
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1361.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/457.jpg,8d28a5903bb97419b8c11b8c7ab4917f
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1389.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/476.jpg,7b88f4c5e6e888aed4a51be2bf8f8633
+train,test,/kaggle/input/food11-image-dataset/training/Soup/140.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/49.jpg,5a563af26f0bd3f1350dbe806275acfe
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1451.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/489.jpg,68b9fc85361561354413dab57d140553
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1464.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/492.jpg,5f93ede2c5e7ab4395c0745a4cc7c300
+train,test,/kaggle/input/food11-image-dataset/training/Soup/1497.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/499.jpg,ad6cac9972eb797d482d459d2fd09774
+train,test,/kaggle/input/food11-image-dataset/training/Soup/167.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/66.jpg,7ec037d4997fbe19c35e1c5cdb755f60
+train,test,/kaggle/input/food11-image-dataset/training/Soup/198.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/76.jpg,c19e48ee1e4a0011b3bf4e904c5f785a
+train,test,/kaggle/input/food11-image-dataset/training/Soup/224.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/83.jpg,b079e04be6a31ad6c47019a011104541
+train,test,/kaggle/input/food11-image-dataset/training/Soup/229.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/85.jpg,9b24242c4ea4a8bb8e4058eeabb6c226
+train,test,/kaggle/input/food11-image-dataset/training/Soup/236.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/88.jpg,d7b0782da965d85ca45d123bf53d56aa
+train,test,/kaggle/input/food11-image-dataset/training/Soup/28.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/7.jpg,e109207f5312b68c6c416c1ce6f786bc
+train,test,/kaggle/input/food11-image-dataset/training/Soup/309.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/106.jpg,60830030a76aab8142032308a30d839b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/312.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/107.jpg,6f85cae69fc529773b4ce4fd1b889b25
+train,test,/kaggle/input/food11-image-dataset/training/Soup/318.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/108.jpg,cddd43ae584d007cf12e2880a25d3516
+train,test,/kaggle/input/food11-image-dataset/training/Soup/339.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/114.jpg,6a904e078116452c2675fed0f4e5174c
+train,test,/kaggle/input/food11-image-dataset/training/Soup/347.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/116.jpg,81fc4ea264293ce3cd10adc2561eee05
+train,test,/kaggle/input/food11-image-dataset/training/Soup/35.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/9.jpg,98a788b7902c95a27094a1de762a6986
+train,test,/kaggle/input/food11-image-dataset/training/Soup/368.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/120.jpg,65caf97b304f36d453f40d1299205caf
+train,test,/kaggle/input/food11-image-dataset/training/Soup/38.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/10.jpg,648db7a217732cfb753454b16f6992cd
+train,test,/kaggle/input/food11-image-dataset/training/Soup/380.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/121.jpg,744964abe6e2428d927425ec2c3841c0
+train,test,/kaggle/input/food11-image-dataset/training/Soup/384.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/122.jpg,7c86985f682448727d88ae2f93b26ad7
+train,test,/kaggle/input/food11-image-dataset/training/Soup/407.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/128.jpg,e1b8182933e5c2b75aa7cf47066a4d24
+train,test,/kaggle/input/food11-image-dataset/training/Soup/442.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/137.jpg,4c7f81e875f727e37740e3ebab62a98d
+train,test,/kaggle/input/food11-image-dataset/training/Soup/449.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/142.jpg,d423a941a13a9d5a0c8492e035a4f3a0
+train,test,/kaggle/input/food11-image-dataset/training/Soup/458.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/144.jpg,33fbe46600540dc64d82c0d125bd3451
+train,test,/kaggle/input/food11-image-dataset/training/Soup/511.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/164.jpg,e3c4c241767a6715bdd25d1c0b56623a
+train,test,/kaggle/input/food11-image-dataset/training/Soup/524.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/168.jpg,6a47b0ca9a646499ab1132ee5b66f49d
+train,test,/kaggle/input/food11-image-dataset/training/Soup/546.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/176.jpg,c9c05987990059c24373bc632b86acc5
+train,test,/kaggle/input/food11-image-dataset/training/Soup/55.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/15.jpg,8808b75ea46d4a37c4ffeb27fbcb7a9b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/554.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/177.jpg,1f718f6e124d32d92ee43cb443c9c8e9
+train,test,/kaggle/input/food11-image-dataset/training/Soup/558.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/180.jpg,82757558935f5c02005f36b44d9e29b4
+train,test,/kaggle/input/food11-image-dataset/training/Soup/574.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/185.jpg,3d623e6d3d0f3edc0a9e7db60a103e06
+train,test,/kaggle/input/food11-image-dataset/training/Soup/579.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/188.jpg,1c6045b6d54c9d74d2e60fec37ab9ac7
+train,test,/kaggle/input/food11-image-dataset/training/Soup/590.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/191.jpg,848c4f981d70609dfe92e494bcc7172b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/60.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/16.jpg,d6eb319f12f6a3dc62ee4f6f09082aca
+train,test,/kaggle/input/food11-image-dataset/training/Soup/602.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/195.jpg,aadd82778a553c13457803bd56a6fc63
+train,test,/kaggle/input/food11-image-dataset/training/Soup/606.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/196.jpg,2e86c5b60261103e67248106cbd035fa
+train,test,/kaggle/input/food11-image-dataset/training/Soup/62.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/19.jpg,2accdbcb1e37e68e2d4f0813b642e1c1
+train,test,/kaggle/input/food11-image-dataset/training/Soup/622.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/201.jpg,427a2d673600c3203dde502a1ab7a5b5
+train,test,/kaggle/input/food11-image-dataset/training/Soup/623.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/202.jpg,655d87ab148a1b3642995d74cf8d4a51
+train,test,/kaggle/input/food11-image-dataset/training/Soup/635.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/205.jpg,555aa6a539b5a9267fcbe58f5bd536d0
+train,test,/kaggle/input/food11-image-dataset/training/Soup/639.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/206.jpg,f90f773a4405b5f662cdfec522afb8ca
+train,test,/kaggle/input/food11-image-dataset/training/Soup/641.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/208.jpg,355d1ad12d5cfae14fec2c0ba35c0b9d
+train,test,/kaggle/input/food11-image-dataset/training/Soup/661.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/216.jpg,569ba94d17b69ca1dd7c6945c7ce026e
+train,test,/kaggle/input/food11-image-dataset/training/Soup/668.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/219.jpg,27c22f92fef7e82e642db1d41be24840
+train,test,/kaggle/input/food11-image-dataset/training/Soup/71.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/22.jpg,e346af47d44b32ae23238697a33bed68
+train,test,/kaggle/input/food11-image-dataset/training/Soup/710.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/231.jpg,b542565580f613d69868bb9ea15f8b6f
+train,test,/kaggle/input/food11-image-dataset/training/Soup/738.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/243.jpg,223dda967bf19ecdfd202c4af65adcc6
+train,test,/kaggle/input/food11-image-dataset/training/Soup/753.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/250.jpg,8c5605ef0463fafb94bb7fb3ae6a985c
+train,test,/kaggle/input/food11-image-dataset/training/Soup/776.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/258.jpg,9b03fe9a6f5c542e0df98c18492f5622
+train,test,/kaggle/input/food11-image-dataset/training/Soup/777.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/260.jpg,ca62c09512ac19d55f4bc69fb99e056c
+train,test,/kaggle/input/food11-image-dataset/training/Soup/78.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/23.jpg,a2df4eab599ad2d700e4f1ffb81fa763
+train,test,/kaggle/input/food11-image-dataset/training/Soup/784.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/261.jpg,b93b1147cb57a180ec8444b83c63aaf2
+train,test,/kaggle/input/food11-image-dataset/training/Soup/8.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/4.jpg,5ecc833a886d8b155c4e02fa89658a8a
+train,test,/kaggle/input/food11-image-dataset/training/Soup/844.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/278.jpg,b5e60f81c0f714554a598678b9633e59
+train,test,/kaggle/input/food11-image-dataset/training/Soup/854.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/283.jpg,44b34ae3e2951f380e6039b35dc253ba
+train,test,/kaggle/input/food11-image-dataset/training/Soup/857.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/284.jpg,d29ee97233188fc38b96f66a9d433a2f
+train,test,/kaggle/input/food11-image-dataset/training/Soup/864.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/286.jpg,3da6830a17ca7972bad041ecaea62750
+train,test,/kaggle/input/food11-image-dataset/training/Soup/880.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/288.jpg,afd69b92320c66629bfd5ccf71411c9b
+train,test,/kaggle/input/food11-image-dataset/training/Soup/916.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/299.jpg,e186f85ec6943e3276742f86de84f9e1
+train,test,/kaggle/input/food11-image-dataset/training/Soup/954.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/314.jpg,0dc14ab978a1d143b501c6e6282a9b72
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/548.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/2.jpg,796ea07a4b4cfd4fe528ab7497e6e6c6
+train,test,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/613.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/69.jpg,21ba085bee1a53f4635afb5969ed6030
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/102.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/63.jpg,925ac24cd5e4cb3b46aa3e357efdbe0f
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/107.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/82.jpg,646722074455bf40723ca248f75c718a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/11.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/13.jpg,4a7250c15b48a43a77ed96c7d8cbc590
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/110.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/349.jpg,0120d240612ea69b4d6d13791ce44bbf
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/112.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/68.jpg,9ce96b61192dfb8e1160ad4d1866038a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/126.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/93.jpg,8da53e6ffdfd311641abaa90f6ab6d30
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/129.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/138.jpg,a16c2e36e352b4e936e41c51b97fe042
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/136.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/325.jpg,d2071d9703471390538c029748b950d0
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/144.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/238.jpg,d846bfbddcf881713360168272470e7c
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/150.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/17.jpg,c02888c909c31b2aae80d1a09b8086de
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/152.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/149.jpg,d5bdb556fb22f744825d2cde7a3e241a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/165.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/28.jpg,7f960ec18eff71ea2836bec441215692
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/167.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/105.jpg,0aa42179d679f1c58a70d7f52df39949
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/174.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/1.jpg,0b2cc3493d8f057449223ce5cd036b71
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/177.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/266.jpg,2f1ffc55e93828a5b2fb2ffbbdd7ccf2
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/188.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/282.jpg,2c996fa94f8bfd44afbbc54bf2704f58
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/189.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/276.jpg,9742cdf1a3398c17ada08e51c9cef526
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/19.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/39.jpg,5b5d84651afdc89af5179af684966c29
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/191.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/366.jpg,85a7fcc3f71811141e1dc8a1119da386
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/208.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/312.jpg,833526f0ee0236393ddd942edb63121c
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/216.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/283.jpg,0f0cd8d77b77173c2c4544a2bcb8e05f
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/222.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/155.jpg,64296a996ec55deba974dafab12dfab1
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/226.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/54.jpg,4ab130596b57881564f4bb7557253017
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/23.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/125.jpg,ff2582d32fd5d65a7323d653d810899a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/233.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/230.jpg,e9cdd0c71a67544911306203332daa0b
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/242.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/89.jpg,93d03df29c3db7c897cc8135ae7e4095
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/243.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/207.jpg,6af345f6b18b46dad98578c3da39e2fb
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/248.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/342.jpg,2aa6c914b2e1ba898219cf8f0f2005c2
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/252.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/315.jpg,595a9e958480f9bafbc928b6e3bb2213
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/254.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/319.jpg,30dbb7f943e5c8074712b714ef85141f
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/259.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/223.jpg,4416803984094148473333064ceaed14
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/262.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/277.jpg,3b845b750b451f0a02064406d6c9f3d0
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/265.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/141.jpg,8252aec6581fa4cb694cfd1263d8b94c
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/275.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/326.jpg,863713e0461a7251074ee1cf57c02c16
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/28.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/171.jpg,0254ea46539ce145da9cbc30978d8ec3
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/284.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/257.jpg,6905287aa1f0afff0cb4bf0bf0a990fb
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/287.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/189.jpg,dc157aed663493b136d5d077b671b7f0
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/29.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/221.jpg,9538fa52ca1c0b3ee90fa9f923cbad78
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/303.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/307.jpg,956456a044cdf52c0f647c8d7194298f
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/304.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/114.jpg,128f8d6b88d90dc143025d07d6695b01
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/314.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/344.jpg,90f10269e0fc026c43b40f5a901b33b4
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/316.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/314.jpg,456e043a19b8d8f38e8376cb7fd54e6a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/318.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/59.jpg,b98da8f05b65c791791e1151b15ad358
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/324.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/2.jpg,c681be62048769877abb841bd20ad355
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/350.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/20.jpg,a0004a97473165399639f85129805373
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/355.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/259.jpg,d101c43dbeadab4f108056a5a9e7b923
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/61.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/250.jpg,eecc575ca9b2a886943c7a2a6f5ffa9c
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/62.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/304.jpg,12e9372e38b28d1f2c2016a179f5648b
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/63.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/163.jpg,23df5c2c4ba0f8367b625b14135449ef
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/64.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/255.jpg,1a6a7677350a5058f07d0d77944df60b
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/65.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/197.jpg,47ecc85913c00bd230b751cc474aa50f
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/78.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/113.jpg,d8fbf136e2975609ba8350ba59ea9850
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/83.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/334.jpg,4602ce550243ee30dcac879515e48d31
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/88.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/194.jpg,f18cb4c937a7241b314c0efd0643f79a
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/90.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/248.jpg,cda855631bbbc6ab2378cf493053438c
+val,test,/kaggle/input/food11-image-dataset/validation/Bread/96.jpg,/kaggle/input/food11-image-dataset/evaluation/Bread/148.jpg,09019056c30b3218bc25ca5b49bfc889
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/108.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/96.jpg,d4a96e23f887884ab7cd79f13ea8550d
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/12.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/14.jpg,8b677137ec811a86aacac46dc22deef1
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/120.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/112.jpg,0002ae8b30b5199ef73aacfe6cb93877
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/129.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/117.jpg,4ff72bc34bf1f447971871e7f66f9d94
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/132.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/129.jpg,822bfdb92de5e45cecac0290217d3e17
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/133.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/134.jpg,0a5a26812295f50405cea699248a0c3a
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/141.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/139.jpg,6d212a5457cbcc0e9ccfc66fd09266cb
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/150.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/158.jpg,633db2ed7154ec215957b75f134d6fb3
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/155.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/160.jpg,b5c712b7cb3bbe7aabf591b0c7aa3b30
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/164.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/166.jpg,8ee138781d1f083677b166bd69480b0b
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/176.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/174.jpg,9db06a827446a67083849c2f532e0bac
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/18.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/16.jpg,d42873cec2deb7df65ebe6ad2687acea
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/225.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/213.jpg,5cd50c77ae0a4b0686cb13c407b27bba
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/228.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/214.jpg,32d7ab5fd694738c4f474f6207ad61e8
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/233.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/221.jpg,4b1b881038289f42716342631ff538ef
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/242.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/227.jpg,2fedd1dcfe1491007bb822787e435627
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/245.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/232.jpg,b76a05fe45a5afbf4b69d34b3fcb39ea
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/254.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/237.jpg,152d14db394b926d9bc3b88f092c2851
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/267.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/249.jpg,2714b4736792bd2f8603da1515399ded
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/283.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/264.jpg,20b169a09316d8ea6cf87de4b1a7e081
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/289.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/270.jpg,ad1814d1df40e7f592c6b6724290b413
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/29.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/26.jpg,48567bdf296c48d214fbab9440ce58cf
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/300.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/274.jpg,5fd74d188b183081a5e4a683deea1bdc
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/311.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/289.jpg,c1c63021cb0606a73f250772b421c727
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/332.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/304.jpg,7958c29f3bf964ed2f243fae32280e8d
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/338.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/309.jpg,7f79de5b18577dad8e83fb6554b64d93
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/349.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/316.jpg,ac032a0e39439c14b5aae0a9ad939969
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/351.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/320.jpg,265310fa90af408b594b8ef3b5660793
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/362.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/331.jpg,2e5d50371b39f11277014644753110df
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/366.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/336.jpg,153c96676fcd1b26883ea2049e8ced55
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/373.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/345.jpg,acfb4b24050b05eaefd386d443598468
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/380.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/354.jpg,05787a66d5a8c2c8525eaf02dd983741
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/382.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/357.jpg,6dd6b942764a411b1dc213b0ed9b260e
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/385.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/358.jpg,7f764274baf35b2b876d38c42a74bfcd
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/387.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/362.jpg,01b7eeddfba9e7184acc74faa4e8e7f8
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/402.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/376.jpg,adef6488138d9b5df93af6c3574d8395
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/420.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/402.jpg,d67567b4897733fd62293d2bb9d40d2e
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/423.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/406.jpg,650a1454d6787bac4ebabdfe637e48d9
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/425.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/408.jpg,cdbdca73eaa663ee6f91cf307d319c5e
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/426.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/410.jpg,4462bd11687328d151fdf020285cd52f
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/433.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/417.jpg,bd071312daf2fe905f2f6ea9e80c4c33
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/439.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/422.jpg,2a61fb69969c61fbaaf984fd270101ce
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/454.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/433.jpg,743f57aaa9baf4a22b246aedf67c3e17
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/456.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/436.jpg,2dd1ddb308172514529ef2bab070dcd5
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/458.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/441.jpg,5e7d42161e337430d2ea7722d6ae444c
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/462.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/446.jpg,d72818e45e625a3612a5082d8ef6dfb9
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/465.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/450.jpg,d4b89750b29eb0f3fb5e574d523895e9
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/479.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/472.jpg,64c69ec15476338fc30566bc5b4da52b
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/482.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/477.jpg,dba9aa2a6cbd489144be4c372419a142
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/488.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/484.jpg,7a90456ffb611f5118cb6eaf3fb93284
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/489.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/485.jpg,666f7c34ca53cd434c2e3fb834e09c31
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/49.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/40.jpg,650bd07cbcead99877bab7aca953732c
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/491.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/489.jpg,28f3c7027224273d3f40bdf9d43ebe13
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/53.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/45.jpg,b98c27c5cdc88306a43a26c724682320
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/62.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/56.jpg,485043c46f53d9e7e454746315e3697f
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/78.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/66.jpg,8e27469170dedd6abb7d15debaa9e840
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/8.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/9.jpg,0f87ec0f92c48d9b9f9113886f8abd34
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/83.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/74.jpg,d035a7862cf9fced69e0c76976b9783a
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/86.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/75.jpg,2f9342fd24a7b1cee4b115cf29fa0447
+val,test,/kaggle/input/food11-image-dataset/validation/Dessert/91.jpg,/kaggle/input/food11-image-dataset/evaluation/Dessert/80.jpg,a394be63f3efb238408e627c9b67cbc9
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/100.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/46.jpg,d054cdeb53efe9f17b972c6873bc430d
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/103.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/147.jpg,6d4ed29eb4a1f7ffe30bcda50faa62d3
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/13.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/159.jpg,e8390a92807d8fef5aea81023c94735a
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/130.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/259.jpg,689561420652524099406010882247c5
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/144.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/234.jpg,5bbd405c306f475b21ce23e5937b35bf
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/146.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/52.jpg,d5e98c5802e97109162dcc865818f06a
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/149.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/216.jpg,c80d68a71f7c4611e326458aa6ea3fa0
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/150.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/265.jpg,54e9b361a923d39aefa3c0e9e8e9fd80
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/163.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/219.jpg,d35b6fbf52208471efe9cff6a9583aa6
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/173.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/225.jpg,1ec3aa779ad6a08645bb54c99166ff71
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/189.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/51.jpg,946503e7b3e251d0cc495d63dc537e16
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/198.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/266.jpg,f003c97000c2b62003f1c8d81886b016
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/200.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/85.jpg,f9a615f5bec4d98cafc6ad2b4a564209
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/202.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/124.jpg,b01cf5a3815274a2e4f096e784b5b57c
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/204.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/209.jpg,a036d31bbc83f769bc8dae871d5f3b64
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/209.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/240.jpg,b38ec811a70e3bd3558e9c7a0e0e0d5f
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/215.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/146.jpg,ec4f2b026c144575198248bb92cdf4ae
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/216.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/170.jpg,79cca51f9766f29c269c5eb323ec02f5
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/255.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/182.jpg,56e7cbb3e459aa5c2b32b28dfafdac83
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/304.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/174.jpg,c46b43b3afc3662fc422cddeb4e21895
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/319.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/82.jpg,21d5f08c198a3d06937d4bf71bb1d961
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/37.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/183.jpg,11227e9b12ab8764988597f5c0c8d1df
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/47.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/49.jpg,9d3c0030d65fb574e1645f0e8c830bd8
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/52.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/34.jpg,f0f3185cf24622d5c3f041404ca137d9
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/61.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/180.jpg,532ea494c6371e7c9aa889b674d816dd
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/70.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/214.jpg,a9daf741e82a6994212ed013412f8fa1
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/74.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/197.jpg,afb7acc6aa8bbf333fea1ebfb77c15b1
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/76.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/186.jpg,26bf13f26332c6d4fb3b4ce399d22852
+val,test,/kaggle/input/food11-image-dataset/validation/Fried food/86.jpg,/kaggle/input/food11-image-dataset/evaluation/Fried food/211.jpg,a248a6be225fce2f2feaa0aa26b6b407
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/103.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/355.jpg,85fd9493a9e006328c628bca6da6d409
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/104.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/306.jpg,0abeecb3b85c398cce7c83174ae484ca
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/105.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/310.jpg,6b26480cb33334a6fcfceeaf47e6639e
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/107.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/166.jpg,64f1cd2ee1340f41914a7a0281e857fd
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/123.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/13.jpg,0cbd652daae7682ef805ac6e329f13cb
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/132.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/401.jpg,d03f6d8948a59b1f6e8fb6cd2e98e03f
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/134.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/245.jpg,9d8e27354e5dbf7e921a9db4b83590b3
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/147.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/386.jpg,078ec84bb4b7efa60482b415965128bd
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/149.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/412.jpg,363a70eb2c46dc7672211c88e91e2d70
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/151.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/253.jpg,bbad590d5635cba40f679d9d0ce90e1d
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/153.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/399.jpg,1f024116450a37727c6ba7feb0f960f9
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/160.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/244.jpg,17982674e285ca7c2448aa6db468809f
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/171.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/274.jpg,c861e2f61ba82b56e71de1dbb9667d21
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/174.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/119.jpg,084e8350c60f658ebbd3851d7587ebcd
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/181.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/260.jpg,4d33a3a5c9fa67c84d2556c2765f1d5c
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/190.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/200.jpg,956affc78332a3133b78761cbeb77252
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/196.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/215.jpg,da0daccb52a49a83e779852face10f42
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/199.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/127.jpg,b7046685f117823398979dc84bc76985
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/20.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/396.jpg,f52b97dc050787db864dd08d34c3000d
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/207.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/354.jpg,2039d136bd6fe7609c672be90ce7413f
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/209.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/174.jpg,e60fae7f530ae9dbf796111c0baa391a
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/21.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/270.jpg,61f2d9afb02faa82a72ad7ef09e2733a
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/237.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/74.jpg,91bf7ee8671060fa0839618dbe031c07
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/238.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/222.jpg,5c3e77be44c9e910482ff1146a4c9e39
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/252.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/58.jpg,7723cb933c5bdd8736b15ded0641b8fc
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/256.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/319.jpg,3caf3383fd648f9a305872992b76fb4c
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/26.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/124.jpg,20ecdd758acc04b49040ef0ead29f276
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/267.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/361.jpg,cb65740cd74c6d58554bb03c198bd3c0
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/277.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/11.jpg,ace6cc250bd44bef2e0dd8339c3d4f5d
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/28.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/249.jpg,9c7045795d2772e81371fed2feaa13d3
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/285.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/190.jpg,1be811b93fcf6676e919514157bf44a7
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/287.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/406.jpg,18b21359851af518621ace19143e3431
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/299.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/233.jpg,ece7ae955d23593e55bdb4b27b660e8b
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/302.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/286.jpg,a4749656ea835855f9a1dc067bad061d
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/308.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/137.jpg,8215a7ad6def2a3728e8dfe3defc85ed
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/309.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/297.jpg,f30505e930a4fa7c03f0cd1dd3644971
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/314.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/135.jpg,a3e136e6f452c3a00959a3f4f45f18cc
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/323.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/393.jpg,c25f98481b62d23edf648bdfd0e4e67b
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/324.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/82.jpg,b7e33f607ab4f88b6836fc4ce29943e5
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/342.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/54.jpg,6383cb08e43085b6696de01ebb48b9bf
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/350.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/118.jpg,d07c16652585e297cfcc986923122177
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/352.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/110.jpg,d5e3217ddd99e7b9246af6feeb3cb656
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/356.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/173.jpg,c18a2be2b1e943a3bc27c7f693df1fb3
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/360.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/51.jpg,15ae1bbe8eeb4459d90facab05b6763c
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/366.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/192.jpg,908c9b9ff6c4001a1ce49718fbfa4b40
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/374.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/169.jpg,a47c1bf1f1ec02358282919b672a3c3b
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/377.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/172.jpg,15f826b8837f1ccc536fa32bd94c4fdc
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/385.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/294.jpg,0b2f2656e272b5a12729e128d88f0e65
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/396.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/27.jpg,4fce7f67af1560c870e9cc47f73f6407
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/405.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/389.jpg,82097ab6077d0bdd942c566b822a548f
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/410.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/226.jpg,add8cd85a78542c55b8ea006e0a700f6
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/416.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/193.jpg,4d11ed1a0c800ded55fcfb61353daa65
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/42.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/180.jpg,ac42086a3cc578e6144a77c37bc74c5f
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/422.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/303.jpg,53653fb07ad0dd268363fc132840c6b4
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/423.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/6.jpg,4b432029804a804214dfeed1ea9a45bb
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/424.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/90.jpg,14cd640a6ba7498682448725c9d4b462
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/430.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/28.jpg,200b09b178b64e5631c2ec394485d2b0
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/432.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/241.jpg,cd705c76db116e06596f0ec292ebec13
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/437.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/197.jpg,25ff98722c84c6ce11b005e51788d9ce
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/44.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/300.jpg,40470ec616568c05bd6a46b529bbb4f0
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/440.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/320.jpg,a6446bcafe38419dc3795c18dfcdd0ae
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/446.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/287.jpg,c40ef900836018477cc7b82550a3b996
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/46.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/265.jpg,b2c7efe938a2b6dfc6d0fed9e2697bf4
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/54.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/130.jpg,696589784353cb9c9fb1d67e12fe115e
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/56.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/201.jpg,9fa4d50944b9e137d3164397332021a0
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/61.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/280.jpg,31a3535cae14c492bb39d2452e3f7d08
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/73.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/248.jpg,007360b341dd3f34c82039a125747061
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/75.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/151.jpg,9911476a30212c18e29588b652e40473
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/77.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/196.jpg,d453a8a9cb2bf4e6c00c9b00a282f7a5
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/86.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/150.jpg,309488ea38279c9280ee79ecae2d1c2c
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/88.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/67.jpg,8332220123b43c2b44ea3b5255bd6238
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/93.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/102.jpg,99638a26c10e4dfd2fc0a4346be0f179
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/95.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/162.jpg,7785df2a1e00e0485258100b5a5c130b
+val,test,/kaggle/input/food11-image-dataset/validation/Meat/99.jpg,/kaggle/input/food11-image-dataset/evaluation/Meat/184.jpg,8c7392cd8c50e225528262d0876c073f
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/1.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/6.jpg,61ab00d4eb8a3f9298a2b52b1ca760db
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/102.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/100.jpg,23ff5c2732e9eacd447fb3a94ccfb4f7
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/110.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/108.jpg,97a5385e1eba4fe7c83a67536a275859
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/12.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/9.jpg,dc91b4d4afd5a9e70eaf0ec9f6644f97
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/125.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/123.jpg,c70a2f4764dfe0b5c82f954fa19907c3
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/130.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/134.jpg,06ffa9c0ff4f6328472f0d1ce9df8c11
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/133.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/137.jpg,a6f976f57d45dd578e4354c5e05518f3
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/134.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/138.jpg,71e9afafc648c0f14f25087e98519ec3
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/139.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/139.jpg,4836ab05db44c64dfc1628700a1d0204
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/141.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/140.jpg,3df044881bab98c39d1041040c791bd2
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/167.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/164.jpg,65b9d3157fa806ae1ee667f34ab904ee
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/183.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/177.jpg,219bdd2af64b943ac5fc36cf0d951bce
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/187.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/186.jpg,41050aaa37bf1262c158086b5cc75157
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/19.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/15.jpg,63f52af88ad0cdf944ed97004f7c530f
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/196.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/191.jpg,63d220ae200dd384a89a6de659ab6986
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/197.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/195.jpg,9e6aba4ffe3ad3ebb18fd4bc751029bc
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/2.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/7.jpg,d9aefed022a3ea1c550cb89e0727d79f
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/206.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/202.jpg,ba0dd7a4c678f9edf2e5c00ea0f27f1c
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/21.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/18.jpg,a371fe39bdbdf6696b2ce6d105a683ec
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/216.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/208.jpg,51c2e9dc4f5d734aac940deff970d8de
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/217.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/209.jpg,7827cf962085bdfc6b3f2f6c426eb11a
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/22.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/20.jpg,e063ac9fd521cd945d4105ab522bf085
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/220.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/210.jpg,e86053c5b1379802c1c3e8356c335425
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/221.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/211.jpg,50e2296940f9ce767a092da137b4353d
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/224.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/218.jpg,a53a263fba6742e78dee3cbc5deef553
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/228.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/219.jpg,c3a0d3dc4c92e6bc7030916af8a553f9
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/23.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/23.jpg,ae02ef44dc97ec6959e8222210432976
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/246.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/229.jpg,288cd6377cc20944bb1a99c20a11f7dd
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/247.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/230.jpg,e80f86bf3723f5542c5d154925ae81a4
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/257.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/237.jpg,c60ffc707a2a2dfb144ed428fb9f9167
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/261.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/242.jpg,69c0a3f81066261226c1c6f032da0900
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/272.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/248.jpg,d41c78badb32225a73d77dc5c97116bf
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/288.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/258.jpg,e80f07ac4fdb81716b32d3f18676ec18
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/294.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/263.jpg,ac4f50f4a73a237b4c3144f5eba209e2
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/306.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/269.jpg,cd995ed5154b69c74e1f3030b0f9fe94
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/32.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/30.jpg,03dbe109b8127415ea2096e9062828a4
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/320.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/282.jpg,8a04d98436f8f00d42d32eff6ebb19b3
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/33.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/31.jpg,9f29f0072bd437c5617d8a4772bd6f71
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/333.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/292.jpg,9bd856e61052c40e0dcd87a5ee2a00e8
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/338.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/296.jpg,208f96de42b97b7373873360bf60feb3
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/34.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/34.jpg,b3c86201618861d876779374ed5dabb0
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/340.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/298.jpg,6c1e2ec1a78bac58d0b199f798ff5985
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/342.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/301.jpg,25f1f1dfe6811f930640e13fb6d0c00a
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/49.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/43.jpg,032529eb4f3474db9340195641a868c9
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/51.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/45.jpg,a04a610456808582ba4b124ce525a1a8
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/65.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/61.jpg,d253f7147cafdf737dac263f1c4428c1
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/69.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/63.jpg,a82cf9d0c1439a78071900779958daec
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/74.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/66.jpg,4c0887697fe3a1aede5682d7fcf9d1d6
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/82.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/73.jpg,d6178db945a9434fd89172eadd6f85ae
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/93.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/82.jpg,9a52b8e5f2c23d92a70cb51c9b870690
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/94.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/83.jpg,4a7ab64f87790a2a97264bd34200de37
+val,test,/kaggle/input/food11-image-dataset/validation/Seafood/99.jpg,/kaggle/input/food11-image-dataset/evaluation/Seafood/91.jpg,4614460176100446018c624f02fb64da
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/151.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/148.jpg,23c4a726eb687eb14fef2169b6e87eb8
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/152.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/150.jpg,85b5467752c149a8b14d52c83baf13d2
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/166.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/162.jpg,85ef8e0edd14e4ebf5cbeee7174c8d72
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/172.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/170.jpg,e8e99b49cb4de1b3d638e60837b1a709
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/197.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/192.jpg,6529979cdca2862aa7116212c64c25bf
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/209.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/203.jpg,a314f6a64a34ed2e3edba5d8950e9f1a
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/214.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/214.jpg,23e67c9003831a151885a519dd5f517e
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/227.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/227.jpg,2e19670dfde2773741eb06192a0c57dd
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/238.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/236.jpg,e51936dd138f659f95fb3dae73e1e5b7
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/239.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/238.jpg,8c186782ea98ceece89742c27c01747f
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/278.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/280.jpg,f228817cbb70ba185476334ce3e25cf6
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/285.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/285.jpg,cd05d257a049565201f300c295809120
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/287.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/287.jpg,c17f0eb27cf502b4cbeb9a67be9dae04
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/290.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/289.jpg,9f1b311bfd74902008619be767b71bd9
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/303.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/303.jpg,b1a63801c2352e3a8b8ca1a5c102fec0
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/306.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/309.jpg,1e2d5a707c1af730d98f504d9cc923e5
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/308.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/311.jpg,283ab55426d843fb21523a6f3df41d96
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/309.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/312.jpg,41b743f0ca87f8226a2c7cdc97d15424
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/324.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/329.jpg,dcbffaefc4b3793781b9b774c817b3c4
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/33.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/31.jpg,7217771f5212ecfabbdd69314d73e7da
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/338.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/349.jpg,a94971f370a70e895fdca070c275706b
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/351.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/355.jpg,3c66ebab2cf6652daf4f45aaad8941f0
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/352.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/356.jpg,70e0616ed93d53bd41cdfe1100dda380
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/364.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/363.jpg,ad1b33c3d808be2c4dd9a7563aad5eab
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/369.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/371.jpg,c3a88b2342552736ded9a7d8949d0e6a
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/370.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/372.jpg,89360421b13501d2439d8ae841a42a38
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/379.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/388.jpg,e81492f523bcf3f30b3f03b6b2d0a8f1
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/389.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/397.jpg,06c0e1f3f756391234a8289f3921573c
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/404.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/412.jpg,bb7788e4e0f5fd4b7cde0e05679beb67
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/407.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/419.jpg,6fb2c0dced3d00f64b7d1af163ada216
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/416.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/427.jpg,e58ffe9f410fb0b8a54ae3b219bbb96d
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/426.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/438.jpg,1cb7987aaebfd0be80a0ec4b277112e7
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/439.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/447.jpg,7a8ce2269b8e194c23188fb685f4e127
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/444.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/449.jpg,f6a29eb7d25c0fe160abc06af61a836d
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/481.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/483.jpg,088d93458e03a53b12d2615939acb195
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/486.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/484.jpg,90cbac7e47f257d8f969e575a76fb513
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/495.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/490.jpg,481cbd3c2aa0bdc68b536ebc5b03f82c
+val,test,/kaggle/input/food11-image-dataset/validation/Soup/73.jpg,/kaggle/input/food11-image-dataset/evaluation/Soup/73.jpg,6058e47e5e328568920bdc60843a266b
+val,test,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/107.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/94.jpg,9b6362ce1ccfa3eeb073a889bd50aa19
+val,test,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/138.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/106.jpg,075aa778c3ec3d55fa7a378981f66b65
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/167.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/201.jpg,9a0c94b314ae497957abd36a5d465c79
+train,train,/kaggle/input/food11-image-dataset/training/Dairy product/250.jpg,/kaggle/input/food11-image-dataset/training/Dairy product/308.jpg,a3ea7208485e0ec095f3bbd44c7dac84
+train,train,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/174.jpg,/kaggle/input/food11-image-dataset/training/Noodles-Pasta/50.jpg,89f558fc242f6a6c2ce967489f200dde
+train,train,/kaggle/input/food11-image-dataset/training/Rice/212.jpg,/kaggle/input/food11-image-dataset/training/Rice/32.jpg,56294bc21fc25df5b3ca7182da11348a
+train,train,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/181.jpg,/kaggle/input/food11-image-dataset/training/Vegetable-Fruit/564.jpg,71ca4f16b39ee78b74c2bc4fe7da43db
+val,val,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/108.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/96.jpg,88affd156c8430135946919716ca693c
+val,val,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/114.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/219.jpg,38b6480096ef2c29758d4c7580138712
+val,val,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/3.jpg,/kaggle/input/food11-image-dataset/validation/Vegetable-Fruit/70.jpg,d6607b31814539e44728907ca5fc0e78
+test,test,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/112.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/208.jpg,459a876ffd857b3f7aacbfe122716773
+test,test,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/112.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/71.jpg,459a876ffd857b3f7aacbfe122716773
+test,test,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/12.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/137.jpg,31a45eadae7141704d83816314cce0a8
+test,test,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/164.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/46.jpg,7dde21b699b0c0d9fd250f7fbc2a932a
+test,test,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/208.jpg,/kaggle/input/food11-image-dataset/evaluation/Vegetable-Fruit/71.jpg,459a876ffd857b3f7aacbfe122716773

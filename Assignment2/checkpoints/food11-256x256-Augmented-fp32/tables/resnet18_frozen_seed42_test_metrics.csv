@@ -1,0 +1,2 @@
+run_name,seed,best_epoch,loss,accuracy,macro_precision,macro_recall,macro_f1
+resnet18_frozen_seed42,42,22,0.4962033492133075,0.844043321299639,0.8533207834092171,0.8503832461371587,0.85083086019302

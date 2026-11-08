@@ -1,0 +1,2 @@
+run_name,seed,epochs_run,selected_epoch,selected_val_loss,selected_val_accuracy,selected_val_macro_f1,train_minus_val_f1_pp,last_val_loss_minus_min,train_val_minutes,mean_epoch_seconds,diagnosis
+resnet18_frozen_seed43,43,25,22,0.5562250991922213,0.8162901307966707,0.8218594635632869,-1.294022033648834,0.0019024796916812248,46.72801055940001,112.14722534256003,Not manually assessed

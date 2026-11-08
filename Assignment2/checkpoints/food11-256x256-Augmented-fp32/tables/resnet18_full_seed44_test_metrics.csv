@@ -1,0 +1,2 @@
+run_name,seed,best_epoch,loss,accuracy,macro_precision,macro_recall,macro_f1
+resnet18_full_seed44,44,17,0.3366974567678431,0.9101083032490975,0.9133951558916287,0.9138589803719195,0.9132949437829235
