@@ -2021,128 +2021,153 @@ label IDs: [2, 0, 4, 4, 3, 2, 2, 9]</samp></pre>
         <section id="error-analysis">
           <h2 class="section-title">Error analysis</h2>
           <p>
-            The analysis below covers the notebook's three evaluated models and
-            seeds 42–44 on the shared, deduplicated 2,770-image test partition.
-            Confusion counts and recalls are summarized as means across seeds;
-            reported &plusmn; values are sample standard deviations.
-            High-confidence errors use the notebook's top-1 softmax threshold of
-            0.80. Individual qualitative examples are illustrative rather than
-            exhaustive, and proposed improvements remain to be tested.
+            The analysis below uses three models, seeds 42–44, and the same
+            deduplicated set of 2,770 test images. Counts are means across seeds;
+            &plusmn; values are sample standard deviations. Across the shared
+            test images, the number misclassified in at least one seed / in all
+            three seeds is 1,464 / 756 for <code>simple_cnn</code>, 481 / 376
+            for <code>resnet18_frozen</code>, and 334 / 154 for
+            <code>resnet18_full</code>. These counts show whether mistakes recur
+            across training runs; they do not measure confidence, and the wrong
+            label can differ between seeds.
           </p>
 
-          <h3>Confusion between visually similar classes</h3>
+          <h3>Similar-looking food classes are confused</h3>
           <p>
-            <strong>Description and frequency:</strong> Mean errors per seed
-            decline from 1,097 (39.60% of the test set) for
-            <code>simple_cnn</code> to 426 (15.38%) for
-            <code>resnet18_frozen</code> and 239 (8.63%) for
-            <code>resnet18_full</code>. Remaining errors recur among
-            <em>Dairy product</em> and <em>Dessert</em>, among <em>Bread</em>,
-            <em>Egg</em>, and <em>Fried food</em>, and between <em>Rice</em> and
-            <em>Noodles-Pasta</em>.
+            <strong>Description and frequency:</strong> Some foods share visible
+            cues, so the model can mistake one category for another. Mean errors
+            per seed fall from 1,097 (39.60% of test images) for
+            <code>simple_cnn</code>, to 426 (15.38%) for
+            <code>resnet18_frozen</code>, and 239 (8.63%) for
+            <code>resnet18_full</code>. <em>Dairy product</em> has the lowest
+            recall for every model: 18.82 &plusmn; 2.75% for
+            <code>simple_cnn</code>, 70.07 &plusmn; 1.80% for
+            <code>resnet18_frozen</code>, and 80.50 &plusmn; 1.42% for
+            <code>resnet18_full</code>. For the full ResNet-18,
+            <em>Bread</em> is the next weakest class, with recall 85.07
+            &plusmn; 2.33%. The smaller CNN also confuses <em>Rice</em> with
+            <em>Noodles-Pasta</em>: 31.0 &plusmn; 6.6 of 90 Rice images per seed
+            are predicted as Noodles-Pasta, and 17.0 &plusmn; 8.5 errors occur in
+            the reverse direction. The pretrained ResNet-18 models make at most
+            one error per seed on this pair.
           </p>
-          <p>
-            <em>Dairy product</em> (147 test images in each confusion matrix)
-            has the lowest class-wise recall for all three models: 18.82
-            &plusmn; 2.75% for <code>simple_cnn</code> (119.3 &plusmn; 4.0
-            errors), 70.07 &plusmn; 1.80% for <code>resnet18_frozen</code> (44.0
-            &plusmn; 2.6 errors), and 80.50 &plusmn; 1.42% for
-            <code>resnet18_full</code> (28.7 &plusmn; 2.1 errors). Its most
-            frequent incorrect prediction is <em>Dessert</em>: 58.0 &plusmn;
-            15.1, 23.0 &plusmn; 1.7, and 17.0 &plusmn; 1.0 images per seed,
-            respectively. The reverse error is smaller:
-            <code>resnet18_full</code> predicts 10.7 &plusmn; 0.6 of 440
-            <em>Dessert</em> images as <em>Dairy product</em>.
-          </p>
-          <p>
-            For <code>resnet18_full</code>, <em>Bread</em> (268 test images) has
-            the second-lowest recall, 85.07 &plusmn; 2.33% (40.0 &plusmn; 6.2
-            errors). It is most often predicted as <em>Fried food</em> (12.7
-            &plusmn; 0.6 images per seed), <em>Egg</em> (10.3 &plusmn; 4.5), or
-            <em>Meat</em> (8.3 &plusmn; 1.2); 12.3 &plusmn; 1.5
-            <em>Egg</em> images are also predicted as <em>Bread</em>. The
-            smaller CNN has a stronger <em>Rice</em>-to-<em>Noodles-Pasta</em>
-            confusion (31.0 &plusmn; 6.6 of 90 <em>Rice</em> images per seed)
-            and 17.0 &plusmn; 8.5 errors in the reverse direction. In the
-            pretrained ResNet-18 matrices this pair is nearly absent: at most
-            one error per seed in either direction for
-            <code>resnet18_frozen</code>, and none for
-            <code>resnet18_full</code>.
-          </p>
-
           <p>
             <strong>Examples:</strong> In <code>resnet18_full</code> (seed 42),
-            <code>Bread/57.jpg</code> is predicted as <em>Fried food</em> with a
-            top-1 softmax score of 44.83%, close to 41.53% for its true class.
-            In seed 44, <code>Dessert/438.jpg</code> is predicted as
-            <em>Dairy product</em> (63.16% versus 27.78% for <em>Dessert</em>).
-            For <code>simple_cnn</code>, <code>Rice/62.jpg</code> (seed 42) is
-            assigned to <em>Noodles-Pasta</em> (45.94% versus 31.60% for
-            <em>Rice</em>), while <code>Noodles-Pasta/38.jpg</code> (seed 44) is
-            assigned to <em>Rice</em> (56.29% versus 37.24% for its true class).
+            <code>Bread/57.jpg</code> is assigned to <em>Fried food</em> with a
+            score of 44.83%, only slightly above 41.53% for its true class.
+            Golden, crisp-looking edges can plausibly resemble either bread or
+            fried food. In seed 44, <code>Dessert/438.jpg</code> is assigned to
+            <em>Dairy product</em> (63.16% versus 27.78% for Dessert). For
+            <code>simple_cnn</code>, <code>Rice/62.jpg</code> (seed 42) is
+            labelled <em>Noodles-Pasta</em> (45.94% versus 31.60% for Rice),
+            while <code>Noodles-Pasta/38.jpg</code> (seed 44) is labelled
+            <em>Rice</em> (56.29% versus 37.24% for its true class).
           </p>
           <p>
-            <strong>Hypothesized cause:</strong> Visual overlap, varied
-            presentation within a class, and dishes containing multiple
-            ingredients may make some single-label decisions ambiguous. Before
-            duplicate cleaning, source training counts range from 280
-            <em>Rice</em> images to 1,500 each for <em>Dessert</em> and
-            <em>Soup</em> (with 1,325 <em>Meat</em> and 429
-            <em>Dairy product</em> images). This imbalance could affect decision
-            boundaries, but the experiments do not isolate its effect from other
-            model differences; these explanations remain hypotheses.
+            <strong>Hypothesized cause:</strong> In everyday terms, a small
+            photograph may show the color or texture of a dish more strongly
+            than the ingredients that distinguish its label. Creamy dairy and
+            desserts can both look pale and smooth; bread, eggs, and fried food
+            can all look golden or crisp. A mixed dish may also contain several
+            ingredients despite having only one supplied label. Before duplicate cleaning, the source training
+            split is imbalanced: it has 1,500 images each for
+            <em>Dessert</em> and <em>Soup</em>, compared with 429
+            <em>Dairy product</em> and 280 <em>Rice</em> images. These factors
+            could make the distinctions harder to learn, but the experiments do
+            not isolate their effects.
           </p>
           <p>
-            <strong>Improvement ideas:</strong> Future ablations could compare
-            class-balanced sampling or loss weighting with the current setup,
-            then test higher-resolution or multi-scale inputs for recurring
-            visually similar pairs. Report Macro-F1 together with per-class
-            recall and directional confusion counts so that changes in
-            under-recalled classes remain visible.
+            <strong>Improvement ideas:</strong> Review the confused examples and
+            add or augment images that show the distinguishing cues for
+            under-recalled classes. Compare class-balanced sampling or loss
+            weighting in a controlled ablation. Track Macro-F1, per-class recall,
+            and directional confusions so that improvements to one class do not
+            hide new errors elsewhere.
           </p>
 
-          <h3>Incorrect predictions with high softmax scores</h3>
+          <h3>SimpleCNN often mistakes other foods for Dessert</h3>
           <p>
-            <strong>Description and frequency:</strong> The notebook counts an
-            error as high-confidence when an incorrect prediction has a top-1
-            softmax score of at least 0.80. The mean counts per seed are 35.0
-            for <code>simple_cnn</code>, 55.7 for <code>resnet18_frozen</code>,
-            and 124.7 for <code>resnet18_full</code>. These represent
-            approximately 3.2%, 13.1%, and 52.2% of each model's mean errors
-            (1,097, 426, and 239), respectively. Across the shared test images,
-            the number misclassified in at least one seed / in all three seeds
-            is 1,464 / 756 for <code>simple_cnn</code>, 481 / 376 for
-            <code>resnet18_frozen</code>, and 334 / 154 for
-            <code>resnet18_full</code>. As the notebook states, softmax scores
-            are not calibrated probabilities.
+            <strong>Description and frequency:</strong> This is a repeated
+            directional error pattern: many images whose true labels are other
+            foods are assigned to <em>Dessert</em> by the from-scratch CNN. Its
+            confusion matrices contain 317.3 &plusmn; 68.7 such predictions per
+            seed, about 28.9% of all its errors. The largest sources are
+            <em>Meat</em> (67.3 &plusmn; 30.2 images per seed),
+            <em>Dairy product</em> (58.0 &plusmn; 15.1), <em>Egg</em>
+            (47.3 &plusmn; 14.6), and <em>Soup</em> (41.7 &plusmn; 17.2). This
+            pattern occurs in all three seeds; <code>resnet18_full</code> has
+            about 55 false <em>Dessert</em> predictions per seed.
+          </p>
+          <p>
+            <strong>Examples:</strong> In the qualitative examples,
+            <code>Dairy product/101.jpg</code> (seed 42) is assigned to
+            <em>Dessert</em> (27.92% versus 14.59% for Dairy product), and
+            <code>Meat/194.jpg</code> (seed 43) is assigned to <em>Dessert</em>
+            (31.56% versus 22.92% for Meat). These examples show the direction
+            of the mistakes, not high confidence. The first image places cheese, crackers, and fruit together, so several
+            food cues appear in one frame.
+          </p>
+          <p>
+            <strong>Hypothesized cause:</strong> A small network trained from
+            scratch may rely on broad cues such as color, texture, or plating
+            instead of learning features that separate each category reliably.
+            <em>Dessert</em> is also one of the largest source training classes.
+            When a dish is ambiguous, those factors could make Dessert an
+            attractive guess for several other classes. The matrices establish
+            the repeated bias, but they do not prove that class frequency caused
+            it.
+          </p>
+          <p>
+            <strong>Improvement ideas:</strong> Inspect false Dessert
+            predictions by their true class, then test class-balanced sampling
+            or a weighted loss. Add targeted examples or augmentations for
+            <em>Meat</em>, <em>Dairy product</em>, <em>Egg</em>, and
+            <em>Soup</em>. Check whether Dessert precision improves while recall
+            in the smaller classes is preserved.
+          </p>
+
+          <h3>Wrong predictions with high softmax scores</h3>
+          <p>
+            <strong>Description and frequency:</strong> This asks a different
+            question: not which classes the model confuses, but how high a score
+            it gives a wrong answer. The notebook defines this as a top-1
+            softmax score of at least 0.80. There are, on average, 35.0 such
+            errors per seed for <code>simple_cnn</code>, 55.7 for
+            <code>resnet18_frozen</code>, and 124.7 for
+            <code>resnet18_full</code>—about 3.2%, 13.1%, and 52.2% of each
+            model's errors, respectively. In an app, this could look like a
+            confident answer to a user even when the food label is wrong.
           </p>
           <p>
             <strong>Examples:</strong> In <code>resnet18_full</code> (seed 42),
             <code>Dessert/60.jpg</code> is predicted as <em>Seafood</em> at
             98.75%, while <em>Dessert</em> receives 0.72%;
-            <code>Dairy product/113.jpg</code> is predicted as
-            <em>Dessert</em> at 98.22%, while its true class receives 0.37%. In
-            seed 43, <code>Egg/51.jpg</code> is predicted as <em>Bread</em> at
-            99.50%, while <em>Egg</em> receives 0.49%. Such errors also occur in
-            <code>resnet18_frozen</code>: <code>Egg/11.jpg</code> (seed 42) is
-            predicted as <em>Dessert</em> at 93.32%, while <em>Egg</em> receives
-            4.05%.
+            <code>Dairy product/113.jpg</code> is predicted as <em>Dessert</em>
+            at 98.22%, while its true class receives 0.37%. In the frozen
+            model, <code>Egg/11.jpg</code> (seed 42) is predicted as
+            <em>Dessert</em> at 93.32%, while <em>Egg</em> receives 4.05%. The
+            piped filling and garnish on this egg dish can resemble dessert
+            decoration. By contrast, the strawberry dessert predicted as
+            Seafood is not an obvious visual match to a person.
           </p>
           <p>
-            <strong>Hypothesized cause:</strong> These examples show that a
-            model can assign a dominant score to an incorrect class, but they do
-            not establish why. Full fine-tuning has the largest share of
-            high-confidence errors among its remaining mistakes; this alone does
-            not demonstrate systematic miscalibration. Calibration measures on
-            the complete validation and test predictions would be needed to
-            assess that question.
+            <strong>Hypothesized cause:</strong> The model does not understand
+            the dish as a person would. It combines visual cues it learned
+            during training; when those cues strongly match the wrong class, it
+            can produce a very high score. Visual similarity may explain some
+            cases, while background, color, unusual composition, or an
+            ambiguous supplied label may explain others. The notebook has no
+            attribution map for these specific images, so the exact cue cannot
+            be confirmed. A high softmax score by itself also does not prove
+            systematic miscalibration.
           </p>
           <p>
-            <strong>Improvement ideas:</strong> Evaluate reliability diagrams,
-            expected calibration error, and Brier score; fit temperature scaling
-            on validation data and report its held-out test performance. Label
-            smoothing or Mixup could also be tested as training ablations,
-            comparing calibration measures and Macro-F1.
+            <strong>Improvement ideas:</strong> Check reliability diagrams,
+            expected calibration error, and Brier score. Fit temperature
+            scaling on validation data and assess it on the held-out test set.
+            Test label smoothing or Mixup as training ablations. If this model
+            is used in an app, calibrated uncertainty and a human-review option
+            could help prevent a wrong answer from being silently accepted.
           </p>
         </section>
 
