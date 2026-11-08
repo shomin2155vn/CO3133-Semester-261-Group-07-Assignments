@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "config": {
+    "model": "resnet18_full",
+    "architecture": "resnet18",
+    "frozen": false,
+    "seed": 43,
+    "epochs": 25,
+    "batch_size": 128,
+    "num_workers": 0,
+    "image_size": 256,
+    "optimizer": "AdamW",
+    "initial_lrs": {
+      "backbone": 0.0001,
+      "head": 0.001
+    },
+    "weight_decay": 0.01,
+    "scheduler": "ReduceLROnPlateau",
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 3,
+    "scheduler_min_lr": 1e-06,
+    "selection": "max_val_macro_f1_then_min_val_loss",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "split_sha256": "51fd11ab24467622bec13e675d032615bf4a8d0081736530595c11a2c8702470",
+    "training_hardware": "Tesla T4",
+    "environment": {
+      "python_version": "3.13.16",
+      "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+      "device": "cuda",
+      "gpu_name": "Tesla T4",
+      "gpu_memory_gb": 14.56,
+      "cuda_version": "13.0",
+      "dependencies": {
+        "torch": "2.11.0+cu130",
+        "torchvision": "0.26.0+cu130",
+        "numpy": "2.4.6",
+        "pandas": "2.2.3",
+        "scikit-learn": "1.6.1",
+        "scipy": "1.16.3",
+        "matplotlib": "3.10.0",
+        "Pillow": "11.3.0",
+        "kagglehub": "1.0.3"
+      }
+    }
+  }
+}
