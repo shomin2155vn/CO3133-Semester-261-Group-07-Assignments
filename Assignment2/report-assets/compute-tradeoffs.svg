@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 330" width="670" height="330" fill="#15171c" font-family="Times New Roman, Times, serif" font-size="19">
+<title>Test Macro-F1 versus training time per run</title>
+<path d="M70 258H620" stroke="#dfe1e8"/>
+<text x="61" y="264" text-anchor="end" fill="#4b4f58">50%</text>
+<path d="M70 212H620" stroke="#dfe1e8"/>
+<text x="61" y="218" text-anchor="end" fill="#4b4f58">60%</text>
+<path d="M70 166H620" stroke="#dfe1e8"/>
+<text x="61" y="172" text-anchor="end" fill="#4b4f58">70%</text>
+<path d="M70 120H620" stroke="#dfe1e8"/>
+<text x="61" y="126" text-anchor="end" fill="#4b4f58">80%</text>
+<path d="M70 74H620" stroke="#dfe1e8"/>
+<text x="61" y="80" text-anchor="end" fill="#4b4f58">90%</text>
+<path d="M70 28H620" stroke="#dfe1e8"/>
+<text x="61" y="34" text-anchor="end" fill="#4b4f58">100%</text>
+<text x="70" y="286" text-anchor="middle" fill="#4b4f58">45</text>
+<text x="222.778" y="286" text-anchor="middle" fill="#4b4f58">50</text>
+<text x="375.556" y="286" text-anchor="middle" fill="#4b4f58">55</text>
+<text x="528.333" y="286" text-anchor="middle" fill="#4b4f58">60</text>
+<text x="345" y="317" text-anchor="middle">Mean training time (min/run)</text>
+<circle cx="207.245" cy="223.132" r="5" fill="#2a4494"/>
+<text x="219.245" y="213.132" text-anchor="start" fill="#1c2f6b" font-weight="700">SimpleCNN</text>
+<circle cx="207.653" cy="95.804" r="5" fill="#2a4494"/>
+<text x="219.653" y="85.804" text-anchor="start" fill="#1c2f6b" font-weight="700">ResNet-18 frozen</text>
+<circle cx="538.264" cy="66.318" r="5" fill="#2a4494"/>
+<text x="526.264" y="56.318" text-anchor="end" fill="#1c2f6b" font-weight="700">ResNet-18 full</text>
+</svg>

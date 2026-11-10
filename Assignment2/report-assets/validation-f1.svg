@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 315" width="680" height="315" font-family="system-ui,sans-serif" font-size="17" fill="#4b4f58">
+<title>Mean validation Macro-F1 over 25 epochs</title>
+<path d="M57 262H661" stroke="#d3daea"/>
+<text x="48" y="268" text-anchor="end">0%</text>
+<path d="M57 201.75H661" stroke="#d3daea"/>
+<text x="48" y="207.75" text-anchor="end">25%</text>
+<path d="M57 141.5H661" stroke="#d3daea"/>
+<text x="48" y="147.5" text-anchor="end">50%</text>
+<path d="M57 81.25H661" stroke="#d3daea"/>
+<text x="48" y="87.25" text-anchor="end">75%</text>
+<path d="M57 21H661" stroke="#d3daea"/>
+<text x="48" y="27" text-anchor="end">100%</text>
+<text x="57" y="286" text-anchor="middle">1</text>
+<text x="157.667" y="286" text-anchor="middle">5</text>
+<text x="283.5" y="286" text-anchor="middle">10</text>
+<text x="409.333" y="286" text-anchor="middle">15</text>
+<text x="535.167" y="286" text-anchor="middle">20</text>
+<text x="661" y="286" text-anchor="middle">25</text>
+<text x="359" y="311" text-anchor="middle">Epoch</text>
+<path d="M57.00 214.48 L82.17 198.64 L107.33 195.07 L132.50 178.85 L157.67 186.91 L182.83 170.55 L208.00 170.29 L233.17 170.94 L258.33 168.94 L283.50 166.71 L308.67 160.71 L333.83 155.72 L359.00 166.54 L384.17 164.52 L409.33 157.70 L434.50 156.30 L459.67 139.54 L484.83 140.22 L510.00 141.41 L535.17 137.94 L560.33 141.94 L585.50 135.39 L610.67 131.93 L635.83 142.45 L661.00 131.13" stroke="#8f4827" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6"/>
+<path d="M57.00 90.52 L82.17 76.38 L107.33 73.43 L132.50 68.61 L157.67 68.42 L182.83 66.69 L208.00 67.34 L233.17 66.59 L258.33 66.18 L283.50 65.45 L308.67 64.96 L333.83 65.89 L359.00 65.42 L384.17 64.79 L409.33 64.86 L434.50 64.92 L459.67 64.21 L484.83 64.65 L510.00 64.31 L535.17 64.40 L560.33 64.70 L585.50 63.21 L610.67 63.86 L635.83 64.38 L661.00 63.41" stroke="#21675e" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 6"/>
+<path d="M57.00 55.00 L82.17 48.27 L107.33 46.90 L132.50 46.69 L157.67 46.88 L182.83 45.80 L208.00 45.57 L233.17 43.89 L258.33 42.77 L283.50 42.65 L308.67 42.46 L333.83 42.41 L359.00 42.61 L384.17 42.07 L409.33 42.06 L434.50 41.94 L459.67 41.88 L484.83 42.06 L510.00 41.77 L535.17 41.96 L560.33 41.98 L585.50 41.70 L610.67 42.00 L635.83 42.03 L661.00 41.98" stroke="#2a4494" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
