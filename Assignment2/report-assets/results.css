@@ -1,0 +1,104 @@
+#results [id] {
+  scroll-margin-top: 80px;
+}
+
+#results .report-model {
+  margin: 18px 0;
+  border: 1px solid #dcdfe8;
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+#results .report-model summary {
+  padding: 18px 20px;
+  color: var(--ink);
+  font-size: 21px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#results .report-model summary span {
+  display: block;
+  margin: 6px 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#results .report-model-content {
+  min-width: 0;
+  padding: 0 18px 14px;
+}
+
+#results .report-model img {
+  width: 100%;
+}
+
+#results .report-curve {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+#results .report-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 18px;
+}
+
+#results .report-metric-grid {
+  align-items: start;
+}
+
+#results .report-figure-grid .figure-card {
+  min-width: 0;
+  margin: 8px 0 16px;
+  padding: 12px;
+}
+
+#results .report-table :is(th, td) {
+  padding: 13px 16px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+#results .report-table tbody th {
+  border-bottom: 1px solid #eef1f6;
+  background: transparent;
+  color: var(--ink);
+}
+
+#results .report-table caption {
+  padding: 14px 16px;
+  color: var(--ink-soft);
+  font-size: 17px;
+  text-align: left;
+}
+
+#results .report-note {
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+#results .figure-caption {
+  font-style: normal;
+}
+
+#results :is(summary, .mandatory-table-wrap):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  #results .report-metric-grid .report-table :is(th, td) {
+    white-space: normal;
+  }
+
+  #results .report-model-content {
+    padding: 0 10px 10px;
+  }
+
+  #results .report-model summary {
+    padding: 16px 12px;
+  }
+}
