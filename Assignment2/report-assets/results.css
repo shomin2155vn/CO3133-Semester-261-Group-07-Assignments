@@ -1,4 +1,4 @@
-#results [id] {
+:is(#results, #error-analysis) [id] {
   scroll-margin-top: 80px;
 }
 

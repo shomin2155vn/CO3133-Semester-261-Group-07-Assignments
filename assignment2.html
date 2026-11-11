@@ -7,7 +7,68 @@
   <title>Assignment 2 - CO3133 Group Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<style>
+  .food11-table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+  }
 
+  .food11-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #444;
+    border-bottom: 2px solid #444;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    color: #111;
+    background: #fff;
+  }
+
+  .food11-table th,
+  .food11-table td {
+    padding: 6px 8px;
+    border: none;
+    background: transparent;
+    white-space: nowrap;
+    font-weight: normal;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .food11-table .class-name {
+    text-align: left;
+  }
+
+  .food11-table .group-heading {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+  }
+
+  /* Short rules underneath the three split headings. */
+  .food11-table .group-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 8px;
+    right: 8px;
+    border-bottom: 1px solid #888;
+  }
+
+  .food11-table thead tr:last-child {
+    border-bottom: 1px solid #444;
+  }
+
+  .food11-table tfoot {
+    border-top: 1px solid #666;
+  }
+
+  .food11-table tfoot td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+</style>
 <body>
 
   <header class="topnav">
@@ -56,22 +117,125 @@
         </svg>
       </section>
 
-      <section class="assignment-people">
-        <h2 class="section-title">Instructor</h2>
-        <p class="assignment-detail">Lê Thành Sách</p>
+      <section id="course" class="assignment-people" aria-labelledby="course-details-title">
+        <h2 id="course-details-title" class="section-title">Course details</h2>
+        <dl class="kv-grid">
+          <div class="kv-item">
+            <dt>Course name</dt>
+            <dd>Deep Learning and Its Applications</dd>
+          </div>
+          <div class="kv-item">
+            <dt>Instructor</dt>
+            <dd><strong>Lê Thành Sách</strong></dd>
+          </div>
+          <div class="kv-item">
+            <dt>Course code</dt>
+            <dd class="mono">CO3133</dd>
+          </div>
+          <div class="kv-item">
+            <dt>Semester</dt>
+            <dd class="mono">261</dd>
+          </div>
+        </dl>
       </section>
 
-      <section class="assignment-people">
+      <section id="group-members" class="assignment-people">
         <h2 class="section-title">Group members</h2>
-        <p class="assignment-detail">Hoàng Xuân Bách · Nguyễn Việt Hùng · Lê Nguyễn Gia Phúc</p>
+        <div class="table-wrap">
+          <table id="table-1" class="members">
+            <caption class="table-caption">Table 1 · Group members and contributions</caption>
+            <thead>
+              <tr>
+                <th>Full name</th>
+                <th>Student ID</th>
+                <th>Main role / contribution</th>
+                <th>GitHub profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hoàng Xuân Bách</td>
+                <td class="mono">2352082</td>
+                <td>EDA, Ablation Study</td>
+                <td><a href="https://github.com/bachkhmt" target="_blank" rel="noopener">bachkhmt</a></td>
+              </tr>
+              <tr>
+                <td>Nguyễn Việt Hùng</td>
+                <td class="mono">2352424</td>
+                <td>Modelling,Error Analysis</td>
+                <td><a href="https://github.com/taro1026205" target="_blank" rel="noopener">taro1026205</a></td>
+              </tr>
+              <tr>
+                <td>Lê Nguyễn Gia Phúc</td>
+                <td class="mono">2352931</td>
+                <td>Method (SimpleCNN, Resnet18), Training, Reproducibility</td>
+                <td><a href="https://github.com/shomin2155vn" target="_blank" rel="noopener">shomin2155vn</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </section>
 
 
 
 
-      <section>
+      <section id="problem-statement">
         <h2 class="section-title">Problem statement</h2>
-        <div class="stub-note"></div>
+        <p>
+          Food-11 recognition is a supervised image-classification task: given
+          one food photograph, predict its single supplied category. The study
+          asks whether ImageNet-pretrained visual features and backbone
+          fine-tuning improve recognition over a compact network trained from
+          scratch, and how those choices affect class-wise errors and
+          computational cost. Macro-F1 is the primary metric because it gives
+          equal weight to all 11 categories.
+        </p>
+        <p>The task is defined by the following elements:</p>
+        <ul>
+          <li>
+            <strong>Prediction unit:</strong> One RGB food photograph assigned
+            to one broad category; there are no bounding boxes, segmentation
+            masks, or ingredient-level labels.
+          </li>
+          <li>
+            <strong>Input:</strong> A float32 tensor
+            <code>x &isin; ℝ<sup>3&times;256&times;256</sup></code
+            >. The notebook resizes the longer image side to 256 pixels with
+            bilinear interpolation, centers the image on a black square
+            canvas, and applies ImageNet RGB normalization.
+          </li>
+          <li>
+            <strong>Output:</strong> Eleven logits
+            <code>z<sub>&theta;</sub>(x) &isin; ℝ<sup>11</sup></code
+            >, one for each Food-11 category (Bread, Dairy product, Dessert,
+            Egg, Fried food, Meat, Noodles-Pasta, Rice, Seafood, Soup, and
+            Vegetable-Fruit). The predicted label is the highest-scoring class
+            after softmax; these scores are not assumed to be calibrated
+            probabilities.
+          </li>
+          <li>
+            <strong>Objective and primary metric:</strong> Training minimizes
+            unweighted multiclass cross-entropy in FP32. Held-out performance
+            is assessed primarily with test Macro-F1, alongside accuracy,
+            per-class metrics, confusion matrices, and runtime measures.
+          </li>
+          <li>
+            <strong>Main difficulties:</strong> Food appearance varies with
+            preparation, viewpoint, lighting, scale, and background; some
+            categories have overlapping visual cues, composite dishes have one
+            broad label, and the source training counts are imbalanced (up to
+            a 5.36:1 ratio).
+          </li>
+        </ul>
+        <p>
+          The frozen-versus-full ResNet-18 comparison holds the architecture
+          and ImageNet initialization fixed while changing whether the
+          backbone is updated. Comparisons with SimpleCNN also change
+          architecture and initialization, so they describe overall model
+          differences rather than isolating a causal effect of pretraining
+          alone.
+        </p>
       </section>
 
       <section>
@@ -79,177 +243,251 @@
 
         <h3>Dataset description</h3>
         <h4>Source, task and license</h4>
-        <p><strong>Original source and version.</strong> Food-11 was released by the <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">Multimedia Signal Processing Group (MMSPG) at EPFL</a> and introduced by Singla, Yuan and Ebrahimi (2016) in <a style="color: #000;" href="https://doi.org/10.1145/2986035.2986039" target="_blank" rel="noopener">Food/Non-Food Image Classification and Food Categorization Using Pre-Trained GoogLeNet Model</a>. This project uses the <a style="color: #000;" href="https://www.kaggle.com/datasets/trolukovich/food11-image-dataset" target="_blank" rel="noopener">Kaggle mirror maintained by trolukovich</a>; the EDA notebook pins its automatic download to version 1. EPFL is the original dataset source.</p>
-        <p><strong>Collection and category design.</strong> Section 4.2 of the <a style="color: #000;" href="https://infoscience.epfl.ch/record/221610/files/madima2016_food_recognition.pdf" target="_blank" rel="noopener">original paper</a> describes categories adapted from major USDA food groups. Images were mainly collected from Food-101, UEC-FOOD-100 and UEC-FOOD-256, with additional Flickr and Instagram images for Dairy product and Vegetable-Fruit. The authors included varied food items within each category and selected images whose main content belonged to that category.</p>
-        <p><strong>Task and annotations.</strong> The task is supervised, single-label classification: given one RGB food photograph, predict one of 11 broad food categories. The prediction unit is one image. In the Kaggle distribution used here, labels come from class folders and are mapped to integer IDs 0–10 as listed in Table 2. A mixed dish still receives one supplied category label. The group preserves the provided annotations and official training, validation and evaluation partitions without manual relabeling or duplicate removal.</p>
+        <p><strong>Original source and version.</strong> Food-11 was released by the <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">Multimedia Signal Processing Group (MMSPG) at EPFL</a> and introduced by Singla, Yuan and Ebrahimi (2016) in <a style="color: #000;" href="https://doi.org/10.1145/2986035.2986039" target="_blank" rel="noopener">Food/Non-Food Image Classification and Food Categorization Using Pre-Trained GoogLeNet Model</a>. This project uses the <a style="color: #000;" href="https://www.kaggle.com/datasets/trolukovich/food11-image-dataset" target="_blank" rel="noopener">Kaggle mirror maintained by trolukovich</a>;</p>
+        <p><strong>Task and annotations.</strong> The task is supervised, single-label classification: given one RGB food photograph, predict one of 11 broad food categories. The prediction unit is one image. In the Kaggle distribution used here, labels come from class folders and are mapped to integer IDs 0–10. A mixed dish still receives one supplied category label. The group preserves the provided labels and split assignments. The experiments remove duplicate images before training and evaluation.</p>
         <p><strong>License and use.</strong> The <a style="color: #000;" href="https://www.epfl.ch/labs/mmspg/downloads/food-image-datasets/" target="_blank" rel="noopener">EPFL conditions of use</a> permit use, copying, modification and distribution of the dataset and its documentation for research purposes only and prohibit commercial distribution. This project uses Food-11 for academic coursework and research under those published conditions.</p>
 
         <h4>Format, counts and size</h4>
         <div class="table-wrap">
-          <table class="members">
+          <table id="table-2" class="members">
             <thead>
               <tr><th>Property</th><th>Value</th></tr>
             </thead>
             <tbody>
               <tr><td>Dataset version</td><td>Version 1 of the Kaggle distribution; original Food-11 release by EPFL</td></tr>
-              <tr><td>Total samples</td><td>16,643 (train 9,866; validation 3,430; evaluation/test 3,347)</td></tr>
+              <tr><td>Total samples (original)</td><td>16,643 (train 9,866; validation 3,430; evaluation/test 3,347)</td></tr>
+              <tr><td>Samples after deduplication</td><td>15,980 (train 9,846; validation 3,364; evaluation/test 2,770)</td></tr>
               <tr><td>Classes</td><td>11 food categories; one integer label per image</td></tr>
               <tr><td>Raw format</td><td>JPEG, RGB, uint8 in [0, 255]</td></tr>
-              <tr><td>Model input</td><td>float32 tensor, 3 × 512 × 512 after resize, padding and normalization</td></tr>
-              <tr><td>Size on disk</td><td>≈ 1,133 MiB (median 48 KiB; largest 9.6 MiB; 1 KiB = 1,024 bytes)</td></tr>
-              <tr><td>License</td><td>EPFL MMSPG: use for research purposes only</td></tr>
+              <tr><td>Model input</td><td>float32 tensor, 3 × 256 × 256 after resize, padding and ImageNet normalization. A full batch of 128 input tensors occupies 96 MiB.</td></tr>
+              <tr><td>Size on disk</td><td>≈ 1,133 MiB</td></tr>
+              <tr><td>License</td><td>EPFL provides the original release for research use. The report records a CC0 listing for the Kaggle mirror.</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="table-caption">Table 1 - Food-11 overview</p>
-
-        <p>Table 2 gives class counts by split; Figure 1 compares total counts by class. Dessert and Soup are the largest classes; Rice is the smallest. The largest-to-smallest ratio is 5.36 in train and 5.30 overall, so accuracy should be read alongside macro-F1 and per-class recall.</p>
-        <div class="table-wrap">
-          <table class="members">
-            <thead>
-              <tr><th>Label</th><th>Class</th><th>Train</th><th>Val</th><th>Test</th><th>Total</th><th>Share</th></tr>
-            </thead>
-            <tbody>
-              <tr><td class="mono">0</td><td>Bread</td><td class="mono">994</td><td class="mono">362</td><td class="mono">368</td><td class="mono">1,724</td><td class="mono">10.4%</td></tr>
-              <tr><td class="mono">1</td><td>Dairy product</td><td class="mono">429</td><td class="mono">144</td><td class="mono">148</td><td class="mono">721</td><td class="mono">4.3%</td></tr>
-              <tr><td class="mono">2</td><td>Dessert</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
-              <tr><td class="mono">3</td><td>Egg</td><td class="mono">986</td><td class="mono">327</td><td class="mono">335</td><td class="mono">1,648</td><td class="mono">9.9%</td></tr>
-              <tr><td class="mono">4</td><td>Fried food</td><td class="mono">848</td><td class="mono">326</td><td class="mono">287</td><td class="mono">1,461</td><td class="mono">8.8%</td></tr>
-              <tr><td class="mono">5</td><td>Meat</td><td class="mono">1,325</td><td class="mono">449</td><td class="mono">432</td><td class="mono">2,206</td><td class="mono">13.3%</td></tr>
-              <tr><td class="mono">6</td><td>Noodles-Pasta</td><td class="mono">440</td><td class="mono">147</td><td class="mono">147</td><td class="mono">734</td><td class="mono">4.4%</td></tr>
-              <tr><td class="mono">7</td><td>Rice</td><td class="mono">280</td><td class="mono">96</td><td class="mono">96</td><td class="mono">472</td><td class="mono">2.8%</td></tr>
-              <tr><td class="mono">8</td><td>Seafood</td><td class="mono">855</td><td class="mono">347</td><td class="mono">303</td><td class="mono">1,505</td><td class="mono">9.0%</td></tr>
-              <tr><td class="mono">9</td><td>Soup</td><td class="mono">1,500</td><td class="mono">500</td><td class="mono">500</td><td class="mono">2,500</td><td class="mono">15.0%</td></tr>
-              <tr><td class="mono">10</td><td>Vegetable-Fruit</td><td class="mono">709</td><td class="mono">232</td><td class="mono">231</td><td class="mono">1,172</td><td class="mono">7.0%</td></tr>
-              <tr><td></td><td><strong>All classes</strong></td><td class="mono"><strong>9,866</strong></td><td class="mono"><strong>3,430</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>16,643</strong></td><td class="mono"><strong>100.0%</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">Table 2 - Official sample counts by class and split</p>
-
-        <h4>Bias and limitations</h4>
-        <ul>
-          <li>Classes are imbalanced, with fewer examples for Rice, Dairy product and Noodles-Pasta.</li>
-          <li>Each image has one label; representative sample inspection includes composite plates and images that appear off-topic.</li>
-          <li>Photographic style differs by class and repeated images occur across the official splits; both can affect evaluation.</li>
-        </ul>
-
+        <p class="table-caption">Table 2 · Food-11 overview</p>
         <h3>Exploratory data analysis (EDA)</h3>
-        <p>The EDA scans all files in the official release. File integrity and original image dimensions are audited before preprocessing. Pixel statistics are computed after longer-side resize to 512 px, with padding excluded; normalization statistics are fitted on the training split only.</p>
+        <p>The EDA describes the original release before duplicate removal. The preliminary audit scans file integrity, native dimensions and metadata across all three splits. The report computes pixel statistics on original training images after resizing the longer side to 256 px, with padding excluded. <a href="#table-6">Table 6</a> compares those statistics with the ImageNet constants used for normalization.</p>
 
-        <h4>Data integrity and splitting</h4>
-        <p>All 16,643 files decode as RGB JPEGs; no file is empty, unreadable or inconsistent with its extension. The same 11 class folders appear in all three official splits. Of 1,887 files with a non-default EXIF orientation tag, 1,884 have the invalid value 0 and only three have a real 90° rotation; images are read as stored.</p>
-        <p>The official 59.3% / 20.6% / 20.1% training/validation/evaluation (test) split is retained. All 16,643 images are used; the group does not create a custom split or select a subset. The split unit is an individual image. No project-level random seed or stratification applies because the group does not resplit the data; the EPFL download page lists the three partitions but does not state the original split seed or whether the split was stratified.</p>
-        <p>Exact copies across the published splits mean image-level splitting does not eliminate leakage. Class proportions are similar across splits (χ² test p = 0.806; Cramér's V = 0.021).</p>
-
-        <h4>Class distribution</h4>
-        <figure class="figure-large">
+        <h4>Data integrity</h4>
+        <p>All 16,643 files decode as RGB JPEGs; no file is empty, unreadable or inconsistent with its extension. The same 11 class folders appear in all three official splits.</p>
+        <h4>Class distribution before deduplication</h4>
+        <figure id="figure-1" class="figure-large">
           <img src="Assignment2/02_dataset_and_eda/a2_fig1_class_distribution.png"
             alt="Horizontal bar chart of images per class over the whole dataset, from Soup and Dessert with 2,500 images each down to Rice with 472; a dashed line marks the uniform level of 1,513 images"
             loading="lazy">
-          <figcaption>Figure 1 - Images per class over the whole dataset (N = 16,643)</figcaption>
+          <figcaption>Figure 1 · Images per class over the whole dataset (N = 16,643)</figcaption>
         </figure>
-        <p>An always-Dessert predictor reaches 0.146 accuracy but only 0.023 macro-F1 on validation. This is why macro-F1 and per-class recall should be read alongside accuracy.</p>
+        <p>On the original splits, always predicting Dessert gives 14.58% validation accuracy and 2.31% validation Macro-F1. It gives 14.94% accuracy on the original evaluation split. Macro-F1 gives each class equal weight.</p>
 
-        <h4>Input size and aspect ratio</h4>
-        <p>There are 825 distinct image shapes; the longer side ranges from 270 to 9,542 px, with a median of 512 px. Table 3 summarizes resizing and padding by split. The aspect-ratio groups in Table 4 show why padding is concentrated in non-square images. Figure 2 illustrates the transformation.</p>
-        <div class="table-wrap">
-          <table class="members">
-            <thead><tr><th>Split</th><th>Upsampled (%)</th><th>Longer side = 512 (%)</th><th>Downsampled (%)</th><th>Needs padding (%)</th><th>Mean padding (%)</th><th>Max padding (%)</th></tr></thead>
-            <tbody>
-              <tr><td>train</td><td class="mono">2.4</td><td class="mono">92.1</td><td class="mono">5.5</td><td class="mono">43.6</td><td class="mono">11.7</td><td class="mono">55.1</td></tr>
-              <tr><td>val</td><td class="mono">1.6</td><td class="mono">93.2</td><td class="mono">5.2</td><td class="mono">38.0</td><td class="mono">10.3</td><td class="mono">61.7</td></tr>
-              <tr><td>test</td><td class="mono">2.0</td><td class="mono">91.7</td><td class="mono">6.3</td><td class="mono">40.5</td><td class="mono">10.9</td><td class="mono">47.5</td></tr>
-              <tr><td>all</td><td class="mono">2.1</td><td class="mono">92.2</td><td class="mono">5.6</td><td class="mono">41.8</td><td class="mono">11.3</td><td class="mono">61.7</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">Table 3 - Resize and padding statistics by split (percentages rounded independently)</p>
-        <div class="table-wrap">
-          <table class="members">
-            <thead><tr><th>Aspect-ratio group (longer / shorter)</th><th>Images</th><th>Share (%)</th><th>Mean padding (%)</th></tr></thead>
-            <tbody>
-              <tr><td>1:1</td><td class="mono">9,683</td><td class="mono">58.2</td><td class="mono">0.0</td></tr>
-              <tr><td>1.00–1.32</td><td class="mono">536</td><td class="mono">3.2</td><td class="mono">8.3</td></tr>
-              <tr><td>≈4:3 (1.32–1.34)</td><td class="mono">3,759</td><td class="mono">22.6</td><td class="mono">25.0</td></tr>
-              <tr><td>1.34–1.45</td><td class="mono">959</td><td class="mono">5.8</td><td class="mono">25.8</td></tr>
-              <tr><td>≈3:2 (1.45–1.55)</td><td class="mono">845</td><td class="mono">5.1</td><td class="mono">33.4</td></tr>
-              <tr><td>1.55–1.85 (5:3, 16:9)</td><td class="mono">841</td><td class="mono">5.0</td><td class="mono">41.7</td></tr>
-              <tr><td>&gt;1.85</td><td class="mono">20</td><td class="mono">0.1</td><td class="mono">49.6</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">Table 4 - Aspect ratio and resulting padding</p>
-        <figure>
-          <img src="Assignment2/02_dataset_and_eda/a2_fig2_resize_pad_demo.jpg"
-            alt="Four example images in their original shape (top row) and after resizing and padding to 512 by 512 (bottom row), with padding of 44, 0, 25 and 55 percent"
-            loading="lazy">
-          <figcaption>Figure 2 - Original images and examples of model inputs after longer-side resize to 512 px and centre padding to 512 × 512</figcaption>
-        </figure>
+        <h4>Class Distribution across splits before deduplication</h4>
+        <div class="food11-table-wrap">
+          <table id="table-3" class="food11-table" aria-label="Food-11 class distribution before duplicate removal">
+            <thead>
+              <tr>
+                <th colspan="2"></th>
+                <th colspan="2" scope="colgroup" class="group-heading">Training</th>
+                <th colspan="2" scope="colgroup" class="group-heading">Validation</th>
+                <th colspan="2" scope="colgroup" class="group-heading">Evaluation</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th scope="col">Idx</th>
+                <th scope="col" class="class-name">Class</th>
+                <th scope="col">Images</th>
+                <th scope="col">%</th>
+                <th scope="col">Images</th>
+                <th scope="col">%</th>
+                <th scope="col">Images</th>
+                <th scope="col">%</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
 
-        <h4>Duplicates and split leakage</h4>
-        <p>Exact duplicates have identical file bytes; matching 64-bit dHashes mark possible near-duplicates that need visual review. Table 5 summarizes pairwise overlap; Table 5b breaks exact-copy overlap down by test class. The official split is retained; report results on the full test set and on the 2,787 images without a byte-identical train/validation copy.</p>
-        <div class="table-wrap">
-          <table class="members">
-            <thead><tr><th>Split pair</th><th>Byte-identical files (MD5)</th><th>Shared dHashes</th></tr></thead>
             <tbody>
-              <tr><td>train–val</td><td class="mono">51</td><td class="mono">58</td></tr>
-              <tr><td>train–test</td><td class="mono">249</td><td class="mono">254</td></tr>
-              <tr><td>val–test</td><td class="mono">311</td><td class="mono">314</td></tr>
+              <tr>
+                <td>0</td><th scope="row" class="class-name">Bread</th>
+                <td>994</td><td>10.08</td>
+                <td>362</td><td>10.55</td>
+                <td>368</td><td>10.99</td>
+                <td>1,724</td>
+              </tr>
+              <tr>
+                <td>1</td><th scope="row" class="class-name">Dairy product</th>
+                <td>429</td><td>4.35</td>
+                <td>144</td><td>4.20</td>
+                <td>148</td><td>4.42</td>
+                <td>721</td>
+              </tr>
+              <tr>
+                <td>2</td><th scope="row" class="class-name">Dessert</th>
+                <td>1,500</td><td>15.20</td>
+                <td>500</td><td>14.58</td>
+                <td>500</td><td>14.94</td>
+                <td>2,500</td>
+              </tr>
+              <tr>
+                <td>3</td><th scope="row" class="class-name">Egg</th>
+                <td>986</td><td>9.99</td>
+                <td>327</td><td>9.53</td>
+                <td>335</td><td>10.01</td>
+                <td>1,648</td>
+              </tr>
+              <tr>
+                <td>4</td><th scope="row" class="class-name">Fried food</th>
+                <td>848</td><td>8.60</td>
+                <td>326</td><td>9.50</td>
+                <td>287</td><td>8.57</td>
+                <td>1,461</td>
+              </tr>
+              <tr>
+                <td>5</td><th scope="row" class="class-name">Meat</th>
+                <td>1,325</td><td>13.43</td>
+                <td>449</td><td>13.09</td>
+                <td>432</td><td>12.91</td>
+                <td>2,206</td>
+              </tr>
+              <tr>
+                <td>6</td><th scope="row" class="class-name">Noodles/Pasta</th>
+                <td>440</td><td>4.46</td>
+                <td>147</td><td>4.29</td>
+                <td>147</td><td>4.39</td>
+                <td>734</td>
+              </tr>
+              <tr>
+                <td>7</td><th scope="row" class="class-name">Rice</th>
+                <td>280</td><td>2.84</td>
+                <td>96</td><td>2.80</td>
+                <td>96</td><td>2.87</td>
+                <td>472</td>
+              </tr>
+              <tr>
+                <td>8</td><th scope="row" class="class-name">Seafood</th>
+                <td>855</td><td>8.67</td>
+                <td>347</td><td>10.12</td>
+                <td>303</td><td>9.05</td>
+                <td>1,505</td>
+              </tr>
+              <tr>
+                <td>9</td><th scope="row" class="class-name">Soup</th>
+                <td>1,500</td><td>15.20</td>
+                <td>500</td><td>14.58</td>
+                <td>500</td><td>14.94</td>
+                <td>2,500</td>
+              </tr>
+              <tr>
+                <td>10</td><th scope="row" class="class-name">Vegetable/Fruit</th>
+                <td>709</td><td>7.19</td>
+                <td>232</td><td>6.76</td>
+                <td>231</td><td>6.90</td>
+                <td>1,172</td>
+              </tr>
             </tbody>
-          </table>
-        </div>
-        <p class="table-caption">Table 5 - Pairwise duplicate audit (dHash counts include byte-identical pairs)</p>
-        <div class="table-wrap">
-          <table class="members">
-            <thead><tr><th>Class</th><th>Test images</th><th>Exact copy in train/validation</th><th>Rate (%)</th><th>Test images without exact train/validation copy</th></tr></thead>
-            <tbody>
-              <tr><td>Bread</td><td class="mono">368</td><td class="mono">100</td><td class="mono">27.2</td><td class="mono">268</td></tr>
-              <tr><td>Dairy product</td><td class="mono">148</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">148</td></tr>
-              <tr><td>Dessert</td><td class="mono">500</td><td class="mono">60</td><td class="mono">12.0</td><td class="mono">440</td></tr>
-              <tr><td>Egg</td><td class="mono">335</td><td class="mono">5</td><td class="mono">1.5</td><td class="mono">330</td></tr>
-              <tr><td>Fried food</td><td class="mono">287</td><td class="mono">66</td><td class="mono">23.0</td><td class="mono">221</td></tr>
-              <tr><td>Meat</td><td class="mono">432</td><td class="mono">109</td><td class="mono">25.2</td><td class="mono">323</td></tr>
-              <tr><td>Noodles-Pasta</td><td class="mono">147</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">147</td></tr>
-              <tr><td>Rice</td><td class="mono">96</td><td class="mono">0</td><td class="mono">0.0</td><td class="mono">96</td></tr>
-              <tr><td>Seafood</td><td class="mono">303</td><td class="mono">100</td><td class="mono">33.0</td><td class="mono">203</td></tr>
-              <tr><td>Soup</td><td class="mono">500</td><td class="mono">116</td><td class="mono">23.2</td><td class="mono">384</td></tr>
-              <tr><td>Vegetable-Fruit</td><td class="mono">231</td><td class="mono">4</td><td class="mono">1.7</td><td class="mono">227</td></tr>
-              <tr><td><strong>All</strong></td><td class="mono"><strong>3,347</strong></td><td class="mono"><strong>560</strong></td><td class="mono"><strong>16.7</strong></td><td class="mono"><strong>2,787</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="table-caption">Table 5b - Test images with a byte-identical copy in train or validation, by class</p>
-        <p>Of 568 test images sharing a dHash with train or validation, 560 are byte-identical and eight are dHash-only candidates: six in Rice and two in Vegetable-Fruit. dHash matches are possible near-duplicates, not confirmed duplicates.</p>
-        <figure>
-          <img src="Assignment2/02_dataset_and_eda/a2_fig3_cross_split_duplicates.jpg"
-            alt="Five pairs of identical images, with the train or validation copy in the top row and the test copy below it: a cake, a meat dish, mussels, flatbread and chicken wings"
-            loading="lazy">
-          <figcaption>Figure 3 - Examples of identical files shared between splits</figcaption>
-        </figure>
-        <p>Seafood has the highest exact-copy rate (33.0%). Dessert also has 60 affected test images (12.0%). Dairy product, Noodles-Pasta and Rice have no byte-identical test copies in train or validation.</p>
-        <p>Additional byte-identical copies within the same split are 5 in train, 3 in validation and 4 in test; these copies are retained. In addition, 51 validation images are byte-identical to images in train, so validation-based checkpoint selection and early stopping could be optimistic for those examples. This is a limitation of the provided split.</p>
 
-        <h4>Input size versus class</h4>
-        <p>Table 6 shows that longer side, file size and bits per pixel carry the strongest class signal. The effect-size labels use rule-of-thumb thresholds: ε² &lt; 0.01 negligible, &lt; 0.06 small, &lt; 0.14 moderate and ≥ 0.14 large. The metadata-only random forest reaches 0.251 accuracy and 0.193 macro-F1 on validation, above the majority-class baseline (0.146 and 0.023). Vegetable-Fruit is the clearest size outlier, so its results should be interpreted with care.</p>
+            <tfoot>
+              <tr>
+                <td></td><th scope="row" class="class-name">Total</th>
+                <td>9,866</td><td>100</td>
+                <td>3,430</td><td>100</td>
+                <td>3,347</td><td>100</td>
+                <td>16,643</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="table-caption">Table 3 · Official sample counts by class and split</p>
+
+        <!-- <h4>Bias and limitations</h4>
+        <ul>
+          <li>Classes are imbalanced, with fewer examples for Rice, Dairy product and Noodles/Pasta.</li>
+          <li>Each image has one label; representative sample inspection includes composite plates and images that appear off-topic.</li>
+          <li>Photographic style differs by class and repeated images occur across the official splits; both can affect evaluation.</li>
+        </ul> -->
+
+        
+
+        
+        <h4>Input size</h4>
+        
         <div class="table-wrap">
-          <table class="members">
-            <thead><tr><th>Size feature</th><th>All 11 classes</th><th>Without Vegetable-Fruit</th></tr></thead>
+          <table id="table-4" class="members">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Resolution (pixels)</th>
+                <th>Images</th>
+                <th>Share (%)</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>Longer side</td><td class="mono">0.184 (large)</td><td class="mono">0.046 (small)</td></tr>
-              <tr><td>Shorter side</td><td class="mono">0.045 (small)</td><td class="mono">0.013 (small)</td></tr>
-              <tr><td>Aspect ratio</td><td class="mono">0.046 (small)</td><td class="mono">0.014 (small)</td></tr>
-              <tr><td>File size</td><td class="mono">0.166 (large)</td><td class="mono">0.087 (moderate)</td></tr>
-              <tr><td>Bits per pixel</td><td class="mono">0.161 (large)</td><td class="mono">0.118 (moderate)</td></tr>
+              <tr><td class="mono">1</td><td class="mono">512 × 512</td><td class="mono">5,551</td><td class="mono">56.26</td></tr>
+              <tr><td class="mono">2</td><td class="mono">512 × 384</td><td class="mono">1,355</td><td class="mono">13.73</td></tr>
+              <tr><td class="mono">3</td><td class="mono">384 × 512</td><td class="mono">519</td><td class="mono">5.26</td></tr>
+              <tr><td class="mono">4</td><td class="mono">382 × 512</td><td class="mono">320</td><td class="mono">3.24</td></tr>
+              <tr><td class="mono">5</td><td class="mono">512 × 382</td><td class="mono">216</td><td class="mono">2.19</td></tr>
+              <tr><td class="mono">6</td><td class="mono">512 × 341</td><td class="mono">142</td><td class="mono">1.44</td></tr>
+              <tr><td class="mono">7</td><td class="mono">1024 × 768</td><td class="mono">108</td><td class="mono">1.09</td></tr>
+              <tr><td class="mono">8</td><td class="mono">512 × 306</td><td class="mono">107</td><td class="mono">1.08</td></tr>
+              <tr><td class="mono">9</td><td class="mono">512 × 289</td><td class="mono">81</td><td class="mono">0.82</td></tr>
+              <tr><td class="mono">10</td><td class="mono">511 × 512</td><td class="mono">60</td><td class="mono">0.61</td></tr>
+              <tr><td></td><td>Other</td><td class="mono">1,407</td><td class="mono">14.26</td></tr>
+              <tr>
+                <td></td>
+                <td><strong>Total</strong></td>
+                <td class="mono"><strong>9,866</strong></td>
+                <td class="mono"><strong>100.00</strong></td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p class="table-caption">Table 6 - Effect size of class on image-size features (ε²)</p>
-
+        <p class="table-caption">Table 4 · Ten most common resolutions in the original training split.</p>
+        <div class="table-wrap">
+          <table id="table-5" class="members">
+    
+            <thead>
+              <tr>
+                <th>Dimensions above 512 pixels</th>
+                <th>Images</th>
+                <th>Share (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Neither dimension</td>
+                <td class="mono">9,319</td>
+                <td class="mono">94.46</td>
+              </tr>
+              <tr>
+                <td>Exactly one dimension</td>
+                <td class="mono">120</td>
+                <td class="mono">1.22</td>
+              </tr>
+              <tr>
+                <td>Both dimensions</td>
+                <td class="mono">427</td>
+                <td class="mono">4.33</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td class="mono"><strong>9,866</strong></td>
+                <td class="mono"><strong>100.00</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">Table 5 · Original training images by number of dimensions above 512 pixels. Shares are rounded independently.</p>
+        <p>
+          We chose a common input size of 256 × 256 to balance spatial detail
+          and compute cost across models and repeated runs. For the dominant
+          512 × 512 group, this halves each dimension and reduces the input
+          pixel count from 262,144 to 65,536 (75% fewer pixels). The preprocessing
+          rule was fixed before training using the original training images
+          and applied to all partitions.
+        </p>
         <h4>Pixel intensity</h4>
-        <p>Table 7 reports the training-set RGB statistics used for normalization, computed after resize with padding excluded. Food-11 is warmer and has a wider pixel spread than the ImageNet reference. Figure 4 shows the channel distributions.</p>
+        <p><a href="#table-6">Table 6</a> reports descriptive training-set RGB statistics, computed after a 256 px resize with padding excluded, and the fixed ImageNet constants used for normalization. Food-11 is warmer and has a wider pixel spread than the ImageNet reference. <a href="#figure-2">Figure 2</a> shows the channel distributions.</p>
         <div class="table-wrap">
-          <table class="members">
+          <table id="table-6" class="members">
             <thead><tr><th>Channel</th><th>Train mean</th><th>Train std</th><th>ImageNet mean</th><th>ImageNet std</th></tr></thead>
             <tbody>
               <tr><td>R</td><td class="mono">0.5586</td><td class="mono">0.2722</td><td class="mono">0.485</td><td class="mono">0.229</td></tr>
@@ -258,1282 +496,1506 @@
             </tbody>
           </table>
         </div>
-        <p class="table-caption">Table 7 - Training-set RGB statistics and ImageNet reference</p>
-        <figure class="figure-large">
-          <img src="Assignment2/02_dataset_and_eda/a2_fig4_pixel_intensity.png"
+        <p class="table-caption">Table 6 · Training-set RGB statistics and ImageNet reference</p>
+        <figure id="figure-2" class="figure-large">
+          <img src="Assignment2/report-assets/rgb-distribution.webp"
             alt="Two line plots of per-channel pixel-intensity histograms of the training split, linear scale on the left and log scale on the right, with spikes at 0 and 255"
             loading="lazy">
-          <figcaption>Figure 4 - Training-set pixel-intensity distributions (right: log scale)</figcaption>
+          <figcaption>Figure 2 · Training-set pixel-intensity distributions (right: log scale)</figcaption>
         </figure>
 
+        <h4>Duplicates and split leakage</h4>
+        <p>Exact duplicates have identical file bytes. <a href="#table-7">Table 7</a> summarizes exact MD5 matches and pHash candidate pairs within and across the original splits. <a href="#table-8">Table 8</a> shows the class counts after duplicate removal.</p>
+        <div class="table-wrap">
+          <table id="table-7" class="members">
+            <thead>
+              <tr>
+                <th>Split pair</th>
+                <th>MD5 duplicate pairs</th>
+                <th>pHash candidate pairs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>train–val</td><td class="mono">51</td><td class="mono">51</td></tr>
+              <tr><td>train–test</td><td class="mono">249</td><td class="mono">46</td></tr>
+              <tr><td>val–test</td><td class="mono">311</td><td class="mono">14</td></tr>
+              <tr><td>train–train</td><td class="mono">5</td><td class="mono">69</td></tr>
+              <tr><td>val–val</td><td class="mono">3</td><td class="mono">7</td></tr>
+              <tr><td>test–test</td><td class="mono">5</td><td class="mono">9</td></tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td class="mono"><strong>624</strong></td>
+                <td class="mono"><strong>196</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption">
+          Table 7 · Duplicate audit within and across the official splits.
+          MD5 counts represent exact-duplicate pairs.
+          pHash candidates have different MD5 hashes and a Hamming distance
+          of at most 10. Counts refer to image pairs, not unique images.
+        </p>
+        <figure id="figure-3">
+          <img src="Assignment2/02_dataset_and_eda/a2_fig3_cross_split_duplicates.jpg"
+            alt="Four exact-duplicate pairs detected by MD5, with Dairy product examples on the left and Dessert examples on the right"
+            loading="lazy">
+          <figcaption>Figure 3 · Exact-duplicate image pairs identified by matching MD5 hashes</figcaption>
+        </figure>
+        <figure id="figure-4">
+          <img src="Assignment2/02_dataset_and_eda/phash-examples.png" alt="Four visually similar image pairs flagged by perceptual hashes, including rice and meat dishes" width="1161" height="510" loading="lazy">
+          <figcaption>Figure 4 · Near-duplicate image pairs identified using pHash Hamming distance</figcaption>
+        </figure>
+        <figure id="figure-5">
+          <img src="Assignment2/02_dataset_and_eda/manual_removed.png" alt="Two additional duplicate pairs found by visual inspection, one labeled Soup and one labeled Egg" width="742" height="596" loading="lazy">
+          <figcaption>Figure 5 · Additional duplicate pairs identified through visual inspection</figcaption>
+        </figure>
+        <p>
+        <p>
+          Images were treated as duplicates when they shared the same MD5 hash
+          or as near-duplicates when their pHash Hamming distance was at most 5.
+          Both checks used the same removal logic: an image was removed only if
+          a matching representative had already been retained. MD5 deduplication
+          was performed first, followed by pHash deduplication. Each stage processed
+          duplicates within partitions before removing duplicates across partitions,
+          with retention priority given to training, then validation, and finally
+          evaluation. Within each partition, the first eligible image in the existing
+          order was retained. Two additional redundant images were removed after
+          manual inspection, while their counterparts were retained. Label consistency was also checked to distinguish repeated images from
+          identical images assigned to different categories, All images removed during deduplication shared the same class label as their retained counterparts. The resulting class distribution is shown in <a href="#table-8">Table 8</a>.
+        </p>
+        <div class="table-wrap">
+          <table id="table-8" class="members">
+            <thead>
+              <tr>
+                <th rowspan="2">Idx</th>
+                <th rowspan="2">Class</th>
+                <th colspan="2">Training</th>
+                <th colspan="2">Validation</th>
+                <th colspan="2">Evaluation</th>
+                <th rowspan="2">Total</th>
+              </tr>
+              <tr>
+                <th>Images</th><th>%</th>
+                <th>Images</th><th>%</th>
+                <th>Images</th><th>%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">0</td><td>Bread</td>
+                <td class="mono">993</td><td class="mono">10.09</td>
+                <td class="mono">362</td><td class="mono">10.76</td>
+                <td class="mono">268</td><td class="mono">9.68</td>
+                <td class="mono">1,623</td>
+              </tr>
+              <tr>
+                <td class="mono">1</td><td>Dairy product</td>
+                <td class="mono">423</td><td class="mono">4.30</td>
+                <td class="mono">141</td><td class="mono">4.19</td>
+                <td class="mono">147</td><td class="mono">5.31</td>
+                <td class="mono">711</td>
+              </tr>
+              <tr>
+                <td class="mono">2</td><td>Dessert</td>
+                <td class="mono">1,499</td><td class="mono">15.22</td>
+                <td class="mono">450</td><td class="mono">13.38</td>
+                <td class="mono">440</td><td class="mono">15.88</td>
+                <td class="mono">2,389</td>
+              </tr>
+              <tr>
+                <td class="mono">3</td><td>Egg</td>
+                <td class="mono">982</td><td class="mono">9.97</td>
+                <td class="mono">327</td><td class="mono">9.72</td>
+                <td class="mono">329</td><td class="mono">11.88</td>
+                <td class="mono">1,638</td>
+              </tr>
+              <tr>
+                <td class="mono">4</td><td>Fried food</td>
+                <td class="mono">848</td><td class="mono">8.61</td>
+                <td class="mono">326</td><td class="mono">9.69</td>
+                <td class="mono">221</td><td class="mono">7.98</td>
+                <td class="mono">1,395</td>
+              </tr>
+              <tr>
+                <td class="mono">5</td><td>Meat</td>
+                <td class="mono">1,325</td><td class="mono">13.46</td>
+                <td class="mono">449</td><td class="mono">13.35</td>
+                <td class="mono">321</td><td class="mono">11.59</td>
+                <td class="mono">2,095</td>
+              </tr>
+              <tr>
+                <td class="mono">6</td><td>Noodles/Pasta</td>
+                <td class="mono">438</td><td class="mono">4.45</td>
+                <td class="mono">147</td><td class="mono">4.37</td>
+                <td class="mono">147</td><td class="mono">5.31</td>
+                <td class="mono">732</td>
+              </tr>
+              <tr>
+                <td class="mono">7</td><td>Rice</td>
+                <td class="mono">279</td><td class="mono">2.83</td>
+                <td class="mono">88</td><td class="mono">2.62</td>
+                <td class="mono">90</td><td class="mono">3.25</td>
+                <td class="mono">457</td>
+              </tr>
+              <tr>
+                <td class="mono">8</td><td>Seafood</td>
+                <td class="mono">855</td><td class="mono">8.68</td>
+                <td class="mono">347</td><td class="mono">10.32</td>
+                <td class="mono">203</td><td class="mono">7.33</td>
+                <td class="mono">1,405</td>
+              </tr>
+              <tr>
+                <td class="mono">9</td><td>Soup</td>
+                <td class="mono">1,497</td><td class="mono">15.20</td>
+                <td class="mono">500</td><td class="mono">14.86</td>
+                <td class="mono">384</td><td class="mono">13.86</td>
+                <td class="mono">2,381</td>
+              </tr>
+              <tr>
+                <td class="mono">10</td><td>Vegetable/Fruit</td>
+                <td class="mono">707</td><td class="mono">7.18</td>
+                <td class="mono">227</td><td class="mono">6.75</td>
+                <td class="mono">220</td><td class="mono">7.94</td>
+                <td class="mono">1,154</td>
+              </tr>
+              <tr>
+                <td></td><td><strong>Total</strong></td>
+                <td class="mono"><strong>9,846</strong></td>
+                <td class="mono"><strong>100</strong></td>
+                <td class="mono"><strong>3,364</strong></td>
+                <td class="mono"><strong>100</strong></td>
+                <td class="mono"><strong>2,770</strong></td>
+                <td class="mono"><strong>100</strong></td>
+                <td class="mono"><strong>15,980</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-caption">
+          Table 8 · Class distribution after duplicate removal. Each percentage
+          is calculated relative to the number of retained images in its split.
+        </p>
+
+        
+
         <h4>Sample inspection</h4>
-        <p>The samples in Figure 5 show broad within-class variety, composite dishes assigned one class label, examples that appear off-topic and visually similar classes such as Noodles-Pasta/Soup and Meat/Egg/Fried food. These qualitative observations motivate hypotheses for later error analysis; their prevalence has not been quantified.</p>
-        <figure>
+        <p>The samples in <a href="#figure-6">Figure 6</a> show broad within-class variety, composite dishes assigned one class label, examples that appear off-topic and visually similar classes such as Noodles/Pasta/Soup and Meat/Egg/Fried food. These qualitative observations motivate hypotheses for later error analysis.</p>
+        <figure id="figure-6">
           <img src="Assignment2/02_dataset_and_eda/a2_fig5_samples_per_class.jpg"
             alt="Grid of seven random training images for each of the 11 food classes"
             loading="lazy">
-          <figcaption>Figure 5 - Random training images per class (seed 42)</figcaption>
+          <figcaption>Figure 6 · Random training images per class (seed 42)</figcaption>
         </figure>
-        <p>Figure 6 highlights unusual image sizes and brightness, which reflect photographic-style differences across categories.</p>
-        <figure>
-          <img src="Assignment2/02_dataset_and_eda/a2_fig6_extremes.jpg"
-            alt="Grid of training images with the smallest longer side, the most elongated shape, the lowest mean luminance and the highest mean luminance"
-            loading="lazy">
-          <figcaption>Figure 6 - Training-set size and brightness extremes. The butter image shares a dHash with another training image, indicating a near-duplicate candidate.</figcaption>
-        </figure>
+        <h3>Data splitting</h3>
+        <div class="table-wrap">
+          <table id="table-9" class="members">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Protocol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Split</strong></td>
+                <td>
+                  The predefined Food-11 training, validation, and evaluation
+                  partitions are used without random re-splitting. After
+                  deduplication, they contain 9,846, 3,364, and 2,770 images,
+                  respectively. Retained images remain in their original partitions.
+                </td>
+              </tr>
 
-        <h4>Data preprocessing</h4>
-        <p>For model input, images are decoded as stored, converted to RGB, resized with Lanczos so the longer side is 512 px and centre-padded with the rounded training mean (142, 115, 88). Values are scaled to [0, 1] and standardized with the training-only means and standard deviations in Table 7. Each image produces a float32 tensor with shape [3, 512, 512]; a batch has shape [B, 3, 512, 512]. The EDA uses no augmentation; any training-time augmentation belongs to the model-training protocol and is not assessed here.</p>
-        <p><strong>Example batch after preprocessing.</strong> Figure 7 shows an actual PyTorch DataLoader batch of eight training images sampled without replacement for illustration (seed 42). The batch uses the pipeline above with no augmentation. Its recorded output is:</p>
-        <pre style="white-space: pre-wrap;"><samp>images: shape [8, 3, 512, 512], dtype torch.float32
-labels: shape [8], dtype torch.int64
-label IDs: [2, 0, 4, 4, 3, 2, 2, 9]</samp></pre>
-        <figure>
-          <img src="Assignment2/02_dataset_and_eda/a2_fig7_preprocessed_batch.jpg"
-            alt="Eight preprocessed training images arranged in two rows, labeled Dessert, Bread, Fried food, Fried food, Egg, Dessert, Dessert and Soup; non-square images show centred padding"
+              <tr>
+                <td><strong>Seeds</strong></td>
+                <td>
+                  No split seed is used. Training seeds 42, 43, and 44 are
+                  assigned to Python, NumPy, and PyTorch CPU and CUDA random-number
+                  generators before model initialization and training. They control
+                  stochastic operations such as initialization, shuffling,
+                  augmentation, and dropout. The cleaned partitions remain fixed.
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Stratification</strong></td>
+                <td>
+                  No additional stratified splitting is performed. Class counts
+                  and proportions are examined separately for each partition
+                  to assess imbalance and differences in class distribution.
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Split unit</strong></td>
+                <td>
+                  One image file. The dataset provides no subject, restaurant,
+                  plate, or scene identifiers for grouped splitting.
+                  Image-similarity checks are used to identify duplicates
+                  within and across partitions.
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Leakage control</strong></td>
+                <td>
+                  MD5 exact-duplicate removal is followed by pHash near-duplicate
+                  removal using a Hamming distance of at most 5. Each stage
+                  processes duplicates within partitions before removing duplicates
+                  across partitions, with retention priority given to training,
+                  then validation, and finally evaluation. An image is removed
+                  only when a matching representative has already been retained.
+                  Two additional redundant images are removed after manual inspection.
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Subset selection rules</strong></td>
+                <td>
+                  All 11 classes and all 15,980 images retained after deduplication
+                  are used. No additional class exclusion or sample subsampling
+                  is applied.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-caption">
+          Table 9 · Data-splitting protocol for the cleaned Food-11 dataset.
+          The same retained partitions are used across all model configurations,
+          training seeds, and augmentation conditions.
+        </p>
+        <h4 id="dataset-bias-and-limitations">Dataset bias and limitations</h4>
+        <ul class="pipeline-notes-list">
+          <li><strong>Class imbalance.</strong> The largest classes in the original training split have about 5.36 times as many images as Rice. This motivates using Macro-F1 as the primary metric.</li>
+          <li><strong>Broad and overlapping categories.</strong> Dishes within a class can look different, while dishes from different classes may share colors, textures, or preparation styles. A mixed plate can contain several types of food and still carry a single label.</li>
+          <li><strong>Annotation ambiguity.</strong> Some sampled images contain distracting background subjects or off-topic content, such as a shop sign labeled Dessert. These examples suggest possible label noise, whose frequency across the dataset was not measured.</li>
+          <li><strong>Photo-style bias.</strong> Some Dairy product and Vegetable/Fruit images use studio backgrounds, while other classes include restaurant photos. Models may use these background cues alongside the appearance of the food.</li>
+          <li><strong>Duplicates and grouping metadata.</strong> Duplicate images require cleaning within and across the predefined splits. The dataset provides food-class labels but lacks subject, restaurant, plate, and scene identifiers for grouped splitting.</li>
+        </ul>
+        <h3>Data preprocessing</h3>
+
+        <h4>Data cleaning and annotation handling</h4>
+        <p>
+          All 16,643 original image files were successfully decoded as RGB JPEGs,
+          with no empty or unreadable files. Exact duplicates, near-duplicates,
+          and two manually identified redundant images were removed as described
+          in the leakage-control protocol. Class labels are inherited from the
+          dataset folders. Potentially ambiguous annotations are discussed as
+          dataset limitations rather than automatically relabeled.
+        </p>
+
+        <h4>Resizing and padding</h4>
+        <p>
+          Each image is converted to RGB and resized using bilinear interpolation
+          so that its longer side becomes 256 pixels while preserving its aspect
+          ratio. The resized image is centered on a black 256 × 256 canvas,
+          with padding divided as evenly as possible between opposite sides.
+          This produces a uniform input size without cropping image content
+          or distorting its proportions.
+        </p>
+
+        <h4>Normalization</h4>
+        <p>
+          Pixel values are converted to floating-point values on the [0, 1] scale
+          and normalized independently for each RGB channel using the fixed
+          ImageNet mean (0.485, 0.456, 0.406) and standard deviation
+          (0.229, 0.224, 0.225).
+          These constants match the normalization expected by the pretrained
+          ResNet-18 weights. The same normalization is applied to SimpleCNN
+          to keep input preprocessing consistent across configurations.
+        </p>
+
+        <h4>Data augmentation</h4>
+        <p>
+          Training images undergo random horizontal flipping with probability
+          0.5 after resizing and padding. No rotation or random cropping is
+          applied. Horizontal flipping is disabled in the augmentation ablation.
+          Validation and evaluation images use the same resizing, padding,
+          and normalization steps without random augmentation.
+        </p>
+
+        <h4>Input tensor shapes</h4>
+        <p>
+          Each preprocessed image is represented as a float32 tensor of shape
+          [3, 256, 256], corresponding to the RGB channels, height, and width.
+          Each class label is an integer from 0 to 10.
+        </p>
+
+        <h4>Example batch after preprocessing</h4>
+        <p>
+          Training, validation, and evaluation use a batch size of 128.
+          Training samples are shuffled, while validation and evaluation samples
+          retain their order. A full batch has the shapes and data types below.
+          The final batch may contain fewer images because incomplete batches
+          are retained.
+        </p>
+
+        <pre style="white-space: pre-wrap;"><samp>images: shape [128, 3, 256, 256], dtype torch.float32
+labels: shape [128], dtype torch.int64</samp></pre>
+
+        <figure id="figure-7">
+          <img
+            src="Assignment2/02_dataset_and_eda/256x256.png"
+            alt="Eight preprocessed training images with class labels and centered black padding"
             loading="lazy">
-          <figcaption>Figure 7 - An example training batch after resize, padding and normalization. Normalization is reversed for display; the model-input tensors remain standardized.</figcaption>
+          <figcaption>
+            Figure 7 · Example training images after aspect-ratio-preserving resizing,
+            black padding to 256 × 256, and horizontal-flip augmentation.
+            ImageNet normalization is reversed for visualization.
+          </figcaption>
         </figure>
       </section>
 
       <section id="methodology">
-          <h2 class="section-title">Methodology</h2>
+        <h2 class="section-title">Methodology</h2>
 
-          <h3
-            style="
+        <h3
+          style="
               font-family: var(--font-display);
               font-size: 26px;
               font-weight: bold;
               margin: 0 0 14px;
               color: var(--ink);
             "
+        >
+          Pipeline overview
+        </h3>
+        <figure id="figure-8" style="margin: 20px 0 28px; text-align: center;">
+          <img
+            src="Assignment2/03_methodology/pipe_ass2.png"
+            alt="Food-11 classification pipeline arranged in four rows of three steps, from raw data and deduplication to training, checkpoint selection, test evaluation, and aggregation across three seeds"
+            loading="lazy"
+            style="display: block; width: 100%; max-width: 1000px; height: auto; margin: 0 auto;"
           >
-            Pipeline overview
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            The classification pipeline follows a strict, end-to-end sequential
-            workflow across all experiments on the Food-11 dataset:
-          </p>
 
-          <div class="pipeline-card">
-            <div class="pipeline-flow-steps">
-              <span class="pipeline-pill">Raw data</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Preprocessing</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Data loader</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Model</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-arrow" style="display: none"></span>
-              <span class="pipeline-pill">Loss</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Optimization</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Prediction</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Post-processing</span>
-              <span class="pipeline-arrow">→</span>
-              <span class="pipeline-pill">Evaluation</span>
-            </div>
-          </div>
+          <figcaption>Figure 8 · Food-11 training and evaluation pipeline</figcaption>
+        </figure>
 
-          <ul
-            class="pipeline-notes-list"
-            style="margin-top: 18px; margin-bottom: 28px"
-          >
-            <li>
-              <strong>Raw data &amp; Split Preservation:</strong> The official
-              Food-11 partitions (<code>9,866</code> training,
-              <code>3,430</code> validation, and
-              <code>3,347</code> evaluation/test RGB images across 11 food
-              categories) are preserved without re-splitting or automatic
-              deletion. An automated MD5 and 64-bit difference hash (dHash)
-              audit logs exact and near-duplicates across splits to
-              transparently document potential data leakage risk.
-            </li>
-            <li>
-              <strong
-                >Aspect-Preserving Preprocessing &amp; Train-Only
-                Normalization:</strong
-              >
-              Each image is decoded in RGB and its longer side is resized to
-              <code>512</code> pixels via Lanczos interpolation while preserving
-              aspect ratio. Channel-wise RGB mean and population standard
-              deviation (<code>ddof=0</code>) are fitted once exclusively on
-              resized, unaugmented training image pixels (excluding synthetic
-              padding) and cached in <code>train_normalization.json</code>.
-              Images are then centrally padded to
-              <code>512 &times; 512</code> using the rounded training-mean RGB
-              values and standardized via
-              <code>(x - train_mean) / train_std</code>. Training images
-              additionally undergo random horizontal flipping and color jitter
-              (brightness=0.3, contrast=0.3, saturation=0.3, hue=0.05) prior to
-              resizing and padding.
-            </li>
-            <li>
-              <strong>Data Loader:</strong> Custom PyTorch
-              <code>DataLoader</code> instances group tensors of shape
-              <code>(B, 3, 512, 512)</code> with
-              <code>batch_size = 32</code> and <code>drop_last = False</code>.
-              Training uses seeded random shuffling (<code
-                >torch.Generator().manual_seed(seed)</code
-              >
-              and deterministic <code>seed_worker</code>), while validation and
-              test loaders evaluate deterministically in fixed order.
-            </li>
-            <li>
-              <strong>Model, Loss &amp; Optimization:</strong> A custom 4-stage
-              scratch baseline (<code>SimpleCNN</code>) and four
-              transfer-learning configurations (<code>ResNet-18</code> and
-              <code>ResNet-50</code> under both frozen-backbone linear probing
-              and full end-to-end fine-tuning) map inputs to 11 class logits.
-              Models are trained with label-smoothed Cross-Entropy Loss (<code
-                >label_smoothing = 0.1</code
-              >), optimized via <code>AdamW</code> with discriminative learning
-              rates, 1-epoch linear warmup + cosine annealing, gradient norm
-              clipping (<code>1.0</code>), and Automatic Mixed Precision (AMP).
-            </li>
-            <li>
-              <strong>Prediction, Post-processing &amp; Evaluation:</strong>
-              Forward logits are converted in FP32 to class probabilities via
-              softmax and class decisions via <code>argmax</code>.
-              Post-processing includes Expected Calibration Error (ECE, 10 bins)
-              and Grad-CAM visual attribution on <code>layer4[-1]</code>. Dual
-              validation checkpoints (best validation <code>macro_f1</code> and
-              best validation <code>accuracy</code>) are tracked and evaluated
-              across three independent seeds (<code>[42, 43, 44]</code>),
-              accompanied by paired seed differences, 1,000-iteration bootstrap
-              95% CIs, and exact McNemar tests.
-            </li>
-          </ul>
-
-          <h3
-            style="
+        <h3
+          style="
               font-family: var(--font-display);
               font-size: 26px;
               font-weight: bold;
               margin: 36px 0 18px;
               color: var(--ink);
             "
-          >
-            Baseline and main methods
-          </h3>
+        >
+          Baseline and main methods
+        </h3>
 
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 155px">Model / Variant</th>
-                  <th style="min-width: 265px">Architecture</th>
-                  <th style="min-width: 175px">Input representation</th>
-                  <th style="min-width: 165px">Loss</th>
-                  <th style="min-width: 215px">Metrics</th>
-                  <th style="min-width: 275px">Strengths &amp; limits</th>
-                  <th style="min-width: 115px; text-align: center">
-                    Params (Total / Trainable)
-                  </th>
-                  <th style="min-width: 215px">Library vs. Self-implemented</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td>
-                    <strong>SimpleCNN</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Scratch Baseline)</span
-                    >
-                  </td>
-                  <td>
-                    Custom 9-conv-layer network trained from random
-                    initialization:<br />
-                    • <strong>Stem:</strong>
-                    <code>Conv2d(3, 32, 3, stride=2, pad=1, bias=False)</code> →
-                    <code>BN</code> → <code>ReLU</code> (512→256)<br />
-                    • <strong>4 Stages</strong> with widths
-                    <code>(32, 64, 128, 256)</code>: each stage has two
-                    <code>[Conv2d(3×3, pad=1, bias=False) → BN → ReLU]</code>
-                    blocks followed by
-                    <code>MaxPool2d(2)</code> (256→128→64→32→16)<br />
-                    • <strong>Head:</strong> <code>AdaptiveAvgPool2d(1)</code> →
-                    <code>Flatten()</code> → <code>Dropout(0.3)</code> →
-                    <code>Linear(256, 11)</code>.
-                  </td>
-                  <td>
-                    Aspect-preserved, padded &amp; train-normalized 3D RGB
-                    tensor <code>X ∈ ℝ^{B×3×512×512}</code>
-                  </td>
-                  <td>
-                    <code>nn.CrossEntropyLoss</code> with
-                    <code>label_smoothing=0.1</code>
-                  </td>
-                  <td>
-                    • <strong>Primary:</strong> Macro-F1, Macro-Precision,
-                    Macro-Recall<br />
-                    • <strong>Secondary:</strong> Top-1 Accuracy, Test Loss,
-                    ECE<br />
-                    • <strong>Class-level:</strong> Per-class P/R/F1, Confusion
-                    Matrix<br />
-                    • <strong>Efficiency:</strong> GFLOPs, Train time (min),
-                    Peak VRAM (MiB), Latency (bs=1), Throughput (bs=32)
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Compact (~1.19M params), fast
-                    forward pass, zero external pretraining dependency, clean
-                    spatial inductive bias benchmark.<br />
-                    <strong>Limits:</strong> Lacks residual skip connections;
-                    limited depth and receptive field struggle with high
-                    intra-class food variation when trained from scratch on
-                    9,866 images.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">1,185,323</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 1,185,323 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Complete
-                    <code>SimpleCNN</code> class, stem + 4-stage generator loop,
-                    custom head.<br />
-                    <strong>Library:</strong> <code>torch.nn.Conv2d</code>,
-                    <code>BatchNorm2d</code>, <code>ReLU</code>,
-                    <code>MaxPool2d</code>, <code>AdaptiveAvgPool2d</code>,
-                    <code>Dropout</code>, <code>Linear</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td>
-                    <strong>ResNet-18 (Frozen)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation / Linear Probe)</span
-                    >
-                  </td>
-                  <td>
-                    Pretrained <code>torchvision.models.resnet18</code> (<code
-                      >IMAGENET1K_V1</code
-                    >
-                    weights):<br />
-                    • <strong>Backbone (Frozen):</strong> 7×7 conv stride-2 +
-                    maxpool stem, 4 residual stages of 2 basic blocks each
-                    (widths <code>64, 128, 256, 512</code>). All weights frozen
-                    (<code>requires_grad=False</code>) and
-                    <code>BatchNorm2d</code> locked in
-                    <code>eval()</code> mode.<br />
-                    • <strong>Head (Trainable):</strong>
-                    <code>Sequential(Dropout(0.3), Linear(512, 11))</code>.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Ultra-low trainable parameter
-                    count (5,643); rapid convergence; minimal backward-pass
-                    memory; isolates off-the-shelf ImageNet feature quality.<br />
-                    <strong>Limits:</strong> Cannot adapt convolutional filters
-                    or BatchNorm statistics to fine-grained culinary textures
-                    and domain-specific lighting.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">11,182,155</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 5,643 (0.05%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Head replacement wrapper,
-                    split-mode <code>set_mode()</code> locking backbone BN in
-                    <code>eval()</code>.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet18</code>
-                    (<code>IMAGENET1K_V1</code>).
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td>
-                    <strong>ResNet-18 (Full Fine-Tuning)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Controlled Study)</span
-                    >
-                  </td>
-                  <td>
-                    Same <code>ResNet-18</code> (<code>IMAGENET1K_V1</code>)
-                    architecture and
-                    <code>Dropout(0.3) → Linear(512, 11)</code> head, but
-                    <strong>all</strong> backbone residual blocks, BatchNorm
-                    layers, and classification head are unfrozen and jointly
-                    optimized end-to-end with discriminative learning rates
-                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>).
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Adapts multi-scale residual
-                    representations specifically to Food-11 categories while
-                    maintaining moderate compute cost (~11.18M params).<br />
-                    <strong>Limits:</strong> Higher training time and VRAM than
-                    frozen probing; shallower 2-conv basic blocks have lower
-                    representational ceiling than bottleneck architectures.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">11,182,155</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 11,182,155 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Parameter-group splitter
-                    (<code>make_optimizer</code>) for differential backbone/head
-                    learning rates.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet18</code>,
-                    <code>torch.optim.AdamW</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td>
-                    <strong>ResNet-50 (Frozen)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation / Linear Probe)</span
-                    >
-                  </td>
-                  <td>
-                    Pretrained <code>torchvision.models.resnet50</code> (<code
-                      >IMAGENET1K_V2</code
-                    >
-                    weights):<br />
-                    • <strong>Backbone (Frozen):</strong> 4 residual stages with
-                    <code>(3, 4, 6, 3)</code> bottleneck blocks (1×1 → 3×3 → 1×1
-                    convs, expansion factor 4, output channels
-                    <code>256, 512, 1024, 2048</code>). Locked in
-                    <code>eval()</code> mode.<br />
-                    • <strong>Head (Trainable):</strong>
-                    <code>Sequential(Dropout(0.3), Linear(2048, 11))</code>.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    across 3 seeds + dual checkpoints
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Leverages rich 2,048-dim
-                    high-level semantic features from TorchVision's upgraded V2
-                    recipe while training only 22,539 parameters.<br />
-                    <strong>Limits:</strong> High forward-pass FLOPs at 512×512
-                    resolution despite frozen weights; linear head alone cannot
-                    resolve subtle cross-class food overlaps.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">23,530,571</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 22,539 (0.10%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> Head replacement wrapper
-                    and frozen BN enforcement.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet50</code>
-                    (<code>IMAGENET1K_V2</code>).
-                  </td>
-                </tr>
-                <tr style="background: rgba(42, 68, 148, 0.04)">
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <strong>ResNet-50 (Full Fine-Tuning)</strong><br /><span
-                      style="font-size: 13px; color: #2a4494; font-weight: bold"
-                      >★ Primary Model</span
-                    >
-                  </td>
-                  <td>
-                    Deep 50-layer bottleneck architecture initialized with
-                    <code>IMAGENET1K_V2</code> weights and custom
-                    <code>Dropout(0.3) → Linear(2048, 11)</code> head. Entire
-                    network (<code>23,530,571</code> parameters) is fine-tuned
-                    end-to-end using discriminative AdamW
-                    (<code>lr_backbone=1e-4</code>, <code>lr_head=1e-3</code>)
-                    and cosine decay.
-                  </td>
-                  <td>3D RGB tensor <code>X ∈ ℝ^{B×3×512×512}</code></td>
-                  <td><code>nn.CrossEntropyLoss(label_smoothing=0.1)</code></td>
-                  <td>
-                    Same primary, secondary, class-level, and efficiency metrics
-                    + Grad-CAM visual attribution &amp; ECE calibration
-                  </td>
-                  <td>
-                    <strong>Strengths:</strong> Highest representational
-                    capacity and hierarchical receptive field; adapts deep
-                    bottleneck filters to complex food compositions, garnish
-                    details, and plating.<br />
-                    <strong>Limits:</strong> Largest memory footprint and
-                    longest per-epoch training time at 512×512 resolution;
-                    requires careful regularization to prevent overfitting.
-                  </td>
-                  <td style="text-align: center">
-                    <span class="tag-placeholder">23,530,571</span><br />
-                    <span style="font-size: 12px; color: var(--ink-soft)"
-                      >Trainable: 23,530,571 (100%)</span
-                    >
-                  </td>
-                  <td>
-                    <strong>Self-implemented:</strong> End-to-end differential
-                    fine-tuning loop, dual-best checkpoint manager, custom
-                    Grad-CAM hooks.<br />
-                    <strong>Library:</strong>
-                    <code>torchvision.models.resnet50</code>
-                    (<code>IMAGENET1K_V2</code>), PyTorch AMP &amp; autograd.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+        <div class="mandatory-table-wrap">
+          <table id="table-10" class="mandatory-models-table">
+            <caption class="table-caption">Table 10 · Model configurations for Food-11</caption>
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center">#</th>
+                <th style="min-width: 155px">Model / Variant</th>
+                <th style="min-width: 265px">Architecture</th>
+                <th style="min-width: 175px">Input representation</th>
+                <th style="min-width: 165px">Loss</th>
+                <th style="min-width: 215px">Metrics</th>
+                <th style="min-width: 275px">Strengths &amp; limits</th>
+                <th style="min-width: 115px; text-align: center">
+                  Params (Total / Trainable)
+                </th>
+                <th style="min-width: 215px">Library vs. Self-implemented</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><strong>1</strong></td>
+                <td><strong>SimpleCNN</strong><br>Scratch baseline</td>
+                <td>Four <code>Conv(3x3,stride=1,padding=1)–BN–ReLU–MaxPool</code> blocks with 16, 32, 64 and 128 output channels. Global average pooling → dropout (0.3) → linear head (128 → 11).</td>
+                <td><code>B × 3 × 256 × 256</code> RGB, aspect-preserving resize, black padding and ImageNet normalization.</td>
+                <td><code>nn.CrossEntropyLoss</code>, unweighted.</td>
+                <td><strong>Primary:</strong> test Macro-F1.<br><strong>Secondary:</strong> accuracy, macro-precision, macro-recall, cross-entropy, per-class metrics and compute cost.</td>
+                <td>Compact and fast at inference. Learns features from scratch and converges more slowly.</td>
+                <td><span class="tag-placeholder">99,339</span><br>Trainable: 99,339</td>
+                <td>Custom SimpleCNN built with <code>torch.nn</code> layers.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>2</strong></td>
+                <td><strong>ResNet-18 (Frozen)</strong><br></td>
+                <td>ImageNet-1K V1 backbone. The backbone and its BatchNorm running statistics stay fixed. Global average pooling → dropout (0.3) → linear head (512 → 11).</td>
+                <td><code>B × 3 × 256 × 256</code> RGB, aspect-preserving resize, black padding and ImageNet normalization.</td>
+                <td><code>nn.CrossEntropyLoss</code>, unweighted.</td>
+                <td><strong>Primary:</strong> test Macro-F1.<br><strong>Secondary:</strong> accuracy, macro-precision, macro-recall, cross-entropy, per-class metrics and compute cost.</td>
+                <td>Pretrained features give strong results with few trainable parameters. The full backbone still runs for each image.</td>
+                <td><span class="tag-placeholder">11,182,155</span><br>Trainable: 5,643</td>
+                <td>TorchVision ResNet-18 with a custom classification head and freeze policy.</td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>3</strong></td>
+                <td><strong>ResNet-18 (Full Fine-Tuning)</strong></td>
+                <td>Same pretrained backbone and classification head. Update both backbone and head, with a lower learning rate for the backbone.</td>
+                <td><code>B × 3 × 256 × 256</code> RGB, aspect-preserving resize, black padding and ImageNet normalization.</td>
+                <td><code>nn.CrossEntropyLoss</code>, unweighted.</td>
+                <td><strong>Primary:</strong> test Macro-F1.<br><strong>Secondary:</strong> accuracy, macro-precision, macro-recall, cross-entropy, per-class metrics and compute cost.</td>
+                <td>Highest Macro-F1 in the comparison, with higher training time and a persistent train–validation gap.</td>
+                <td><span class="tag-placeholder">11,182,155</span><br>Trainable: 11,182,155</td>
+                <td>TorchVision ResNet-18 with a custom classification head and optimizer parameter groups.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        <section id="experimental-setup">
-          <h2 class="section-title">Experimental setup</h2>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            To ensure strict experimental fairness and reproducibility across
-            all 15 core training runs (5 model configurations &times; 3 random
-            seeds), a unified training protocol and predeclared experimental
-            design were enforced.
-          </p>
+      <div class="mandatory-table-wrap">
+        <table id="table-11" class="mandatory-models-table">
+          <thead>
+            <tr>
+              <th>Hyperparameter / Component</th>
+              <th>Specification / Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Optimizer</strong></td>
+              <td>
+                <code>torch.optim.AdamW</code>,
+                β₁ = 0.9, β₂ = 0.999, ε = 10<sup>−8</sup>,
+                and weight decay = 10<sup>−2</sup>
+              </td>
+            </tr>
 
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 24px;
-              font-weight: bold;
-              margin: 24px 0 14px;
-              color: var(--ink);
-            "
-          >
-            1. Standardized training setup &amp; hyperparameters
-          </h3>
+            <tr>
+              <td><strong>Loss Function</strong></td>
+              <td>Unweighted <code>CrossEntropyLoss</code></td>
+            </tr>
 
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 45px; text-align: center">#</th>
-                  <th style="min-width: 210px">Setup / Hyperparameter</th>
-                  <th style="min-width: 260px">Value / Policy</th>
-                  <th style="min-width: 380px">
-                    Design Rationale &amp; Protocol Notes
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td><strong>Optimizer</strong></td>
-                  <td>
-                    <code>torch.optim.AdamW</code> (<code
-                      >weight_decay = 0.01</code
-                    >)
-                  </td>
-                  <td>
-                    Decoupled weight decay regularizes high-capacity backbones
-                    effectively during transfer learning and scratch training
-                    alike.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td><strong>Learning rate</strong></td>
-                  <td>
-                    • <strong>Classifier head / Scratch:</strong>
-                    <code>lr_head = 1e-3</code><br />
-                    • <strong>Pretrained backbone:</strong>
-                    <code>lr_backbone = 1e-4</code>
-                  </td>
-                  <td>
-                    Discriminative learning rates allow the randomly initialized
-                    classification head to adapt quickly while preventing
-                    catastrophic forgetting in pretrained ImageNet weights.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td><strong>Batch size &amp; Input</strong></td>
-                  <td>
-                    <code>batch_size = 32</code> at
-                    <code>512 &times; 512</code> resolution
-                  </td>
-                  <td>
-                    Consistent across train, validation, and test loaders (<code
-                      >drop_last = False</code
-                    >). Aspect-preserving Lanczos resize + center train-mean RGB
-                    padding preserves food geometry.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td><strong>Epochs</strong></td>
-                  <td>
-                    Up to <code>100</code> epochs (<code>EP_SCRATCH = 100</code
-                    >, <code>EP_FT = 100</code>)
-                  </td>
-                  <td>
-                    Matched maximum epoch budget across all five configurations,
-                    bounded by dual-criterion early stopping.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td><strong>Scheduler</strong></td>
-                  <td>
-                    <code>LambdaLR</code>: 1-epoch linear warmup → cosine
-                    annealing (<code>min_ratio = 0.01</code>)
-                  </td>
-                  <td>
-                    Stepped per iteration/batch. Warmup stabilizes early
-                    gradients in the new linear head before smooth cosine decay
-                    to 1% of peak LR.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>6</strong></td>
-                  <td><strong>Regularization &amp; Augmentation</strong></td>
-                  <td>
-                    • <strong>Loss:</strong> Cross-Entropy with
-                    <code>label_smoothing = 0.1</code><br />
-                    • <strong>Head:</strong> <code>Dropout(p = 0.3)</code><br />
-                    • <strong>Gradients:</strong> Global L2 norm clipping at
-                    <code>1.0</code><br />
-                    • <strong>Train Aug:</strong>
-                    <code>RandomHorizontalFlip(0.5)</code> +
-                    <code>ColorJitter(0.3, 0.3, 0.3, 0.05)</code>
-                  </td>
-                  <td>
-                    Mitigates overconfidence on visually ambiguous or noisy
-                    web-scraped food labels and improves robustness to
-                    lighting/color shifts.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>7</strong></td>
-                  <td><strong>Early stopping</strong></td>
-                  <td>
-                    <code>patience = 10</code> epochs (shared dual-criterion
-                    counter)
-                  </td>
-                  <td>
-                    Patience resets to <code>0</code> whenever
-                    <em>either</em> validation <code>macro_f1</code> or
-                    validation <code>accuracy</code> improves (ties broken by
-                    lower validation loss). Training stops only when neither
-                    improves for 10 consecutive epochs.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>8</strong></td>
-                  <td><strong>Checkpoint criterion</strong></td>
-                  <td>
-                    Dual validation checkpoints:
-                    <code>best_macro_f1.pt</code> (primary) &amp;
-                    <code>best_accuracy.pt</code>
-                  </td>
-                  <td>
-                    Both checkpoints are saved independently on validation and
-                    evaluated on the test set in §9. Primary comparisons and
-                    plots strictly use <code>best_macro_f1</code> to account for
-                    class imbalance.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>9</strong></td>
-                  <td><strong>Seeds &amp; Repeated runs</strong></td>
-                  <td>
-                    <code>THREE_SEEDS = [42, 43, 44]</code> (3 independent runs
-                    / config)
-                  </td>
-                  <td>
-                    Seeds control Python, NumPy, PyTorch, CUDA,
-                    <code>cudnn.deterministic=True</code>, and DataLoader
-                    shuffling while keeping the official data split invariant.
-                    Results reported as <code>mean ± sample std (ddof=1)</code>.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>10</strong></td>
-                  <td><strong>Hardware &amp; Environment</strong></td>
-                  <td>
-                    CUDA GPU (Colab / Kaggle environment logged in
-                    <code>environment.json</code>)
-                  </td>
-                  <td>
-                    Full environment provenance, SHA-256 split fingerprint
-                    (<code>SPLIT_SHA</code>), and run signatures verified
-                    automatically before reusing or evaluating checkpoints.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>11</strong></td>
-                  <td><strong>Mixed precision</strong></td>
-                  <td>
-                    Enabled (<code>AMP_ENABLED = True</code>,
-                    <code>torch.float16</code> autocast +
-                    <code>GradScaler</code>)
-                  </td>
-                  <td>
-                    Accelerates 512×512 convolutional training and reduces peak
-                    VRAM allocation; evaluation loss accumulation is cast back
-                    to FP32 for numerical exactness.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>12</strong></td>
-                  <td><strong>Training time &amp; Cost tracking</strong></td>
-                  <td>
-                    Per-epoch &amp; total wall-clock time, Peak GPU VRAM (MiB),
-                    GFLOPs, Latency (<code>bs=1</code>) &amp; Throughput
-                    (<code>bs=32</code>)
-                  </td>
-                  <td>
-                    Measured via <code>time.perf_counter()</code> (including
-                    validation), <code>torch.cuda.max_memory_allocated()</code>,
-                    <code>FlopCounterMode</code> (1 MAC = 2 FLOPs), and
-                    warmed-up CUDA-synchronized synthetic inference benchmarks.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>13</strong></td>
-                  <td><strong>Hyperparameter selection method</strong></td>
-                  <td>
-                    Proposal-locked controlled recipe (no per-model test tuning)
-                  </td>
-                  <td>
-                    All hyperparameters were fixed a priori in the approved
-                    proposal to isolate the effects of pretraining, backbone
-                    freezing vs. full fine-tuning, and backbone depth without
-                    hyperparameter-search confounding.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <tr>
+              <td><strong>Initial Learning Rate</strong></td>
+              <td>
+                <strong>SimpleCNN:</strong> 10<sup>−3</sup> for all parameters.<br>
+                <strong>ResNet-18 frozen:</strong> 10<sup>−3</sup> for the classification head.<br>
+                <strong>ResNet-18 full:</strong> 10<sup>−4</sup> for the backbone
+                and 10<sup>−3</sup> for the classification head.
+              </td>
+            </tr>
 
-          <h3
-            style="
+            <tr>
+              <td><strong>Batching and Data Loading</strong></td>
+              <td>
+                Batch size 128 for training, validation, and evaluation.
+                Training samples are shuffled; validation and evaluation samples
+                are not. Data loading uses <code>num_workers=0</code>.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Training Duration</strong></td>
+              <td>
+                A fixed budget of 25 epochs for every configuration;
+                no early stopping
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Learning Rate Scheduler</strong></td>
+              <td>
+                <code>ReduceLROnPlateau</code>, <code>mode=min</code>,
+                factor = 0.5, patience = 3, and minimum learning rate =
+                10<sup>−6</sup> for each parameter group.
+                The default threshold is 10<sup>−4</sup> with
+                <code>threshold_mode=rel</code>.
+                The scheduler is stepped on validation loss.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Input and Normalization</strong></td>
+              <td>
+                RGB inputs of shape 3 × 256 × 256.
+                Aspect-ratio-preserving bilinear resizing and centered black
+                padding are applied. Pixel values are scaled to [0, 1] and
+                normalized using ImageNet mean (0.485, 0.456, 0.406) and
+                standard deviation (0.229, 0.224, 0.225).
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Data Augmentation</strong></td>
+              <td>
+                Training only: random horizontal flipping with probability 0.5.
+                No random augmentation is applied to validation or evaluation images.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Regularization</strong></td>
+              <td>
+                <strong>SimpleCNN:</strong> Batch normalization in all four
+                convolutional blocks and dropout with probability 0.3 in the
+                classification head.<br>
+                <strong>ResNet-18:</strong> Backbone batch normalization and
+                dropout with probability 0.3 in the new head.
+                Frozen-backbone batch normalization remains in evaluation mode.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Weight Initialization</strong></td>
+              <td>
+                <strong>SimpleCNN:</strong> Trained from scratch.<br>
+                <strong>ResNet-18:</strong> ImageNet-1K pretrained backbone
+                (<code>IMAGENET1K_V1</code>) with a newly initialized
+                11-class classification head.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Checkpoint Criterion</strong></td>
+              <td>
+                Highest validation Macro-F1-score. Equal scores are resolved
+                using lower validation loss. The selected checkpoint is
+                restored before final evaluation.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Seeds</strong></td>
+              <td>
+                Training seeds 42, 43, and 44 for each configuration.
+                The cleaned Food-11 partitions are derived from the official
+                splits and held fixed across all runs.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Hardware &amp; Environment</strong></td>
+              <td>
+                NVIDIA Tesla T4 GPU, Google Colab, Linux, Python 3.13.16,
+                PyTorch 2.11.0 - 2.14.1+cu130, TorchVision 0.26.0 - 0.29.1+cu130,
+                CUDA 13.0, NumPy 2.4.6, pandas 2.2.3,
+                and scikit-learn 1.6.1
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Numerical Precision</strong></td>
+              <td>
+                FP32 (<code>torch.float32</code>);
+                no mixed-precision training is used
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Reported Training Time</strong></td>
+              <td>
+                Sum of the per-epoch training and validation timings.
+                Includes batch loading, preprocessing, training augmentation,
+                device transfer, forward and backward passes, optimizer updates,
+                and metric computation. Excludes dataset preparation, model
+                initialization, checkpoint and CSV writes, printed logging,
+                scheduler updates, and final test evaluation.
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Hyperparameter Configuration</strong></td>
+              <td>
+                Hyperparameters were selected manually and held fixed across
+                training seeds for each configuration.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-caption">
+        Table 11 · Training and Optimization Hyperparameters for SimpleCNN and ResNet-18.
+      </p>
+
+      <h3
+        style="
               font-family: var(--font-display);
               font-size: 24px;
               font-weight: bold;
               margin: 36px 0 14px;
               color: var(--ink);
             "
-          >
-            2. Experimental design &amp; controlled comparisons
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Every controlled comparison states its predeclared hypothesis,
-            changed factor, fixed factors, evaluation metrics, and decision
-            criterion prior to inspecting test outcomes:
-          </p>
+      >
+        2. Experimental design &amp; controlled comparisons
+      </h3>
+      <p
+        style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
+      >
+        The design compares the three model configurations and tests horizontal flipping as a separate ablation.
+      </p>
 
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 190px">Comparison Study</th>
-                  <th style="min-width: 170px">Reference vs. Alternative</th>
-                  <th style="min-width: 250px">Predeclared Hypothesis</th>
-                  <th style="min-width: 210px">Changed Factor(s)</th>
-                  <th style="min-width: 240px">Fixed Factors</th>
-                  <th style="min-width: 250px">
-                    Metrics &amp; Decision Criterion
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td>
-                    <strong>Transfer Learning &amp; Architecture</strong
-                    ><br /><span style="font-size: 13px; color: var(--ink-soft)"
-                      >(Baseline vs. Main)</span
-                    >
-                  </td>
-                  <td>
-                    <code>simple_cnn</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Deep residual architecture initialized with ImageNet
-                    pretraining substantially improves Food-11 test Macro-F1
-                    over a compact CNN trained from scratch, at the cost of
-                    higher compute and memory.
-                  </td>
-                  <td>
-                    Backbone architecture/depth (9-layer SimpleCNN vs. 50-layer
-                    bottleneck ResNet) and initialization (random vs.
-                    ImageNet-1K V2 + discriminative LR).
-                  </td>
-                  <td>
-                    Official Food-11 split, 512×512 aspect-preserving
-                    resize/pad, train-only RGB normalization, augmentation,
-                    AdamW, epoch budget (100), dual-criterion early stopping,
-                    batch size (32), seeds <code>[42, 43, 44]</code>.
-                  </td>
-                  <td>
-                    • <strong>Primary:</strong> Paired Δ Test Macro-F1 across
-                    seeds.<br />
-                    • <strong>Criterion:</strong> Mean paired
-                    <code>Δ Macro-F1 ≥ +0.01</code> (1.0 pp) indicates a
-                    practical gain for <code>alt</code>; report sample std, sign
-                    consistency, seed-42 bootstrap 95% CI, and McNemar
-                    <em>p</em>-value.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td>
-                    <strong>Backbone Adaptation (Shallow)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation Study 1)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet18_frozen</code><br />vs.<br /><code
-                      >resnet18_full</code
-                    >
-                  </td>
-                  <td>
-                    Unfreezing and adapting the ResNet-18 backbone end-to-end
-                    yields a practical gain (≥ 1.0 pp) in Food-11 Macro-F1 over
-                    a frozen linear probe by specializing convolutional filters
-                    to food textures, at higher training cost.
-                  </td>
-                  <td>
-                    Backbone parameter trainability (<code>requires_grad</code>)
-                    and <code>BatchNorm2d</code> behavior (locked
-                    <code>eval()</code> vs. active
-                    <code>train()</code> statistics).
-                  </td>
-                  <td>
-                    ResNet-18 architecture, ImageNet-1K V1 initialization,
-                    classifier head (<code>Dropout(0.3) + Linear(512, 11)</code
-                    >), data split, 512×512 preprocessing, optimizer/schedule,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
-                    VRAM trade-off analysis.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td>
-                    <strong>Backbone Adaptation (Deep)</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Ablation Study 2)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet50_frozen</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Full end-to-end fine-tuning of ResNet-50 significantly
-                    outperforms a frozen ResNet-50 feature extractor,
-                    demonstrating that domain adaptation of deep bottleneck
-                    layers is critical for fine-grained food classification.
-                  </td>
-                  <td>
-                    Backbone parameter trainability (22.5K vs. 23.53M trainable
-                    params) and <code>BatchNorm2d</code> train/eval mode.
-                  </td>
-                  <td>
-                    ResNet-50 architecture, ImageNet-1K V2 initialization,
-                    classifier head (<code>Dropout(0.3) + Linear(2048, 11)</code
-                    >), data split, 512×512 preprocessing, optimizer/schedule,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) + training time and peak
-                    VRAM trade-off analysis.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td>
-                    <strong>Backbone Capacity Scaling</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Controlled Study)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet18_full</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Scaling from ResNet-18 (basic blocks) to ResNet-50
-                    (bottleneck blocks) under full fine-tuning improves test
-                    Macro-F1 by capturing richer hierarchical food features,
-                    while increasing GFLOPs and latency.
-                  </td>
-                  <td>
-                    Backbone architecture/depth (18-layer basic vs. 50-layer
-                    bottleneck, 11.18M vs. 23.53M params) and corresponding
-                    TorchVision ImageNet weight recipe (V1 vs. V2).
-                  </td>
-                  <td>
-                    Full fine-tuning regime (<code>lr_backbone=1e-4</code>,
-                    <code>lr_head=1e-3</code>), official split, 512×512
-                    preprocessing, augmentation, epoch budget, early stopping,
-                    batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) evaluated alongside
-                    GFLOPs, latency, and F1-per-GFLOP efficiency.
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <strong>Data Augmentation Ablation</strong><br /><span
-                      style="font-size: 13px; color: var(--ink-soft)"
-                      >(Optional Protocol)</span
-                    >
-                  </td>
-                  <td>
-                    <code>resnet50_full_noaug</code><br />vs.<br /><code
-                      >resnet50_full</code
-                    >
-                  </td>
-                  <td>
-                    Applying random horizontal flips and color jitter during
-                    training reduces overfitting and improves test
-                    generalization on Food-11 (controlled via
-                    <code>RUN_AUG_ABLATION</code> flag).
-                  </td>
-                  <td>
-                    Presence vs. absence of training-time data augmentation
-                    (<code>RandomHorizontalFlip</code> +
-                    <code>ColorJitter</code>).
-                  </td>
-                  <td>
-                    ResNet-50 architecture, ImageNet-1K V2 weights, full
-                    fine-tuning recipe, 512×512 resize/pad &amp; train-only
-                    normalization, batch size, seeds.
-                  </td>
-                  <td>
-                    Same paired multi-seed decision rule (practical threshold
-                    <code>|Δ Macro-F1| ≥ 0.01</code>) and generalization gap
-                    (<code>train_acc - val_acc</code>) inspection.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+      <div class="mandatory-table-wrap">
+        <table id="table-12" class="mandatory-models-table">
+          <caption class="table-caption">Table 12 · Experimental design and controlled comparisons</caption>
+          <thead>
+            <tr>
+              <th style="width: 40px; text-align: center">#</th>
+              <th style="min-width: 190px">Comparison Study</th>
+              <th style="min-width: 170px">Reference vs. Alternative</th>
+              <th style="min-width: 250px">Predeclared Hypothesis</th>
+              <th style="min-width: 210px">Changed Factor(s)</th>
+              <th style="min-width: 240px">Fixed Factors</th>
+              <th style="min-width: 250px">
+                Metrics &amp; Decision Criterion
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><strong>1</strong></td>
+              <td>Model configuration</td>
+              <td>SimpleCNN vs. ResNet-18 frozen vs. ResNet-18 full</td>
+              <td>The pretrained configurations outperform the scratch baseline. Full fine-tuning improves over a frozen backbone.</td>
+              <td><span>SimpleCNN and ResNet-18 differ in architecture, initialization, and parameter count. Full fine-tuning updates the backbone weights and BatchNorm statistics and uses a separate backbone learning rate.</span></td>
+<td><span>Same cleaned splits, preprocessing, flip policy, batch size, optimizer, weight decay, training budget, scheduler, and checkpoint rule. Both ResNet-18 variants share the same architecture and initial weights for each matched seed.</span></td>
+              <td>
+                <strong>Metrics:</strong> Test Macro-F1 is the primary metric,
+                supported by secondary predictive metrics, computational costs,
+                and training and validation curves.<br><br>
 
-        <section id="results">
-          <h2 class="section-title">Results</h2>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 20px"
-          >
-            The analysis covers training curves and convergence behavior,
-            quantitative performance metrics across primary and secondary
-            evaluation criteria, parameter counts, compute costs, and
-            qualitative findings.
-          </p>
+                <strong>Conclusion criteria:</strong> Compare mean test Macro-F1,
+                variability across seeds, and computational cost.
+                The SimpleCNN–ResNet comparison evaluates complete configurations
+                and cannot attribute performance differences solely to pretraining,
+                because architecture and capacity also differ.
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>2</strong></td>
+              <td>Horizontal-flip ablation</td>
+              <td>With flip (<code>p = 0.5</code>) vs. no flip (<code>p = 0</code>) for each model</td>
+              <td>Training-time horizontal flipping improves test Macro-F1.</td>
+              <td>Horizontal flipping during training.</td>
+              <td>Model, partitions, other training settings and matched seeds.</td>
+              <td>
+                <strong>Metrics:</strong> For each configuration and training seed,
+                compute the paired test Macro-F1 difference as
+                augmentation minus no augmentation. Report mean ± sample standard
+                deviation across seeds 42, 43, and 44.<br><br>
 
-          <!-- KPI Grid -->
-          <div class="results-kpi-grid">
-            <div class="results-kpi-card highlight">
-              <div class="results-kpi-value">94.17%</div>
-              <div class="results-kpi-label">
-                Top-1 Accuracy (ResNet-50 Full)
-              </div>
+                <strong>Conclusion criteria:</strong> A positive mean difference
+                favors horizontal-flip augmentation, whereas a negative mean
+                difference favors training without augmentation. The standard
+                deviation describes variability across seeds. A mean difference
+                that is small compared with its standard deviation is interpreted
+                cautiously as inconclusive evidence of improvement.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </section>
+
+      <section id="results">
+        <link rel="stylesheet" href="Assignment2/report-assets/results.css">
+        <h2 class="section-title">Results</h2>
+        <p>The three models use the same 2,770 cleaned Food-11 test images. Results are mean ± sample standard deviation across training seeds 42, 43 and 44. Each run completes 25 epochs and restores the checkpoint with the highest validation Macro-F1, with lower validation cross-entropy breaking ties.</p>
+        <p>Validation uses unaugmented images and the weights at the end of each epoch. In each per-class table, bold and underlined values mark the highest and lowest means in each column. In the confusion matrices, rows are true classes and columns are predicted classes. The row-normalized diagonal gives class recall. Prediction examples use each model’s selected checkpoint for seed 42. Difficult-but-correct examples have small gaps between their two highest softmax scores.</p>
+        <h3 class="section-title">Training Behaviors</h3>
+        <details class="report-model" id="method-simplecnn" open>
+          <summary>SimpleCNN</summary>
+          <div class="report-model-content">
+              
+
+            <p>Training and validation performance remain relatively low and track each other closely. This pattern suggests incomplete fitting within the 25-epoch budget. Training loss is still improving late in training, and two seeds select the final epoch. The runs leave open how much of the remaining limitation comes from model capacity, optimization, or training duration. The selected checkpoints are at epochs 22, 25, and 25 for seeds 42, 43, and 44, respectively.</p>
+            <figure id="figure-9" class="figure-card report-curve">
+              <img src="Assignment2/report-assets/simplecnn-curves.webp" alt="SimpleCNN training and validation loss, accuracy, and Macro-F1 across seeds 42 to 44" width="1230" height="1454" loading="lazy" decoding="async">
+              <figcaption class="figure-caption">Figure 9 · Training and validation loss, accuracy, and Macro-F1. Markers identify the selected checkpoints.</figcaption>
+            </figure>
+        </details>
+
+        <details class="report-model" id="method-frozen" open>
+          <summary>ResNet-18 frozen</summary>
+          <div class="report-model-content">
+            <p>Validation performance is broadly stable in the later epochs, suggesting limited additional gains from head-only training under the current protocol. The selected epochs for seeds 42, 43 and 44 are 22, 25 and 22, respectively.</p>
+            <figure id="figure-10" class="figure-card report-curve">
+              <img src="Assignment2/report-assets/frozen-curves.webp" alt="ResNet-18 frozen training and validation loss, accuracy, and Macro-F1 across seeds 42 to 44" width="1230" height="1454" loading="lazy" decoding="async">
+              <figcaption class="figure-caption">Figure 10 · Training and validation loss, accuracy, and Macro-F1. Markers identify the selected checkpoints.</figcaption>
+            </figure>
+        </details>
+        <details class="report-model" id="method-full" open>
+          <summary>ResNet-18 full fine-tuning</summary>
+          <div class="report-model-content">
+            <p>After its early minimum, validation loss broadly plateaus or rises while training loss continues to fall. This persistent gap is consistent with overfitting later in training, despite strong validation performance. The selected epochs for seeds 42, 43 and 44 are 14, 19 and 17, respectively.</p>
+            <figure id="figure-11" class="figure-card report-curve">
+              <img src="Assignment2/report-assets/full-curves.webp" alt="ResNet-18 full fine-tuning training and validation loss, accuracy, and Macro-F1 across seeds 42 to 44" width="1230" height="1454" loading="lazy" decoding="async">
+              <figcaption class="figure-caption">Figure 11 · Training and validation loss, accuracy, and Macro-F1. Markers identify the selected checkpoints.</figcaption>
+            </figure>
+        </details>
+
+        <h3 id="quantitative-results">Quantitative Results</h3>
+
+        <div class="mandatory-table-wrap">
+          <table id="table-13" class="mandatory-models-table report-table">
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">Total params</th>
+                <th scope="col">Trainable params</th>
+                <th scope="col">Test Acc (%)</th>
+                <th scope="col">Macro-Prec (%)</th>
+                <th scope="col">Macro-Rec (%)</th>
+                <th scope="col">Macro-F1 (%)</th>
+                <th scope="col">Test CE loss</th>
+                <th scope="col">Inference (ms/sample)</th>
+                <th scope="col">Train time / run (s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">SimpleCNN</th>
+                <td>99,339</td>
+                <td>99,339</td>
+                <td>60.40 &plusmn; 1.02</td>
+                <td>63.48 &plusmn; 2.25</td>
+                <td>57.23 &plusmn; 0.51</td>
+                <td>57.58 &plusmn; 0.84</td>
+                <td>1.2060 &plusmn; 0.0273</td>
+                <td><b>0.8054 &plusmn; 0.1036</b></td>
+                <td>2,969.5 &plusmn; 112.3</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (frozen)</th>
+                <td>11,182,155</td>
+                <td>5,643</td>
+                <td>84.62 &plusmn; 0.24</td>
+                <td>85.45 &plusmn; 0.10</td>
+                <td>85.23 &plusmn; 0.19</td>
+                <td>85.26 &plusmn; 0.17</td>
+                <td>0.4938 &plusmn; 0.0036</td>
+                <td>2.6574 &plusmn; 0.4641</td>
+                <td>2,970.3 &plusmn; 97.2</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (full)</th>
+                <td>11,182,155</td>
+                <td>11,182,155</td>
+                <td><b>91.37 &plusmn; 0.43</b></td>
+                <td><b>91.65 &plusmn; 0.37</b></td>
+                <td><b>91.74 &plusmn; 0.40</b></td>
+                <td><b>91.67 &plusmn; 0.39</b></td>
+                <td><b>0.3197 &plusmn; 0.0148</b></td>
+                <td>2.4819 &plusmn; 0.1453</td>
+                <td>3,619.5 &plusmn; 72.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-caption">
+          Table 13 · Predictive performance and computational cost on Food-11, reported as
+          mean &plusmn; sample standard deviation across seeds 42, 43, and 44.
+          Macro-F1 is the primary metric. Bold values indicate the best mean
+          predictive performance.
+        </p>
+
+        <div class="mandatory-table-wrap">
+          <table id="table-14" class="mandatory-models-table report-table">
+            <caption>
+              Table 14 · Training duration: mean &plusmn; sample SD across seeds 42, 43, and 44.
+              All runs execute 25 epochs without early stopping.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">Executed epochs</th>
+                <th scope="col">Train time / epoch (s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">SimpleCNN</th>
+                <td>25</td>
+                <td>118.78 &plusmn; 4.49</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (frozen)</th>
+                <td>25</td>
+                <td>118.81 &plusmn; 3.89</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (full)</th>
+                <td>25</td>
+                <td>144.78 &plusmn; 2.89</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="section-title" id="per-class-results">
+          Per-class results and confusion matrices
+        </h3>
+
+        <details class="report-model" id="metrics-simplecnn" open>
+          <summary>SimpleCNN</summary>
+          <div class="report-model-content">
+            <p>Per-class metrics and test confusion matrices.</p>
+
+            <div class="mandatory-table-wrap">
+              <table id="table-15" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 15 · SimpleCNN per-class test metrics</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">One-vs-rest Acc (%)</th>
+                    <th scope="col">Precision (%)</th>
+                    <th scope="col">Recall (%)</th>
+                    <th scope="col">F1 (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Bread</th><td>89.64 &plusmn; 2.19</td><td>48.92 &plusmn; 8.70</td><td>47.51 &plusmn; 11.44</td><td>46.87 &plusmn; 4.00</td></tr>
+                  <tr><th scope="row">Dairy product</th><td>95.38 &plusmn; 0.07</td><td>76.47 &plusmn; 3.09</td><td><u>18.82 &plusmn; 2.75</u></td><td><u>30.10 &plusmn; 3.44</u></td></tr>
+                  <tr><th scope="row">Dessert</th><td><u>83.25 &plusmn; 1.52</u></td><td><u>48.39 &plusmn; 3.52</u></td><td>66.67 &plusmn; 6.43</td><td>55.83 &plusmn; 0.99</td></tr>
+                  <tr><th scope="row">Egg</th><td>90.29 &plusmn; 0.58</td><td>61.41 &plusmn; 4.42</td><td>50.46 &plusmn; 3.70</td><td>55.22 &plusmn; 1.43</td></tr>
+                  <tr><th scope="row">Fried food</th><td>92.07 &plusmn; 1.39</td><td>51.22 &plusmn; 6.90</td><td>64.71 &plusmn; 5.56</td><td>56.74 &plusmn; 2.42</td></tr>
+                  <tr><th scope="row">Meat</th><td>92.77 &plusmn; 0.33</td><td>74.98 &plusmn; 8.61</td><td>59.61 &plusmn; 15.22</td><td>64.87 &plusmn; 7.50</td></tr>
+                  <tr><th scope="row">Noodles/Pasta</th><td>95.85 &plusmn; 0.85</td><td>62.09 &plusmn; 9.56</td><td>61.68 &plusmn; 3.49</td><td>61.44 &plusmn; 3.66</td></tr>
+                  <tr><th scope="row">Rice</th><td>96.57 &plusmn; 0.66</td><td>50.42 &plusmn; 15.44</td><td>39.63 &plusmn; 6.70</td><td>43.00 &plusmn; 2.99</td></tr>
+                  <tr><th scope="row">Seafood</th><td>94.33 &plusmn; 0.32</td><td>65.91 &plusmn; 10.97</td><td>54.52 &plusmn; 14.53</td><td>57.81 &plusmn; 5.87</td></tr>
+                  <tr><th scope="row">Soup</th><td>92.80 &plusmn; 1.58</td><td>75.20 &plusmn; 9.87</td><td>74.57 &plusmn; 5.36</td><td>74.37 &plusmn; 2.88</td></tr>
+                  <tr><th scope="row">Vegetable/Fruit</th><td><b>97.85 &plusmn; 0.30</b></td><td><b>83.26 &plusmn; 3.21</b></td><td><b>91.36 &plusmn; 0.45</b></td><td><b>87.10 &plusmn; 1.55</b></td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="results-kpi-card highlight">
-              <div class="results-kpi-value">0.9461</div>
-              <div class="results-kpi-label">
-                Macro-F1 Score (ResNet-50 Full)
-              </div>
+
+            <figure id="figure-12" class="figure-card">
+              <a href="Assignment2/report-assets/simplecnn-confusion-counts.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size SimpleCNN confusion counts">
+                <img src="Assignment2/report-assets/simplecnn-confusion-counts.webp"
+                  alt="SimpleCNN test confusion matrix showing counts across seeds 42, 43, and 44"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 12 · SimpleCNN confusion matrix
+              </figcaption>
+            </figure>
+
+            <figure id="figure-13" class="figure-card">
+              <a href="Assignment2/report-assets/simplecnn-confusion-normalized.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size SimpleCNN normalized confusion matrix">
+                <img src="Assignment2/report-assets/simplecnn-confusion-normalized.webp"
+                  alt="SimpleCNN row-normalized test confusion matrix"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 13 · SimpleCNN row-normalized confusion matrix. 
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="metrics-resnet18-frozen" open>
+          <summary>ResNet-18 (frozen)</summary>
+          <div class="report-model-content">
+            <p>Per-class metrics and test confusion matrices.</p>
+
+            <div class="mandatory-table-wrap">
+              <table id="table-16" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 16 · Frozen ResNet-18 per-class test metrics</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">One-vs-rest Acc (%)</th>
+                    <th scope="col">Precision (%)</th>
+                    <th scope="col">Recall (%)</th>
+                    <th scope="col">F1 (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Bread</th><td>95.28 &plusmn; 0.15</td><td><u>75.66 &plusmn; 2.39</u></td><td>75.75 &plusmn; 2.45</td><td>75.65 &plusmn; 0.24</td></tr>
+                  <tr><th scope="row">Dairy product</th><td>97.57 &plusmn; 0.09</td><td>81.64 &plusmn; 2.73</td><td><u>70.07 &plusmn; 1.80</u></td><td><u>75.37 &plusmn; 0.41</u></td></tr>
+                  <tr><th scope="row">Dessert</th><td><u>93.39 &plusmn; 0.06</u></td><td>80.12 &plusmn; 0.93</td><td>77.73 &plusmn; 2.02</td><td>78.89 &plusmn; 0.58</td></tr>
+                  <tr><th scope="row">Egg</th><td>95.09 &plusmn; 0.10</td><td>79.90 &plusmn; 1.12</td><td>78.42 &plusmn; 2.19</td><td>79.13 &plusmn; 0.70</td></tr>
+                  <tr><th scope="row">Fried food</th><td>97.20 &plusmn; 0.15</td><td>82.07 &plusmn; 2.25</td><td>83.11 &plusmn; 2.23</td><td>82.55 &plusmn; 0.75</td></tr>
+                  <tr><th scope="row">Meat</th><td>96.79 &plusmn; 0.23</td><td>83.56 &plusmn; 1.90</td><td>90.03 &plusmn; 0.62</td><td>86.66 &plusmn; 0.74</td></tr>
+                  <tr><th scope="row">Noodles/Pasta</th><td><b>99.70 &plusmn; 0.02</b></td><td><b>96.64 &plusmn; 0.01</b></td><td><b>97.73 &plusmn; 0.39</b></td><td><b>97.18 &plusmn; 0.20</b></td></tr>
+                  <tr><th scope="row">Rice</th><td>99.49 &plusmn; 0.04</td><td>90.43 &plusmn; 0.92</td><td>94.44 &plusmn; 1.11</td><td>92.39 &plusmn; 0.55</td></tr>
+                  <tr><th scope="row">Seafood</th><td>97.45 &plusmn; 0.13</td><td>82.41 &plusmn; 1.77</td><td>82.92 &plusmn; 0.57</td><td>82.66 &plusmn; 0.63</td></tr>
+                  <tr><th scope="row">Soup</th><td>98.33 &plusmn; 0.08</td><td>92.90 &plusmn; 0.82</td><td>95.23 &plusmn; 0.66</td><td>94.04 &plusmn; 0.28</td></tr>
+                  <tr><th scope="row">Vegetable/Fruit</th><td>98.95 &plusmn; 0.06</td><td>94.59 &plusmn; 1.47</td><td>92.12 &plusmn; 1.84</td><td>93.32 &plusmn; 0.45</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="results-kpi-card">
-              <div class="results-kpi-value">6.87 ms</div>
-              <div class="results-kpi-label">Inference Latency (bs=1)</div>
+
+            <figure id="figure-14" class="figure-card">
+              <a href="Assignment2/report-assets/frozen-confusion-counts.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size frozen ResNet-18 confusion counts">
+                <img src="Assignment2/report-assets/frozen-confusion-counts.webp"
+                  alt="Frozen ResNet-18 test confusion matrix showing counts across seeds 42, 43, and 44"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 14 · Frozen ResNet-18 confusion matrix. 
+              </figcaption>
+            </figure>
+
+            <figure id="figure-15" class="figure-card">
+              <a href="Assignment2/report-assets/frozen-confusion-normalized.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size frozen ResNet-18 normalized confusion matrix">
+                <img src="Assignment2/report-assets/frozen-confusion-normalized.webp"
+                  alt="Frozen ResNet-18 row-normalized test confusion matrix"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 15 · Frozen ResNet-18 row-normalized confusion matrix. 
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="metrics-resnet18-full" open>
+          <summary>ResNet-18 (full fine-tuning)</summary>
+          <div class="report-model-content">
+            <p>Per-class metrics and test confusion matrices.</p>
+
+            <div class="mandatory-table-wrap">
+              <table id="table-17" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 17 · Fully fine-tuned ResNet-18 per-class test metrics</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Class</th>
+                    <th scope="col">One-vs-rest Acc (%)</th>
+                    <th scope="col">Precision (%)</th>
+                    <th scope="col">Recall (%)</th>
+                    <th scope="col">F1 (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Bread</th><td>97.36 &plusmn; 0.23</td><td>87.37 &plusmn; 1.13</td><td>85.07 &plusmn; 2.33</td><td>86.19 &plusmn; 1.30</td></tr>
+                  <tr><th scope="row">Dairy product</th><td>98.30 &plusmn; 0.07</td><td><u>86.59 &plusmn; 0.36</u></td><td><u>80.50 &plusmn; 1.42</u></td><td><u>83.43 &plusmn; 0.83</u></td></tr>
+                  <tr><th scope="row">Dessert</th><td><u>96.04 &plusmn; 0.12</u></td><td>87.51 &plusmn; 0.69</td><td>87.58 &plusmn; 0.47</td><td>87.54 &plusmn; 0.33</td></tr>
+                  <tr><th scope="row">Egg</th><td>97.91 &plusmn; 0.25</td><td>91.14 &plusmn; 2.11</td><td>91.29 &plusmn; 0.46</td><td>91.20 &plusmn; 0.96</td></tr>
+                  <tr><th scope="row">Fried food</th><td>98.23 &plusmn; 0.07</td><td>88.63 &plusmn; 0.66</td><td>89.29 &plusmn; 1.71</td><td>88.95 &plusmn; 0.58</td></tr>
+                  <tr><th scope="row">Meat</th><td>97.79 &plusmn; 0.24</td><td>89.47 &plusmn; 1.29</td><td>91.69 &plusmn; 0.72</td><td>90.57 &plusmn; 0.99</td></tr>
+                  <tr><th scope="row">Noodles/Pasta</th><td><b>99.89 &plusmn; 0.04</b></td><td><b>99.10 &plusmn; 0.78</b></td><td>98.87 &plusmn; 0.39</td><td><b>98.98 &plusmn; 0.34</b></td></tr>
+                  <tr><th scope="row">Rice</th><td>99.72 &plusmn; 0.02</td><td>93.03 &plusmn; 0.56</td><td><b>98.89 &plusmn; 0.00</b></td><td>95.87 &plusmn; 0.30</td></tr>
+                  <tr><th scope="row">Seafood</th><td>98.68 &plusmn; 0.08</td><td>90.71 &plusmn; 0.73</td><td>91.30 &plusmn; 1.14</td><td>91.00 &plusmn; 0.54</td></tr>
+                  <tr><th scope="row">Soup</th><td>99.23 &plusmn; 0.08</td><td>97.30 &plusmn; 0.15</td><td>97.14 &plusmn; 0.52</td><td>97.22 &plusmn; 0.28</td></tr>
+                  <tr><th scope="row">Vegetable/Fruit</th><td>99.59 &plusmn; 0.06</td><td>97.28 &plusmn; 0.45</td><td>97.58 &plusmn; 0.26</td><td>97.43 &plusmn; 0.34</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="results-kpi-card">
-              <div class="results-kpi-value">253 img/s</div>
-              <div class="results-kpi-label">Throughput (bs=32)</div>
-            </div>
+
+            <figure id="figure-16" class="figure-card">
+              <a href="Assignment2/report-assets/full-confusion-counts.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size fully fine-tuned ResNet-18 confusion counts">
+                <img src="Assignment2/report-assets/full-confusion-counts.webp"
+                  alt="Fully fine-tuned ResNet-18 test confusion matrix showing counts across seeds 42, 43, and 44"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 16 · Fully fine-tuned ResNet-18 confusion matrix. 
+              </figcaption>
+            </figure>
+
+            <figure id="figure-17" class="figure-card">
+              <a href="Assignment2/report-assets/full-confusion-normalized.webp"
+                target="_blank" rel="noopener"
+                aria-label="Open full-size fully fine-tuned ResNet-18 normalized confusion matrix">
+                <img src="Assignment2/report-assets/full-confusion-normalized.webp"
+                  alt="Fully fine-tuned ResNet-18 row-normalized test confusion matrix"
+                  loading="lazy" decoding="async">
+              </a>
+              <figcaption class="figure-caption">
+                Figure 17 · Fully fine-tuned ResNet-18 row-normalized confusion matrix. 
+              </figcaption>
+            </figure>
           </div>
+        </details>
 
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 32px 0 14px;
-              color: var(--ink);
-            "
-          >
-            1. Training behavior &amp; convergence curves
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Training dynamics under the 100-epoch budget and shared
-            dual-criterion early stopping:
-          </p>
+        <p>
+          Dairy product has the lowest mean recall and F1-score across all three
+          configurations, while Vegetable/Fruit is comparatively well recognized.
+          Both ResNet-18 configurations perform strongly on Noodles/Pasta and Soup.
+          Full fine-tuning improves mean F1 for every class relative to the frozen
+          backbone, although Dairy product and Bread remain comparatively difficult.
+        </p>
 
-          <div class="figure-card">
-            <img
-              src="results_training_curves.png"
-              alt="Training Curves (Loss and Validation Macro-F1)"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/training_curves.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 1: Training curves across the five model configurations
-              (SimpleCNN scratch, ResNet-18/50 frozen vs. full fine-tuning) on
-              Food-11 under aspect-preserving 512×512 preprocessing and
-              train-only normalization.
-            </p>
+        <p>
+          One-vs-rest accuracy includes true negatives and can remain high even when
+          a class has low recall. For example, SimpleCNN achieves 95.38% one-vs-rest
+          accuracy for Dairy product but only 18.82% recall. Precision, recall,
+          F1-score, and directional confusion rates should therefore be considered
+          together when assessing class-specific performance.
+        </p>
+        <h3 id="prediction-examples">4. Qualitative results</h3>
+        <p>These examples come from the Food-11 test set and use each model’s validation-selected checkpoint for training seed 42. Examples were selected separately for each model. Difficult-but-correct examples have small gaps between their two highest softmax scores. Select any figure to open the full-size image.</p>
+
+        <details class="report-model" id="examples-simplecnn" open>
+          <summary>SimpleCNN <span>Correct, difficult-but-correct, and incorrect predictions (seed 42)</span></summary>
+          <div class="report-model-content">
+            <figure id="figure-18" class="figure-card">
+              <a href="Assignment2/report-assets/simplecnn-correct.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of SimpleCNN correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/simplecnn-correct-mobile.webp" width="830" height="1691">
+                  <img src="Assignment2/report-assets/simplecnn-correct.webp" alt="Correct SimpleCNN predictions on Food-11 test images, annotated with predicted labels and softmax scores" width="1745" height="920" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 18 · Correct predictions.</strong></figcaption>
+            </figure>
+
+            <figure id="figure-19" class="figure-card">
+              <a href="Assignment2/report-assets/simplecnn-close.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of SimpleCNN difficult-but-correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/simplecnn-close-mobile.webp" width="830" height="1676">
+                  <img src="Assignment2/report-assets/simplecnn-close.webp" alt="Correct SimpleCNN predictions with small gaps between the two highest softmax scores" width="1750" height="914" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 19 · Difficult-but-correct predictions.</strong></figcaption>
+            </figure>
+
+            <figure id="figure-20" class="figure-card">
+              <a href="Assignment2/report-assets/simplecnn-failures.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of SimpleCNN failure cases">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/simplecnn-failures-mobile.webp" width="830" height="1676">
+                  <img src="Assignment2/report-assets/simplecnn-failures.webp" alt="Misclassified Food-11 test images from SimpleCNN, annotated with true and predicted labels" width="1750" height="914" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 20 · Failure cases.</strong> </figcaption>
+            </figure>
           </div>
+        </details>
 
-          <ul class="pipeline-notes-list" style="margin-bottom: 28px">
-            <li>
-              <strong>SimpleCNN (Scratch Baseline):</strong> Reached best
-              validation macro-F1 at epoch 59 out of 110.7 minutes total
-              training time, reflecting slower convergence from random
-              initialization without shortcut connections.
-            </li>
-            <li>
-              <strong>ResNet-18 &amp; ResNet-50 (Frozen Backbones):</strong>
-              Exhibited rapid early convergence (best epoch 25 for ResNet-18
-              frozen, 37 for ResNet-50 frozen) as only the classification head
-              was trained. However, performance plateaued earlier due to frozen
-              feature extractors unable to specialize on culinary nuances.
-            </li>
-            <li>
-              <strong>ResNet-18 &amp; ResNet-50 (Full Fine-Tuning):</strong>
-              Benefited significantly from end-to-end adaptation, with ResNet-50
-              achieving top performance at epoch 16 while maintaining robust
-              stability through AdamW and cosine decay.
-            </li>
-          </ul>
+        <details class="report-model" id="examples-resnet18-frozen" open>
+          <summary>ResNet-18 (frozen) <span>Correct, difficult-but-correct, and incorrect predictions (seed 42)</span></summary>
+          <div class="report-model-content">
+            <figure id="figure-21" class="figure-card">
+              <a href="Assignment2/report-assets/frozen-correct.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of frozen ResNet-18 correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/frozen-correct-mobile.webp" width="830" height="1706">
+                  <img src="Assignment2/report-assets/frozen-correct.webp" alt="Correct frozen ResNet-18 predictions on Food-11 test images, annotated with predicted labels and softmax scores" width="1729" height="920" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 21 · Correct predictions.</strong> </figcaption>
+            </figure>
 
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 36px 0 14px;
-              color: var(--ink);
-            "
-          >
-            2. Quantitative results &amp; compute cost summary
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Proposal primary evaluation (best validation macro-F1 checkpoint
-            selection) and operational compute costs across all evaluated
-            architectures (Seed 42 single-run evaluation):
-          </p>
+            <figure id="figure-22" class="figure-card">
+              <a href="Assignment2/report-assets/frozen-close.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of frozen ResNet-18 difficult-but-correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/frozen-close-mobile.webp" width="830" height="1741">
+                  <img src="Assignment2/report-assets/frozen-close.webp" alt="Correct frozen ResNet-18 predictions with small gaps between the two highest softmax scores" width="1694" height="920" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 22 · Difficult-but-correct predictions.</strong> </figcaption>
+            </figure>
 
-          <div class="mandatory-table-wrap">
-            <table class="mandatory-models-table">
-              <thead>
-                <tr>
-                  <th style="width: 40px; text-align: center">#</th>
-                  <th style="min-width: 155px">Experiment</th>
-                  <th style="min-width: 80px; text-align: center">
-                    Runs / Seed
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Accuracy
-                  </th>
-                  <th style="min-width: 105px; text-align: center">
-                    Test Precision
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Recall
-                  </th>
-                  <th style="min-width: 100px; text-align: center">
-                    Test Macro-F1
-                  </th>
-                  <th style="min-width: 95px; text-align: center">
-                    Val Macro-F1
-                  </th>
-                  <th style="min-width: 85px; text-align: center">
-                    Params (M)
-                  </th>
-                  <th style="min-width: 95px; text-align: center">
-                    Trainable (M)
-                  </th>
-                  <th style="min-width: 85px; text-align: center">GFLOPs</th>
-                  <th style="min-width: 100px; text-align: center">
-                    Train Time (min)
-                  </th>
-                  <th style="min-width: 85px; text-align: center">
-                    Best Epoch
-                  </th>
-                  <th style="min-width: 110px; text-align: center">
-                    Latency bs=1 (ms)
-                  </th>
-                  <th style="min-width: 110px; text-align: center">
-                    Throughput (img/s)
-                  </th>
-                  <th style="min-width: 120px; text-align: center">
-                    Peak GPU Mem (MiB)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: center"><strong>1</strong></td>
-                  <td><code>simple_cnn</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">82.61%</td>
-                  <td style="text-align: center">83.19%</td>
-                  <td style="text-align: center">83.29%</td>
-                  <td style="text-align: center">82.99%</td>
-                  <td style="text-align: center">80.42%</td>
-                  <td style="text-align: center">1.19</td>
-                  <td style="text-align: center">1.19</td>
-                  <td style="text-align: center">1.99</td>
-                  <td style="text-align: center">110.7</td>
-                  <td style="text-align: center">59.0</td>
-                  <td style="text-align: center">1.40 ms</td>
-                  <td style="text-align: center">1,035</td>
-                  <td style="text-align: center">3,139 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>2</strong></td>
-                  <td><code>resnet18_frozen</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">84.43%</td>
-                  <td style="text-align: center">85.38%</td>
-                  <td style="text-align: center">84.39%</td>
-                  <td style="text-align: center">84.59%</td>
-                  <td style="text-align: center">82.74%</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">0.01</td>
-                  <td style="text-align: center">4.74</td>
-                  <td style="text-align: center">55.2</td>
-                  <td style="text-align: center">25.0</td>
-                  <td style="text-align: center">3.83 ms</td>
-                  <td style="text-align: center">591</td>
-                  <td style="text-align: center">1,245 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>3</strong></td>
-                  <td><code>resnet18_full</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">91.81%</td>
-                  <td style="text-align: center">91.87%</td>
-                  <td style="text-align: center">92.34%</td>
-                  <td style="text-align: center">92.01%</td>
-                  <td style="text-align: center">91.32%</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">11.18</td>
-                  <td style="text-align: center">4.74</td>
-                  <td style="text-align: center">39.6</td>
-                  <td style="text-align: center">13.0</td>
-                  <td style="text-align: center">3.92 ms</td>
-                  <td style="text-align: center">591</td>
-                  <td style="text-align: center">3,994 MiB</td>
-                </tr>
-                <tr>
-                  <td style="text-align: center"><strong>4</strong></td>
-                  <td><code>resnet50_frozen</code></td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center">90.56%</td>
-                  <td style="text-align: center">91.50%</td>
-                  <td style="text-align: center">90.58%</td>
-                  <td style="text-align: center">91.00%</td>
-                  <td style="text-align: center">89.26%</td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">0.02</td>
-                  <td style="text-align: center">10.68</td>
-                  <td style="text-align: center">82.7</td>
-                  <td style="text-align: center">37.0</td>
-                  <td style="text-align: center">7.31 ms</td>
-                  <td style="text-align: center">218</td>
-                  <td style="text-align: center">1,869 MiB</td>
-                </tr>
-                <tr style="background: rgba(42, 68, 148, 0.04)">
-                  <td style="text-align: center"><strong>5</strong></td>
-                  <td>
-                    <code>resnet50_full</code>
-                    <span
-                      style="
-                        font-size: 13px;
-                        color: #2a4494;
-                        font-weight: bold;
-                        margin-left: 4px;
-                      "
-                      >★ Best</span
-                    >
-                  </td>
-                  <td style="text-align: center">1 / 42</td>
-                  <td style="text-align: center"><strong>94.17%</strong></td>
-                  <td style="text-align: center"><strong>94.55%</strong></td>
-                  <td style="text-align: center"><strong>94.72%</strong></td>
-                  <td style="text-align: center"><strong>94.61%</strong></td>
-                  <td style="text-align: center"><strong>93.25%</strong></td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">23.53</td>
-                  <td style="text-align: center">10.68</td>
-                  <td style="text-align: center">67.8</td>
-                  <td style="text-align: center">16.0</td>
-                  <td style="text-align: center">6.87 ms</td>
-                  <td style="text-align: center">253</td>
-                  <td style="text-align: center">14,517 MiB</td>
-                </tr>
-              </tbody>
-            </table>
+            <figure id="figure-23" class="figure-card">
+              <a href="Assignment2/report-assets/frozen-failures.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of frozen ResNet-18 failure cases">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/frozen-failures-mobile.webp" width="830" height="1702">
+                  <img src="Assignment2/report-assets/frozen-failures.webp" alt="Misclassified Food-11 test images from frozen ResNet-18, annotated with true and predicted labels" width="1733" height="920" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 23 · Failure cases.</strong> </figcaption>
+            </figure>
           </div>
+        </details>
 
-          <p
-            style="
-              color: var(--ink-soft);
-              font-size: 16px;
-              margin: 12px 0 24px;
-              font-style: italic;
-            "
-          >
-            Note: Values reflect single-seed evaluation (seed 42). Standard
-            deviations across multiple seeds are currently uninitialized pending
-            full 3-seed aggregation runs.
-          </p>
+        <details class="report-model" id="examples-resnet18-full" open>
+          <summary>ResNet-18 (full fine-tuning) <span>Correct, difficult-but-correct, and incorrect predictions (seed 42)</span></summary>
+          <div class="report-model-content">
+            <figure id="figure-24" class="figure-card">
+              <a href="Assignment2/report-assets/full-correct.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of fully fine-tuned ResNet-18 correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/full-correct-mobile.webp" width="830" height="1676">
+                  <img src="Assignment2/report-assets/full-correct.webp" alt="Correct fully fine-tuned ResNet-18 predictions on Food-11 test images, annotated with predicted labels and softmax scores" width="1750" height="914" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 24 · Correct predictions.</strong> </figcaption>
+            </figure>
 
-          <div class="figure-card">
-            <img
-              src="results_tradeoffs.png"
-              alt="Trade-off Analysis (Macro-F1 vs Parameters, GFLOPs, Training Time, Latency)"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/tradeoffs.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 2: Accuracy–cost trade-off plots illustrating test Macro-F1
-              against parameter count (log scale), GFLOPs per image, training
-              time, and batch-size-1 inference latency.
-            </p>
+            <figure id="figure-25" class="figure-card">
+              <a href="Assignment2/report-assets/full-close.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of fully fine-tuned ResNet-18 difficult-but-correct predictions">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/full-close-mobile.webp" width="830" height="1711">
+                  <img src="Assignment2/report-assets/full-close.webp" alt="Correct fully fine-tuned ResNet-18 predictions with small gaps between the two highest softmax scores" width="1724" height="920" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 25 · Difficult-but-correct predictions.</strong></figcaption>
+            </figure>
+
+            <figure id="figure-26" class="figure-card">
+              <a href="Assignment2/report-assets/full-failures.webp" target="_blank" rel="noopener" aria-label="Open full-size figure of fully fine-tuned ResNet-18 failure cases">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="Assignment2/report-assets/full-failures-mobile.webp" width="830" height="1676">
+                  <img src="Assignment2/report-assets/full-failures.webp" alt="Misclassified Food-11 test images from fully fine-tuned ResNet-18, including packaged butter predicted as Dessert" width="1750" height="914" loading="lazy" decoding="async">
+                </picture>
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 26 · Failure cases.</strong></figcaption>
+            </figure>
           </div>
-
-          <h3
-            style="
-              font-family: var(--font-display);
-              font-size: 26px;
-              font-weight: bold;
-              margin: 36px 0 14px;
-              color: var(--ink);
-            "
-          >
-            3. Qualitative &amp; visual diagnostics
-          </h3>
-          <p
-            style="color: var(--ink-soft); font-size: 18.5px; margin: 0 0 16px"
-          >
-            Inspection of confusion matrices, error categories, and Grad-CAM
-            activations on test images:
-          </p>
-
-          <div class="figure-card">
-            <img
-              src="results_confusion_matrices.png"
-              alt="Row-normalized Confusion Matrices"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/confusion_matrices.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 3: Row-normalized confusion matrices for baseline SimpleCNN
-              and main ResNet-50 full model on the Food-11 test split.
-            </p>
-          </div>
-
-          <div class="figure-card">
-            <img
-              src="results_gradcam.png"
-              alt="Grad-CAM Visualizations"
-              loading="lazy"
-              onerror="
-                this.onerror = null;
-                this.src = 'figures/gradcam.png';
-              "
-            />
-            <p class="figure-caption">
-              Figure 4: Grad-CAM visual attributions on ResNet-50 layer4[-1]
-              showing regions of the food dish driving model classification.
-            </p>
-          </div>
-        </section>
-
-      <section>
+        </details>
+      </section>
+      <section id="comparison-discussion">
         <h2 class="section-title">Comparison and discussion</h2>
-        <div class="stub-note"></div>
-      </section>
 
-      <section>
+        <h3>Overall predictive performance</h3>
+        <p>Fully fine-tuned ResNet-18 achieved the highest mean test Macro-F1 at 91.67%, followed by frozen ResNet-18 at 85.26% and SimpleCNN at 57.58%. Top-1 accuracy followed the same ordering at 91.37%, 84.62%, and 60.40%, respectively. The model ranking therefore holds when weighting each test image equally for accuracy and each food class equally for Macro-F1.</p>
+
+        <h3>Class-specific improvements and remaining errors</h3>
+        <p>Rice showed the largest F1 improvement from SimpleCNN to frozen ResNet-18, rising from 43.00% to 92.39%. Egg showed the largest further improvement with full fine-tuning, rising from 79.13% to 91.20%. Dairy product remained the lowest-recall class at 80.50% for the fully fine-tuned model. The packaged-butter example in <a href="#figure-26">Figure 26</a> illustrates its recurring confusion with Dessert.</p>
+
+        <h3>Architecture and input representation</h3>
+        <p>All three models used the same 3 &times; 256 &times; 256 RGB inputs after aspect-ratio-preserving resizing, black padding, and ImageNet normalization. SimpleCNN learned its features from scratch. For each matched seed, both ResNet-18 variants started from the same ImageNet-pretrained backbone weights and the same initial classification head. The frozen model’s performance shows that the pretrained features already transfer to Food-11, and full fine-tuning yielded a further gain under the evaluated training settings.</p>
+
+        <h3>Training behavior, loss, and prediction confidence</h3>
+        <p>SimpleCNN continued to improve near the end of the 25-epoch budget, while frozen ResNet-18 largely plateaued. Full fine-tuning reached nearly perfect training accuracy and showed a persistent gap between training and validation accuracy. It also achieved the lowest mean test cross-entropy at 0.3197, compared with 0.4938 for frozen ResNet-18 and 1.2060 for SimpleCNN.</p>
+        <p>The fully fine-tuned model assigned a softmax score of 98.219% to Dessert for an image labeled Dairy product. A calibration analysis would measure how closely these scores correspond to observed accuracy across the test set.</p>
+
+        <h3>Computational trade-offs</h3>
+        <p>SimpleCNN was the smallest model and had the fastest measured inference at 0.81 ms per image. Frozen ResNet-18 trained only 5,643 parameters. Both ResNet-18 variants ran the full backbone during inference, averaging 2.66 ms per image for the frozen model and 2.48 ms per image for the fully fine-tuned model. Full fine-tuning took about 60.3 minutes per run including validation, compared with 49.5 minutes for frozen ResNet-18.</p>
+
+        <h3>Hypothesis assessment and scope</h3>
+        <p>Both pretrained ResNet-18 configurations outperformed SimpleCNN on the evaluated Food-11 split, supporting the study hypothesis. The comparison with SimpleCNN combines differences in architecture, capacity, initialization, and training policy. The comparison within ResNet-18 holds the architecture and initial weights fixed for each matched seed, supporting full fine-tuning under the tested settings. The results cover three training seeds on the same cleaned data partitions.</p>
+      </section>
+      <section id="error-analysis">
         <h2 class="section-title">Error analysis</h2>
-        <div class="stub-note"></div>
-      </section>
 
+        <p>Fully fine-tuned ResNet-18 misclassified 242 of 2,770 Food-11 test images (8.74%) at seed 42. Each error was assigned to the first matching group from G1 to G5 based on its true and predicted labels.</p>
+        <p class="report-note">Group percentages are calculated over all 242 errors. <a href="#table-18">Table 18</a> through <a href="#table-22">Table 22</a> show the main confusion pairs for G1–G5. Each figure contains four selected examples and opens at full size when selected.</p>
+
+        <details class="report-model" id="error-g1" open>
+          <summary>G1 · Dairy and Dessert overlap <span>28 errors · 11.6%</span></summary>
+          <div class="report-model-content">
+            <div class="mandatory-table-wrap" tabindex="0" role="region" aria-label="G1 error analysis table">
+              <table id="table-18" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 18 · G1 error analysis</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Error group</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Main pairs (true → predicted)</th>
+                    <th scope="col">Hypothesized cause</th>
+                    <th scope="col">Improvement idea</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">G1 · Dairy and Dessert overlap</th>
+                    <td>28 (11.6%)</td>
+                    <td>Dairy product → Dessert (17)<br>Dessert → Dairy product (11)</td>
+                    <td>Shared ingredients, creamy textures, and similar presentation may make dairy dishes resemble desserts.</td>
+                    <td>Review labels for mixed dairy dishes and add examples of dairy products and similar-looking desserts in varied settings.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure id="figure-27" class="figure-card">
+              <a href="Assignment2/04_error_analysis/g1.png" target="_blank" rel="noopener" aria-label="Open full-size G1 examples">
+                <img src="Assignment2/04_error_analysis/g1.png" width="1432" height="391" loading="lazy" decoding="async" alt="Four Dairy product images predicted as Dessert, including cheese plates and spreads">
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 27.</strong> Dairy product images predicted as Dessert, including mixed cheese plates and spread-covered bread.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="error-g2">
+          <summary>G2 · Bread in mixed dishes <span>71 errors · 29.3%</span></summary>
+          <div class="report-model-content">
+            <div class="mandatory-table-wrap" tabindex="0" role="region" aria-label="G2 error analysis table">
+              <table id="table-19" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 19 · G2 error analysis</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Error group</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Main pairs (true → predicted)</th>
+                    <th scope="col">Hypothesized cause</th>
+                    <th scope="col">Improvement idea</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">G2 · Bread in mixed dishes</th>
+                    <td>71 (29.3%)</td>
+                    <td>Bread → Fried food (13)<br>Egg → Bread (12)<br>Bread → Egg (10)<br>Bread → Meat (9)<br>Dessert → Bread (7)</td>
+                    <td>Bread, fillings, and sides can provide competing cues in an image with a single label.</td>
+                    <td>Review how the main food is selected and compare full images with crops of the main dish.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure id="figure-28" class="figure-card">
+              <a href="Assignment2/04_error_analysis/g2.png" target="_blank" rel="noopener" aria-label="Open full-size G2 examples">
+                <img src="Assignment2/04_error_analysis/g2.png" width="1432" height="542" loading="lazy" decoding="async" alt="Four misclassified mixed dishes featuring bread alongside eggs or meat">
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 28.</strong> Mixed dishes in which bread, eggs, or meat provide competing cues.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="error-g3">
+          <summary>G3 · Other classes predicted as Dessert <span>37 errors · 15.3%</span></summary>
+          <div class="report-model-content">
+            <div class="mandatory-table-wrap" tabindex="0" role="region" aria-label="G3 error analysis table">
+              <table id="table-20" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 20 · G3 error analysis</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Error group</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Main pairs (true → predicted)</th>
+                    <th scope="col">Hypothesized cause</th>
+                    <th scope="col">Improvement idea</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">G3 · Other classes predicted as Dessert</th>
+                    <td>37 (15.3%)</td>
+                    <td>Fried food → Dessert (11)<br>Meat → Dessert (9)<br>Seafood → Dessert (6)</td>
+                    <td>Sweet fried foods can fit both Fried food and Dessert. Similar colors, glossy surfaces, and plating may make other foods resemble desserts.</td>
+                    <td>Review labels for sweet fried foods, add visually similar examples from competing classes, and test crops of the main dish.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure id="figure-29" class="figure-card">
+              <a href="Assignment2/04_error_analysis/g3.png" target="_blank" rel="noopener" aria-label="Open full-size G3 examples">
+                <img src="Assignment2/04_error_analysis/g3.png" width="1451" height="387" loading="lazy" decoding="async" alt="Four images predicted as Dessert, including churros and dishes labeled Seafood or Meat">
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 29.</strong> Fried food, Seafood, and Meat images predicted as Dessert. The churros illustrate the overlap between fried foods and desserts.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="error-g4">
+          <summary>G4 · Dessert predicted as other classes <span>35 errors · 14.5%</span></summary>
+          <div class="report-model-content">
+            <div class="mandatory-table-wrap" tabindex="0" role="region" aria-label="G4 error analysis table">
+              <table id="table-21" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 21 · G4 error analysis</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Error group</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Main pairs (true → predicted)</th>
+                    <th scope="col">Hypothesized cause</th>
+                    <th scope="col">Improvement idea</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">G4 · Dessert predicted as other classes</th>
+                    <td>35 (14.5%)</td>
+                    <td>Dessert → Egg (9)<br>Dessert → Meat (9)<br>Dessert → Soup (6)<br>Dessert → Seafood (5)</td>
+                    <td>Dessert images can share colors, textures, sauces, or ingredients with other classes. Ambiguous annotations may contribute to some errors.</td>
+                    <td>Audit ambiguous labels and add dessert examples that visually resemble other classes.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure id="figure-30" class="figure-card">
+              <a href="Assignment2/04_error_analysis/g4.png" target="_blank" rel="noopener" aria-label="Open full-size G4 examples">
+                <img src="Assignment2/04_error_analysis/g4.png" width="1430" height="392" loading="lazy" decoding="async" alt="Four Dessert-labeled images predicted as Meat, Egg, or Soup, including a dish with a visible fried egg">
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 30.</strong> Dessert-labeled images predicted as Meat, Egg, or Soup. The visible egg in the second example makes its annotation worth reviewing.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <details class="report-model" id="error-g5">
+          <summary>G5 · Ingredient and preparation overlap <span>35 errors · 14.5%</span></summary>
+          <div class="report-model-content">
+            <div class="mandatory-table-wrap" tabindex="0" role="region" aria-label="G5 error analysis table">
+              <table id="table-22" class="mandatory-models-table report-table">
+                <caption class="table-caption">Table 22 · G5 error analysis</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Error group</th>
+                    <th scope="col">Errors</th>
+                    <th scope="col">Main pairs (true → predicted)</th>
+                    <th scope="col">Hypothesized cause</th>
+                    <th scope="col">Improvement idea</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">G5 · Ingredient and preparation overlap</th>
+                    <td>35 (14.5%)</td>
+                    <td>Fried food → Meat (7)<br>Meat → Fried food (4)<br>Meat → Egg (4)</td>
+                    <td>A fried coating can hide the main ingredient. Mixed dishes can contain cues associated with several classes.</td>
+                    <td>Review which label takes priority when ingredient and preparation both apply. Add consistently labeled examples of coated foods and mixed dishes.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figure id="figure-31" class="figure-card">
+              <a href="Assignment2/04_error_analysis/g5.png" target="_blank" rel="noopener" aria-label="Open full-size G5 examples">
+                <img src="Assignment2/04_error_analysis/g5.png" width="1456" height="430" loading="lazy" decoding="async" alt="Four examples of confusion involving Fried food, Meat, and Egg, including breaded meat">
+              </a>
+              <figcaption class="figure-caption"><strong>Figure 31.</strong> Confusion involving Fried food, Meat, and Egg where ingredient and preparation cues overlap.</figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <p class="report-note"><strong>Other pairs.</strong> The remaining 36 errors (14.9%) span several class pairs.</p>
+
+        <h3 id="high-softmax-errors">Errors with high softmax scores</h3>
+        <p>In <a href="#figure-27">Figure 27</a>, the model predicts Dessert for a Dairy product image with a softmax score of 99.4%. In <a href="#figure-31">Figure 31</a>, it predicts Fried food for a Meat image with a score that rounds to 100.0%. The report proposes fitting temperature scaling on validation data and evaluating calibration on the test set.</p>
+      </section>
       <section>
-        <h2 class="section-title">Limitations and conclusion</h2>
-        <div class="stub-note"></div>
+        <h2 id="horizontal-flip-ablation">Ablation study: Horizontal flipping</h2>
+
+        <p>We compare training with horizontal flipping (<em>p</em> = 0.5) and without it (<em>p</em> = 0). For each model, runs are paired by seed and use the same cleaned Food-11 splits. Test Macro-F1 is the primary metric.</p>
+
+        <h4 id="ablation-table-23">Table 23 · Test performance without horizontal flipping</h4>
+        <p>Values are mean &plusmn; sample standard deviation across seeds 42, 43, and 44. Bold values mark the best mean for each metric.</p>
+
+        <div class="mandatory-table-wrap" tabindex="0" role="region" aria-labelledby="ablation-table-23">
+          <table id="table-23" class="mandatory-models-table report-table" aria-labelledby="ablation-table-23">
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">Top-1 Accuracy (%)</th>
+                <th scope="col">Macro-Precision (%)</th>
+                <th scope="col">Macro-Recall (%)</th>
+                <th scope="col">Macro-F1 (%)</th>
+                <th scope="col">Test CE Loss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">SimpleCNN</th>
+                <td>60.01 &plusmn; 1.47</td>
+                <td>62.41 &plusmn; 0.91</td>
+                <td>56.79 &plusmn; 1.43</td>
+                <td>57.09 &plusmn; 1.81</td>
+                <td>1.2211 &plusmn; 0.0196</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (frozen)</th>
+                <td>84.33 &plusmn; 0.06</td>
+                <td>85.50 &plusmn; 0.04</td>
+                <td>84.52 &plusmn; 0.11</td>
+                <td>84.85 &plusmn; 0.11</td>
+                <td>0.4988 &plusmn; 0.0022</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (full fine-tuning)</th>
+                <td><b>90.76</b> &plusmn; 0.07</td>
+                <td><b>91.12</b> &plusmn; 0.14</td>
+                <td><b>91.18</b> &plusmn; 0.04</td>
+                <td><b>91.12</b> &plusmn; 0.05</td>
+                <td><b>0.3423</b> &plusmn; 0.0087</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 id="ablation-table-24">Table 24 · Paired changes from adding horizontal flipping</h4>
+        <p>For each seed, we subtract the result without flipping from the result with flipping. The table reports mean &plusmn; sample standard deviation across the three paired seeds. A negative change in cross-entropy means lower loss with flipping.</p>
+
+        <div class="mandatory-table-wrap" tabindex="0" role="region" aria-labelledby="ablation-table-24">
+          <table id="table-24" class="mandatory-models-table report-table" aria-labelledby="ablation-table-24">
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">&Delta; Top-1 Accuracy (%)</th>
+                <th scope="col">&Delta; Macro-Precision (%)</th>
+                <th scope="col">&Delta; Macro-Recall (%)</th>
+                <th scope="col">&Delta; Macro-F1 (%)</th>
+                <th scope="col">&Delta; Test CE Loss</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">SimpleCNN</th>
+                <td>+0.39 &plusmn; 0.50</td>
+                <td>+1.07 &plusmn; 2.38</td>
+                <td>+0.44 &plusmn; 1.12</td>
+                <td>+0.49 &plusmn; 1.30</td>
+                <td>&minus;0.0151 &plusmn; 0.0156</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (frozen)</th>
+                <td>+0.29 &plusmn; 0.19</td>
+                <td>&minus;0.05 &plusmn; 0.06</td>
+                <td>+0.71 &plusmn; 0.22</td>
+                <td>+0.41 &plusmn; 0.16</td>
+                <td>&minus;0.0051 &plusmn; 0.0019</td>
+              </tr>
+              <tr>
+                <th scope="row">ResNet-18 (full fine-tuning)</th>
+                <td>+0.61 &plusmn; 0.38</td>
+                <td>+0.53 &plusmn; 0.41</td>
+                <td>+0.56 &plusmn; 0.42</td>
+                <td>+0.55 &plusmn; 0.42</td>
+                <td>&minus;0.0227 &plusmn; 0.0106</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Horizontal flipping improved test Macro-F1 at all three seeds for both ResNet-18 configurations. The mean changes were +0.41% for the frozen backbone and +0.55% for full fine-tuning. For the frozen model, mean Macro-Recall changed by +0.71% and mean Macro-Precision by &minus;0.05%. SimpleCNN’s Macro-F1 change varied in direction across seeds (+0.49 &plusmn; 1.30%), so the effect was inconclusive.</p>
       </section>
 
-      <section id="ai-disclosure">
-        <p class="section-label">AI usage - this assignment</p>
-        <h2 class="section-title">Assignment-specific AI Usage Disclosure</h2>
-        <div class="disclosure-box">
-          <h4>Where AI was used</h4>
-          <ul>
-            <li class="placeholder"></li>
-          </ul>
-          <h4>Where AI was NOT used</h4>
-          <ul>
-            <li class="placeholder"></li>
-          </ul>
+      <section id="limitations">
+        <h2 class="section-title">Limitations</h2>
+
+        <h3>Data limitations</h3>
+        <p><strong>Class imbalance.</strong> The largest classes in the original training split contain about 5.36 times as many images as Rice. Macro-F1 gives each class equal weight, while per-class scores for smaller classes are more sensitive to individual errors. The test set contains 90 Rice images and 440 Dessert images.</p>
+        <p><strong>Broad and overlapping categories.</strong> Dishes from different classes can share colors, textures, and preparation styles. Food-11 assigns one label per image, so mixed dishes can make some errors difficult to interpret.</p>
+        <p><strong>Annotation ambiguity.</strong> Some images contain off-topic content, such as a shop sign labeled Dessert. These examples suggest possible label noise, whose frequency across the dataset was not measured.</p>
+        <p><strong>Photo-style bias.</strong> Some Dairy product and Vegetable/Fruit images have studio backgrounds. Models may use these background cues alongside the appearance of the food.</p>
+        <p><strong>Duplicates and grouping metadata.</strong> Duplicate removal reduces overlap within and across the predefined splits. All three seeds use the same cleaned split, so they measure variation across training runs on that split. The dataset lacks subject, restaurant, plate, and scene identifiers for grouped splitting.</p>
+        <h3>Method limitations</h3>
+        <p>The comparison between SimpleCNN and pretrained ResNet-18 combines differences in architecture, parameter count, and initialization. The two ResNet-18 variants were compared under the selected learning rates and a fixed budget of 25 epochs. SimpleCNN’s training loss was still decreasing near epoch 25, so a longer run could change its results. The horizontal-flip ablation used three matched seeds, which limits how precisely the small gains can be estimated.</p>
+
+        <h3>Generalization and future work</h3>
+        <p>Evaluation on an independent food-image dataset would test whether the model ranking holds across image sources, cuisines, and presentation styles. Comparing randomly initialized and ImageNet-pretrained ResNet-18 under the same training settings would help isolate the effect of pretraining. Longer SimpleCNN runs with validation-based checkpoint selection would clarify the effect of the training budget. Reviewing Dairy product images predicted as Dessert would help identify which errors involve ambiguous labels or scenes.</p>
+      </section>
+
+      <section id="conclusion">
+        <h2 class="section-title">Conclusion</h2>
+
+        <p>Both pretrained ResNet-18 variants outperformed SimpleCNN on the evaluated Food-11 split, supporting the first hypothesis. Mean test Macro-F1 was 57.58% for SimpleCNN, 85.26% for frozen ResNet-18, and 91.67% for fully fine-tuned ResNet-18. The improvement from the frozen to the fully fine-tuned model supports updating the backbone under the tested training policy.</p>
+        <p>Horizontal flipping improved test Macro-F1 at all three seeds for both ResNet-18 variants, supporting the second hypothesis for those models. The mean paired changes were +0.41% for frozen ResNet-18 and +0.55% for full fine-tuning. The effect on SimpleCNN was inconclusive because its changes varied in direction across seeds. Fully fine-tuned ResNet-18 with horizontal flipping achieved the highest mean test Macro-F1 among the evaluated configurations.</p>
+      </section>
+
+      <section id="ai-disclosure" class="landing-disclosure-section">
+        <p class="section-label">04 — AI usage Disclosure</p>
+        <div class="disclosure-box landing-disclosure">
+          <p>
+            In accordance with the course's AI-use disclosure requirements,
+            AI assistance during implementation, analysis, report writing,
+            and website development is documented in
+            <a
+              href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/blob/main/Assignment1/AI_USAGE.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >AI_USAGE.md</a>.
+            The records describe the tools used, tasks, AI contributions,
+            student verification, and responsible members.
+          </p>
+
+          <p>
+            The group takes full responsibility for all submitted code,
+            numerical results, figures, claims, and text.
+            AI tools supported learning, code and draft refinement,
+            website development, formatting, and language editing.
+            All reported experimental metrics were obtained from runs
+            executed by the group, and result figures were produced
+            from those outputs. Group members reviewed the adopted
+            suggestions and checked them against the implementation,
+            experimental evidence, and assignment requirements.
+          </p>
         </div>
       </section>
 
       <section>
         <h2 class="section-title">Links</h2>
         <div class="table-wrap">
-          <table class="links-table">
+          <table id="table-25" class="links-table">
+            <caption class="table-caption">Table 25 · Assignment resources</caption>
             <thead>
               <tr>
                 <th>Content</th>
@@ -1547,6 +2009,9 @@ label IDs: [2, 0, 4, 4, 3, 2, 2, 9]</samp></pre>
                     href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2"
                     target="_blank" rel="noopener">GitHub repository</a></td>
               </tr>
+              <tr><td>Three-seed experiment outputs</td><td><a href="https://github.com/shomin2155vn/CO3133-Semester-261-Group-07-Assignments/tree/main/Assignment2/checkpoints">Logs, predictions and metric tables</a></td></tr>
+              <tr><td>Final report</td><td><a href="report/DL_Assignment2/DL2.pdf">Report PDF</a></td></tr>
+              <tr><td>Notebooks</td><td><a href="report/DL_Assignment2/DL_ASS2_EDA.ipynb">EDA</a> · <a href="report/DL_Assignment2/DL_ASS2_seed42.ipynb">Training (seed 42 copy)</a></td></tr>
             </tbody>
           </table>
         </div>
