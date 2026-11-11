@@ -459,9 +459,8 @@
   with retention priority given to training, then validation, and finally
   evaluation. Within each partition, the first eligible image in the existing
   order was retained. Two additional redundant images were removed after
-  manual inspection, while their counterparts were retained. Label consistency
-  was also checked: all pairs identified had
-  matching class labels. The resulting class distribution is shown in Table 8.
+  manual inspection, while their counterparts were retained. Label consistency was also checked to distinguish repeated images from
+  identical images assigned to different categories, All images removed during deduplication shared the same class label as their retained counterparts. The resulting class distribution is shown in Table 8.
 </p>
 <div class="table-wrap">
   <table class="members">
